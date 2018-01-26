@@ -1,0 +1,99 @@
+﻿@using RepidShare.Entities.Resource;
+@using RepidShare.Entities
+@{
+    ViewBag.Title = "ViewUserDocument";
+}
+@model ViewDocumentResponseModel
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="/Images/home-icon.png"></a></li>
+            <li class="active">ViewUserDocument</li>
+        </ol>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "divDocumentList", OnBegin = "beginRequest", OnComplete = "searchComplete" }))
+{
+    @Html.HiddenFor(model => model.UserId, new { Value = Model.UserId })
+    
+    <div class="search-strip half-padding">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="search-row width-auto labelPaddingTop">
+                    @Html.LabelFor(model => model.FilterDocumentTitle, new { @class = "labelColon" })
+
+                </div>
+                <div class="search-row">
+                    @Html.TextBoxFor(model => model.FilterDocumentTitle, new { @id = "txtFilterDocumentName", @class = "form-control  filter-control", @maxlength = "50", @Width = "265px" })
+                </div>
+                <div class="search-row search-row-large">
+                    <input id="btnSubmit" type="submit" value="Search" class="btn btn-primary" style="display: none" />
+                    <input id="btnSearch" type="button" value="Search" class="btn btn-primary" />
+                    <input id="btnReset" type="button" value="Reset" onclick="resetFilter()" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divDocumentList">
+        @Html.Partial("_ViewUserDocumentList", Model)
+    </div>    
+}
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        $(".pickDate").val('');
+
+
+        $("#btnSearch").click(function () {
+            $("#ActionType").val("search");
+            $("#CurrentPage").val("1");
+            sendToServer();
+        });
+
+        $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer) });
+        $("a.lnkDetail").click(function () { getDetail(this, "ActionType", sendToServer) });
+
+    });
+
+    function resetFilter() {
+        $(".filter-control").val("");
+        $("#ddlCompletedStatus").val(0);
+        $("#ddlDocumentStatus").val(0);
+        //Validation for Super Admin if Model.AppID = 0 Means Super Admin Login
+        @if (Model.AppID == 0)
+        {
+           <text>
+        $("#ddlApplication").val(0);
+           </text>
+        }
+        $("#txtFilterDocumentName").val("");
+        $("#ActionType").val("search");
+        $("#CurrentPage").val("1");
+        sendToServer();
+    }
+
+
+
+    createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+
+    function sendToServer() {
+        $("#btnSubmit").click();
+    }
+
+    function searchComplete(xmlHttpRequest, textStatus) {
+
+        createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+        $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer) });
+        setSortClass("SortBy", "SortOrder");
+        $("a.lnkDetail").click(function () { getDetail(this, "ActionType", sendToServer) });
+        endRequest();
+    }
+    $(document).keyup(function (e) {
+        if (e.keyCode == 13) {
+            sendToServer();
+        }
+    });
+</script>

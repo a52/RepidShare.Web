@@ -1,0 +1,139 @@
+﻿@using RepidShare.Entities
+@model HomeCategoryViewModel
+@{
+    Layout = "~/Views/Shared/_websiteLayout.cshtml";
+    ViewBag.Title = "CategorySummaryView";
+}
+
+<!--Header Bottom egion Start-->
+<div class="header_bottom">
+    <div class="wrapper">
+        <div class="links_main">
+
+            @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null)
+            {
+                <span>@Model.objCategoryModel.CategoryName law: </span>
+            }
+            <a href="javascript:void(0);" class="selected"><i class="fa fa-file-text"></i>Legal documents </a><a href="/Home/LawGuideView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objCategoryModel.CategoryID))"><i class="fa fa-book"></i>Law guide </a>
+        </div>
+        <div class="links_popular">
+            <span class="pop">Popular topics:</span>
+            @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0)
+            {
+                int Icount = Model.objListSubCategory.Count > 2 ? 3 : Model.objListSubCategory.Count;
+                for (int i = 0; i < Icount; i++)
+                {
+                <a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListSubCategory[i].SubCategoryID))">@Model.objListSubCategory[i].SubCatName</a>                 
+                }
+
+            }
+        </div>
+    </div>
+</div>
+<!--Header Bottom egion End-->
+
+<!--Container egion Start-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 e_sidebar">
+            <ul class="left-menu">
+                @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null)
+                {
+                    <li class="active"><a href='javascript:void(0);'>@Model.objCategoryModel.CategoryName law home</a></li>
+                }
+                @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0)
+                {
+                    for (int i = 0; i < Model.objListSubCategory.Count; i++)
+                    {
+                    <li><a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListSubCategory[i].SubCategoryID))">@Model.objListSubCategory[i].SubCatName</a></li>
+                    }
+
+                }
+            </ul>
+            <div class="promo">
+                <div>
+                    <h5><a href="javascript:void(0);">Family law guide</a></h5>
+                    <i class="fa fa-book fa-3x"></i>
+                    <p>
+                        Need help understanding specific areas of law? Our lawguide can help you.<br>
+                        <a href="javascript:void(0);">Visit our Family Law guide</a>
+                    </p>
+                </div>
+            </div>
+            <div class="promo">
+                <div>
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <p>Choose your document and try it for FREE</p>
+                </div>
+                <div>
+                    <i class="fa fa-gbp fa-3x"></i>
+                    <p>Purchase when you're happy to print or export</p>
+                </div>
+                <div>
+                    <i class="fa fa-search fa-3x"></i>
+                    <p>Have your document reviewed by our legal team for extra peace of mind</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="e_contentMainWrapper e_spanRight">
+                @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null)
+                {
+                    <h1>@Model.objCategoryModel.CategoryName law documents</h1>
+                    <p>@Html.Raw(Model.objCategoryModel.Description)</p>
+                }
+                <div class="accordion">
+                    <ul>
+                        @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0)
+                        {
+                            for (int i = 0; i < Model.objListSubCategory.Count; i++)
+                            {
+                            <li class="subsite_@Model.objListSubCategory[i].SubCategoryID">
+                                <h2><a href="javascript:void(0)"><i class="fa fa-desktop"></i><span>@Model.objListSubCategory[i].SubCatName</span><i class="fa fa-chevron-circle-right"></i></a></h2>
+                                <div class="topdocs hidden">
+                                    <div class="acc_left">
+                                        <div class="acc_image"></div>
+                                        <p>@Html.Raw(Model.objListSubCategory[i].Description)</p>
+                                        <a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListSubCategory[i].SubCategoryID))" class="button button_big">Go to '@Model.objListSubCategory[i].SubCatName' </a>
+                                    </div>
+                                    <div class="acc_pop">
+                                        <h3>Most popular documents in "@Model.objListSubCategory[i].SubCatName"</h3>
+
+                                        @{
+                                            
+                                List<RepidShare.Entities.DocumentModel> objDocumentModel = Model.objListDocumentModel.Where(x => x.SubCategoryID == Model.objListSubCategory[i].SubCategoryID).ToList();
+                                int iCount = objDocumentModel.Count > 1 ? 2 : objDocumentModel.Count;
+                                for (int j = 0; j < iCount; j++)
+                                {
+                                            <div class="product">
+                                                <h4><a href="/Home/DocumentView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(objDocumentModel[j].DocumentID))">@objDocumentModel[j].DocumentTitle</a></h4>
+                                                <a href="javascript:void(0)" class="button">Take a look <i class="fa fa-chevron-right"></i></a>
+                                                <p>@Html.Raw(objDocumentModel[j].DocumentDescription) </p>
+                                            </div>
+                                }
+                                        }
+
+
+                                        <a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListSubCategory[i].SubCategoryID))" class="e_more_documents">View all documents in "@Model.objListSubCategory[i].SubCatName" </a>
+                                        @*<a href="javascript:void(0)" class="e_more_documents">View all documents in "@Model.objCategoryModel.CategoryName"</a>*@
+                                    </div>
+                                </div>
+                            </li>
+                            }
+
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Container egion End-->
+<script>
+
+    if ('@Model.objCategoryModel.CategoryName' == 'Family Law')
+        $('body').addClass(' business e_body_subsite_home');
+    else
+        $('body').addClass(' family e_body_subsite_home');
+
+</script>

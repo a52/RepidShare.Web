@@ -1,0 +1,208 @@
+﻿@using RepidShare.Entities
+@model SummaryAndMyDocument
+@{
+    RepidShare.Entities.HomeLayOutModel objHomeLayOutModel = (RepidShare.Entities.HomeLayOutModel)Session["LayOutData"];
+}
+<div class="summry-box">
+    <div class="row padd15">
+        <div class="col-md-9 col-sm-7 col-xs-7">
+            <h4 class="m-p">My summary</h4>
+        </div>
+        <div class="col-md-3 text-right">
+            <p href="#newFolder" data-toggle="modal" class="cursor">
+                <i class="fa fa-plus-square-o" aria-hidden="true"></i> Create folder
+            </p>
+
+        </div>
+        <div class="clearfix"></div>
+        <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+            <div class="btn-group tab-f focus" role="group">
+                <button type="button" id="recentDocument" class="btn tab-btn btn-primary tab-bg-color" href="#tab1" data-toggle="tab">My Activity</button>
+            </div>
+            <div class="btn-group focus" role="group">
+                <button type="button" id="myDocument" class="btn tab-btn  tab-bg-color" href="#tab2" data-toggle="tab">My Documents</button>
+            </div>
+            <div class="btn-group focus" role="group">
+                <button type="button" id="myFolder" class="btn tab-btn  tab-bg-color" href="#tab3" data-toggle="tab">My Folders</button>
+            </div>
+        </div>
+        <div class="show-scroll">
+            <div class="tab-content">
+                <div class="tab-pane fade active in" id="tab1">
+                    <div id="loadingMyActivity" style="display:none">
+                        <img src="/img/ajax-loader.gif" />
+                    </div>
+                </div>
+                <!--Tab-Center-->
+                <div class="tab-pane fade" id="tab2">
+                    <div id="loadingMyDocumentsList" style="display:none">
+                        <img src="/img/ajax-loader.gif" />
+                    </div>
+                    <div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+                    </div>
+                </div>
+                <!--Close Center Tab-->
+                <div class="tab-pane fade" id="tab3">
+                    <div id="loadingFolderList" style="display:none">
+                        <img src="/img/ajax-loader.gif" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="newFolder" class="modal fade" role="dialog">
+    <div class="modal-dialog top-form">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <div class="text-center">
+                    <h3>Create Folder</h3>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="">Folder Name</label>
+                        <input type="text" class="form-control" id="txtFolderName" placeholder="" required>
+                        <span id="errorMsg" style="color:red;"></span>
+                    </div>
+
+                    <button type="button" id="btnCreateFolder" class="btn btn-account">Submit</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+
+    $('#txtFolderName').on("keyup", function () {
+        if ($(this).val() == '') {
+            $('#errorMsg').html('Please enter folder name');
+            $('#txtFolderName').css('border-color', 'red');
+        }
+        else {
+            $('#errorMsg').html('');
+            $('#txtFolderName').css('border-color', 'green');
+        }
+    });
+    $("#btnCreateFolder").click(function () {
+
+        if ($('#txtFolderName').val() == '') {
+            $('#errorMsg').html('Please enter folder name');
+            $('#txtFolderName').css('border-color', 'red');
+        }
+        else {
+            $('#errorMsg').html('');
+            $('#txtFolderName').css('border-color', 'green');
+            $('#newFolder').modal('toggle');
+
+            CreateFolder($('#txtFolderName').val());
+            $('#txtFolderName').val('');
+            $('#txtFolderName').css('border-color', '');
+            $("#myFolder").click();
+        }
+    });
+    MyActivityDetails();
+    $('#recentDocument').click(function () {
+        MyActivityDetails();
+    });
+    function MyActivityDetails() {
+        $("#loadingMyActivity").css('display', 'block');
+        $.ajax({
+            url: '@Url.Action("MyActivityDetails")',
+            type: 'POST',
+            dataType: 'html',
+            success: function (html) {
+                $("#documentView").empty();
+                $("#tab1").empty().append(html);
+                $("#loadingMyActivity").css('display', 'none');
+            },
+            fail: function (error) {                
+                alert(error);
+                $("#loadingMyActivity").css('display', 'none');
+            }
+        });
+    }
+
+    MyDocumentDetails();
+    $('#myDocument').click(function () {
+        MyDocumentDetails();       
+    });
+    function MyDocumentDetails() {       
+        $("#loadingMyDocumentsList").css('display', 'block');
+        $.ajax({
+            url: '@Url.Action("MyDocumentDetails")',
+            type: 'POST',
+            dataType: 'html',
+            success: function (html) {
+                $("#tab2").empty().append(html);
+                $("#loadingMyDocumentsList").css('display', 'none');
+                $('#ddlSelectFolder').change();
+            },
+            fail: function (error) {
+                alert(error);
+                $("#loadingMyDocumentsList").css('display', 'none');
+            }
+        });
+    }
+
+
+    $("#myFolder").click(function () {
+        CreateFolder('GetList');
+    });
+    function CreateFolder(fName) {
+        $("#loadingFolderList").css('display', 'block');
+        $.ajax({
+            url: '@Url.Action("CreateFolder")',
+            type: 'POST',
+            dataType: 'html',
+            data: { folderName: fName },
+            success: function (html) {
+                $("#tab3").empty().append(html);
+                $("#loadingFolderList").css('display', 'none');
+            },
+            fail: function (error) {
+                alert(error);
+                $("#loadingFolderList").css('display', 'none');
+            }
+        });
+    }
+
+    //function DeleteFolder(folderId) {
+
+    //}
+    function DeleteFolder(deletedId, titleText, okCallBackFunction, cancelCallBackFunction) {
+        // e.preventDefault(); use this or return false
+
+        bootbox.confirm(titleText, function (result) {
+            if (result == true) {
+
+                $("#loadingFolderList").css('display', 'block');
+                $.ajax({
+                    url: '@Url.Action("DeleteFolder")',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: { prm: deletedId },
+                    success: function (result) {
+                        if (result == true) {
+
+                            CreateFolder('GetList');
+                        }
+                    },
+                    fail: function (error) {
+                        alert(error);
+                        $("#loadingFolderList").css('display', 'none');
+                    }
+                });
+            }
+            else {
+                if (cancelCallBackFunction != null)
+                    cancelCallBackFunction();
+            }
+        });
+        return false;
+    }
+</script>

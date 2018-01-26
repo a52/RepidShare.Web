@@ -1,0 +1,154 @@
+﻿@using RepidShare.Entities.Resource;
+@using RepidShare.Entities
+@{
+    ViewBag.Title = "ViewDocumentResponse";
+}
+@model ViewDocumentResponseModel
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="/Images/home-icon.png"></a></li>
+            <li class="active">ViewDocumentResponse</li>
+        </ol>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "divDocumentList", OnBegin = "beginRequest", OnComplete = "searchComplete" }))
+{
+    
+    <div class="search-strip label-left">
+        <div class="row" style="margin-left: 5px; margin-right: 5px;">
+
+            <div class="col-sm-3">
+                <div class="">
+                    @Html.LabelFor(model => model.FilterDocumentTitle, new { @class = "labelColon" })
+                    @Html.TextBoxFor(model => model.FilterDocumentTitle, new { @id = "txtDocumentName", @class = "form-control  filter-control", @maxlength = "50", @Width = "265px" })
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="">
+                    @Html.LabelFor(model => model.CreateFromDate, new { @class = "labelColon" })
+                    @Html.TextBoxFor(model => model.CreateFromDate, new { @id = "CreateFromDate", @class = "pickDate filter-control form-control cal_icon", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="">
+                    @Html.LabelFor(model => model.CreateEndDate, new { @class = "labelColon" })
+                    @Html.TextBoxFor(model => model.CreateEndDate, new { @id = "CreateEndDate", @class = "pickDate form-control filter-control cal_icon", @readonly = "readonly" })
+                </div>
+            </div>
+            <div class="col-sm-12 text-center">
+                <div class="">
+                    <input id="btnSubmit" type="submit" value="Search" class="btn" style="display: none" />
+                    <input id="btnSearch" type="button" value="Search" class="btn btn-primary" />
+                    <input id="btnReset" type="button" value="Reset" onclick="resetFilter()" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    </div>
+    <div id="divDocumentList">
+        @Html.Partial("_ViewDocumentResponseList", Model)
+    </div>    
+}
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        $(".pickDate").val('');
+        $("#ExpireFromDate").datetimepicker({ minView: 2, autoclose: true, format: '@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()' });
+        $("#ExpireEndDate").datetimepicker({ minView: 2, autoclose: true, format: '@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()' });
+
+
+        $("#ExpireFromDate").on("changeDate", function (e) {
+            $('#ExpireEndDate').datetimepicker('setStartDate', $("#ExpireFromDate").val());
+        });
+        $("#ExpireEndDate").on("changeDate", function (e) {
+            $('#ExpireFromDate').datetimepicker('setEndDate', $("#ExpireEndDate").val());
+        });
+
+        $("#CreateFromDate").datetimepicker({ minView: 2, autoclose: true, format: '@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()' });
+        $("#CreateEndDate").datetimepicker({ minView: 2, autoclose: true, format: '@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()' });
+
+
+        $("#CreateFromDate").on("changeDate", function (e) {
+            $('#CreateEndDate').datetimepicker('setStartDate', $("#CreateFromDate").val());
+        });
+        $("#CreateEndDate").on("changeDate", function (e) {
+            $('#CreateFromDate').datetimepicker('setEndDate', $("#CreateEndDate").val());
+        });
+
+
+        $("#btnSearch").click(function () {
+            $("#ActionType").val("search");
+            $("#CurrentPage").val("1");
+            sendToServer();
+        });
+
+        $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer) });
+        $("a.lnkDetail").click(function () { getDetail(this, "ActionType", sendToServer) });
+
+    });
+
+    function resetFilter() {
+
+        $(".filter-control").val("");
+        $("#ExpireFromDate").val("");
+        $("#ExpireEndDate").val("");
+        $("#CreateFromDate").val("");
+        $("#CreateEndDate").val("");
+
+
+
+        $('#ExpireEndDate').datetimepicker('setStartDate', '');
+        $('#ExpireFromDate').datetimepicker('setEndDate', '');
+
+        $('#CreateEndDate').datetimepicker('setStartDate', '');
+        $('#CreateFromDate').datetimepicker('setEndDate', '');
+
+
+
+
+        //Validation for Super Admin if Model.AppID = 0 Means Super Admin Login
+        @if (Model.AppID == 0)
+        {
+           <text>
+        $("#ddlApplication").val(0);
+           </text>
+        }
+        $("#txtDocumentName").val("");
+        $("#ActionType").val("search");
+        $("#CurrentPage").val("1");
+        sendToServer();
+    }
+
+
+
+    createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+
+    function sendToServer() {
+        $("#btnSubmit").click();
+    }
+
+    function searchComplete(xmlHttpRequest, textStatus) {
+
+        createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+        $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer) });
+        setSortClass("SortBy", "SortOrder");
+        $("a.lnkDetail").click(function () { getDetail(this, "ActionType", sendToServer) });
+        endRequest();
+    }
+
+    $(document).keyup(function (e) {
+        if (e.keyCode == 13) {
+            sendToServer();
+        }
+    });
+
+</script>

@@ -1,0 +1,113 @@
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"><header>
+  <div class="header_top">
+    <div class="wrapper"> <span class="left">Need help? Call <i class="fa fa-phone"></i> <strong>0345 838 4074</strong></span> <span class="right"> <a href="../registration.html" onclick="_gaq.push(['_link', this.href]); return false;"><i class="fa fa-user"></i> Register</a> <a href="../login.html" onclick="_gaq.push(['_link', this.href]); return false;"><i class="fa fa-sign-in"></i> Login</a> </span> </div>
+  </div>
+  <div class="header">
+    <div class="wrapper"> <a class="header_logo" href="../index.html"> <img src="../img/logo.png" alt="Papeles Legales" width="180px"/> </a>
+      <div class="nav nav_category"> <a href="../family-law.html" class="link_personal"><i class="icon-home153"></i> Family Law</a> <a href="../business-law.html" class="link_business"><i class="icon-work3"></i> Business Law</a> <a href="" class="link_lawyers"><i class="icon-justice4"></i> Lawyers</a> </div>
+      <div class="nav nav_links"> <a href="../contactus.html" onclick="_gaq.push(['_link', this.href]); return false;">Contact</a> <a href="#">Help</a> <a href="javascript:void(0)" id="header_menu_link">Menu</a> <a href="javascript:void(0)" id="header_search_link"><i class="fa fa-search"></i> Search</a> <a href="#" onclick="_gaq.push(['_link', this.href]); return false;"><i class="icon-shopping232"></i> Basket (0)</a> </div>
+      <div class="nav_mobile_link"><a href="#" onclick="_gaq.push(['_link', this.href]); return false;" id="nav_mobile_basket"><i class="fa fa-shopping-cart fa-2x"></i></a><a href="javascript:void(0);" id="nav_mobile_menu_trigger"><i class="fa fa-bars fa-2x"></i></a></div>
+    </div>
+  </div>
+  <div class="header_search">
+    <div class="search_box search_box_header">
+      <form action="#" method="GET" id="searchFormHeader" class="clearfix">
+      <a href="javascript:void(0)" class="button pull-right"><i class="fa fa-search"></i> Search</a>
+      <div class="overflow">
+        <input type="hidden" name="event" value="search">
+        <input type="text" name="search" value="" placeholder="Search all documents..." />
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="header_divider">
+    <div class="header_arrow"> <a href="#"></a> </div>
+    <div class="header_full_menu">
+      <div class="wrapper"> <a href="index1ff4.html?event=base:home"> <img src="../img/logo.png" alt="Papeles Legales" width="140" height="55" /> </a>
+        <div class="header_full_menu_col personal">
+          <ul>
+            <li>
+              <h4><a href="index2375.html?event=base:cpage&amp;collection=1&amp;c=cpage%5Fpersonal">Family documents home</a></h4>
+            </li>
+          </ul>
+          <div class='collection'>
+            <ul class='childcontainer childrenlevel2' data-parent='1'>
+              <li class='level level2 first li-76052  li2'><a class='selector level2 first 76052 a2'  href='index6de4.html?event=base:subsite&amp;1=&amp;subsite=76052'>Building work</a></li>
+              <li class='level level2 li-76053  li2'><a class='selector level2 76053 a2'  href='index9fd5.html?event=base:subsite&amp;1=&amp;subsite=76053'>Buying &amp; selling</a></li>
+              <li class='level level2 li-76076  li2'><a class='selector level2 76076 a2'  href='indexb57d.html?event=base:subsite&amp;1=&amp;subsite=76076'>Complaints &amp; disputes</a></li>
+              <li class='level level2 li-76048  li2'><a class='selector level2 76048 a2'  href='index5435.html?event=base:subsite&amp;1=&amp;subsite=76048'>Divorce</a></li>
+              <li class='level level2 li-76049  li2'><a class='selector level2 76049 a2'  href='index1f51.html?event=base:subsite&amp;1=&amp;subsite=76049'>Identity theft &amp; credit improvement</a></li>
+              <li class='level level2 li-76046  li2'><a class='selector level2 76046 a2'  href='index745b.html?event=base:subsite&amp;1=&amp;subsite=76046'>Landlords</a></li>
+              <li class='level level2 li-76047  li2'><a class='selector level2 76047 a2'  href='indexc3bd.html?event=base:subsite&amp;1=&amp;subsite=76047'>Motoring</a></li>
+              <li class='level level2 li-76055  li2'><a class='selector level2 76055 a2'  href='indexabc2.html?event=base:subsite&amp;1=&amp;subsite=76055'>Personal finance</a></li>
+              <li class='level level2 li-76050  li2'><a class='selector level2 76050 a2'  href='indexb35d.html?event=base:subsite&amp;1=&amp;subsite=76050'>Powers of attorney</a></li>
+              <li class='level level2 li-76051  li2'><a class='selector level2 76051 a2'  href='indexdc8f.html?event=base:subsite&amp;1=&amp;subsite=76051'>Prenuptials &amp; living together</a></li>
+              <li class='level level2 li-76991  li2'><a class='selector level2 76991 a2'  href='indexa1a7.html?event=base:subsite&amp;1=&amp;subsite=76991'>Probate &amp; confirmation</a></li>
+              <li class='level level2 li-76045  li2'><a class='selector level2 76045 a2'  href='index8845.html?event=base:subsite&amp;1=&amp;subsite=76045'>Wills</a></li>
+              <li class='level level2 last li-76056  li2'><a class='selector level2 last 76056 a2'  href='indexf160.html?event=base:subsite&amp;1=&amp;subsite=76056'>Workplace</a></li>
+            </ul>
+          </div>
+          <ul>
+            <li><strong><a href="index7da4.html?event=base:lawguide&amp;collection=1">Family lawguide</a></strong></li>
+          </ul>
+        </div>
+        <div class="header_full_menu_col business">
+          <ul>
+            <li>
+              <h4><a href="index59a2.html?event=base:cpage&amp;collection=2&amp;c=cpage%5Fbusiness">Business documents home</a></h4>
+            </li>
+          </ul>
+          <div class='collection'>
+            <ul class='childcontainer childrenlevel2' data-parent='1'>
+              <li class='level level2 first li-76058  li2'><a class='selector level2 first 76058 a2'  href='indexccd8.html?event=base:subsite&amp;2=&amp;subsite=76058'>Business start-up</a></li>
+              <li class='level level2 li-76065  li2'><a class='selector level2 76065 a2'  href='indexea3f.html?event=base:subsite&amp;2=&amp;subsite=76065'>Debts &amp; debt recovery</a></li>
+              <li class='level level2 li-76064  li2'><a class='selector level2 76064 a2'  href='indexa202.html?event=base:subsite&amp;2=&amp;subsite=76064'>Ecommerce</a></li>
+              <li class='level level2 li-76018  li2'><a class='selector level2 76018 a2'  href='index357c.html?event=base:subsite&amp;2=&amp;subsite=76018'>Employment</a></li>
+              <li class='level level2 li-76060  li2'><a class='selector level2 76060 a2'  href='index61b4.html?event=base:subsite&amp;2=&amp;subsite=76060'>Health &amp; safety</a></li>
+              <li class='level level2 li-76063  li2'><a class='selector level2 76063 a2'  href='index2d12.html?event=base:subsite&amp;2=&amp;subsite=76063'>Intellectual property</a></li>
+              <li class='level level2 li-76061  li2'><a class='selector level2 76061 a2'  href='index418e.html?event=base:subsite&amp;2=&amp;subsite=76061'>Property</a></li>
+              <li class='level level2 last li-76062  li2'><a class='selector level2 last 76062 a2'  href='indexbb5f.html?event=base:subsite&amp;2=&amp;subsite=76062'>Purchase &amp; sales agreements</a></li>
+            </ul>
+          </div>
+          <ul>
+            <li><strong><a href="index9ef4.html?event=base:lawguide&amp;collection=2">Business lawguide</a></strong></li>
+          </ul>
+        </div>
+        <div class="header_full_menu_col homepages">
+          <ul>
+            <li>
+              <h4><a href="index1ff4.html?event=base:home">Homepage</a></h4> 
+            </li>
+            <li><a href="../about.html">About us</a></li>
+            <li><a href="https://desktoplawyer.secureclient.co.uk/dtl/index.cfm?event=base:basket" onclick="_gaq.push(['_link', this.href]); return false;">Basket</a></li>
+            <li><a href="../contactus.html" onclick="_gaq.push(['_link', this.href]); return false;">Contact us</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">How it works</a></li>
+            <li><a href="../faq.html">FAQs</a></li>
+            <li><a href="#">Search</a></li>
+            <li><a href="#">Testimonials</a></li>
+            <li><a href="#">Two minute tour</a></li>
+            <li><a href="#">Why choose us?</a></li>
+          </ul>
+        </div>
+        <div class="header_full_menu_col">
+          <ul>
+            <li>
+              <h4>&nbsp;</h4>
+            </li>
+            <li><a href="index1312.html?event=base:cpage&amp;c=cpage%5Fcomplaintsprocedure">Complaints procedure</a></li>
+            <li><a href="#">Data, cookies & privacy policy</a></li>
+            <li><a href="#">Intellectual property rights notice</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+          <ul>
+            <li><a href="#" onclick="_gaq.push(['_link', this.href]); return false;">Register/Login</a></li>
+            <li><a href="#" onclick="_gaq.push(['_link', this.href]); return false;">My Account</a></li>
+            <li><a href="#" onclick="_gaq.push(['_link', this.href]); return false;">My Documents</a></li>
+            <li><a href="#">My Services</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

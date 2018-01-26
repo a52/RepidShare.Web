@@ -1,0 +1,132 @@
+﻿
+<div class="text-center">
+    <div class="col-md-4">
+        <div class="btn-group tab-f focus" role="group">
+            <button type="button" id="freeDocument" class="btn tab-btn tab-bg-color btn-primary" href="#tab01" data-toggle="tab" aria-expanded="true">Free Documents</button>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="btn-group focus" role="group">
+            <button type="button" id="purchageDocument" class="btn tab-btn tab-bg-color btn-default" href="#tab02" data-toggle="tab" aria-expanded="true">Purchage Documents</button>
+        </div>
+    </div>
+    <div class="margin15"></div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <select class="form-control02" id="ddlSelectFolder">
+               @*<option value="">Select folder</option>*@
+                <option value="0">All</option>
+                @if (Model.myDocument.objListFolderModel != null && Model.myDocument.objListFolderModel.Count > 0)
+                {
+                    for (int i = 0; i < Model.myDocument.objListFolderModel.Count; i++)
+                    {
+                        if (i != 0)
+                        {
+                            <option value="@Model.myDocument.objListFolderModel[i].FolderId">@Model.myDocument.objListFolderModel[i].FolderName</option>
+                        }
+
+                    }
+                    @*foreach (var folderDetails in Model.myDocument.objListFolderModel)
+                        {
+                            <option value="@folderDetails.FolderId">@folderDetails.FolderName</option>
+                        }*@
+                }
+            </select>
+        </div>
+    </div>
+</div>
+<div class="tab-content" id="documentView">
+    <div class="tab-pane fade active in" id="tab01">
+        @if (Model.myTrailDocument.objListDocumentModel != null && Model.myTrailDocument.objListDocumentModel.Count > 0)
+        {
+            foreach (var item in Model.myTrailDocument.objListDocumentModel)
+            {
+                <div class="clearfix margin15"></div>
+
+                <div class="col-md-5 font-s">
+                    <div class="col-md-2 col-sm-2 col-xs-1">
+                        <img src="/img/icon02.png">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-6">
+                        <span class="color-t">@Html.Raw(item.DocumentTitle)</span>
+                        <br>
+                        <span style="cursor:pointer" title="@Html.Raw(item.DocumentDescription).ToHtmlString().Replace("<p>","").Replace("</p>","")">@Html.Raw(item.DocumentDescription.Length > 50 ? item.DocumentDescription.Substring(0, 50) + "..." : item.DocumentDescription)</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12 font-s m-top">
+                    <p>Created On</p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6 m-top xs-center">
+                    <span>@item.CreatedOn.ToShortDateString()</span>
+                </div>
+            }
+        }
+    </div>
+    <!--center-Tab 02-->
+    <div class="tab-pane fade" id="tab02">
+        @if (Model.myDocument.objListDocumentModel != null && Model.myDocument.objListDocumentModel.Count > 0)
+        {
+            foreach (var item in Model.myDocument.objListDocumentModel)
+            {
+                <div class="clearfix margin15"></div>
+                <div class="col-md-5 font-s">
+                    <div class="col-md-2 col-sm-2 col-xs-1">
+                        <img src="/img/icon02.png">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-6">
+                        <span class="color-t">@Html.Raw(item.DocumentTitle)</span><br>
+                        <span style="cursor:pointer" title="@Html.Raw(item.DocumentDescription).ToHtmlString().Replace("<p>","").Replace("</p>","")">@Html.Raw(item.DocumentDescription.Length > 50 ? item.DocumentDescription.Substring(0, 50) + "..." : item.DocumentDescription)</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12 font-s m-top">
+                    <p>Created On</p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6 m-top xs-center">
+                    <span>@item.CreatedOn.ToShortDateString()</span>
+
+                </div>
+            }
+        }
+
+    </div>
+</div>
+
+<script type="text/javascript">   
+    $('#freeDocument').click(function () {       
+        $('#freeDocument').addClass('btn-primary');
+        $('#purchageDocument').removeClass('btn-primary');
+       
+    });
+    $('#purchageDocument').click(function () {
+        $('#freeDocument').removeClass('btn-primary');
+        $('#purchageDocument').addClass('btn-primary');
+    });
+    $('#ddlSelectFolder').change(function () {     
+        $("#loadingMyDocumentsList").css('display', 'block');
+        $.ajax({
+            url: '@Url.Action("MyFolderDocuments")',
+            data: { folderId: $('#ddlSelectFolder').val() },
+            type: 'POST',
+            dataType: 'html',
+            success: function (html) {
+               // debugger;
+                if (html == "false") {
+                    $("#documentView").empty().append('Please select atleast one folder');
+                }
+                if (html == false) {
+                    $("#documentView").empty().append('No document found');
+                }
+                if (html != "false" && html != false) {
+                    $("#documentView").empty().append(html);
+                }
+                $("#loadingMyDocumentsList").css('display', 'none');
+            },
+            fail: function (error) {
+                alert(error);
+                //$("#loadingMyDocumentsList").css('display', 'none');
+            }
+        });
+
+    });
+
+</script>

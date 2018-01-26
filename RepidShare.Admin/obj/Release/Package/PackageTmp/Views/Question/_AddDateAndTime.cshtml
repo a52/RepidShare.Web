@@ -1,0 +1,99 @@
+﻿@model RepidShare.Entities.ViewQuestionModel
+@using RepidShare.Entities.Resource;
+@if (Model != null && Model.QuestionTypeDetail != null && Model.QuestionTypeDetail.DateAndTimeType != null)
+{
+    
+     <div class="row half-bottom">
+                        <div class="col-sm-3">
+                            <div class="radio-btn"> <label class ="labelColon">@QuestionResource.AnswerOptions</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 radio-group mandatoryFeild validation-error-outer">
+                            <div class="radio-btn">
+                               @Html.RadioButtonFor(model => model.QuestionTypeDetail.DateAndTimeType.IsDateOnly, "true", new { @class="rdDateOptions"}) @QuestionTypeResource.DateOnly
+                                </div>
+                            <div class="radio-btn"> @Html.RadioButtonFor(model => model.QuestionTypeDetail.DateAndTimeType.IsDateOnly, "false", new { @class = "rdDateOptions" }) @QuestionTypeResource.DateAndTime</div>
+                               @Html.ValidationMessageFor(model => model.QuestionTypeDetail.DateAndTimeType.IsDateOnly)
+                        </div>
+                    </div>
+    
+         <div class="row half-bottom" id="dvDefaultValue" style="display:none">
+                        <div class="col-sm-3">
+                            <div class="radio-btn"> <label class ="labelColon">@QuestionTypeResource.DefaultValue</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 radio-group mandatoryFeild validation-error-outer">
+                            <div class="radio-btn">
+                              @Html.RadioButtonFor(model => model.QuestionTypeDetail.DateAndTimeType.DefaultValueType, RepidShare.Utility.CommonUtils.DateDefaultValue.None, new { @class = "rdDateDefaultValue" }) @QuestionTypeResource.None
+                                </div>
+                            <div class="radio-btn"> @Html.RadioButtonFor(model => model.QuestionTypeDetail.DateAndTimeType.DefaultValueType, RepidShare.Utility.CommonUtils.DateDefaultValue.TodaysDate, new { @class = "rdDateDefaultValue" }) @QuestionTypeResource.TodaysDate</div>
+                            <div class="radio-btn">@Html.RadioButtonFor(model => model.QuestionTypeDetail.DateAndTimeType.DefaultValueType, RepidShare.Utility.CommonUtils.DateDefaultValue.SpecificDate, new { @class = "rdDateDefaultValue" }) @QuestionTypeResource.SpecificDate</div>
+                               @Html.ValidationMessageFor(model => model.QuestionTypeDetail.DateAndTimeType.DefaultValueType)
+                        </div>
+                    </div>
+                    <div id="dvSpecificDate" style="display:none" class="row half-bottom">
+                        <div class="col-sm-3">
+                            &nbsp;
+                            </div>
+                        <div class="col-sm-4 mandatoryFeild">
+                            <div>
+                            
+                                 @Html.TextBoxFor(model => model.QuestionTypeDetail.DateAndTimeType.DateDefaultValue, new { Value = (Model.QuestionTypeDetail.DateAndTimeType.DefaultValueType == RepidShare.Utility.CommonUtils.DateDefaultValue.SpecificDate.ToString() ? Model.QuestionTypeDetail.DateAndTimeType.IsDateOnly == true ? Convert.ToDateTime(Model.QuestionTypeDetail.DateAndTimeType.DateDefaultValue).ToString(RepidShare.Utility.CommonUtils.ShortDateFormat) : Convert.ToDateTime(Model.QuestionTypeDetail.DateAndTimeType.DateDefaultValue).ToString(RepidShare.Utility.CommonUtils.LongDateFormat) : ""), @id = "dateDefaultValue", @class = "pickDate form-control cal_icon dateTimePicker", @readonly = "readonly" })
+                               @Html.ValidationMessageFor(model => model.QuestionTypeDetail.DateAndTimeType.DateDefaultValue)
+                                   </div>
+                        </div>
+                     </div>
+                   
+    
+ 
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        if (parseInt('@Model.QuestionDetail.QuestionID') > 0) {
+            $("#dvDefaultValue").show();
+            ChangeDefaultValue();
+            var isDateOnly = $(".rdDateOptions:checked").val();
+            bindDateTimePicker(isDateOnly);
+        }
+        $(".rdDateOptions").change(function () {
+            $("#dvDefaultValue").show();
+            var isDateOnly = $(".rdDateOptions:checked").val();
+            $("#dateDefaultValue").val("");
+            bindDateTimePicker(isDateOnly);
+        });
+
+        $(".rdDateDefaultValue").change(function () {
+            ChangeDefaultValue();
+        });
+        $(".rdDateDefaultValue").change(function () {
+            var isDateOnly = $(".rdDateOptions:checked").val();
+            bindDateTimePicker(isDateOnly);
+        });
+        $("#dateDefaultValue").on("changeDate", function (e) {
+            $("#dateDefaultValue").valid();
+        });
+    });
+    function bindDateTimePicker(isDateOnly) {
+        $('.dateTimePicker').datetimepicker('remove');
+        if (isDateOnly == "true") {
+            $('.dateTimePicker').datetimepicker({ minView: 2, autoclose: true, format: "@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()" });
+        }
+        else {
+            $('.dateTimePicker').datetimepicker({ autoclose: true, format: '@RepidShare.Utility.CommonUtils.LongDateFormat.Replace("mm", "ii").ToLower()' });
+
+        }
+        $('.dateTimePicker').datetimepicker('update');
+    }
+
+    function ChangeDefaultValue()
+    {
+        if ($(".rdDateDefaultValue:checked").val() == "@RepidShare.Utility.CommonUtils.DateDefaultValue.SpecificDate.ToString()") {
+            $("#dvSpecificDate").show();
+        }
+        else {
+            $("#dateDefaultValue").val("");
+            $("#dvSpecificDate").hide();
+        }
+    }
+   
+</script>

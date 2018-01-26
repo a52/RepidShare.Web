@@ -1,0 +1,61 @@
+﻿@using RepidShare.Entities
+@model UserMyDocument
+
+
+
+@if (Model.objListDocumentModel != null)
+{
+    for (int i = 0; i < Model.objListDocumentModel.Count; i++)
+    {
+    <div class="communication_agreement">
+        <div class="communication_image  fa" aria-hidden="true">
+            <img src="/images/document_b.png" />
+        </div>
+        <div class="communication_content">
+            <div class="col-sm-9">
+                <h3><span><a href="/User/AddForTrial?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i].DocumentID))">@Model.objListDocumentModel[i].DocumentTitle</a></span></h3>
+                <ul class="communication_status">
+                    <li><strong>Status:</strong>With customer</li>
+                    <li><strong>Date created:</strong>@Model.objListDocumentModel[i].CreatedOn</li>
+                    <li><strong>Reference ID:</strong>@Model.objListDocumentModel[i].DocumentID</li>
+                </ul>
+                <ul class="communication_link">
+                    <li><a href="javascript:void(0);" title="Print preview" onclick="PrintPriview('@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i].DocumentID))')">Print preview</a></li>
+                    <li><a href="/user/ExportView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i].DocumentID))" title="Export" >Export</a></li>
+                    <li><a href="Javascript:void(0)" title="Folder" onclick="FolderMove('@RepidShare.Utility.CommonUtils.Encrypt("folderid=" + Convert.ToString(Model.objListDocumentModel[i].FolderId) + "&documentid=" + Convert.ToString(Model.objListDocumentModel[i].DocumentID))')">Folder</a></li>
+                    <li><a href="Javascript:void(0)" title="Guidance notes" onclick="GuidanceNotes('@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i].DocumentID))')">Guidance notes</a></li>
+                    <li><a href="Javascript:void(0)" title="History" onclick="HistoryView('@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i].DocumentID))')">History</a></li>
+                    <a id="show-example_@i" onclick="MoreOption('@i')" href="Javascript:void(0)" title="More">More</a>
+                </ul>
+
+                <div id="example_@i" style="display: none">
+                    <ul class="communication_link_more">
+                        <li><a href="Javascript:void()" title="Rename Document" onclick="RenameDocument('@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i].DocumentID))')">Rename</a></li>
+                        <li><a href="Javascript:void()" title="Export" data-toggle="modal" onclick="ShareDocument('@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i].DocumentID))')" data-target="#myModal">Sharing</a></li>
+                        <li><a href="Javascript:void()" onclick="openConfirmDialog('@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i].DocumentID))','Are you sure you want to delete this document? <br/>This will move it to the bin, where you can choose to delete it permanently.',deleteDocument,null)" class="delete_folder">Delete</a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="document_percentage"><span>@Model.objListDocumentModel[i].ComPercentage%</span> </div>
+                <div class="communication_edit_btn"><a href="/User/AddForTrial?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i].DocumentID))"><span>Edit</span></a> </div>
+                <div class="communication_buy_btn"><a href="/User/buy?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i].DocumentID))"><span>Buy</span></a> </div>
+            </div>
+        </div>
+    </div>
+    }
+}
+@if (Model.objListDocumentModel != null)
+{
+    for (int i = 0; i < Model.objListDocumentModel.Count; i++)
+    {
+    <div class="pagination-strip clearfix">
+        <div class="show-page-number">
+        </div>
+        <div id="pg_pager" class="text-right pagination-wrp">
+        </div>
+    </div>
+    }
+}
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())

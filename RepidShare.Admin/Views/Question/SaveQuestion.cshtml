@@ -1,0 +1,454 @@
+﻿@using RepidShare.Entities.Resource;
+@model RepidShare.Entities.ViewQuestionModel
+@{
+    if (Model.QuestionDetail.IsPublish)
+    {
+        ViewBag.Title = QuestionResource.ViewQuestion;
+    }
+    else if (Model.QuestionDetail.QuestionID > 0)
+    {
+        ViewBag.Title = QuestionResource.EditQuestionTitle;
+    }
+    else
+    {
+        ViewBag.Title = QuestionResource.AddQuestionTitle;
+    }
+    
+}
+<script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="@Url.Content("~/Images/home-icon.png")"></a></li>
+            <li>@Html.ActionLink("View Document", "ViewDocument", "Document")</li>
+            @if (!Model.QuestionDetail.IsPublish)
+            {
+                <li>@Html.ActionLink("Edit Document", "SaveDocument", "Document", new { prm = RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.QuestionDetail.DocumentID)) }, null)</li>
+            }
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2 class="gray-heading">@ViewBag.Title</h2>
+        @*<div class="table-bg table-style-new">
+            <div class="table-responsive largeToolTip">
+                <table class="table">
+                    <tbody>
+                        <tr class="no-border">
+                            <td>
+                                <strong>@Html.LabelFor(model => model.QuestionDetail.QuestionDescription, new { @class = "labelColon" })</strong>
+                            </td>
+                            <td>
+                                <label>@Model.QuestionDetail.QuestionDescription</label>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>*@
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="white-bg">
+            <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/chosen.css")" />
+            <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+            <div>
+                @using (Html.BeginForm("SaveQuestion", "Question", FormMethod.Post, new { @id = "frmQuestion", enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(model => model.QuestionDetail.QuestionID, new { Value = Model.QuestionDetail.QuestionID, id = "hdnQuestionID" })
+                    @Html.HiddenFor(model => model.QuestionDetail.DocumentID, new { Value = Model.QuestionDetail.DocumentID, id = "hdnDocumentID" })
+                    @Html.HiddenFor(model => model.QuestionDetail.StepID, new { Value = Model.QuestionDetail.StepID, id = "hdnStepID" })
+                    
+                    @Html.HiddenFor(model => model.Message, new { Value = Model.Message, id = "hdnMessage" })
+                    @Html.HiddenFor(model => model.MessageType, new { Value = Model.MessageType, id = "hdnMessageType" })
+                    @Html.HiddenFor(model => model.QuestionDetail.ParentAnswer, new { Value = Model.QuestionDetail.ParentAnswer, id = "hdnParentAnswer" })
+                    
+
+                    <div class="row questionDetail">
+                        <div class="col-sm-3">
+                            @Html.LabelFor(model => model.QuestionDetail.StepID, new { @class = "labelColon" })
+                        </div>
+                        <div class="col-sm-4 mandatoryFeild">
+                            @Html.DropDownListFor(model => model.QuestionDetail.StepID, ViewBag.StepDropDown as SelectList, "--Select--", new { id = "ddlStep", @class = "ddlMedium" })
+                            @Html.ValidationMessageFor(model => model.QuestionDetail.StepID)
+                        </div>
+                        @* <div class="col-sm-4 uploadQA">
+                     <input type="file" class="form-control file"  name="fuQuestion" id="fuQuestion" />
+                   
+                    </div>*@
+                    </div>
+                    if (ViewBag.ParentQuestionList != null && (ViewBag.ParentQuestionList as MultiSelectList).Count() > 0)
+                    {
+                    <div class="row">
+                        <div class="col-sm-3">
+                            @Html.LabelFor(model => model.QuestionDetail.ParentQuestion, new { @class = "labelColon" })
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.DropDownListFor(model => model.QuestionDetail.ParentQuestion, ViewBag.ParentQuestionList as SelectList, "--Select--", new { @id = "ddlParentQuestion", @class = "ddlMedium" })
+                            @Html.ValidationMessageFor(model => model.QuestionDetail.ParentQuestion)
+                            @* @Html.HiddenFor(model => model.QuestionDetail.ParentQuestion, new { @id = "hdnddlParentQuestion" })*@
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-sm-3">
+                            @Html.LabelFor(model => model.QuestionDetail.ParentAnswer, new { @class = "labelColon" })
+                        </div>
+                        <div class="col-sm-4">
+                            @*<select id="ddlParentAnswer" class = "ddlMedium"></select>*@
+                            @Html.DropDownListFor(model => model.QuestionDetail.ParentAnswer, ViewBag.ParentAnswerList as SelectList, "--Select--", new { @id = "ddlParentAnswer", @class = "ddlMedium" })
+                            @Html.ValidationMessageFor(model => model.QuestionDetail.ParentAnswer)
+                            @* @Html.HiddenFor(model => model.QuestionDetail.ParentQuestion, new { @id = "hdnddlParentQuestion" })*@
+                        </div>
+                    </div>
+                    }
+                    <div class="row questionDetail">
+                        <div class="col-sm-3">
+                            @Html.LabelFor(model => model.QuestionDetail.QuestionDescription, new { @class = "labelColon" })
+                        </div>
+                        <div class="col-sm-4 mandatoryFeild">
+                            @Html.TextAreaFor(model => model.QuestionDetail.QuestionDescription, new { @id = "txtQuestionDescription", @class = "form-control name", @maxlength = "500", rows = 3, columns = 30 })
+                            @Html.ValidationMessageFor(model => model.QuestionDetail.QuestionDescription)
+                        </div>
+                        @* <div class="col-sm-4 uploadQA">
+                     <input type="file" class="form-control file"  name="fuQuestion" id="fuQuestion" />
+                   
+                    </div>*@
+                    </div>
+                    <div class="row questionDetail">
+                        <div class="col-sm-3">
+                            @Html.LabelFor(model => model.QuestionDetail.Explanation, new { @class = "labelColon" })
+                        </div>
+                        <div class="col-sm-4 mandatoryFeild">
+                            @Html.TextAreaFor(model => model.QuestionDetail.Explanation, new { @id = "txtExplanation", @class = "form-control name", @maxlength = "8000", rows = 3, columns = 30 })
+                            @Html.ValidationMessageFor(model => model.QuestionDetail.Explanation)
+                        </div>
+                        @* <div class="col-sm-4 uploadQA">
+                     <input type="file" class="form-control file"  name="fuQuestion" id="fuQuestion" />
+                   
+                    </div>*@
+                    </div>
+                    <div class="row questionDetail">
+                        <div class="col-sm-3">
+                            @Html.LabelFor(model => model.QuestionDetail.QuestionHint, new { @class = "labelColon" })
+                        </div>
+                        <div class="col-sm-4">
+                            @Html.TextAreaFor(model => model.QuestionDetail.QuestionHint, new { @id = "txtQuestionHint", @class = "form-control name", @maxlength = "8000", rows = 3, columns = 30 })
+                            @Html.ValidationMessageFor(model => model.QuestionDetail.QuestionHint)
+                        </div>
+                        @* <div class="col-sm-4 uploadQA">
+                     <input type="file" class="form-control file"  name="fuQuestion" id="fuQuestion" />
+                   
+                    </div>*@
+                    </div>
+                    <div class="row questionDetail">
+                        <div class="col-sm-3">
+                            @Html.LabelFor(model => model.QuestionDetail.QuestionType, new { @class = "labelColon" })
+                        </div>
+                        <div class="col-sm-4 mandatoryFeild">
+                            @Html.DropDownListFor(model => model.QuestionDetail.QuestionType, ViewBag.QuestionTypeList as SelectList, "--Select--", new { id = "ddlQuestionType", @class = "ddlMedium" })
+                            @Html.ValidationMessageFor(model => model.QuestionDetail.QuestionType)
+                        </div>
+                    </div>
+                    <div class="questionDetail" id="divQuestionTypeDetail">
+                        @if (!String.IsNullOrEmpty(Model.QuestionDetail.QuestionType))
+                        {
+                            if (Model.QuestionDetail.QuestionType == RepidShare.Utility.CommonUtils.QuestionType.SingleLine.ToString())
+                            {
+                      
+                            @Html.Partial("_AddSingleLineText", Model)
+                            }
+                            else if (Model.QuestionDetail.QuestionType == RepidShare.Utility.CommonUtils.QuestionType.MultiLine.ToString())
+                            {
+                            @Html.Partial("_AddMultiLineText", Model)
+                            }
+                            else if (Model.QuestionDetail.QuestionType == RepidShare.Utility.CommonUtils.QuestionType.Number.ToString())
+                            {
+                            @Html.Partial("_AddNumber", Model)
+                            }
+                            else if (Model.QuestionDetail.QuestionType == RepidShare.Utility.CommonUtils.QuestionType.SingleSelect.ToString())
+                            {
+                            @Html.Partial("_AddSingleSelect", Model)
+                            }
+                            else if (Model.QuestionDetail.QuestionType == RepidShare.Utility.CommonUtils.QuestionType.MultiSelect.ToString())
+                            {
+                            @Html.Partial("_AddMultiSelect", Model)
+                            }
+                            else if (Model.QuestionDetail.QuestionType == RepidShare.Utility.CommonUtils.QuestionType.DateAndTime.ToString())
+                            {
+                            @Html.Partial("_AddDateAndTime", Model)
+                            }
+                            else if (Model.QuestionDetail.QuestionType == RepidShare.Utility.CommonUtils.QuestionType.DropDown.ToString())
+                            {
+                            @Html.Partial("_AddDropDown", Model)
+                            }
+                            else if (Model.QuestionDetail.QuestionType == RepidShare.Utility.CommonUtils.QuestionType.Price_Question.ToString())
+                            {
+                            @Html.Partial("_AddSingleLineText", Model)
+                            }
+                            else if (Model.QuestionDetail.QuestionType == RepidShare.Utility.CommonUtils.QuestionType.Price.ToString())
+                            {
+                            @Html.Partial("_AddSingleLineText", Model)
+                            }
+                        }
+                    </div>
+                    <div class="row half-bottom questionDetail">
+                        <div class="col-sm-3">
+                            <div class="radio-btn">@Html.LabelFor(model => model.QuestionDetail.IsRequireResponse, new { @class = "labelColon" })
+                            </div>
+                        </div>
+                        <div class="col-sm-6 radio-group">
+                            <div class="radio-btn">
+                                @Html.RadioButtonFor(model => model.QuestionDetail.IsRequireResponse, "true", new { @class = "requireResponse" }) @CommonResource.lblYes
+                            </div>
+                            <div class="radio-btn">@Html.RadioButtonFor(model => model.QuestionDetail.IsRequireResponse, "false", new { @class = "requireResponse" })@CommonResource.lblNo</div>
+                        </div>
+                    </div>
+                   
+                    <div class="text-left button-group row questionDetail">
+                        <div class="col-sm-3">
+                            &nbsp;
+                        </div>
+                        <div class="col-sm-7">
+                            @if (!Model.QuestionDetail.IsPublish)
+                            {
+                                <input id="btnSave" class="btn btn-primary" type="button" value="@CommonResource.btnSave" />
+                                <input id="btnCancel" type="button" class="btn cancel btn-primary" causesvalidation="false"
+                            value="@CommonResource.btnCancel" />
+                            }
+                            <input id="btnSubmit" class="btn btn-primary" type="submit" value="@CommonResource.btnSave" style="display: none" />
+
+                        </div>
+                    </div>
+                
+                    <div id="divQuestionList">
+                        @Html.Partial("_ViewQuestionList", Model)
+                    </div>
+                    <div class="text-center button-group">
+                        <input id="btnBack" type="button" class="btn btn-primary" causesvalidation="false" value="@CommonResource.btnBack" />
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        $("#ddlParentAnswer").change(function () {
+            $("#hdnParentAnswer").val($("#ddlParentAnswer option:selected").text());
+        });
+
+        $('#ddlParentQuestion').change(function () {
+
+            $.getJSON('/Question/ParentAnswerList?QuestionId=' + $('#ddlParentQuestion').val(), function (data) {
+                var items = '<option>--Select--</option>';
+                $.each(data, function (i, state) {
+                    debugger;
+                    items += "<option value='" + state.Value + "'>" + state.Text + "</option>";
+                });
+                $('#ddlParentAnswer').html(items);
+            });
+        });
+
+
+        $('#ddlStep').on('change', function () {
+            if (this.value > 0) {
+                $("#hdnStepID").val(this.value);
+                beginRequest();
+                $.ajax({
+                    url: '/Question/RedirectURL',
+                    type: 'POST',
+                    data: $("form").serialize(),
+                    success: function (data) {
+                        window.location = '/Question/SaveQuestion?prm=' + data;
+                    },
+                    error: function () {
+                        alert("An error occurred while loading the results.");
+                    },
+                    complete: function () {
+                        $('form').removeData('validator');
+                        $('form').removeData('unobtrusiveValidation');
+                        $.validator.unobtrusive.parse('form');
+                        endRequest();
+                        $(".numeric").numeric();
+                        $(".number").numeric({ decimal: false });
+                    }
+                });
+            }
+        });
+
+
+        $("#txtQuestionDescription").focus();
+        $(".file").change(function () {
+            $(".uploader").addClass("selected");
+        });
+        RefreshQuestionList();
+        if ('@Model.QuestionDetail.IsPublish' == "True" && parseInt('@Model.QuestionDetail.QuestionID') <= 0) {
+            $(".questionDetail").hide();
+        }
+        else {
+            if ('@Model.QuestionDetail.IsPublish' == "True") {
+                $(".questionDetail").attr("disabled", "disabled");
+                $("input[type=text]").attr("disabled", "disabled");
+                $("select, input[type='checkbox'], input[type='radio']").uniform();
+            }
+            $(".questionDetail").show();
+
+        }
+        $(".number").numeric({ decimal: false });
+        $(".numeric").numeric();
+        showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        $("#btnSave").click(function () {
+
+            var isvalid = true;
+
+            if ($("#ddlQuestionType").val() == '@RepidShare.Utility.CommonUtils.QuestionType.SingleSelect.ToString()') {
+                var fillOptions = $('.txtsingleSelectOption').filter(function () { return $.trim($(this).val()); });
+                if (fillOptions.length < 2) {
+                    isvalid = false;
+                }
+            }
+            else if ($("#ddlQuestionType").val() == '@RepidShare.Utility.CommonUtils.QuestionType.MultiSelect.ToString()') {
+                var fillOptions = $('.txtMultiSelectOption').filter(function () { return $.trim($(this).val()); });
+                if (fillOptions.length < 2) {
+                    isvalid = false;
+                }
+            }
+            else if ($("#ddlQuestionType").val() == '@RepidShare.Utility.CommonUtils.QuestionType.Number.ToString()') {
+                if ($("#txtMaxValue").val() != "" && $("#txtMinValue").val() != "") {
+                    if (parseFloat($("#txtMaxValue").val()) <= parseFloat($("#txtMinValue").val())) {
+                        isvalid = false;
+                    }
+
+                }
+            }
+            else if ($("#ddlQuestionType").val() == '@RepidShare.Utility.CommonUtils.QuestionType.DropDown.ToString()') {
+                if ($("#hdnddlDropDownText").val() == "") {
+                    $("#valDropDownText").show();
+                    isvalid = false;
+                    return true;
+                }
+                else {
+                    $("#valDropDownText").hide();
+                }
+            }
+            if (isvalid && $("#frmQuestion").valid()) {
+                $("#ActionType").val("save");
+                addValidationRule();
+                beginRequest();
+                sendToServer();
+            }
+            else if (!isvalid) {
+                if ($("#ddlQuestionType").val() != '@RepidShare.Utility.CommonUtils.QuestionType.Number.ToString()') {
+                    showMessagePopup("divMessage", '@RepidShare.Utility.CommonUtils.MessageType.Notice.ToString().ToLower()', '@QuestionResource.valOptions');
+                }
+            }
+            else {
+                $("#frmQuestion").valid();
+            }
+
+        });
+
+        $("#btnClear").click(function () {
+            ClearAllData();
+        });
+
+        $("#btnCancel").click(function () {
+            window.location.href = "/Question/SaveQuestion?prm=" + "@RepidShare.Utility.CommonUtils.Encrypt(String.Concat(Model.QuestionDetail.DocumentID))";
+        });
+
+        $("#ddlQuestionType").change(function () {
+            ChangeQuestionType();
+        });
+
+        $("#btnBack").click(function () {
+            if ('@Model.QuestionDetail.IsPublish' == "True") {
+                window.location.href = "/Document/ViewDocument";
+            }
+            else {
+                window.location.href = "/Document/SaveDocument?prm=" + "@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.QuestionDetail.DocumentID))";
+            }
+        });
+
+    });
+
+    function AddNewSelection() {
+        beginRequest();
+        $.ajax({
+            url: '/Question/AddNewSelection',
+            type: 'POST',
+            data: $("form").serialize(),
+            success: function (data) {
+                $("#divQuestionTypeDetail").html(data);
+            },
+            error: function () {
+                alert("An error occurred while loading the results.");
+            },
+            complete: function () {
+                $('form').removeData('validator');
+                $('form').removeData('unobtrusiveValidation');
+                $.validator.unobtrusive.parse('form');
+                endRequest();
+                $(".numeric").numeric();
+                $(".number").numeric({ decimal: false });
+            }
+        });
+    }
+
+
+    function ClearAllData() {
+        $(".form-control").val("");
+        $("#ddlQuestionType").val("");
+        $("input:radio[name='QuestionDetail.IsRequireResponse'][value='false']").prop("checked", true);
+        $("select, input[type='checkbox'], input[type='radio']").uniform();
+        $("#divQuestionTypeDetail").html("");
+    }
+
+    function ChangeQuestionType() {
+        beginRequest();
+        $("#ActionType").val("chnagequestiontype");
+        if ($("#ddlQuestionType").val() == "") {
+            $("#divQuestionTypeDetail").html("");
+            endRequest();
+        }
+        else {
+
+            $.ajax({
+                url: '/Question/GetQuestionTypeDetail',
+                type: 'POST',
+                data: $("form").serialize(),
+                success: function (data) {
+                    $("#divQuestionTypeDetail").html(data);
+                },
+                error: function () {
+                    alert("An error occurred while loading the results.");
+                },
+                complete: function () {
+                    endRequest();
+                    $('form').removeData('validator');
+                    $('form').removeData('unobtrusiveValidation');
+
+                    $.validator.unobtrusive.parse('form');
+                    $(".numeric").numeric();
+                    $(".number").numeric({ decimal: false });
+                    $("#ddlQuestionType").focus();
+                }
+            });
+        }
+    }
+
+</script>

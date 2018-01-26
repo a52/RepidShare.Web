@@ -1,0 +1,172 @@
+﻿@model RepidShare.Entities.DocumentResponseDetailModel
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_LayoutResponsive.cshtml";
+}
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="/Images/home-icon.png"></a></li>
+            <li><a href="@Model.ReferralUrl">@Model.UrlTitle</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+@using (Ajax.BeginForm("ViewDocumentResponse", "DocumentResponse", null, new AjaxOptions { OnBegin = "beginRequest", UpdateTargetId = "dvDocumentQuestionList", OnSuccess = "searchComplete", OnComplete = "endRequest" }, new { @id = "frmPreviewDocumentResponse" }))
+{ 
+   
+    <div class="page-content-body">
+        @if (Model != null)
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.DocumentID, new { Value = Model.DocumentID, id = "hdnDocumentID" })
+            @Html.HiddenFor(model => model.ApplicationRoleID, new { Value = Model.ApplicationRoleID, id = "hdnApplicationRoleID" })
+          
+            @Html.HiddenFor(model => model.MaxNoOfAttempt, new { Value = Model.MaxNoOfAttempt, id = "hdnMaxNoOfAttempt" })
+            @Html.HiddenFor(model => model.UserId, new { Value = Model.UserId, id = "hdnUserId" })
+            @Html.HiddenFor(model => model.AppID, new { Value = Model.AppID, id = "hdnAppID" })
+            @Html.HiddenFor(model => model.DocumentRoleID, new { Value = Model.DocumentRoleID, id = "hdnDocumentRoleID" })
+            @Html.HiddenFor(model => model.IsReadOnly, new { Value = Model.IsReadOnly, id = "hdnIsReadOnly" })
+            @Html.HiddenFor(model => model.Message, new { Value = Model.Message, id = "hdnMessage" })
+            @Html.HiddenFor(model => model.MessageType, new { Value = Model.MessageType, id = "hdnMessageType" })
+            @Html.HiddenFor(model => model.ReferralUrl)         
+        }
+        <h2 class="gray-heading">@ViewBag.Title</h2>
+        <div class=" ">
+            @*@Html.Partial("_DocumentDetail", Model.DocumentApplicationDetail)*@
+        </div>
+    </div>
+    
+    <div id="dvDocumentQuestionList" class="show-questions half-bottom ">
+        @if (Model != null && Model.Questions != null && Model.Questions.Count() > 0 && Model.Questions[0].QuestionID > 0)
+        { 
+            @Html.HiddenFor(model => model.NoOfAttempt, new { Value = Model.NoOfAttempt, id = "hdnNoOfAttempt" })
+            
+            <h2 class="gray-heading">Questions</h2>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="response-question-list sm-corner-a">
+                        @for (int i = 0; i < Model.Questions.Count; i++)
+                        {
+                            @Html.HiddenFor(m => Model.Questions[i].DisplayOrder, new { Value = Model.Questions[i].DisplayOrder })
+                            <div class="response-question response-question-type-single response-question-family-open_ended sm-corner-a spacer-pam ">
+                                <div class="response-question-header clearfix spacer-pbm">
+                                    <div class="sm-float-l">
+                                        <span class="question-title">@("Q" + (i + 1))</span><span
+                                            class="page_delimiter">:</span> <span class="response-question-title-text">@Model.Questions[i].QuestionDescription
+                                            </span>
+                                    </div>
+                                </div>
+                                <div class="response-question-content">
+
+                                    <div class="response-container  essay disableddiv">
+                                        <p class="response-text openended-response-text">
+                                            @if (!String.IsNullOrEmpty(Model.Questions[i].QuestionType))
+                                            {
+                                                Model.Index = i;
+                                                @Html.HiddenFor(m => m.Index, new { Value = i })
+                                                if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.SingleLine.ToString())
+                                                {
+                                        
+                                
+                                                @Html.Partial("_SingleLineText", Model) 
+                                      
+                                                }
+                                                else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.MultiLine.ToString())
+                                                {
+                                                @Html.Partial("_MultiLineText", Model)
+                                                }
+                                                else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.Number.ToString())
+                                                {
+                                                @Html.Partial("_NumberText", Model)
+                                                }
+                                                else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.SingleSelect.ToString())
+                                                {
+                                                @Html.Partial("_SingleSelectRadio", Model)
+                                                }
+                                                else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.MultiSelect.ToString())
+                                                {
+                                                @Html.Partial("_MultiSelectCheckbox", Model)
+                                                }
+                                                else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.DateAndTime.ToString())
+                                                {
+                                                @Html.Partial("_DateTimeText", Model)
+                                                }
+                                            }
+                                        </p>
+                                    </div>
+
+                                </div>
+                            </div>
+                        
+                        }
+                    </div>
+                    <!--.pagination-strip-->
+                </div>
+            </div> 
+        }
+        else
+        {
+            <p>
+                No Question
+            </p>
+        }
+    </div>
+                
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="text-center button-group ">
+                <a href="@Model.ReferralUrl" id="btnBackToList" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </div>
+    
+   
+    <input id="btnSubmit" type="submit" value="Search" class="btn btn-primary" style="display: none" />
+}
+<script type="text/javascript">
+
+    $().ready(function () {
+        $('.disableddiv').attr('disabled', 'disabled');
+        $('.disableddiv').find('input, textarea, button, select').attr('disabled', 'disabled');
+
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+
+
+    // submit form 
+    function sendToServer() {
+        alert("preview");       
+    }
+
+    //search complete will call after search completion and create footer based on search criteria 
+    function searchComplete(xmlHttpRequest, textStatus) {
+
+        createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+        //  CreateNoOfAttempt("divNoOfAttempt", parseInt($("#hdnMaxNoOfAttempt").val()), 1, "ActionType", "hdnNoOfAttempt", sendToServer);
+        // $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer) });
+        setSortClass("SortBy", "SortOrder");
+        endRequest();
+    }
+
+
+    var onSuccess = function (result) {
+        if (result != null) {
+            if (result.url) {
+                // if the server returned a JSON object containing an url 
+                // property we redirect the browser to that url
+                endRequest();
+                window.location.href = result.url;
+            }
+        }
+        else {
+            endRequest();
+        }
+
+    }
+
+</script>

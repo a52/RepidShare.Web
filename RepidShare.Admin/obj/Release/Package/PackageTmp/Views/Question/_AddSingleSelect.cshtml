@@ -1,0 +1,47 @@
+﻿@model RepidShare.Entities.ViewQuestionModel
+@using RepidShare.Entities.Resource;
+@if (Model != null && Model.QuestionTypeDetail != null && Model.QuestionTypeDetail.SingleSelect != null && Model.QuestionTypeDetail.SingleSelect.QuestionOptions != null && Model.QuestionTypeDetail.SingleSelect.QuestionOptions.Count > 0)
+{
+    for (int i = 0; i < Model.QuestionTypeDetail.SingleSelect.QuestionOptions.Count; i++)
+    {
+        <div class="row">
+    <div class="col-sm-3">
+        <label>@QuestionResource.Option@(i+1)</label>
+    </div>
+    <div  class="col-sm-4">
+     <div class="row">
+        <div class="col-sm-1">
+             <div class="radio-btn TopHalfMargin">
+                        @Html.RadioButtonFor(model => model.QuestionTypeDetail.SingleSelect.QuestionOptions[i].QuestionID, "", new { @disabled="true"})
+                </div>
+           
+        </div>
+        <div class="col-sm-11">
+        <div>
+        @Html.HiddenFor(m => m.QuestionTypeDetail.SingleSelect.QuestionOptions[i].QuestionID, new { Value = Model.QuestionTypeDetail.SingleSelect.QuestionOptions[i].QuestionID })
+             @Html.HiddenFor(m=> m.QuestionTypeDetail.SingleSelect.QuestionOptions[i].QuestionOptionsID,new{Value = Model.QuestionTypeDetail.SingleSelect.QuestionOptions[i].QuestionOptionsID})
+            @Html.TextBoxFor(model => model.QuestionTypeDetail.SingleSelect.QuestionOptions[i].OptionText, new{@class="form-control txtsingleSelectOption" })
+            @Html.ValidationMessageFor(model => model.QuestionTypeDetail.SingleSelect.QuestionOptions[i].OptionText)
+            </div>
+         </div>
+     </div>
+    </div>
+     <div class="col-sm-1 TopHalfMargin">
+            @if(i == Model.QuestionTypeDetail.SingleSelect.QuestionOptions.Count -1)
+            {
+                <a id="lnkAddNewSingleOption" href="javascript:void(0);"><span class="btn btn-primary btn-xs"><span class="glyphicon glyphicon-plus"></span></span></a>
+            }
+            </div>
+</div>
+    }
+
+}
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("select, input[type='checkbox'], input[type='radio']").uniform();
+        $("#lnkAddNewSingleOption").click(function () {
+            AddNewSelection();
+        });
+    });
+</script>

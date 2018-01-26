@@ -1,0 +1,149 @@
+﻿@model RepidShare.Entities.BulletinModel
+@{
+    if (Model.BulletinID > 0)
+    {
+        ViewBag.Title = "Edit Bulletin";
+    }
+    else
+    {
+        ViewBag.Title = "Add Bulletin";
+    }
+}
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="@Url.Content("~/Images/home-icon.png")"></a></li>
+            <li>@Html.ActionLink("View Bulletin", "ViewBulletin", "Bulletin")</li>
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2 class="gray-heading">@ViewBag.Title</h2>
+        <div class="white-bg">
+            <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/chosen.css")" />
+            <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+            <link rel="stylesheet" href="~/resources/css/custom-css.css" type="text/css" media="screen" />
+            @* <script type="text/javascript" src="~/resources/libs/jquery/jquery-1.11.0.min.js"></script>
+            <script type="text/javascript" src="~/resources/libs/ckeditor/ckeditor.js"></script>
+            <script type="text/javascript" src="~/resources/libs/ckeditor/adapters/jquery.js"></script>
+            <script type="text/javascript" src="~/resources/js/index.js"></script>*@
+
+            @using (Html.BeginForm("SaveBulletin", "Bulletin", FormMethod.Post, new { @id = "frmBulletin", @enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.BulletinID, new { Value = Model.BulletinID, id = "hdnBulletinID" })
+                @Html.HiddenFor(model => model.Message, new { Value = Model.Message, id = "hdnMessage" })
+                @Html.HiddenFor(model => model.MessageType, new { Value = Model.MessageType, id = "hdnMessageType" })
+                @Html.HiddenFor(model => model.Description, new { id = "hdnDescription" })
+                @Html.HiddenFor(model => model.AttachmentID)
+                @Html.HiddenFor(model => model.AttachmentType)
+                @Html.HiddenFor(model => model.AttachmentSize)
+                @Html.HiddenFor(model => model.AttachmentName)
+                @Html.HiddenFor(model => model.AttachmentContent)
+                
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.BulletinName, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4 mandatoryFeild">
+                        @Html.TextBoxFor(model => model.BulletinName, new { @id = "txtBulletinName", @class = "form-control name", @maxlength = "100" })
+                        @Html.ValidationMessageFor(model => model.BulletinName)
+                    </div>
+                </div>
+                @*<div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.ClassName, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4 mandatoryFeild">
+                        @Html.TextBoxFor(model => model.ClassName, new { @id = "txtClassName", @class = "form-control name", @maxlength = "100" })
+                        @Html.ValidationMessageFor(model => model.ClassName)
+                    </div>
+                </div>*@
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.Description, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.Partial("_HTMLText", Model.Description, new ViewDataDictionary<string>())
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span>&nbsp</span>
+                    </div>
+                </div>
+                <div class="row add-bottom">
+                    <div class="col-sm-3 label-style">
+                        <label class="">Upload Image:</label>
+                    </div>
+                    <div class="col-sm-4 errorOuter">
+                        <input id="fileUpload" name="fileUpload" type="file">
+                        @Html.ValidationMessage("fileUpload")
+                    </div>
+                    @if (Model.AttachmentName != null)
+                    {
+                        <div class="col-sm-3">
+                            <label class="block">
+                                @if (Model.AttachmentContent != null)
+                                {
+                                    <label><a href="/Bulletin/Download?DocID=@Model.BulletinID" title="Download file">@Model.AttachmentName</a></label>     
+                                }
+                            </label>
+                        </div>
+                    }
+                </div>
+                <div class="text-left button-group row">
+                    <div class="col-sm-3">&nbsp;</div>
+                    <div class="col-sm-4">
+                        <input id="btnSave" class="btn btn-primary" type="button" value="Save" />
+                        <input id="btnSubmit" class="btn btn-primary" type="submit" value="Save" style="display: none" />
+                        <input id="btnCancel" type="button" class="btn cancel btn-primary" causesvalidation="false"
+                            value="Cancel" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $().ready(function () {
+        $("#txtBulletinName").focus();
+        // Show  Error Message on popup by common function showMessagePopup if any error found in hidden fields hdnMessage and hdnMessageType
+        showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        //Submit the form on save button click
+        $("#btnSave").click(function () {
+            $("#hdnDescription").val($("#ckeditorBox").val());
+            $("#btnSubmit").click();
+        });
+
+        //redirect to  Bulletin List on Cancel button click
+        $("#btnCancel").click(function () {
+            window.location.href = "/Bulletin/ViewBulletin";
+        });
+
+    });
+
+    //function isValidFile(objid) {
+    //    if ($("#" + objid).val() != "") {
+    //        var ext = $("#" + objid).val().split('.').pop().toLowerCase();
+    //        if ($.inArray(ext, ('jpg,jpeg,png,gif').split(',')) == -1) {
+    //            var msg = 'Please select valid file.';
+    //            var msgType = 'error';
+    //            if (msg != '' && msgType != '') {
+    //                showMessagePopup("divMessage", msgType, msg);
+    //            }
+    //            return false;
+    //        }
+    //        else {
+    //            return true;
+    //        }
+    //    }
+    //    return true;
+    //}
+</script>

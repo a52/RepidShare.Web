@@ -1,0 +1,121 @@
+﻿@using RepidShare.Entities
+@model HomeDocumentViewModel
+
+@{
+    if (Model.objDocumentModel != null && Model.objDocumentModel.DocumentID > 0)
+    {
+        <div class="tab-pane fade in active">
+            <div class="tab-box">
+                <p class="font16"> <img src="/img/icon02.png">@Model.objDocumentModel.DocumentTitle</p>
+                <ul class="nav nav-pills m-b tab-line">
+                    <li><a data-toggle="pill" href="#one">Descripción de documento</a></li>
+                    <li><a data-toggle="pill" href="#two">Como funciona</a></li>
+                </ul>
+                <div class="margin15"></div>
+                <div class="tab-content">
+                    <div id="one" class="tab-pane fade in active">
+                        <p class="tab-box-font-c">
+                            @Html.Raw(Model.objDocumentModel.DocumentDescription)
+                        </p>
+                        <div class="margin15"></div>
+                        <div class="box-outer-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="font16"> Auto-Servicio </p>
+                                </div>
+
+                                <div class="col-md-6 text-right">
+                                    <p class="font16">$ @Model.objDocumentModel.Price </p>
+                                </div>
+                                <div class="margin15"></div>
+                                <div class="padd15">
+                                    <p class="font12">Elabore su documento al instante contestando una sene  de preguntas fáciles de responder.</p>
+                                    <p class="font12">Explicaciones útiles y notas de orientación.</p>
+                                    <p class="font12">Almacene, gestione, rastree e imprima su documento en línea.</p>
+
+                                    <a href="/User/buy?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objDocumentModel.DocumentID))">
+                                        <button type="button" class="btn btn-default pull-right  btn-signup ">
+                                            Añadir al carrito
+                                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                        </button>
+                                    </a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="margin15"></div>
+                        <p class="font16 bold"> Incluido en este servicio:</p>
+
+                        <div class="service-ul">
+                            <ul>
+                                <li>
+                                    <a href="/User/AddForTrial?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objDocumentModel.DocumentID))">
+                                        @Model.objDocumentModel.DocumentTitle
+                                        <span class="font14 pull-right"><i class="fa fa-info-circle" aria-hidden="true"></i> Free Trial</span>
+                                    </a>
+                                </li>
+                                @for (int i = 0; i < Model.objListDocumentService.Count; i++)
+                                {
+                                    <li>
+                                        <a href="/User/AddForTrial?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentService[i].DocumentID))">
+                                            @Model.objListDocumentService[i].DocumentTitle
+                                            <span class="font14 pull-right"><i class="fa fa-info-circle" aria-hidden="true"></i> Free Trial</span>
+                                        </a>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>                        
+                    </div>
+                    <div id="two" class="tab-pane fade">
+                        <p class="font16 bold">Como funciona:</p>
+                        <p class="font14">Es asi de fácil y asequible con nuestro proceso de 3 pasos ...</p>
+                        <div class="margin15"></div>
+                        <p class="font14">
+                            1. Seleccione su documento: Lea la información proporcionada en esta página para versi este es el documento adecuado para usted. Usted puede incluso probarlo gratuitamente (abajo), V utilizar nuestra guía legal en línea para obtener toda la información relacionada al documento seleccionado.
+                        </p>
+                        <p class="font14">
+                            2. Responda las preguntas: Vea su borrador de documento como si estuviera viendo a su abogado prepararlo. Se proporciona orientación adicional en pantalla para cada pregunta.
+                        </p>
+
+                        <p class="font14">
+                            3. Complete tu pedido: Obtenga acceso completo a su documento terminado (para imprimir v
+                            firmar] después de la compra
+                        </p>
+                        <div class="margin15"></div>
+                        <div class="box-outer-tab">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <p class="font16"> Auto-Servicio </p>
+                                </div>
+
+                                <div class="col-md-6 text-right">
+                                    <p class="font16">$ @Model.objDocumentModel.Price </p>
+                                </div>
+                                <div class="margin15"></div>
+                                <div class="padd15">
+                                    <p class="font12">Elabore su documento al instante contestando una sene  de preguntas fáciles de responder.</p>
+                                    <p class="font12">Explicaciones útiles y notas de orientación.</p>
+                                    <p class="font12">Almacene, gestione, rastree e imprima su documento en línea.</p>
+                                    <button type="button" class="btn btn-default pull-right  btn-signup ">
+                                        Añadir al carrito
+                                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="margin15"></div>
+                        <p class="font16 bold"> Incluido en este servicio :</p>
+                        <span class="font14">Contrato de prestación de servicios</span>
+                        <span class="font14 pull-right">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            Free Trial
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    }
+}
+

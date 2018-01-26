@@ -1,0 +1,32 @@
+﻿@model RepidShare.Entities.FolderModel
+
+@using (Html.BeginForm("FolderCreate", "User", FormMethod.Post, new { @id = "frmDocument" }))
+{
+    <div class="form-group">
+        <label for="">Folder Name</label>
+        @Html.TextBoxFor(model => model.FolderName, new { @id = "txtFolderName", @class = "form-control", @maxlength = "100" })
+        @Html.ValidationMessageFor(model => model.FolderName)
+    </div>
+    <button type="button" id="btnFolder" class="btn btn-account">Submit</button>
+    <button type="button" id="btnClose" class="btn btn-default pull-right" data-dismiss="modal">Close</button>    
+}
+
+<script>
+    @*$("#btnFolder").click(function () {
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("NewFolder")',
+            data: { folderName: $('#FolderName').val() },
+            datatype: "json",
+            success: function (data) {
+                debugger;
+                $('#btnClose').click();
+                $('#tab3').html('');
+                $('#tab3').html(data);
+                $('#tab3').show();
+
+            }
+        });
+    });*@
+
+</script>

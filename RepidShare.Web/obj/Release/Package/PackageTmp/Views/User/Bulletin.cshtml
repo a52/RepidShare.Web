@@ -1,0 +1,85 @@
+﻿@using RepidShare.Entities
+@model ViewBulletinModel
+@{
+    Layout = "~/Views/Shared/_websiteLayout.cshtml";
+    ViewBag.Title = "Bulletin View";
+}
+
+<!--Header Bottom egion Start-->
+<div class="header_bottom">
+    <div class="wrapper">
+        <div class="links_main"><a href='javascript:void(0);' class="selected"><i class="fa fa-file-text"></i>Summary</a><a href="/User/MyTempletes"><i class="fa fa-book"></i>My Templates</a><a href="/User/MyDocument"><i class="fa fa-book"></i>My Documents</a></div>
+    </div>
+</div>
+<!--Header Bottom egion End-->
+
+<!--Container egion Start-->
+<div class="container">
+    <p>Welcome back to Desktop Lawyer.The document you last edited was<a href="javascript:void(0);"><strong>Commission linking agreement for websites</strong></a></p>
+
+    <div class="row">
+        <div class="col-sm-4 e_sidebar">
+            <div class="summary_box">
+                <h2>My documents</h2>
+
+                <p>You do not own any documents. <a href="/Home/Index">Click here to browse the available documents</a></p>
+            </div>
+            <div class="summary_box_bottom">
+                <p>This is an overview of all your documents. To see these in more detail, please visit <a href="/User/MyDocument">My documents</a>.</p>
+            </div>
+            <div class="summary_account">
+                <div class="summary_box">
+                    <h2>My documents</h2>
+
+                    <a href="/User/Register">Update my account details</a>
+                    <a href="/User/ChangePassword">Change my password</a>
+                    <a href="javascript:void(0);">Manage my payment methodsn</a>
+                    <a href="/User/BulletinView">Bulletin settings</a>
+                </div>
+                <div class="summary_box_bottom">
+                    <p>Use the links above to manage your account.</a>.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="e_contentMainWrapper e_spanRight summary_right">
+                <div class="summary_box">
+                    <h2>Monthly bulletin</h2>
+                    <p>The business bulletin is a monthly newsletter containing information about topical areas of law that might affect you as well as information about recent court cases, and it will advise you if there has been a change in law that affects any of the documents we provide.</p>
+                </div>
+
+                <div class="summary_activity">
+                    <h2>Previous issues</h2>
+                    <div class="summary_box audit">
+                        @if (Model != null && Model.BulletinList != null && Model.BulletinList.Count > 0)
+                        {
+                            for (int i = 0; i < Model.BulletinList.Count; i++)
+                            {
+                            <div>
+                                <table>
+                                    <tr>
+                                        <td><a href="javascript:void(0)" onclick="BulletinPreview('@Model.BulletinList[i].BulletinID')">@Model.BulletinList[i].BulletinName</a></td>
+                                        <td style="width: 10px"></td>
+                                        <td>- <a href="/User/Download?DocID=@Model.BulletinList[i].BulletinID" >Download as pdf</a></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            }
+                        }
+                    </div>
+                    <div class="summary_box_bottom">
+                        <p>Your activity over the last two weeks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Container egion End-->
+<script>
+
+    function BulletinPreview(id) {
+        openEditDialog("/User/BulletinPreview?id=" + id, "Bulletin Preview", "", "")
+    }
+
+</script>

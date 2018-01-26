@@ -1,0 +1,7 @@
+﻿input[type="text"]{
+    width:100% !important;
+}
+
+textarea.form-control {
+    height: 70px !important;
+}

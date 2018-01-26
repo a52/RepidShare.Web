@@ -1,0 +1,152 @@
+﻿@{
+    Layout = "~/Views/Shared/_webSiteMasterLayout.cshtml";
+    ViewBag.Title = "Basket";
+}
+
+@model RepidShare.Web.PayPalItemDetail
+
+<div class="grey-l"></div>
+<div class="clearfix"></div>
+<div class="container">
+    <div class="row padd15">
+        <div class="margin15"></div>
+        <h3>Basket</h3>
+        The item you attempted to add (Agreement for the sale of a motor vehicle) is already in the basket.
+        <div class="margin15 clearfix"></div>
+        
+        <div class="hidden-xs hidden-sm">
+            <div class="row">
+                <div class="col-md-3">
+                    <strong>Products</strong>
+                </div>
+
+                <div class="col-md-3">
+                    <strong>Service levels</strong>
+                </div>
+                <div class="col-md-3">
+                    <strong>Price</strong>
+                </div>
+                <div class="col-md-3">
+                    <strong></strong>
+                </div>
+
+            </div>
+        </div>
+        <div class="margin10"></div>
+        <div class="grey-l"></div>
+        <div class="margin15"></div>
+
+        @for (int i = 0; i < Model.itemList.items.Count; i++)
+        {
+            <div class="row">
+                <div class="col-md-3">
+                    <strong class="visible-xs visible-sm">Products</strong>
+                    <p><a href="/Home/DocumentView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.itemList.items[i].url))" title="@Model.itemList.items[i].name">@Model.itemList.items[i].name</a></p>
+                </div>
+                <div class="col-md-3">
+                    <strong class="visible-xs visible-sm"> Service levels</strong>
+                    <p>Self service</p>
+                </div>
+                <div class="col-md-3">
+                    <strong class="visible-xs visible-sm">Price</strong>
+                    <p>£@Model.itemList.items[i].price</p>
+                </div>
+                <div class="col-md-3 text-over">
+                    @*<strong class="visible-xs visible-sm">Total</strong>*@
+                    <a href="/User/BuyRemove?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.itemList.items[i].url))" title="Remove">Remove</a>
+                </div>
+            </div>
+            <div class="clearfix margin10"></div>
+        }
+        <div class="grey-l"></div>
+        <div class="clearfix margin15"></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <img src="/img/visa.png">
+                <p>You can pay with any visa Mastercard or maestro debit or credit card</p>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="col-md-4">
+                <div class="right-summery">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 col-xs-6">
+                            <p><strong>subtotal</strong> </p>
+                            <p><strong>VAT</strong> </p>
+                            <p><strong>Total</strong> </p>
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 text-right">
+                            <p>£@Model.details.subtotal</p>
+                            <p>£@Model.details.tax</p>
+                            <input type="hidden" id="hdntotal" value="@Model.amount.total" />
+                            <p>@Model.amount.total</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="margin10"></div>
+                <p class="font13">If you have a discount voucher,please enter the Voucher code </p>
+                <p>
+                    <span id="spnDiscount" style="color: green; display: none"></span>
+                    <span id="spnError" style="color: red; display: none"></span>
+                </p>
+                <form class="row">
+                    <div class="col-md-6  col-sm-6 col-xs-6">
+                        <input type="text" class="form-control" id="txtCoupenCode">
+                    </div>
+                    <div class="visible-xs visible-sm margin10"></div>
+                    <div class="col-md-6 col-sm-6 col-xs-6">
+                        <a href="javascript:void(0);" title="apply" id="txtApply">Apply</a>
+                    </div>
+                </form>
+                <div class="margin15 clearfix"></div>
+                <a href="/User/Checkout">
+                    <button type="button" class="btn btn-default btn-account">
+                        Proceed to Checkout <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </button>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#txtApply").click(function () {
+
+            if ($("#txtCoupenCode").val() != "") {
+                $.ajax({
+
+                    url: "/User/ApplyOffer?prm=" + $("#txtCoupenCode").val(),
+                    cache: false,
+                    type: "GET",
+                    success: function (data) {
+
+                        if (parseFloat(data.Discount) > 0) {
+                            $("#spnTotal").html(parseFloat($("#hdntotal").val()) - parseFloat(data.Discount));
+                            $("#spnDiscount").html("Congrets. Offer Code applied, you get " + parseFloat(data.Discount) + " Discount");
+                            $("#spnDiscount").show();
+
+                            $("#spnError").html("");
+                            $("#spnError").hide();
+                        }
+                        else {
+                            $("#spnTotal").html(parseFloat($("#hdntotal").val()));
+                            $("#spnDiscount").html("");
+                            $("#spnDiscount").hide();
+                            $("#spnError").html("Offer code not valid");
+                            $("#spnError").show();
+                        }
+                    },
+                    error: function (reponse) {
+                        debugger;
+                    }
+                });
+            }
+        });
+
+    });
+</script>
+
+
+

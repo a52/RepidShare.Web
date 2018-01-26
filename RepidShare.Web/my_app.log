@@ -1,0 +1,1561 @@
+2016-11-14 23:20:34,062
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-14 23:20:34,289
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-14 23:20:34,290
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic eW91ciBjbGllbnQgSUQgb2YgcGF5cGFsIGFjY291bnQ6eW91ciBjbGllbnQgc2VjcmV0IGtleSBvZiBwYXlwYWwgYWNjb3VudA==
+2016-11-14 23:20:34,290
+      [11] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:fca91f3d-205b-40dd-bb04-798a11b0f9f2
+2016-11-14 23:20:34,708
+      [11] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-14 23:20:36,687
+      [11] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-14 23:20:36,687
+      [11] ERROR PayPal.Api.HttpConnection [(null)] {"error":"invalid_client","error_description":"Client Authentication failed"}
+2016-11-14 23:20:36,687
+      [11] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (401) Unauthorized.
+2016-11-14 23:20:36,727
+      [11] ERROR PayPal.PayPalException [(null)] Identity Exception: 
+   Error:   invalid_client
+   Message: Client Authentication failed
+   URI:     
+
+2016-11-14 23:24:03,704
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-14 23:24:03,706
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-14 23:24:03,707
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic eW91ciBjbGllbnQgSUQgb2YgcGF5cGFsIGFjY291bnQ6eW91ciBjbGllbnQgc2VjcmV0IGtleSBvZiBwYXlwYWwgYWNjb3VudA==
+2016-11-14 23:24:03,707
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:109b2d4b-b49e-4b5c-a4fb-fb40ba17da96
+2016-11-14 23:24:04,014
+      [16] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-14 23:24:05,016
+      [16] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-14 23:24:05,016
+      [16] ERROR PayPal.Api.HttpConnection [(null)] {"error":"invalid_client","error_description":"Client Authentication failed"}
+2016-11-14 23:24:05,017
+      [16] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (401) Unauthorized.
+2016-11-14 23:24:05,042
+      [16] ERROR PayPal.PayPalException [(null)] Identity Exception: 
+   Error:   invalid_client
+   Message: Client Authentication failed
+   URI:     
+
+2016-11-14 23:24:15,667
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-14 23:24:15,668
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-14 23:24:15,669
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic eW91ciBjbGllbnQgSUQgb2YgcGF5cGFsIGFjY291bnQ6eW91ciBjbGllbnQgc2VjcmV0IGtleSBvZiBwYXlwYWwgYWNjb3VudA==
+2016-11-14 23:24:15,669
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:dc5a73a5-e866-4d83-8e90-335c9c02c178
+2016-11-14 23:24:15,974
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-14 23:24:16,946
+      [17] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-14 23:24:16,946
+      [17] ERROR PayPal.Api.HttpConnection [(null)] {"error":"invalid_client","error_description":"Client Authentication failed"}
+2016-11-14 23:24:16,947
+      [17] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (401) Unauthorized.
+2016-11-14 23:24:16,973
+      [17] ERROR PayPal.PayPalException [(null)] Identity Exception: 
+   Error:   invalid_client
+   Message: Client Authentication failed
+   URI:     
+
+2016-11-14 23:24:43,637
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-14 23:24:43,637
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-14 23:24:43,637
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic eW91ciBjbGllbnQgSUQgb2YgcGF5cGFsIGFjY291bnQ6eW91ciBjbGllbnQgc2VjcmV0IGtleSBvZiBwYXlwYWwgYWNjb3VudA==
+2016-11-14 23:24:43,638
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:6f5389f9-2a8f-445f-81f2-6fb8151d5545
+2016-11-14 23:24:43,949
+      [16] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-14 23:24:44,944
+      [16] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-14 23:24:44,945
+      [16] ERROR PayPal.Api.HttpConnection [(null)] {"error":"invalid_client","error_description":"Client Authentication failed"}
+2016-11-14 23:24:44,945
+      [16] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (401) Unauthorized.
+2016-11-14 23:24:44,971
+      [16] ERROR PayPal.PayPalException [(null)] Identity Exception: 
+   Error:   invalid_client
+   Message: Client Authentication failed
+   URI:     
+
+2016-11-16 21:34:19,950
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-16 21:34:20,260
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-16 21:34:20,261
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic eW91ciBjbGllbnQgSUQgb2YgcGF5cGFsIGFjY291bnQ6eW91ciBjbGllbnQgc2VjcmV0IGtleSBvZiBwYXlwYWwgYWNjb3VudA==
+2016-11-16 21:34:20,261
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:8642c178-ca28-4113-8780-09c8faea4d2f
+2016-11-16 21:34:20,675
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-16 21:34:22,298
+      [14] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-16 21:34:22,299
+      [14] ERROR PayPal.Api.HttpConnection [(null)] {"error":"invalid_client","error_description":"Client Authentication failed"}
+2016-11-16 21:34:22,299
+      [14] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (401) Unauthorized.
+2016-11-16 21:34:22,334
+      [14] ERROR PayPal.PayPalException [(null)] Identity Exception: 
+   Error:   invalid_client
+   Message: Client Authentication failed
+   URI:     
+
+2016-11-20 08:30:04,345
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 08:30:04,563
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 08:30:04,564
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 08:30:04,564
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:445794b8-d244-4d59-9a9c-68849dcb2bdd
+2016-11-20 08:30:04,938
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 08:30:09,109
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 08:30:09,109
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T03:00:08Z4baUPZDSm9A06rwc1U9kAA0H58-91pEbj-RK5FsvA1s","access_token":"A101.-u4AaSexXr9eKLWADbm6s5lAH2iOG-x033YU7mFR7j4aUxyoKrHLGvAac2hufMp5.ZymbGFFN6bVkd5pIbAnCZbPTlXG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2016-11-20 08:30:10,256
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 08:30:10,257
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 08:30:10,257
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.-u4AaSexXr9eKLWADbm6s5lAH2iOG-x033YU7mFR7j4aUxyoKrHLGvAac2hufMp5.ZymbGFFN6bVkd5pIbAnCZbPTlXG
+2016-11-20 08:30:10,258
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:9426cf70-cd02-4b92-9961-50259252837c
+2016-11-20 08:30:10,566
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"number":"1234567890123456","type":"discover","expire_month":1,"expire_year":2020,"cvv2":"874","first_name":"Aman","last_name":"Thakur","billing_address":{"line1":"23rd street kew gardens","city":"NewYork","country_code":"US","postal_code":"43210","state":"NY"}}}]},"transactions":[{"amount":{"currency":"USD","total":"7","details":{"subtotal":"5","shipping":"1","tax":"1"}},"description":"Description about the payment amount.","invoice_number":"your invoice number which you are generating","item_list":{"items":[{"sku":"sku","name":"Demo Item","quantity":"1","price":"5","currency":"USD"}]}}]}
+2016-11-20 08:30:11,596
+      [14] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 08:30:11,597
+      [14] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"payer.funding_instruments[0].credit_card.number","issue":"Value is invalid."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"88d83d145dbb1"}
+2016-11-20 08:30:11,597
+      [14] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 08:30:11,632
+      [14] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request. See details.
+   URI:      https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR
+   Debug ID: 88d83d145dbb1
+   Details:  payer.funding_instruments[0].credit_card.number -> Value is invalid.
+
+2016-11-20 08:34:13,012
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 08:34:13,012
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 08:34:13,012
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 08:34:13,012
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:26fbc6fd-e512-423b-bf7d-85a237b5cde5
+2016-11-20 08:34:13,309
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 08:34:14,236
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 08:34:14,236
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T03:00:08Z4baUPZDSm9A06rwc1U9kAA0H58-91pEbj-RK5FsvA1s","access_token":"A101.-u4AaSexXr9eKLWADbm6s5lAH2iOG-x033YU7mFR7j4aUxyoKrHLGvAac2hufMp5.ZymbGFFN6bVkd5pIbAnCZbPTlXG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32154}
+2016-11-20 08:34:15,285
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 08:34:15,285
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 08:34:15,285
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.-u4AaSexXr9eKLWADbm6s5lAH2iOG-x033YU7mFR7j4aUxyoKrHLGvAac2hufMp5.ZymbGFFN6bVkd5pIbAnCZbPTlXG
+2016-11-20 08:34:15,286
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:6f71a1eb-51bf-4e55-84e5-f46bb1d397bb
+2016-11-20 08:34:15,585
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"number":"1234567890123456","type":"discover","expire_month":1,"expire_year":2020,"cvv2":"874","first_name":"Aman","last_name":"Thakur","billing_address":{"line1":"23rd street kew gardens","city":"NewYork","country_code":"US","postal_code":"43210","state":"NY"}}}]},"transactions":[{"amount":{"currency":"USD","total":"7","details":{"subtotal":"5","shipping":"1","tax":"1"}},"description":"Description about the payment amount.","invoice_number":"your invoice number which you are generating","item_list":{"items":[{"sku":"sku","name":"Demo Item","quantity":"1","price":"5","currency":"USD"}]}}]}
+2016-11-20 08:34:16,590
+      [14] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 08:34:16,590
+      [14] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"payer.funding_instruments[0].credit_card.number","issue":"Value is invalid."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"d3a0d8bd5a952"}
+2016-11-20 08:34:16,591
+      [14] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 08:34:16,614
+      [14] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request. See details.
+   URI:      https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR
+   Debug ID: d3a0d8bd5a952
+   Details:  payer.funding_instruments[0].credit_card.number -> Value is invalid.
+
+2016-11-20 08:35:37,426
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 08:35:37,427
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 08:35:37,427
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 08:35:37,427
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:a1979355-2ada-4abd-95b4-7d6cf5425a5b
+2016-11-20 08:35:37,719
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 08:35:38,646
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 08:35:38,647
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T03:00:08Z4baUPZDSm9A06rwc1U9kAA0H58-91pEbj-RK5FsvA1s","access_token":"A101.-u4AaSexXr9eKLWADbm6s5lAH2iOG-x033YU7mFR7j4aUxyoKrHLGvAac2hufMp5.ZymbGFFN6bVkd5pIbAnCZbPTlXG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32070}
+2016-11-20 08:36:34,501
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 08:36:34,503
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 08:36:34,503
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.-u4AaSexXr9eKLWADbm6s5lAH2iOG-x033YU7mFR7j4aUxyoKrHLGvAac2hufMp5.ZymbGFFN6bVkd5pIbAnCZbPTlXG
+2016-11-20 08:36:34,504
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:87e08e15-3272-4656-90be-e92f7743b59d
+2016-11-20 08:36:34,879
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"credit_card","funding_instruments":[{"credit_card":{"number":"1234567890123456","type":"discover","expire_month":1,"expire_year":2020,"cvv2":"874","first_name":"Aman","last_name":"Thakur","billing_address":{"line1":"23rd street kew gardens","city":"NewYork","country_code":"US","postal_code":"43210","state":"NY"}}}]},"transactions":[{"amount":{"currency":"USD","total":"7","details":{"subtotal":"5","shipping":"1","tax":"1"}},"description":"Description about the payment amount.","invoice_number":"your invoice number which you are generating","item_list":{"items":[{"sku":"sku","name":"Demo Item","quantity":"1","price":"5","currency":"USD"}]}}]}
+2016-11-20 08:36:35,904
+      [13] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 08:36:35,905
+      [13] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"payer.funding_instruments[0].credit_card.number","issue":"Value is invalid."}],"message":"Invalid request. See details.","information_link":"https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR","debug_id":"b2e7dd4aa73f"}
+2016-11-20 08:36:35,905
+      [13] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 08:36:35,929
+      [13] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request. See details.
+   URI:      https://developer.paypal.com/webapps/developer/docs/api/#VALIDATION_ERROR
+   Debug ID: b2e7dd4aa73f
+   Details:  payer.funding_instruments[0].credit_card.number -> Value is invalid.
+
+2016-11-20 08:37:03,880
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 08:37:03,880
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 08:37:03,880
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 08:37:03,881
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:a4b319e3-47ce-4083-acf9-56085ec3a325
+2016-11-20 08:37:04,186
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 08:37:05,181
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 08:37:05,181
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T03:00:08Z4baUPZDSm9A06rwc1U9kAA0H58-91pEbj-RK5FsvA1s","access_token":"A101.-u4AaSexXr9eKLWADbm6s5lAH2iOG-x033YU7mFR7j4aUxyoKrHLGvAac2hufMp5.ZymbGFFN6bVkd5pIbAnCZbPTlXG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31983}
+2016-11-20 08:37:12,782
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 08:37:12,782
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 08:37:12,782
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.-u4AaSexXr9eKLWADbm6s5lAH2iOG-x033YU7mFR7j4aUxyoKrHLGvAac2hufMp5.ZymbGFFN6bVkd5pIbAnCZbPTlXG
+2016-11-20 08:37:12,783
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:21e843e5-90cf-4b81-b6a1-b32d9829866a
+2016-11-20 08:37:13,084
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"7","details":{"subtotal":"5","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Item Name","quantity":"1","price":"5","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=15317","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=15317"}}
+2016-11-20 08:37:14,385
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 08:37:14,385
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-6FM50284W3560744NLAYRGYQ","intent":"sale","state":"created","payer":{"payment_method":"paypal","use_vendor_currency_conversion":false},"transactions":[{"amount":{"total":"7.00","currency":"USD","details":{"subtotal":"5.00","tax":"1.00","shipping":"1.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Item Name","sku":"sku","price":"5.00","currency":"USD","quantity":1}]},"related_resources":[]}],"create_time":"2016-11-20T03:07:13Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-6FM50284W3560744NLAYRGYQ","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-68R26287G38153422","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-6FM50284W3560744NLAYRGYQ/execute","rel":"execute","method":"POST"}]}
+2016-11-20 08:37:14,454
+      [13] ERROR PayPal.Api.JsonFormatter [(null)] Error while deserializing JSON: Could not find member 'use_vendor_currency_conversion' on object of type 'Payer'. Path 'payer.use_vendor_currency_conversion', line 1, position 139.
+2016-11-20 08:41:44,069
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 08:41:44,071
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 08:41:44,071
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 08:41:44,071
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:f35079d8-5005-4bad-bb2d-2962233022c8
+2016-11-20 08:41:44,457
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 08:41:45,448
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 08:41:45,449
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T03:00:08Z4baUPZDSm9A06rwc1U9kAA0H58-91pEbj-RK5FsvA1s","access_token":"A101.-u4AaSexXr9eKLWADbm6s5lAH2iOG-x033YU7mFR7j4aUxyoKrHLGvAac2hufMp5.ZymbGFFN6bVkd5pIbAnCZbPTlXG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31703}
+2016-11-20 08:42:09,417
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 08:42:09,417
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 08:42:09,418
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.-u4AaSexXr9eKLWADbm6s5lAH2iOG-x033YU7mFR7j4aUxyoKrHLGvAac2hufMp5.ZymbGFFN6bVkd5pIbAnCZbPTlXG
+2016-11-20 08:42:09,418
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:f5b19923-c7a6-43c5-a360-243edce6c8e6
+2016-11-20 08:42:09,717
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"7","details":{"subtotal":"5","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Item Name","quantity":"1","price":"5","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=78440","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=78440"}}
+2016-11-20 08:42:10,994
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 08:42:10,994
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-61V62056DJ941600FLAYRJCQ","intent":"sale","state":"created","payer":{"payment_method":"paypal","use_vendor_currency_conversion":false},"transactions":[{"amount":{"total":"7.00","currency":"USD","details":{"subtotal":"5.00","tax":"1.00","shipping":"1.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Item Name","sku":"sku","price":"5.00","currency":"USD","quantity":1}]},"related_resources":[]}],"create_time":"2016-11-20T03:12:10Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-61V62056DJ941600FLAYRJCQ","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-0XA63791MX296731U","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-61V62056DJ941600FLAYRJCQ/execute","rel":"execute","method":"POST"}]}
+2016-11-20 08:42:11,009
+      [20] ERROR PayPal.Api.JsonFormatter [(null)] Error while deserializing JSON: Could not find member 'use_vendor_currency_conversion' on object of type 'Payer'. Path 'payer.use_vendor_currency_conversion', line 1, position 139.
+2016-11-20 18:21:36,802
+      [15] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:21:37,012
+      [15] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:21:37,012
+      [15] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:21:37,013
+      [15] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:34bc768e-a343-4e51-a359-745c343ea7e3
+2016-11-20 18:21:37,438
+      [15] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:21:39,720
+      [15] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:21:39,720
+      [15] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T12:51:39ZnkRKbHDNd2z5BYnOdcskGPA8IO0RC6pn4_etSwqjWjQ","access_token":"A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2016-11-20 18:21:39,872
+      [15] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:21:39,872
+      [15] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:21:39,873
+      [15] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0
+2016-11-20 18:21:39,873
+      [15] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:b85e3332-6b07-4abc-bf6d-4128fd98c82a
+2016-11-20 18:21:40,187
+      [15] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1041","details":{"subtotal":"1040","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"},{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"1000","currency":"USD","url":"40"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=55686","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=55686"}}
+2016-11-20 18:21:41,293
+      [15] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:21:41,293
+      [15] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"117bc5ccd903b"}
+2016-11-20 18:21:41,294
+      [15] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:21:41,330
+      [15] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 117bc5ccd903b
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:21:56,097
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:21:56,098
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:21:56,098
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:21:56,098
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:e91be1a8-0b06-4e86-950c-df4bee38fa9b
+2016-11-20 18:21:56,403
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:21:57,371
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:21:57,371
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T12:51:39ZnkRKbHDNd2z5BYnOdcskGPA8IO0RC6pn4_etSwqjWjQ","access_token":"A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32382}
+2016-11-20 18:22:00,035
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:22:00,035
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:22:00,035
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0
+2016-11-20 18:22:00,035
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:ecd86950-fe32-4345-b6a5-2cb29e2dbcfa
+2016-11-20 18:22:00,343
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1041","details":{"subtotal":"1040","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"},{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"1000","currency":"USD","url":"40"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=43274","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=43274"}}
+2016-11-20 18:22:01,355
+      [17] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:22:01,356
+      [17] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"1628a67d4e94"}
+2016-11-20 18:22:01,356
+      [17] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:22:01,381
+      [17] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 1628a67d4e94
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:23:20,583
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:23:20,584
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:23:20,584
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0
+2016-11-20 18:23:20,584
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:ecd86950-fe32-4345-b6a5-2cb29e2dbcfa
+2016-11-20 18:23:20,903
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1041","details":{"subtotal":"1040","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"},{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"1000","currency":"USD","url":"40"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=43274","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=43274"}}
+2016-11-20 18:23:21,956
+      [17] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:23:21,957
+      [17] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"57fb97529570f"}
+2016-11-20 18:23:21,957
+      [17] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:23:21,982
+      [17] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 57fb97529570f
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:27:02,895
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:27:03,048
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:27:03,049
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:27:03,049
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:186ca069-5e62-4c01-8cc8-5a5255bb4c1c
+2016-11-20 18:27:03,489
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:27:04,874
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:27:04,875
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T12:51:39ZnkRKbHDNd2z5BYnOdcskGPA8IO0RC6pn4_etSwqjWjQ","access_token":"A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32075}
+2016-11-20 18:27:04,965
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:27:04,965
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:27:04,966
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0
+2016-11-20 18:27:04,966
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:689e9c2a-796d-48da-b062-0f45537f4e4a
+2016-11-20 18:27:05,272
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"41","details":{"subtotal":"40","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=16106","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=16106"}}
+2016-11-20 18:27:06,290
+      [28] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:27:06,290
+      [28] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"a70a1c15ea2a6"}
+2016-11-20 18:27:06,290
+      [28] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:27:06,332
+      [28] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: a70a1c15ea2a6
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:28:18,750
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:28:18,751
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:28:18,752
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:28:18,752
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:767a17ed-0dc4-41b7-899e-841467dc9808
+2016-11-20 18:28:19,082
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:28:20,135
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:28:20,135
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T12:51:39ZnkRKbHDNd2z5BYnOdcskGPA8IO0RC6pn4_etSwqjWjQ","access_token":"A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32000}
+2016-11-20 18:28:20,141
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:28:20,141
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:28:20,142
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0
+2016-11-20 18:28:20,142
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:a242f069-3347-4858-b9f5-0538bf7b7ab9
+2016-11-20 18:28:20,462
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"41","details":{"subtotal":"40","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=91927","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=91927"}}
+2016-11-20 18:28:21,524
+      [17] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:28:21,524
+      [17] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"c63fd8b32e30a"}
+2016-11-20 18:28:21,525
+      [17] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:28:21,555
+      [17] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: c63fd8b32e30a
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:29:50,798
+      [30] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:29:50,798
+      [30] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:29:50,799
+      [30] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:29:50,799
+      [30] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:75457f61-38ba-4313-a2e7-1a8fbf6b21d2
+2016-11-20 18:29:51,130
+      [30] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:29:52,172
+      [30] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:29:52,173
+      [30] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T12:51:39ZnkRKbHDNd2z5BYnOdcskGPA8IO0RC6pn4_etSwqjWjQ","access_token":"A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31908}
+2016-11-20 18:29:52,178
+      [30] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:29:52,178
+      [30] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:29:52,179
+      [30] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.SIzdqECOQUGspzVy6fT8s5mkQXltK-0zWXVr-4b-3wHNRBtSDlUlt5z2caKBYvtC.ZpQAW2Fa4-iBkg_bWG3v-fevJn0
+2016-11-20 18:29:52,179
+      [30] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:8e7e6723-2097-4c2e-85e0-660e6736c495
+2016-11-20 18:29:52,500
+      [30] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"41","details":{"subtotal":"40","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=46761","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=46761"}}
+2016-11-20 18:29:53,559
+      [30] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:29:53,559
+      [30] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"36ff9e7e3898c"}
+2016-11-20 18:29:53,559
+      [30] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:29:53,589
+      [30] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 36ff9e7e3898c
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:30:09,441
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:30:09,443
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:30:09,443
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:30:09,443
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:96125da3-76ce-41de-9eed-d1620a8882c2
+2016-11-20 18:30:09,772
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:30:10,944
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:30:10,945
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T13:00:10Zd0gRSM5nOMLLHy1gpKCmWXeJ9sh7fuXs4DF9Z0hRvHU","access_token":"A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2016-11-20 18:30:10,952
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:30:10,952
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:30:10,952
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG
+2016-11-20 18:30:10,953
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:3380721a-ff52-4b6d-b1f5-5728e36142c9
+2016-11-20 18:30:11,290
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"41","details":{"subtotal":"40","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=82349","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=82349"}}
+2016-11-20 18:30:12,385
+      [14] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:30:12,386
+      [14] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"e37090f2d6cd"}
+2016-11-20 18:30:12,386
+      [14] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:30:12,415
+      [14] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: e37090f2d6cd
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:30:23,386
+      [26] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:30:23,387
+      [26] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:30:23,387
+      [26] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:30:23,387
+      [26] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:4f78cc8a-6f47-4c98-9592-24db60858e2e
+2016-11-20 18:30:23,702
+      [26] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:30:24,703
+      [26] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:30:24,703
+      [26] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T13:00:10Zd0gRSM5nOMLLHy1gpKCmWXeJ9sh7fuXs4DF9Z0hRvHU","access_token":"A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32386}
+2016-11-20 18:30:27,469
+      [26] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:30:27,475
+      [26] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:30:27,475
+      [26] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG
+2016-11-20 18:30:27,476
+      [26] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:dc613fef-c5e1-4ae2-bf3f-a6ff5eb5cf10
+2016-11-20 18:30:27,807
+      [26] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"41","details":{"subtotal":"40","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=55041","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=55041"}}
+2016-11-20 18:30:28,893
+      [26] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:30:28,894
+      [26] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"94a57c2889832"}
+2016-11-20 18:30:28,894
+      [26] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:30:28,928
+      [26] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 94a57c2889832
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:30:45,466
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:30:45,467
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:30:45,467
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:30:45,467
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:94901eea-dd27-44fb-954c-be440e793857
+2016-11-20 18:30:45,795
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:30:46,852
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:30:46,852
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T13:00:10Zd0gRSM5nOMLLHy1gpKCmWXeJ9sh7fuXs4DF9Z0hRvHU","access_token":"A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32364}
+2016-11-20 18:32:25,369
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:32:25,372
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:32:25,373
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG
+2016-11-20 18:32:25,374
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:2f4ece08-c140-440f-bd3b-5931573d34d1
+2016-11-20 18:32:25,794
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"41","details":{"subtotal":"40","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=63894","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=63894"}}
+2016-11-20 18:32:27,575
+      [10] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:32:27,576
+      [10] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"e4c4d6bf4245d"}
+2016-11-20 18:32:27,576
+      [10] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:32:27,577
+      [10] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: e4c4d6bf4245d
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:33:37,954
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:33:38,097
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:33:38,098
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:33:38,098
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:50131e3e-ed7b-41d8-b5c7-c585d071ffb9
+2016-11-20 18:33:38,432
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:33:39,874
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:33:39,875
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T13:00:10Zd0gRSM5nOMLLHy1gpKCmWXeJ9sh7fuXs4DF9Z0hRvHU","access_token":"A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32191}
+2016-11-20 18:33:45,258
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:33:45,259
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:33:45,259
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG
+2016-11-20 18:33:45,260
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:3b787058-a257-4b54-9264-160e58ced868
+2016-11-20 18:33:45,579
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"41","details":{"subtotal":"40","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=2561","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=2561"}}
+2016-11-20 18:33:46,651
+      [10] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:33:46,651
+      [10] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"6b7067524cfff"}
+2016-11-20 18:33:46,651
+      [10] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:33:46,688
+      [10] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 6b7067524cfff
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:34:02,157
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:34:02,157
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:34:02,157
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:34:02,158
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:b7a25232-fe5a-4ec5-9f80-7ee9368251f3
+2016-11-20 18:34:02,484
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:34:03,517
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:34:03,518
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T13:00:10Zd0gRSM5nOMLLHy1gpKCmWXeJ9sh7fuXs4DF9Z0hRvHU","access_token":"A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32167}
+2016-11-20 18:35:48,644
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:35:48,645
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:35:48,645
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG
+2016-11-20 18:35:48,645
+      [6] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:8c609dc9-b73d-4ed4-b340-4e19998fa10b
+2016-11-20 18:35:48,967
+      [6] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"41","details":{"subtotal":"40","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=18911","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=18911"}}
+2016-11-20 18:35:50,022
+      [6] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:35:50,022
+      [6] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"2a53f804ad386"}
+2016-11-20 18:35:50,022
+      [6] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:35:50,047
+      [6] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 2a53f804ad386
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:36:21,547
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:36:21,547
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:36:21,547
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:36:21,548
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:528c9d05-4462-484f-bd53-7cfea79d7416
+2016-11-20 18:36:21,857
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:36:22,833
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:36:22,833
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T13:00:10Zd0gRSM5nOMLLHy1gpKCmWXeJ9sh7fuXs4DF9Z0hRvHU","access_token":"A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32028}
+2016-11-20 18:36:31,110
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:36:31,111
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:36:31,112
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG
+2016-11-20 18:36:31,112
+      [10] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:8c5ddfb1-cbad-4f05-a4d1-f2c38bb91883
+2016-11-20 18:36:31,448
+      [10] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"41","details":{"subtotal":"40","shipping":"1","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD","url":"8"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=57358","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=57358"}}
+2016-11-20 18:36:35,543
+      [10] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-11-20 18:36:35,544
+      [10] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"7234dab8384c8"}
+2016-11-20 18:36:35,544
+      [10] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-11-20 18:36:35,545
+      [10] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 7234dab8384c8
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-11-20 18:39:19,695
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-11-20 18:39:19,844
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:39:19,845
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-11-20 18:39:19,845
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:d7588721-359e-4ae5-981e-70b024e079e2
+2016-11-20 18:39:20,258
+      [12] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-11-20 18:39:21,708
+      [12] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:39:21,709
+      [12] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-11-20T13:00:10Zd0gRSM5nOMLLHy1gpKCmWXeJ9sh7fuXs4DF9Z0hRvHU","access_token":"A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31849}
+2016-11-20 18:39:27,727
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-11-20 18:39:27,728
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-11-20 18:39:27,728
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.iTvjo9lSWqkZrdHxAMkoVscCdewG9Lcdq5bfoUWzy8hGKETyUNdUDrx906oWvPtw.qszreTMybMLyaBy1IkNwraN4NcG
+2016-11-20 18:39:27,728
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:d49c4424-7a69-4325-b4e7-9140155127f1
+2016-11-20 18:39:28,068
+      [12] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"41","details":{"subtotal":"40","shipping":"0","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business Doc","quantity":"1","price":"40","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=67076","cancel_url":"http://localhost:49209/Paypal/PaymentWithPayPal?guid=67076"}}
+2016-11-20 18:39:30,099
+      [12] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-11-20 18:39:30,099
+      [12] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-7CB347920U1692407LAY2BCI","intent":"sale","state":"created","payer":{"payment_method":"paypal","use_vendor_currency_conversion":false},"transactions":[{"amount":{"total":"41.00","currency":"USD","details":{"subtotal":"40.00","tax":"1.00","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Business Doc","sku":"sku","price":"40.00","currency":"USD","quantity":1}]},"related_resources":[]}],"create_time":"2016-11-20T13:09:28Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-7CB347920U1692407LAY2BCI","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-6EK68293G4089173L","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-7CB347920U1692407LAY2BCI/execute","rel":"execute","method":"POST"}]}
+2016-11-20 18:39:30,175
+      [12] ERROR PayPal.Api.JsonFormatter [(null)] Error while deserializing JSON: Could not find member 'use_vendor_currency_conversion' on object of type 'Payer'. Path 'payer.use_vendor_currency_conversion', line 1, position 139.
+2016-12-06 21:06:41,335
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-06 21:06:41,450
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:06:41,451
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-06 21:06:41,451
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:19edeef3-4e66-4f1b-85ec-e06a61151f15
+2016-12-06 21:06:41,860
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-06 21:06:43,575
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-06 21:06:43,576
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-06T15:36:41Z6fsXCv3Wu0_JdT6JVshdvN3HGzjtjbjqg7uEHKMrU5Y","access_token":"A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2016-12-06 21:07:17,444
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-06 21:07:17,445
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:07:17,445
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-06 21:07:17,446
+      [7] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:ad3c3b86-affe-447a-9c1e-7989b84f5e9d
+2016-12-06 21:07:17,765
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-06 21:07:18,784
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-06 21:07:18,785
+      [7] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-06T15:36:41Z6fsXCv3Wu0_JdT6JVshdvN3HGzjtjbjqg7uEHKMrU5Y","access_token":"A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32364}
+2016-12-06 21:08:58,543
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-06 21:08:58,560
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:08:58,561
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-06 21:08:58,561
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:2f6db96e-5825-454a-bfbb-5222b928dd95
+2016-12-06 21:08:58,883
+      [12] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-06 21:09:00,220
+      [12] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-06 21:09:00,221
+      [12] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-06T15:36:41Z6fsXCv3Wu0_JdT6JVshdvN3HGzjtjbjqg7uEHKMrU5Y","access_token":"A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32263}
+2016-12-06 21:09:51,403
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-06 21:09:51,404
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:09:51,404
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y
+2016-12-06 21:09:51,405
+      [12] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:b7ac3b37-0d81-4fd6-8150-4c7d1d6d592c
+2016-12-06 21:09:51,710
+      [12] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"1000","shipping":"0","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"1000","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=72148","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=72148"}}
+2016-12-06 21:09:52,828
+      [12] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-06 21:09:52,828
+      [12] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"b6cea710dd671"}
+2016-12-06 21:09:52,829
+      [12] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-06 21:09:52,872
+      [12] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: b6cea710dd671
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-12-06 21:12:23,904
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-06 21:12:23,921
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:12:23,921
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-06 21:12:23,922
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:4bd6c1c1-e7b5-49bc-b4a2-738a18c91e74
+2016-12-06 21:12:24,336
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-06 21:12:25,663
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-06 21:12:25,664
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-06T15:36:41Z6fsXCv3Wu0_JdT6JVshdvN3HGzjtjbjqg7uEHKMrU5Y","access_token":"A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32058}
+2016-12-06 21:12:38,812
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-06 21:12:38,813
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:12:38,813
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y
+2016-12-06 21:12:38,813
+      [17] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:7ef71d7d-bf39-419f-9dc9-f3528c63873f
+2016-12-06 21:12:39,113
+      [17] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"1000","shipping":"0","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"1000","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=21075","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=21075"}}
+2016-12-06 21:12:40,106
+      [17] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-06 21:12:40,106
+      [17] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"7fa174174949a"}
+2016-12-06 21:12:40,106
+      [17] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-06 21:12:40,148
+      [17] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 7fa174174949a
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-12-06 21:13:01,652
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-06 21:13:01,652
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:13:01,653
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-06 21:13:01,653
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:f70c0a78-fb1c-4c49-a7e5-e9245a2a90ef
+2016-12-06 21:13:01,946
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-06 21:13:02,886
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-06 21:13:02,886
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-06T15:36:41Z6fsXCv3Wu0_JdT6JVshdvN3HGzjtjbjqg7uEHKMrU5Y","access_token":"A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32020}
+2016-12-06 21:13:04,173
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-06 21:13:04,174
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:13:04,174
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y
+2016-12-06 21:13:04,174
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:d4e5a891-aafc-4021-b56d-b4d9abbd1d16
+2016-12-06 21:13:04,474
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"1000","shipping":"0","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"1000","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=56699","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=56699"}}
+2016-12-06 21:13:05,517
+      [22] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-06 21:13:05,518
+      [22] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"db9c353badaa8"}
+2016-12-06 21:13:05,518
+      [22] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-06 21:13:05,557
+      [22] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: db9c353badaa8
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-12-06 21:15:47,646
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-06 21:15:47,647
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:15:47,647
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-06 21:15:47,649
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:1023c159-d6aa-4438-a6b8-dc6e2ea124dd
+2016-12-06 21:15:47,945
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-06 21:15:48,893
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-06 21:15:48,893
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-06T15:36:41Z6fsXCv3Wu0_JdT6JVshdvN3HGzjtjbjqg7uEHKMrU5Y","access_token":"A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31854}
+2016-12-06 21:15:49,726
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-06 21:15:49,726
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:15:49,726
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y
+2016-12-06 21:15:49,727
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:805e821b-2344-494e-8b4b-ac89bdce495e
+2016-12-06 21:15:50,036
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"1000","shipping":"0","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"1000","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=69157","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=69157"}}
+2016-12-06 21:15:51,049
+      [5] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-06 21:15:51,049
+      [5] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"ebf8e35b3de0f"}
+2016-12-06 21:15:51,049
+      [5] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-06 21:15:51,076
+      [5] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: ebf8e35b3de0f
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-12-06 21:19:45,520
+      [27] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-06 21:19:45,537
+      [27] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:19:45,538
+      [27] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-06 21:19:45,538
+      [27] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:a59b058a-5773-42aa-90b0-946ee073e467
+2016-12-06 21:19:45,932
+      [27] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-06 21:19:47,257
+      [27] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-06 21:19:47,258
+      [27] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-06T15:36:41Z6fsXCv3Wu0_JdT6JVshdvN3HGzjtjbjqg7uEHKMrU5Y","access_token":"A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31616}
+2016-12-06 21:19:47,430
+      [27] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-06 21:19:47,430
+      [27] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:19:47,431
+      [27] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y
+2016-12-06 21:19:47,431
+      [27] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:15309559-c894-45fe-ab45-a120d4b22dbf
+2016-12-06 21:19:47,750
+      [27] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"1000","shipping":"0","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"999","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=5010","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=5010"}}
+2016-12-06 21:19:48,803
+      [27] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-06 21:19:48,803
+      [27] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"},{"field":"transactions[0]","issue":"Item amount must add up to specified amount subtotal (or total if amount details not specified)"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"9161060bf0df2"}
+2016-12-06 21:19:48,804
+      [27] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-06 21:19:48,846
+      [27] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 9161060bf0df2
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+   Details:  transactions[0] -> Item amount must add up to specified amount subtotal (or total if amount details not specified)
+
+2016-12-06 21:21:16,913
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-06 21:21:16,914
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:21:16,915
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-06 21:21:16,915
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:ddc7270e-0d1f-4af7-b520-a389dbb770a5
+2016-12-06 21:21:17,233
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-06 21:21:18,239
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-06 21:21:18,240
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-06T15:36:41Z6fsXCv3Wu0_JdT6JVshdvN3HGzjtjbjqg7uEHKMrU5Y","access_token":"A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31525}
+2016-12-06 21:21:21,223
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-06 21:21:21,224
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:21:21,224
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y
+2016-12-06 21:21:21,225
+      [13] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:75449a74-4132-4b7d-a05a-99c3cb5bcf72
+2016-12-06 21:21:21,537
+      [13] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"1000","shipping":"0","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"999","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=63757","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=63757"}}
+2016-12-06 21:21:22,567
+      [13] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-06 21:21:22,567
+      [13] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"},{"field":"transactions[0]","issue":"Item amount must add up to specified amount subtotal (or total if amount details not specified)"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"8ddfbb06bc04d"}
+2016-12-06 21:21:22,568
+      [13] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-06 21:21:22,597
+      [13] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 8ddfbb06bc04d
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+   Details:  transactions[0] -> Item amount must add up to specified amount subtotal (or total if amount details not specified)
+
+2016-12-06 21:22:08,501
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-06 21:22:08,502
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:22:08,502
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-06 21:22:08,503
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:d4446359-9bee-401e-8f51-700753d513b2
+2016-12-06 21:22:08,806
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-06 21:22:09,771
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-06 21:22:09,772
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-06T15:36:41Z6fsXCv3Wu0_JdT6JVshdvN3HGzjtjbjqg7uEHKMrU5Y","access_token":"A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31473}
+2016-12-06 21:22:40,473
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-06 21:22:40,474
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:22:40,474
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y
+2016-12-06 21:22:40,475
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:4f124724-f64e-4af7-b973-bb5f8b696272
+2016-12-06 21:22:40,791
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"1000","shipping":"0","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"999","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=26482","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=26482"}}
+2016-12-06 21:22:41,839
+      [28] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-06 21:22:41,839
+      [28] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"},{"field":"transactions[0]","issue":"Item amount must add up to specified amount subtotal (or total if amount details not specified)"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"27d13961be61"}
+2016-12-06 21:22:41,839
+      [28] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-06 21:22:41,869
+      [28] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 27d13961be61
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+   Details:  transactions[0] -> Item amount must add up to specified amount subtotal (or total if amount details not specified)
+
+2016-12-06 21:25:31,001
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-06 21:25:31,001
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:25:31,002
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-06 21:25:31,002
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:9e924a46-fef3-4152-9578-623fd711511b
+2016-12-06 21:25:31,379
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-06 21:25:32,336
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-06 21:25:32,337
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-06T15:36:41Z6fsXCv3Wu0_JdT6JVshdvN3HGzjtjbjqg7uEHKMrU5Y","access_token":"A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31271}
+2016-12-06 21:25:47,382
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-06 21:25:47,382
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:25:47,383
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y
+2016-12-06 21:25:47,383
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:cc911bdd-9c98-4386-a6d6-e1b24ab92738
+2016-12-06 21:25:47,680
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"1000","shipping":"0","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"999","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=89740","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=89740"}}
+2016-12-06 21:25:48,675
+      [5] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-06 21:25:48,676
+      [5] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0]","issue":"Item amount must add up to specified amount subtotal (or total if amount details not specified)"},{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"e3bedb28d9703"}
+2016-12-06 21:25:48,676
+      [5] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-06 21:25:48,706
+      [5] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: e3bedb28d9703
+   Details:  transactions[0] -> Item amount must add up to specified amount subtotal (or total if amount details not specified)
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-12-06 21:27:32,882
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-06 21:27:32,883
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-06 21:27:32,883
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.w3xEaXWifhUmiWiTLLY5cKtVgFPmcSKykNyt0fH-G6d-BwXzluSF0UvE7whFpRRk.cGtucVS3AZIBFZpZPyu0M7sO16y
+2016-12-06 21:27:32,883
+      [5] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:cc911bdd-9c98-4386-a6d6-e1b24ab92738
+2016-12-06 21:27:33,177
+      [5] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"1000","shipping":"0","tax":"1"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"999","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=89740","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=89740"}}
+2016-12-06 21:27:34,165
+      [5] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-06 21:27:34,166
+      [5] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0]","issue":"Item amount must add up to specified amount subtotal (or total if amount details not specified)"},{"field":"transactions[0].amount","issue":"Transaction amount details (subtotal, tax, shipping) must add up to specified amount total"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"92c20cc55c882"}
+2016-12-06 21:27:34,167
+      [5] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-06 21:27:34,196
+      [5] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 92c20cc55c882
+   Details:  transactions[0] -> Item amount must add up to specified amount subtotal (or total if amount details not specified)
+   Details:  transactions[0].amount -> Transaction amount details (subtotal, tax, shipping) must add up to specified amount total
+
+2016-12-14 23:09:21,879
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-14 23:09:22,007
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-14 23:09:22,007
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-14 23:09:22,007
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:024e5ef0-35fc-475f-b0df-8974144b422c
+2016-12-14 23:09:22,505
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-14 23:09:24,449
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-14 23:09:24,449
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-14T17:39:22ZXumlCJaualNygwM2Qr9fpwmaqJMUNjYN9Nl1reJ1amU","access_token":"A101.nLg3Q1GA2H44lStN8MXgE9hcJeJzGeyxSmC9jRHDEYtLt6_By9muuVit-LWOdRMH.2c_-T7SbX-y02zOcrjewrg_NzrO","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2016-12-14 23:10:33,525
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-14 23:10:33,525
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-14 23:10:33,525
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.nLg3Q1GA2H44lStN8MXgE9hcJeJzGeyxSmC9jRHDEYtLt6_By9muuVit-LWOdRMH.2c_-T7SbX-y02zOcrjewrg_NzrO
+2016-12-14 23:10:33,526
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:f1611812-88a6-4604-82ad-de9368a7e043
+2016-12-14 23:10:33,886
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"980","shipping":"0","tax":"20"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"979","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=84300","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=84300"}}
+2016-12-14 23:10:35,079
+      [22] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-14 23:10:35,079
+      [22] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0]","issue":"Item amount must add up to specified amount subtotal (or total if amount details not specified)"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"b7c5964b98a95"}
+2016-12-14 23:10:35,080
+      [22] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-14 23:10:35,095
+      [22] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: b7c5964b98a95
+   Details:  transactions[0] -> Item amount must add up to specified amount subtotal (or total if amount details not specified)
+
+2016-12-14 23:12:14,549
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-14 23:12:14,567
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-14 23:12:14,567
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-14 23:12:14,568
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:bf778ac0-0f78-4b6f-962e-8073daf9a5dd
+2016-12-14 23:12:14,936
+      [39] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-14 23:12:16,500
+      [39] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-14 23:12:16,501
+      [39] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-14T17:39:22ZXumlCJaualNygwM2Qr9fpwmaqJMUNjYN9Nl1reJ1amU","access_token":"A101.nLg3Q1GA2H44lStN8MXgE9hcJeJzGeyxSmC9jRHDEYtLt6_By9muuVit-LWOdRMH.2c_-T7SbX-y02zOcrjewrg_NzrO","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32228}
+2016-12-14 23:12:17,097
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-14 23:12:17,098
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-14 23:12:17,098
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.nLg3Q1GA2H44lStN8MXgE9hcJeJzGeyxSmC9jRHDEYtLt6_By9muuVit-LWOdRMH.2c_-T7SbX-y02zOcrjewrg_NzrO
+2016-12-14 23:12:17,099
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:8e77d813-67fe-44b2-9115-04933012b67b
+2016-12-14 23:12:17,452
+      [39] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"980","shipping":"0","tax":"20"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"979","currency":"USD"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=65401","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=65401"}}
+2016-12-14 23:12:18,717
+      [39] ERROR PayPal.Api.HttpConnection [(null)] Error response:
+2016-12-14 23:12:18,718
+      [39] ERROR PayPal.Api.HttpConnection [(null)] {"name":"VALIDATION_ERROR","details":[{"field":"transactions[0]","issue":"Item amount must add up to specified amount subtotal (or total if amount details not specified)"}],"message":"Invalid request - see details","information_link":"https://developer.paypal.com/docs/api/#VALIDATION_ERROR","debug_id":"4d32c16e2de8e"}
+2016-12-14 23:12:18,718
+      [39] ERROR PayPal.Api.HttpConnection [(null)] The remote server returned an error: (400) Bad Request.
+2016-12-14 23:12:18,762
+      [39] ERROR PayPal.PayPalException [(null)] Payments Exception: 
+   Error:    VALIDATION_ERROR
+   Message:  Invalid request - see details
+   URI:      https://developer.paypal.com/docs/api/#VALIDATION_ERROR
+   Debug ID: 4d32c16e2de8e
+   Details:  transactions[0] -> Item amount must add up to specified amount subtotal (or total if amount details not specified)
+
+2016-12-14 23:20:04,315
+      [56] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-14 23:20:04,331
+      [56] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-14 23:20:04,331
+      [56] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-14 23:20:04,331
+      [56] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:b63d82c6-2ae8-403a-9b47-5a616b2dfc72
+2016-12-14 23:20:04,795
+      [56] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-14 23:20:06,309
+      [56] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-14 23:20:06,310
+      [56] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-14T17:39:22ZXumlCJaualNygwM2Qr9fpwmaqJMUNjYN9Nl1reJ1amU","access_token":"A101.nLg3Q1GA2H44lStN8MXgE9hcJeJzGeyxSmC9jRHDEYtLt6_By9muuVit-LWOdRMH.2c_-T7SbX-y02zOcrjewrg_NzrO","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31759}
+2016-12-14 23:20:06,457
+      [56] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-14 23:20:06,458
+      [56] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-14 23:20:06,458
+      [56] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.nLg3Q1GA2H44lStN8MXgE9hcJeJzGeyxSmC9jRHDEYtLt6_By9muuVit-LWOdRMH.2c_-T7SbX-y02zOcrjewrg_NzrO
+2016-12-14 23:20:06,458
+      [56] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:12007051-030b-43af-bbbc-f67d07f5d08d
+2016-12-14 23:20:06,814
+      [56] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1000","details":{"subtotal":"980","shipping":"0","tax":"20"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Ecommerce Business Law","quantity":"1","price":"980","currency":"USD","tax":"20","url":"40"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=85815","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=85815"}}
+2016-12-14 23:20:08,248
+      [56] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-14 23:20:08,249
+      [56] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-8BP89423CM872733GLBIYMTI","intent":"sale","state":"created","payer":{"payment_method":"paypal","use_vendor_currency_conversion":false},"transactions":[{"amount":{"total":"1000.00","currency":"USD","details":{"subtotal":"980.00","tax":"20.00","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Ecommerce Business Law","sku":"sku","price":"980.00","currency":"USD","tax":"20.00","quantity":1,"url":"40"}]},"related_resources":[]}],"create_time":"2016-12-14T17:50:05Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-8BP89423CM872733GLBIYMTI","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-88E76298NY155242Y","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-8BP89423CM872733GLBIYMTI/execute","rel":"execute","method":"POST"}]}
+2016-12-14 23:20:08,393
+      [56] ERROR PayPal.Api.JsonFormatter [(null)] Error while deserializing JSON: Could not find member 'use_vendor_currency_conversion' on object of type 'Payer'. Path 'payer.use_vendor_currency_conversion', line 1, position 139.
+2016-12-14 23:26:03,173
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2016-12-14 23:26:03,190
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-14 23:26:03,190
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2016-12-14 23:26:03,191
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:edb8ebce-c458-4ed2-9849-e0e42eb019e9
+2016-12-14 23:26:03,651
+      [39] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2016-12-14 23:26:05,137
+      [39] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-14 23:26:05,138
+      [39] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2016-12-14T17:39:22ZXumlCJaualNygwM2Qr9fpwmaqJMUNjYN9Nl1reJ1amU","access_token":"A101.nLg3Q1GA2H44lStN8MXgE9hcJeJzGeyxSmC9jRHDEYtLt6_By9muuVit-LWOdRMH.2c_-T7SbX-y02zOcrjewrg_NzrO","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31400}
+2016-12-14 23:26:05,357
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2016-12-14 23:26:05,358
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2016-12-14 23:26:05,358
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.nLg3Q1GA2H44lStN8MXgE9hcJeJzGeyxSmC9jRHDEYtLt6_By9muuVit-LWOdRMH.2c_-T7SbX-y02zOcrjewrg_NzrO
+2016-12-14 23:26:05,359
+      [39] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:1e365d82-782e-4771-b90e-eedaa37fa94e
+2016-12-14 23:26:05,712
+      [39] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"4000","details":{"subtotal":"3920","shipping":"0","tax":"80"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business document For Business","quantity":"1","price":"1960","currency":"USD","tax":"40","url":"39"},{"sku":"sku","name":"Ecommerce Document","quantity":"1","price":"1960","currency":"USD","tax":"40","url":"41"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=30092","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=30092"}}
+2016-12-14 23:26:07,109
+      [39] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2016-12-14 23:26:07,110
+      [39] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-4H528698NC5412147LBIYPNA","intent":"sale","state":"created","payer":{"payment_method":"paypal","use_vendor_currency_conversion":false},"transactions":[{"amount":{"total":"4000.00","currency":"USD","details":{"subtotal":"3920.00","tax":"80.00","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Business document For Business","sku":"sku","price":"1960.00","currency":"USD","tax":"40.00","quantity":1,"url":"39"},{"name":"Ecommerce Document","sku":"sku","price":"1960.00","currency":"USD","tax":"40.00","quantity":1,"url":"41"}]},"related_resources":[]}],"create_time":"2016-12-14T17:56:04Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4H528698NC5412147LBIYPNA","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-2TR758737V8096614","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4H528698NC5412147LBIYPNA/execute","rel":"execute","method":"POST"}]}
+2016-12-14 23:26:07,154
+      [39] ERROR PayPal.Api.JsonFormatter [(null)] Error while deserializing JSON: Could not find member 'use_vendor_currency_conversion' on object of type 'Payer'. Path 'payer.use_vendor_currency_conversion', line 1, position 139.
+2017-02-12 09:15:19,552
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-02-12 09:15:19,601
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2017-02-12 09:15:19,601
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-02-12 09:15:19,601
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:c62f8eda-afac-4d15-823f-c7e4b9f736af
+2017-02-12 09:15:20,017
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-02-12 09:15:22,067
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-02-12 09:15:22,068
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-02-12T03:45:15ZsWYLr0sr5hiiyalS5wHwjH3n-ZlsLq8aAgw4oUJ0asM","access_token":"A101.xv0VgHEmx4dSgVX7Cj6uLpGSTqTskREKPb5m4Nv3M7UnRbAU2nlMx5rQef77ykvU.gTpQgqbrq2Vto0kFrf4gxQZgRKS","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2017-02-12 09:15:22,935
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-02-12 09:15:22,935
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2017-02-12 09:15:22,936
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.xv0VgHEmx4dSgVX7Cj6uLpGSTqTskREKPb5m4Nv3M7UnRbAU2nlMx5rQef77ykvU.gTpQgqbrq2Vto0kFrf4gxQZgRKS
+2017-02-12 09:15:22,936
+      [28] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:d1990200-0579-4186-a015-494d1d98bc0c
+2017-02-12 09:15:23,223
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"123","details":{"subtotal":"120.54","shipping":"0","tax":"2.46"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Price Question","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"43"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=90269","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=90269"}}
+2017-02-12 09:15:24,689
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-02-12 09:15:24,705
+      [28] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-5TV20647CB229272KLCP5UTQ","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"123.00","currency":"USD","details":{"subtotal":"120.54","tax":"2.46","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Price Question","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"43"}]},"related_resources":[]}],"create_time":"2017-02-12T03:45:17Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-5TV20647CB229272KLCP5UTQ","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-2B0387876K850221L","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-5TV20647CB229272KLCP5UTQ/execute","rel":"execute","method":"POST"}]}
+2017-02-12 09:16:12,469
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-02-12 09:16:12,469
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2017-02-12 09:16:12,469
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-02-12 09:16:12,469
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:786fb3d9-bdaa-4c42-938a-5e12af8e2dbe
+2017-02-12 09:16:12,776
+      [16] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-02-12 09:16:13,695
+      [16] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-02-12 09:16:13,696
+      [16] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-02-12T03:45:15ZsWYLr0sr5hiiyalS5wHwjH3n-ZlsLq8aAgw4oUJ0asM","access_token":"A101.xv0VgHEmx4dSgVX7Cj6uLpGSTqTskREKPb5m4Nv3M7UnRbAU2nlMx5rQef77ykvU.gTpQgqbrq2Vto0kFrf4gxQZgRKS","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32348}
+2017-02-12 09:16:13,766
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-02-12 09:16:13,767
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.17929;bit=64;os=Microsoft Windows NT 6.1.7601 Service Pack 1)
+2017-02-12 09:16:13,767
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A101.xv0VgHEmx4dSgVX7Cj6uLpGSTqTskREKPb5m4Nv3M7UnRbAU2nlMx5rQef77ykvU.gTpQgqbrq2Vto0kFrf4gxQZgRKS
+2017-02-12 09:16:13,767
+      [16] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:16d5ac40-27b8-47e6-b15c-986083a1f296
+2017-02-12 09:16:14,084
+      [16] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"246","details":{"subtotal":"241.08","shipping":"0","tax":"4.92"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Price Question","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"43"},{"sku":"sku","name":"Price Question","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"43"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=46584","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=46584"}}
+2017-02-12 09:16:15,717
+      [16] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-02-12 09:16:15,717
+      [16] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-5KA90948FA3685844LCP5VAI","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"246.00","currency":"USD","details":{"subtotal":"241.08","tax":"4.92","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Price Question","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"43"},{"name":"Price Question","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"43"}]},"related_resources":[]}],"create_time":"2017-02-12T03:46:08Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-5KA90948FA3685844LCP5VAI","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-2A250060KA486944H","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-5KA90948FA3685844LCP5VAI/execute","rel":"execute","method":"POST"}]}
+2017-04-12 10:02:11,682
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-04-12 10:02:11,807
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-12 10:02:11,807
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-04-12 10:02:11,807
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:bb869bc9-74bb-44ee-af7b-032e500ecc80
+2017-04-12 10:02:12,417
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-04-12 10:02:14,511
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-12 10:02:14,511
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-04-12T04:30:07Z_jE5FsUDIAG6P7GWHrnixALulNj1rxMZ5C0GCh4-u8s","access_token":"A21AAGSaM7FnTpzih76bzGd7Sb2actHWe-iPB8eiIcSsnJS0L8Mh1ZO1jxxyzN2w3TxSCpmMoPCtOH67MjLo2EJzR2YikukfA","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2017-04-12 10:02:15,558
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-04-12 10:02:15,558
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-12 10:02:15,558
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAGSaM7FnTpzih76bzGd7Sb2actHWe-iPB8eiIcSsnJS0L8Mh1ZO1jxxyzN2w3TxSCpmMoPCtOH67MjLo2EJzR2YikukfA
+2017-04-12 10:02:15,558
+      [22] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:a91abd12-1d73-458a-a4e5-edfbaf9aa30f
+2017-04-12 10:02:15,901
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"2000","details":{"subtotal":"1960","shipping":"0","tax":"40"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Business document For Business","quantity":"1","price":"1960","currency":"USD","tax":"40","url":"39"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=4408","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=4408"}}
+2017-04-12 10:02:17,323
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-12 10:02:17,323
+      [22] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-2SS730815R926592FLDW22UQ","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"2000.00","currency":"USD","details":{"subtotal":"1960.00","tax":"40.00","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Business document For Business","sku":"sku","price":"1960.00","currency":"USD","tax":"40.00","quantity":1,"url":"39"}]},"related_resources":[]}],"create_time":"2017-04-12T04:30:10Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2SS730815R926592FLDW22UQ","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-7GD94308S1957325T","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2SS730815R926592FLDW22UQ/execute","rel":"execute","method":"POST"}]}
+2017-04-16 17:53:00,595
+      [44] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-04-16 17:53:00,650
+      [44] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 17:53:00,650
+      [44] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-04-16 17:53:00,651
+      [44] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:25f56e5a-d461-4943-89c0-633471a8105e
+2017-04-16 17:53:01,208
+      [44] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-04-16 17:53:03,165
+      [44] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 17:53:03,166
+      [44] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-04-16T12:20:53ZbfHcBUgBxH9Hrv6isK2LrT-feald_Obf3zul_J0bF0o","access_token":"A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2017-04-16 17:53:03,671
+      [44] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-04-16 17:53:03,671
+      [44] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 17:53:03,672
+      [44] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg
+2017-04-16 17:53:03,672
+      [44] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:93d3b9a2-bc18-4c7b-aeaa-1594ed9c138c
+2017-04-16 17:53:04,045
+      [44] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"123","details":{"subtotal":"120.54","shipping":"0","tax":"2.46"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Testing For Proview","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"42"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=97287","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=97287"}}
+2017-04-16 17:53:05,557
+      [44] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 17:53:05,558
+      [44] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-2E289127JL6068634LDZWDJY","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"123.00","currency":"USD","details":{"subtotal":"120.54","tax":"2.46","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Testing For Proview","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"42"}]},"related_resources":[]}],"create_time":"2017-04-16T12:20:55Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2E289127JL6068634LDZWDJY","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-34923011JY730790N","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2E289127JL6068634LDZWDJY/execute","rel":"execute","method":"POST"}]}
+2017-04-16 18:05:11,472
+      [23] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-04-16 18:05:11,489
+      [23] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 18:05:11,489
+      [23] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-04-16 18:05:11,489
+      [23] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:15c71716-6aa6-418e-8204-b7056b512e21
+2017-04-16 18:05:12,032
+      [23] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-04-16 18:05:13,607
+      [23] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 18:05:13,608
+      [23] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-04-16T12:20:53ZbfHcBUgBxH9Hrv6isK2LrT-feald_Obf3zul_J0bF0o","access_token":"A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31669}
+2017-04-16 18:05:13,851
+      [23] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-04-16 18:05:13,851
+      [23] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 18:05:13,851
+      [23] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg
+2017-04-16 18:05:13,852
+      [23] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:4f0ee91b-70b6-4f50-b422-1361554692cd
+2017-04-16 18:05:14,207
+      [23] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"123","details":{"subtotal":"120.54","shipping":"0","tax":"2.46"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Testing For Proview","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"42"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=36172","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=36172"}}
+2017-04-16 18:05:15,624
+      [23] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 18:05:15,625
+      [23] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-8XL67647BE3295846LDZWJAQ","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"123.00","currency":"USD","details":{"subtotal":"120.54","tax":"2.46","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Testing For Proview","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"42"}]},"related_resources":[]}],"create_time":"2017-04-16T12:33:05Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-8XL67647BE3295846LDZWJAQ","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-4G9353353C306111T","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-8XL67647BE3295846LDZWJAQ/execute","rel":"execute","method":"POST"}]}
+2017-04-16 18:15:53,852
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-04-16 18:15:53,853
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 18:15:53,853
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-04-16 18:15:53,854
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:949c1e2c-7f51-4fc4-b26a-d6d90bd57ec1
+2017-04-16 18:15:54,390
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-04-16 18:15:55,513
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 18:15:55,514
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-04-16T12:20:53ZbfHcBUgBxH9Hrv6isK2LrT-feald_Obf3zul_J0bF0o","access_token":"A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":31028}
+2017-04-16 18:15:55,903
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-04-16 18:15:55,904
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 18:15:55,904
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg
+2017-04-16 18:15:55,905
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:dc519def-ac1b-4a83-b1c3-b1325b99714d
+2017-04-16 18:15:56,255
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"123","details":{"subtotal":"120.54","shipping":"0","tax":"2.46"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Testing For Proview","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"42"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=46907","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=46907"}}
+2017-04-16 18:15:57,672
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 18:15:57,673
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-4PM839907D6668600LDZWOBA","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"123.00","currency":"USD","details":{"subtotal":"120.54","tax":"2.46","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Testing For Proview","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"42"}]},"related_resources":[]}],"create_time":"2017-04-16T12:43:47Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4PM839907D6668600LDZWOBA","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-69K85464FY3174830","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-4PM839907D6668600LDZWOBA/execute","rel":"execute","method":"POST"}]}
+2017-04-16 18:16:33,947
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-04-16 18:16:33,948
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 18:16:33,948
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-04-16 18:16:33,948
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:2181ffeb-e38e-48c1-ab72-1fec20a1e367
+2017-04-16 18:16:34,324
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-04-16 18:16:35,714
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 18:16:35,715
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-04-16T12:20:53ZbfHcBUgBxH9Hrv6isK2LrT-feald_Obf3zul_J0bF0o","access_token":"A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":30987}
+2017-04-16 18:16:45,263
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-04-16 18:16:45,263
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 18:16:45,263
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg
+2017-04-16 18:16:45,264
+      [45] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:93b384b6-48e4-43de-95ec-86493b2738dd
+2017-04-16 18:16:45,698
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"246","details":{"subtotal":"241.08","shipping":"0","tax":"4.92"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Testing For Proview","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"42"},{"sku":"sku","name":"Testing For Proview","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"42"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=53398","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=53398"}}
+2017-04-16 18:16:47,125
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 18:16:47,126
+      [45] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-2MJ722162J187980GLDZWONI","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"246.00","currency":"USD","details":{"subtotal":"241.08","tax":"4.92","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Testing For Proview","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"42"},{"name":"Testing For Proview","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"42"}]},"related_resources":[]}],"create_time":"2017-04-16T12:44:37Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2MJ722162J187980GLDZWONI","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-7D170707AU646471H","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2MJ722162J187980GLDZWONI/execute","rel":"execute","method":"POST"}]}
+2017-04-16 18:17:53,611
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-04-16 18:17:53,612
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 18:17:53,612
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-04-16 18:17:53,612
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:fe330ffb-ab71-4b10-ab3e-93e720169def
+2017-04-16 18:17:54,010
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-04-16 18:17:55,245
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 18:17:55,246
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-04-16T12:20:53ZbfHcBUgBxH9Hrv6isK2LrT-feald_Obf3zul_J0bF0o","access_token":"A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":30908}
+2017-04-16 18:18:02,272
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-04-16 18:18:02,273
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 18:18:02,273
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg
+2017-04-16 18:18:02,273
+      [20] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:b5e2a45e-d396-4643-9bf7-ceaabcbb47f3
+2017-04-16 18:18:02,616
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"246","details":{"subtotal":"241.08","shipping":"0","tax":"4.92"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Testing For Proview","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"42"},{"sku":"sku","name":"Testing For Proview","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"42"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=54164","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=54164"}}
+2017-04-16 18:18:04,023
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 18:18:04,024
+      [20] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-04842263BC9919237LDZWPAQ","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"246.00","currency":"USD","details":{"subtotal":"241.08","tax":"4.92","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Testing For Proview","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"42"},{"name":"Testing For Proview","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"42"}]},"related_resources":[]}],"create_time":"2017-04-16T12:45:54Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-04842263BC9919237LDZWPAQ","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-2HB17724T0494233B","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-04842263BC9919237LDZWPAQ/execute","rel":"execute","method":"POST"}]}
+2017-04-16 18:19:08,755
+      [19] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-04-16 18:19:08,756
+      [19] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 18:19:08,756
+      [19] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-04-16 18:19:08,756
+      [19] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:84ae583d-16a6-41a3-a4ae-a08f4b6c20e3
+2017-04-16 18:19:09,109
+      [19] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-04-16 18:19:10,225
+      [19] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 18:19:10,225
+      [19] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-04-16T12:20:53ZbfHcBUgBxH9Hrv6isK2LrT-feald_Obf3zul_J0bF0o","access_token":"A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":30833}
+2017-04-16 18:19:12,797
+      [19] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-04-16 18:19:12,798
+      [19] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 6.2.9200.0)
+2017-04-16 18:19:12,798
+      [19] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAFKvBQ5tDpsM0eOimDDzZssy_0c1aBFPD_kOBZt-Z3DkpqVMslQupI2zea3uzm7myKoJxQvwLvAzv8xMy1OjbQ6lP7RBg
+2017-04-16 18:19:12,798
+      [19] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:d4d7a97b-5ca4-4d14-b9aa-370043fc2235
+2017-04-16 18:19:13,252
+      [19] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"1","details":{"subtotal":"0.98","shipping":"0","tax":"0.02"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Price Text","quantity":"1","price":"0.98","currency":"USD","tax":"0.02","url":"44"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=8140","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=8140"}}
+2017-04-16 18:19:14,757
+      [19] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-04-16 18:19:14,757
+      [19] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-2AP20876P3891520LLDZWPSI","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"1.00","currency":"USD","details":{"subtotal":"0.98","tax":"0.02","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Price Text","sku":"sku","price":"0.98","currency":"USD","tax":"0.02","quantity":1,"url":"44"}]},"related_resources":[]}],"create_time":"2017-04-16T12:47:04Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2AP20876P3891520LLDZWPSI","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-459259948D639933D","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-2AP20876P3891520LLDZWPSI/execute","rel":"execute","method":"POST"}]}
+2017-09-30 22:56:21,248
+      [46] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-09-30 22:56:21,382
+      [46] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-09-30 22:56:21,383
+      [46] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-09-30 22:56:21,383
+      [46] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:67508ef3-fa0f-4113-90ce-94dadb0b76bb
+2017-09-30 22:56:21,953
+      [46] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-09-30 22:56:27,381
+      [46] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-09-30 22:56:27,382
+      [46] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-09-30T17:26:09ZRS0aci9I-jvirHvGX9mIUIOl07W_7ssnsBrixKZEFL0","access_token":"A21AAEfBg9omUMpv31UJXSNoG2Klh1WM-735TOTA8_QPlCYoQkALPTsWaZkXm9uGWtrrmpTaPKRjzzKzEzDO-m1MfgeqDLnvg","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2017-09-30 22:56:35,749
+      [46] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-09-30 22:56:35,750
+      [46] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-09-30 22:56:35,750
+      [46] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAEfBg9omUMpv31UJXSNoG2Klh1WM-735TOTA8_QPlCYoQkALPTsWaZkXm9uGWtrrmpTaPKRjzzKzEzDO-m1MfgeqDLnvg
+2017-09-30 22:56:35,751
+      [46] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:242243f6-e5fa-43ef-8081-8bf001cb12bf
+2017-09-30 22:56:36,112
+      [46] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"123","details":{"subtotal":"120.54","shipping":"0","tax":"2.46"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Testing For Proview","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"42"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=91500","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=91500"}}
+2017-09-30 22:56:37,872
+      [46] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-09-30 22:56:37,874
+      [46] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-6SN89962HC887780SLHH5HOY","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"123.00","currency":"USD","details":{"subtotal":"120.54","tax":"2.46","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Testing For Proview","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"42"}]},"related_resources":[]}],"create_time":"2017-09-30T17:26:19Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-6SN89962HC887780SLHH5HOY","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-3AW67064BB0325717","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-6SN89962HC887780SLHH5HOY/execute","rel":"execute","method":"POST"}]}
+2017-10-04 22:39:52,146
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/x-www-form-urlencoded
+2017-10-04 22:39:52,335
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-10-04 22:39:52,336
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Basic QWNuQ2xKNF9PeEV3dndqcG5id0hsOU9VNi1oM2FzaXhpdE5lQkc1aGJXdGQ0ZTh3V0w3SE9XeHBrajRrTk9peElMYkxUTVRBWG9MdUF6bkE6RUVvYjZVQS0zekVOZTRiTEctUlRtWG5VZDdtOFJadjV6b0psbTVXbTVBT2pQSzIxZjRsbVRVOEpyN19YNlMyNGR2Q29XZXJkZnpjWVRlRFg=
+2017-10-04 22:39:52,337
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:007f2b7c-54d3-40bc-a670-536d3895d641
+2017-10-04 22:39:53,402
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] grant_type=client_credentials
+2017-10-04 22:39:57,155
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-10-04 22:39:57,155
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] {"scope":"https://uri.paypal.com/services/subscriptions https://uri.paypal.com/services/paypalhere https://api.paypal.com/v1/payments/.* https://api.paypal.com/v1/vault/credit-card https://api.paypal.com/v1/payments/sale/.*/refund https://uri.paypal.com/services/applications/webhooks openid https://uri.paypal.com/payments/payouts https://api.paypal.com/v1/vault/credit-card/.* https://api.paypal.com/v1/payments/refund","nonce":"2017-10-04T17:09:30Z1OImJqBVP7F2Uvo7dvNjPYyT05D3Vr2FtvfuGWmyLz0","access_token":"A21AAEla-Rmi_z0L5DC6o1xOiuQb2Hc00XRmhhpaK2RiVPVBunlSiMQ3xmbMOdUYagupb26fLV8hF9InsRKvNimWzWNtpgLTQ","token_type":"Bearer","app_id":"APP-80W284485P519543T","expires_in":32400}
+2017-10-04 22:40:27,910
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Content-Type:application/json
+2017-10-04 22:40:27,911
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] User-Agent:PayPalSDK/PayPal-NET-SDK 1.8.0 (lang=DOTNET;v=4.5;clr=4.0.30319.42000;bit=64;os=Microsoft Windows NT 10.0.14393.0)
+2017-10-04 22:40:27,911
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] Authorization:Bearer A21AAEla-Rmi_z0L5DC6o1xOiuQb2Hc00XRmhhpaK2RiVPVBunlSiMQ3xmbMOdUYagupb26fLV8hF9InsRKvNimWzWNtpgLTQ
+2017-10-04 22:40:27,912
+      [14] DEBUG PayPal.Api.PayPalResource [(null)] PayPal-Request-Id:6ae3436d-0435-49fa-b971-0658efe7e51b
+2017-10-04 22:40:28,648
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] {"intent":"sale","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"currency":"USD","total":"123","details":{"subtotal":"120.54","shipping":"0","tax":"2.46"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"sku":"sku","name":"Testing For Proview","quantity":"1","price":"120.54","currency":"USD","tax":"2.46","url":"42"}]}}],"redirect_urls":{"return_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=38538","cancel_url":"http://localhost:49328/Paypal/PaymentWithPayPal?guid=38538"}}
+2017-10-04 22:40:30,885
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] Service response: 
+2017-10-04 22:40:30,886
+      [14] DEBUG PayPal.Api.HttpConnection [(null)] {"id":"PAY-9UN04796A03575110LHKRL2Y","intent":"sale","state":"created","payer":{"payment_method":"paypal"},"transactions":[{"amount":{"total":"123.00","currency":"USD","details":{"subtotal":"120.54","tax":"2.46","shipping":"0.00"}},"description":"Transaction description.","invoice_number":"your invoice number","item_list":{"items":[{"name":"Testing For Proview","sku":"sku","price":"120.54","currency":"USD","tax":"2.46","quantity":1,"url":"42"}]},"related_resources":[]}],"create_time":"2017-10-04T17:10:03Z","links":[{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-9UN04796A03575110LHKRL2Y","rel":"self","method":"GET"},{"href":"https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-7T1828424D301740M","rel":"approval_url","method":"REDIRECT"},{"href":"https://api.sandbox.paypal.com/v1/payments/payment/PAY-9UN04796A03575110LHKRL2Y/execute","rel":"execute","method":"POST"}]}

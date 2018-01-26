@@ -1,0 +1,319 @@
+﻿@model RepidShare.Entities.HomeDocumentViewModel
+
+<p class="quick-t">Quick Access</p>
+<div class="btn-pref btn-group btn-group-justified btn-group-lg" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+        <button type="button" id="category11" class="btn tab-btn font12 btn-default" href="#tab010" data-toggle="tab">Contratos y Documentos</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" id="category12" class="btn tab-btn font12 btn-default" href="#tab020" data-toggle="tab">Compañías &amp; Ong's</button>
+    </div>
+    <div class="btn-group" role="group">
+        <button type="button" id="category13" class="btn tab-btn font12 btn-default" href="#tab030" data-toggle="tab">Guia Legal</button>
+    </div>
+</div>
+<div class="full-box-tab">
+    <div class="tab-content">
+        <div id="qaDocumentDesc"></div>
+        <div class="tab-pane fade in active" id="tab010">
+            <div class="tab-box padd15">
+                
+                    @if (Model != null && Model.objListSubCategory.Count > 0)
+                    {
+                        foreach (var category in Model.objListSubCategory)
+                        {
+
+                           <br/>
+                                <p class="font16" style="font-weight:bold">@Html.Raw(category.SubCatName)</p>
+                                <div class="tabs-ul">
+                                    <ul>
+                                        @foreach (var document in Model.objListDocumentService.Where(d => d.SubCategoryID == category.SubCategoryID))
+                                        {
+                                            <li><a style="cursor:pointer" onclick="GetDocument('@document.DocumentID')">@Html.Raw(document.DocumentTitle.Length > 50 ? document.DocumentTitle.Substring(0, 50) + "..." : document.DocumentTitle)</a></li>
+
+                                        }
+                                    </ul>
+
+                                </div>
+                           
+                        }
+                    }
+               
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab020">
+            <div class="tab-box">
+
+                <h4> <i class="fa fa-file-text" aria-hidden="true"></i> Constitution of Companies and Ong's Self Services</h4>
+                <p class="tab-box-p">  Choose, Structure and determine  yourself,the type of company you need. </p>
+                <p class="tab-box-font-c">
+                    Lorem Ipsum is simply dummy text of the he leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+                <p class="tab-box-font-c">
+                    Lorem Ipsum is simply dummy text of the he leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+                <div class="margin15 "></div>
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="button" class="btn btn-default text-right  btn-account">Go to Documents <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
+                    </div>
+                </div>
+            </div>
+            <div class="margin10"></div>
+            <div class="tab-box">
+                <h4> <i class="fa fa-file-text" aria-hidden="true"></i> Constitution of Companies and Ong's Self Services</h4>
+                <p class="tab-box-p">  Choose, Structure and determine  yourself,the type of company you need. </p>
+                <p class="tab-box-font-c">
+                    Lorem Ipsum is simply dummy text of the he leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                </p>
+
+                <div class="margin15"></div>
+                <div class="row">
+                    <div class="col-md-12 text-right">
+                        <button type="button" class="btn btn-default text-right  btn-account">Go to Documents <i class="fa fa-arrow-right" aria-hidden="true"></i> </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="tab030">
+            <div class="tab-box">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="accord-box">
+                            <div class="headline">Derecho Administrativo</div>
+                            <div class="clearfix margin10"></div>
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default bg0">
+                                    <div class="panel-heading bg0">
+                                        <span class="panel-title bg0">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse01" aria-expanded="false">
+                                                <span class="font12 text-uppercase"> ADMINISTRATIVO</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div id="collapse01" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default bg0">
+                                    <div class="panel-heading bg0">
+                                        <span class="panel-title bg0">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse02" aria-expanded="false">
+                                                <span class="font12 text-uppercase">  PROCEDIMIENTO ADMINISTRATIVO</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div id="collapse02" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default bg0">
+                                    <div class="panel-heading bg0">
+                                        <span class="panel-title bg0">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse03" aria-expanded="false">
+                                                <span class="font12 text-uppercase">   TRAFICO Y SEGURIDAD VIAL</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div id="collapse03" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="accord-box">
+                            <div class="headline">Derecho Administrativo</div>
+                            <div class="clearfix margin10"></div>
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-default bg0">
+                                    <div class="panel-heading bg0">
+                                        <span class="panel-title bg0">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse10" aria-expanded="false">
+                                                <span class="font12 text-uppercase"> ADMINISTRATIVO</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div id="collapse10" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default bg0">
+                                    <div class="panel-heading bg0">
+                                        <span class="panel-title bg0">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse20" aria-expanded="false">
+                                                <span class="font12 text-uppercase">  PROCEDIMIENTO ADMINISTRATIVO</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div id="collapse20" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="panel panel-default bg0">
+                                    <div class="panel-heading bg0">
+                                        <span class="panel-title bg0">
+                                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse30" aria-expanded="false">
+                                                <span class="font12 text-uppercase">   TRAFICO Y SEGURIDAD VIAL</span>
+                                            </a>
+                                        </span>
+                                    </div>
+                                    <div id="collapse30" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <div class="row">
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <img src="/img/icon1.png">
+                                                </div>
+                                                <div class="col-md-3">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $("#category11").addClass('btn-primary');
+    $('#category11').click(function () {
+        $('.loading').css('display', 'block');
+        $("#category13").removeClass('btn-primary');
+        $("#category12").removeClass('btn-primary');     
+        $("#loadingMyActivity").css('display', 'block');
+        $.ajax({
+            url: '@Url.Action("QuickAccess")',
+            type: 'GET',
+            dataType: 'html',
+            success: function (response) {
+                $("#quickAccess").html('');
+                $("#quickAccess").html(response);
+                $("#loadingMyActivity").css('display', 'none');
+                $('.loading').css('display', 'none');
+               
+            },
+            fail: function (response) {
+                alert("Error occoured during processing. Please try later.");
+            }
+        });
+    });
+    $('#category12').click(function () {
+       // beginRequest();
+        $("#qaDocumentDesc").hide();
+      
+        $("#category11").removeClass('btn-primary');
+        $("#category13").removeClass('btn-primary');
+        $("#category12").removeClass('btn-default');
+        $("#category12").addClass('btn-primary');
+        $("#category11").addClass('btn-default');
+        $("#category13").addClass('btn-default');
+
+       // endRequest();
+    });
+
+    $('#category13').click(function () {
+       // beginRequest();
+        $("#qaDocumentDesc").hide();
+       
+        $("#category11").removeClass('btn-primary');
+        $("#category12").removeClass('btn-primary');
+        $("#category13").removeClass('btn-default');
+        $("#category13").addClass('btn-primary');
+        $("#category11").addClass('btn-default');
+        $("#category12").addClass('btn-default');
+       // endRequest();
+      
+    });
+</script>

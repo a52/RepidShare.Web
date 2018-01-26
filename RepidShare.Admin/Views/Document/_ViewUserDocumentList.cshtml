@@ -1,0 +1,110 @@
+﻿@using DocumentResource = RepidShare.Entities.Resource.DocumentResource
+@using CommonResource = RepidShare.Entities.Resource.CommonResource
+@model RepidShare.Entities.ViewDocumentResponseModel
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-overflow">
+                <thead>
+                    <tr>
+                        <th style="width: 5%;">
+                            @CommonResource.lblSrNo
+                        </th>
+                        <th style="width: 14%;">
+                            <div>
+                                <a href="javascript:void(0)" sortby="Name" class="sort">@DocumentResource.lblDocumentTitle</a>
+                            </div>
+                        </th>
+                        @*                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="Description" class="sort">@DocumentResource.lblDescription</a>
+                            </div>
+                        </th>*@
+                        <th style="width: 10%;">
+                            <div>
+                                <a href="javascript:void(0)" sortby="PublishDate" class="sort">Publish Date</a>
+                            </div>
+                        </th>
+                        <th style="width: 9%;">
+                            <div>
+                                <a href="javascript:void(0)" sortby="ExpireDate" class="sort">Expire Date</a>
+                            </div>
+                        </th>
+                        <th style="width: 12%;">
+                            <div>
+                                <a href="javascript:void(0)" sortby="CompletionDate" class="sort">Completion Date</a>
+                            </div>
+                        </th>
+                        <th class="text-center" style="width: 18%;">
+                            <div>
+                                @CommonResource.lblAction
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.lstDocumentResponseModel != null && Model.lstDocumentResponseModel.Count > 0)
+                    {
+                        for (int i = 0; i < Model.lstDocumentResponseModel.Count; i++)
+                        {
+                        <tr valign="middle">
+                            @Html.HiddenFor(m => Model.UserId)
+                            <td>@Model.lstDocumentResponseModel[i].RowNumber
+                            </td>
+                            <td>@Model.lstDocumentResponseModel[i].DocumentTitle
+                            </td>
+
+                            <td><span>@Convert.ToDateTime(Model.lstDocumentResponseModel[i].PublishDate).ToString(RepidShare.Utility.CommonUtils.ShortDateFormat)</span>
+                            </td>
+                            <td><span>@Convert.ToDateTime(Model.lstDocumentResponseModel[i].ExpiryDate).ToString(RepidShare.Utility.CommonUtils.ShortDateFormat)</span>
+                            </td>
+
+                            <td>@if (Model.lstDocumentResponseModel[i].CompletionDate != null)
+                                {
+                                <span>@Convert.ToDateTime(Model.lstDocumentResponseModel[i].CompletionDate).ToString(RepidShare.Utility.CommonUtils.ShortDateFormat)</span>
+                                }
+                                else
+                                {
+                                <span>----</span>
+                                }
+                            </td>
+
+
+                            <td class="btn-action"><a class="icon-view" target="_blank" href="http://papeleslegales.com/DocumentResponse/SaveDocumentResponse?prm=@RepidShare.Utility.CommonUtils.Encrypt("UserId=" + Model.UserId.ToString() + "&DocumentId=" + Model.lstDocumentResponseModel[i].DocumentID.ToString() + "&pagename=myDocument")" title="View Response">View Response</a>
+                            </td>
+                        </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="8">@CommonResource.lblNoRecordFound
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+    </div>
+</div>
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+
+    function GiveResponse(Url) {
+        window.location = Url;
+    }
+</script>

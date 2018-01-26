@@ -1,0 +1,98 @@
+﻿@model RepidShare.Entities.DocumentResponseDetailModel
+@if (Model != null && Model.Questions != null && Model.Questions.Count() > 0)
+{  @Html.HiddenFor(model => model.NoOfAttempt, new { Value = Model.NoOfAttempt, id = "hdnNoOfAttempt" })
+ 
+    <h2 class="gray-heading">Questions</h2>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="response-question-list sm-corner-a">
+                @for (int i = 0; i < Model.Questions.Count; i++)
+                {
+                    @Html.HiddenFor(m => Model.Questions[i].DisplayOrder, new { Value = Model.Questions[i].DisplayOrder })
+                    <div class="response-question response-question-type-single response-question-family-open_ended sm-corner-a spacer-pam ">
+                        <div class="response-question-header clearfix spacer-pbm half-bottom ">
+                            <div class="DocumentResultWrapper clearfix">
+                                <div class="question-conunt">@("Q" + Model.Questions[i].RowNumber): </div>
+                                <div class="response-question-title-text">@Model.Questions[i].QuestionDescription</div>
+                            </div>
+                        </div>
+                        <div response-question-content="" class="response-question-content">
+                            <div class="DocumentResultWrapper clearfix">
+                                <div class="question-conunt">Ans: </div>
+                                <div class="response-question-title-text">
+                                    <div class="response-container essay disableddiv" view-role="responseEssayView">
+                                        <p class="response-text openended-response-text">
+                                            @if (!String.IsNullOrEmpty(Model.Questions[i].QuestionType))
+                                            {
+                                                Model.Index = i;
+                                                @Html.HiddenFor(m => m.Index, new { Value = i })
+                                                if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.SingleLine.ToString())
+                                                {
+                                        
+                                
+                                                @Html.Partial("_SingleLineText", Model) 
+                                      
+                                                }
+                                                else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.MultiLine.ToString())
+                                                {
+                                                @Html.Partial("_MultiLineText", Model)
+                                                }
+                                                else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.Number.ToString())
+                                                {
+                                                @Html.Partial("_NumberText", Model)
+                                                }
+                                                else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.SingleSelect.ToString())
+                                                {
+                                                @Html.Partial("_SingleSelectRadio", Model)
+                                                }
+                                                else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.MultiSelect.ToString())
+                                                {
+                                                @Html.Partial("_MultiSelectCheckbox", Model)
+                                                }
+                                                else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.DateAndTime.ToString())
+                                                {
+                                                @Html.Partial("_DateTimeText", Model)
+                                                }
+                                            }
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        
+                }
+            </div>
+            <div class="pagination-strip clearfix">
+                <div class="show-page-number">
+                </div>
+                <div id="pg_pager" class="text-right pagination-wrp">
+                </div>
+            </div>
+            <!--.pagination-strip-->
+        </div>
+    </div>
+    @Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+}
+<div class="row">
+    <div class="col-sm-12">
+    </div>
+</div>
+<script type="text/javascript">
+    $().ready(function () {
+        // Show Sucess or Error Message on popup by common function showMessagePopup
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+
+        $("a.noofattempt").click(function () {
+
+            var noofattempt = $(this).attr("id");
+            $("#ActionType").val("changeattempt");
+            $("#hdnNoOfAttempt").val(noofattempt);
+            sendToServer();
+        });
+        //        $('.disableddiv').attr('disabled', 'disabled');
+        $('.disableddiv').find('input,  button, select').attr('disabled', 'disabled');
+    });
+</script>

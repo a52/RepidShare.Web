@@ -1,0 +1,503 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Best of breed: highly affordable online documents, forms & templates covering business needs and personal legal needs" />
+    <link href="images/favicon.ico" type="image/png" rel="shortcut icon" />
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap -->
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="loading" style="display:none">Loading&#8230;</div>
+    <div class="top-color"></div>
+    @Html.Partial("_TopNavBar")
+
+    <div class="grey-l"></div>
+    <div class="clearfix margin15"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                @if (Session["EmailId"] == null)
+                {
+                    @Html.Partial("_LoginPartial")
+                    <div class="clearfix margin15"></div>
+                }
+                else
+                {
+                    @*<div class="legaltool">
+                        <h2 class="font14 bold">Legal Tools</h2>
+                    </div>*@
+                    <div class="margin15" style="margin-top:-15px"></div>
+                }
+               
+                <div class="newsletter">
+                    <h2 class="font14 bold">Free newsletter</h2>
+                    <!--<div class="grey-l"></div>-->
+                </div>
+
+                <div class="inner-box" id="freeNewsLetter">
+                    <div id="loadingNewsletter" style="display:none">
+                        <img src="img/ajax-loader.gif" />
+                    </div>
+                </div>
+                <div class="clearfix margin15"></div>
+                <div class="newsletter">
+                    <h2 class="font14 bold">Packed Document's</h2>
+                    <!--<div class="grey-l"></div>-->
+                </div>
+                <div class="inner-box scroll-y" id="PackedDocuments">
+                    <div id="loadingPackedDocuments" style="display:none">
+                        <img src="img/ajax-loader.gif" />
+                    </div>
+                </div>
+
+            </div>
+            <div class="margin15 clearfix visible-sm visible-xs"></div>
+            <div class="col-md-6">
+
+                @RenderBody()
+                @*<img class="img100" src="img/add-2.jpg">*@
+                <div class="clearfix margin10"></div>
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <img class="img100" src="img/01.jpg">
+                    </div>
+
+                    <div class="col-md-6">
+                        <img class="img100" src="img/02.jpg">
+                    </div>
+                </div>
+
+            </div>
+            <div class="clearfix margin15 visible-xs visible-xs"></div>
+            <div class="col-md-3">
+                <div class="legaltool">
+                    <h2 class="font14 bold">Legal Tools</h2>
+                </div>
+                <div class="lega-inner-box" id="LegalTools">
+                    <div id="loadingLegalTools" style="display:none">
+                        <img src="img/ajax-loader.gif" />
+                    </div>
+                </div>
+
+                <div class="clearfix margin15"></div>
+                <div class="judicail-box">
+                    <h2 class="font14 bold">Judicail news</h2>
+                </div>
+                <div class="judicail-inner-box padd15" id="JudicailNews">
+                    <div id="loadingJudicailNews" style="display:none">
+                        <img src="img/ajax-loader.gif" />
+                    </div>
+                </div>
+
+                <div class="clearfix margin15"></div>
+                <img class="img100" src="img/add-papper.jpg">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="clearfix margin15"></div>
+    @Html.Partial("_FooterPartial")
+
+    <!-- Modal -->
+    <div class="modal fade" id="myLoginModal" role="dialog">
+        <div class="modal-dialog modal-sm" style="width:450px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                   <div><img src="~/img/logo.png"/></div>
+                    <div style="float: right; margin-top: -32px; margin-right: 32px;">Logged in successfully.</div>
+                </div>
+                <div class="modal-footer">
+                    @*<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>*@
+                </div>
+            </div>
+        </div>
+    </div> 
+
+</body>
+</html>
+
+<script>
+    function toggleChevron(e) {
+        $(e.target)
+            .prev('.panel-heading')
+            .find("i.indicator")
+            .toggleClass('glyphicon-chevron-down glyphicon-chevron-up');
+    }
+    $('#accordion').on('hidden.bs.collapse', toggleChevron);
+    $('#accordion').on('shown.bs.collapse', toggleChevron);
+
+</script>
+
+<script>
+    $(document).ready(function () {
+        $(".btn-pref .btn").click(function () {
+            $("#documentDesc").hide();
+            $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+            // $(".tab").addClass("active"); // instead of this do the below
+            $(this).removeClass("btn-default").addClass("btn-primary");
+        });
+        $("#category1").click(function () {
+            $("#tab1").show();
+            $("#documentDesc").hide();
+            $("#tab2").hide();
+            $("#tab3").hide();
+            $("#category1").removeClass('btn-primary');
+            $("#category2").removeClass('btn-primary');
+            $("#category3").removeClass('btn-primary');
+            $("#category1").addClass('btn-primary');
+
+        });
+        $('#category2').click(function () {
+
+            $("#tab2").show();
+            $("#tab1").hide();
+            $("#tab3").hide();
+            $("#documentDesc").hide();
+            $("#category1").removeClass('btn-primary');
+            $("#category3").removeClass('btn-primary');
+            $("#category2").removeClass('btn-default');
+            $("#category2").addClass('btn-primary');
+
+        });
+
+        $('#category3').click(function () {
+            $("#tab3").show();
+            $("#tab1").hide();
+            $("#tab2").hide();
+            $("#documentDesc").hide();
+            $("#category1").removeClass('btn-primary');
+            $("#category2").removeClass('btn-primary');
+            $("#category3").removeClass('btn-default');
+            $("#category3").addClass('btn-primary');
+
+        });
+
+    });
+
+    $('#txtUserName').on("keyup", function () {
+        if ($(this).val() == '') {
+            $('#validUser').html('Please enter username');
+            $('#txtUserName').css('border-color', 'red');
+        }
+        else {
+            $('#validUser').html('');
+            $('#txtUserName').css('border-color', 'green');
+        }
+    });
+    $('#txtPassword').on("keyup", function () {
+        if ($(this).val() == '') {
+            $('#validPassword').html('Please enter password');
+            $('#txtPassword').css('border-color', 'red');
+        }
+        else {
+            $('#validPassword').html('');
+            $('#txtPassword').css('border-color', 'green');
+        }
+    });
+
+    $("#btnLogin").click(function () {
+
+        if ($("#txtUserName").val() == '') {
+            $('#txtUserName').css('border-color', 'red');
+            $("#validUser").html('Please enter username');
+        }
+        if ($("#txtPassword").val() == '') {
+            $('#txtPassword').css('border-color', 'red');
+            $("#validPassword").html('Please enter password');
+        }
+
+        if ($("#txtUserName").val() != '' && $("#txtPassword").val() != '') {
+            $('.loading').css('display', 'block');
+            // beginRequest();
+            var request = $.ajax({
+                url: '@Url.Content("User/PartialLogin")',
+                type: 'GET',
+                data: { userName: $("#txtUserName").val(), password: $("#txtPassword").val() },
+                dataType: 'json'
+            });
+            request.done(function (response) {             
+                if (response.status == 'Fail') {                    
+                    $("#validMessage").html(response.message);
+                     $('.loading').css('display', 'none');         
+                }
+                else {
+                    $('#myLoginModal').modal('toggle');
+                    window.location.href = response.returnUrl;
+                }
+            });
+            request.fail(function (jqXHR, textStatus) {                
+                alert("Request failed login: " + textStatus);
+            });
+        }
+    });
+
+
+    $("#loadingNewsletter").css('display', 'block');
+    $("#loadingPackedDocuments").css('display', 'block');
+    $("#loadingLegalTools").css('display', 'block');
+    $("#loadingJudicailNews").css('display', 'block');
+    //$("#loadingDocumentCategories").css('display', 'block');
+    $("#loadingRightAdwords").css('display', 'block');
+
+    // Load free news latter
+    var request = $.ajax({
+        url: '@Url.Content("/Home/FreeNewsLatter")',
+        type: 'GET',
+        dataType: 'html'
+    });
+    request.done(function (response) {
+
+        $("#freeNewsLetter").html(response);
+        $("#loadingNewsletter").css('display', 'block');
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);
+    });
+
+    // Load packed documents
+    var request = $.ajax({
+        url: '@Url.Content("/Home/PackedDocuments")',
+        type: 'GET',
+        dataType: 'html'
+    });
+    request.done(function (response) {
+
+        $("#PackedDocuments").html(response);
+        $("#loadingPackedDocuments").css('display', 'none');
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);
+    });
+
+    // Legal tools
+    var request = $.ajax({
+        url: '@Url.Content("/Home/LegalTools")',
+        type: 'GET',
+        dataType: 'html'
+    });
+    request.done(function (response) {
+
+        $("#LegalTools").html(response);
+        $("#loadingLegalTools").css('display', 'none');
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);
+    });
+
+    // Legal judicail news
+    var request = $.ajax({
+        url: '@Url.Content("/Home/JudicailNews")',
+        type: 'GET',
+        dataType: 'html'
+    });
+    request.done(function (response) {
+
+        $("#JudicailNews").html(response);
+        $("#loadingJudicailNews").css('display', 'none');
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        alert("Request failed: " + textStatus);
+    });
+
+    @*// Documents categories
+    var request = $.ajax({
+        url: '@Url.Content("Home/DocumentCategories")',
+        type: 'GET',
+        dataType: 'html'
+    });
+    request.done(function (response) {
+        debugger;
+        $("#divDocumentCategories").html(response);
+        $("#loadingDocumentCategories").css('display', 'none');
+    });*@
+
+    //request.fail(function (jqXHR, textStatus) {
+    //    alert("Request failed document categories: " + textStatus);
+    //});
+
+    // Right adwords
+    var request = $.ajax({
+        url: '@Url.Content("/Home/RightAdwords")',
+        type: 'GET',
+        dataType: 'html'
+    });
+    request.done(function (response) {
+
+        $("#RightAdwords").html(response);
+        $("#loadingRightAdwords").css('display', 'none');
+    });
+
+    request.fail(function (jqXHR, textStatus) {
+        alert("Request failed right adwords: " + textStatus);
+    });
+
+    function GetDocument(id) {
+        $("#tab1").hide();
+        $.ajax({
+            url: '@Url.Content("/Home/GetDocument")',
+            type: 'GET',
+            data: { documentId: id },
+            success: function (response) {
+                $("#documentDesc").html('');
+                $("#documentDesc").show();
+                $("#documentDesc").html(response);
+            },
+            fail: function () {
+            }
+        });
+    }
+</script>
+
+<style type="text/css">
+    .errorClass {
+        border: 1px solid red;
+    }
+
+    .successClass {
+        border: 1px solid green;
+    }
+    /* Absolute Center Spinner */
+    .loading {
+        position: fixed;
+        z-index: 999;
+        height: 2em;
+        width: 2em;
+        overflow: show;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+        /* Transparent Overlay */
+        .loading:before {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+        }
+        /* :not(:required) hides these rules from IE9 and below */
+        .loading:not(:required) {
+            /* hide "loading..." text */
+            font: 0/0 a;
+            color: transparent;
+            text-shadow: none;
+            background-color: transparent;
+            border: 0;
+        }
+
+            .loading:not(:required):after {
+                content: '';
+                display: block;
+                font-size: 10px;
+                width: 1em;
+                height: 1em;
+                margin-top: -0.5em;
+                -webkit-animation: spinner 1500ms infinite linear;
+                -moz-animation: spinner 1500ms infinite linear;
+                -ms-animation: spinner 1500ms infinite linear;
+                -o-animation: spinner 1500ms infinite linear;
+                animation: spinner 1500ms infinite linear;
+                border-radius: 0.5em;
+                -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+                box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+            }
+    /* Animation */
+
+    @@-webkit-keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @@-moz-keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @@-o-keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+</style>

@@ -1,0 +1,97 @@
+﻿@model RepidShare.Entities.ViewGroupModel
+
+@{
+    ViewBag.Title = "View Group";
+}
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="/Images/home-icon.png"></a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "dvGroupList", OnBegin = "beginRequest", OnComplete = "searchComplete" }))
+{
+    <div class="text-right">
+        <a class="btn btn-primary" href="/Group/SaveGroup" title="Add Group">Add Group</a>
+    </div>
+    <div class="search-strip half-padding">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="search-row width-auto labelPaddingTop">
+                    @Html.LabelFor(model => model.FilterGroupText, new { @class = "labelColon" })
+                </div>
+                <div class="search-row">
+                    @Html.TextBoxFor(model => model.FilterGroupText, new { @class = "form-control  filter-control remove-bottom", @maxlength = "50" })
+                </div>
+                <div class="search-row search-row-large">
+                    <input id="btnSubmit" type="submit" value="Search" class="btn btn-primary" style="display: none" />
+                    <input id="btnSearch" type="button" value="Search" class="btn btn-primary" />
+                    <input id="btnReset" type="button" value="Reset" onclick="resetFilter()" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dvGroupList">
+        @Html.Partial("_GroupList", Model)
+    </div>    
+}
+
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        $("#btnSearch").click(function () {
+            // set Action type as search and currentpage as 1 while click on search and submit the form.
+            $("#ActionType").val("search");
+            $("#CurrentPage").val("1");
+            sendToServer();
+        });
+
+        $("a.sort").click(function () {
+            //set sotring parameter with common function bindSort and submit the form
+            bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer)
+        });
+    });
+
+    function resetFilter() {
+        //Reset search filter on Reset buton click and submit the form
+        $("#FilterGroupText").val("");
+        $("#ActionType").val("search");
+        $("#CurrentPage").val("1");
+        sendToServer();
+    }
+
+    //Call common function createFooter to create footer based on Total pages and Current page.
+    createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+
+    // submit form 
+    function sendToServer() {
+
+        $("#btnSubmit").click();
+    }
+
+    //search complete will call after search completion and create footer based on search criteria 
+    function searchComplete(xmlHttpRequest, textStatus) {
+
+        createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+        $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer) });
+        setSortClass("SortBy", "SortOrder");
+        endRequest();
+    }
+    //set  Action Type as delete GroupID as Id(id which will be deleted) when click on delete link and  submit the form
+    function deleteGroup(id) {
+        $("#ActionType").val("delete");
+        $("#DeletedGroupID").val(id);
+        sendToServer()
+    }
+    $(document).keyup(function (e) {
+        if (e.keyCode == 13) {
+            sendToServer();
+        }
+    });
+</script>

@@ -1,0 +1,34 @@
+﻿@model RepidShare.Entities.ViewQuestionModel
+@using RepidShare.Entities.Resource;
+@if (Model != null && Model.QuestionDetail != null && Model.QuestionDetail.QuestionType != null)
+{
+    <div class="row">
+        <div class="col-sm-3">
+            @Html.LabelFor(model => model.QuestionTypeDetail.DropDownType.DropDownText, new { @class = "labelColon" })
+        </div>
+        <div class="col-sm-4 mandatoryFeild">
+            @Html.ListBox("DropDownText", ViewBag.DropDownList as MultiSelectList, new { @id = "ddlDropDownText", @class = "chosen-select ddlMedium", @CausesValidation = "false", data_placeholder = "--Select--" })
+            <span id="valDropDownText" class="field-validation-error" style="padding-top: 5px; display: none"><span class="" style="">Drop Down Value is required.</span> </span>
+            @Html.HiddenFor(model => model.QuestionTypeDetail.DropDownType.DropDownValue, new { @id = "hdnddlDropDownText" })
+        </div>
+    </div>
+}
+
+
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        $('#ddlDropDownText').chosen();
+
+        $("#ddlDropDownText").change(function () {
+            $("#hdnddlDropDownText").val($(this).val());
+            if ($("#hdnddlDropDownText").val() == "") {
+                $("#valDropDownText").show();
+            }
+            else {
+                $("#valDropDownText").hide();
+            }
+        });
+    })
+</script>

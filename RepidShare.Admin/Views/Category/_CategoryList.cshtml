@@ -1,0 +1,120 @@
+﻿@model RepidShare.Entities.ViewCategoryModel
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>
+                                Sr No
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="CategoryName" class="sort">Category Name</a>
+                            </div>
+
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="Description" class="sort">Description</a>
+                            </div>
+
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="Description" class="sort">Image</a>
+                            </div>
+
+                        </th>
+                        <th class="text-center">
+                            <div>
+                                Action
+                            </div>
+                        </th>
+
+                         <th class="text-center">  <div> Activate   </div></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.CategoryList != null && Model.CategoryList.Count > 0)
+                    {
+                        for (int i = 0; i < Model.CategoryList.Count; i++)
+                        {
+                        <tr>
+                            @Html.HiddenFor(m => Model.CategoryList[i].CategoryID)
+
+                            <td>@Model.CategoryList[i].RowNumber</td>
+                            <td>@Model.CategoryList[i].CategoryName</td>
+                            <td>@if (Model.CategoryList[i].Description != null && Model.CategoryList[i].Description.ToString().Length > 20)
+                                {
+                                @Model.CategoryList[i].Description.Substring(0, 20).ToString()
+                                <span>...<a title="@Model.CategoryList[i].Description.ToString()" >more</a></span>
+                                }
+                                else
+                                { 
+                                @Model.CategoryList[i].Description
+                                }
+                            </td>
+                            <td>
+                                @if(Model.CategoryList[i].AttachmentContent!=null)
+                                {
+                                <img src="data:image/jpeg; base64, @Convert.ToBase64String(Model.CategoryList[i].AttachmentContent)" width="40px", height="40px" />
+                                }
+                            </td>
+                            <td class="btn-action" width="15%">
+                               @* @if (Model.CategoryList[i].Count > 0)
+                                {
+                                    <a class="icon-edit-disabled" href="javascript:void(0)" title="Edit">Edit</a><a class="icon-delete-disabled" href="javascript:void(0)" title="Delete">Delete</a>
+                                }
+                                else
+                                { *@
+
+                                <a class="icon-edit" href="/Category/SaveCategory?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.CategoryList[i].CategoryID))" title="Edit">Edit</a><a class="icon-delete" onclick="openConfirmDialog('@Model.CategoryList[i].CategoryID','Are you sure to delete?',deleteCategory,null)" href="javascript:void(0)" title="Delete">Delete</a>
+                               @* }*@
+                            </td>
+                             @*By Narayan*@
+                              @if (Model.CategoryList[i].Activate == true)
+                            {
+                            <td> <img src="~/Images/icon-published.png"  width="19px"/>&nbsp; &nbsp; &nbsp;
+                            <a  href="/Category/ActivateDeactivateCategory?prm=@(RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.CategoryList[i].CategoryID))+"~"+0)"  onclick=" return confirm('Are you sure want to Deactivate Category')"      title=" DeActivate ">DeActivate</a></td>
+                            }
+                            else
+                            {
+                            <td> <img src="~/Images/cross.png" /> &nbsp; &nbsp; &nbsp;
+                            <a  href="/Category/ActivateDeactivateCategory?prm=@(RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.CategoryList[i].CategoryID))+"~"+1)" onclick=" return confirm('Are you sure want to Activate Category')"  title=" Activate "> Activate </a></td>
+                            }
+                        </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6">No Record Found.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+
+    </div>
+</div>
+@Html.HiddenFor(model => model.DeletedCategoryID, new { id = "DeletedCategoryID" })
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+<script type="text/javascript">
+    $().ready(function () {
+        // Show Sucess or Error Message on popup by common function showMessagePopup
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+</script>

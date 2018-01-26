@@ -1,0 +1,24 @@
+﻿@model RepidShare.Entities.DocumentResponseDetailModel
+@using RepidShare.Utility;
+<div class="row">
+    @if (Model != null && Model.Questions != null && Model.Questions.Count() > 0)
+    {
+        if (Model.IsReadOnly)
+        {
+            <div class="col-sm-12">
+                <div class="ViewTextResponse">@Model.Questions[Model.Index].AnswerDetail</div>
+            </div>
+        }
+        else
+        {
+            <div class="col-sm-6" id="input-Box">
+                @Html.SingleLineTextBoxFor(model => Model.Questions[Model.Index].AnswerDetail, Model.Questions[Model.Index])
+                <br />                
+                    @Html.ValidationMessageFor(model => Model.Questions[Model.Index].AnswerDetail, "", new { @class = "redText" })              
+            </div>
+        }
+
+        @Html.HiddenFor(model => model.Questions[Model.Index].ResultDetailID, new { Value = Model.Questions[Model.Index].ResultDetailID })
+        @Html.HiddenFor(model => model.Questions[Model.Index].QuestionID, new { Value = Model.Questions[Model.Index].QuestionID })
+    }
+</div>

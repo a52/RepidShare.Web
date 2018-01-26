@@ -1,0 +1,83 @@
+﻿@model RepidShare.Entities.HowItWorksModel
+@{
+    if (Model.Id > 0)
+    {
+        ViewBag.Title = "Edit Master";
+    }
+    else
+    {
+        ViewBag.Title = "Add Master";
+    }
+
+}
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li>
+                <a href="/Home/Home">
+                    <img src="@Url.Content("~/Images/home-icon.png")">
+                </a>
+            </li>
+            <li>@Html.ActionLink("View Master", "ViewMaster", "Master")</li>
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <h2 class="gray-heading">@ViewBag.Title</h2>
+        <div class="white-bg">
+            <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/chosen.css")" />
+            <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+            @using (Html.BeginForm("SaveMaster", "Master", FormMethod.Post, new { @id = "frmMaster" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.Id, new { Value = Model.Id, id = "hdnMasterID" })                
+                @Html.HiddenFor(model => model.Description, new { id = "hdnDescription" })               
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.Description, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.Partial("_HTMLText", Model.Description, new ViewDataDictionary<string>())
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span>&nbsp</span>
+                    </div>
+                </div>
+                <div class="text-left button-group row">
+                    <div class="col-sm-3">&nbsp;</div>
+                    <div class="col-sm-4">
+                        <input id="btnSave" class="btn btn-primary" type="button" value="Save" />
+                        <input id="btnSubmit" class="btn btn-primary" type="submit" value="Save" style="display: none" />
+                        <input id="btnCancel" type="button" class="btn cancel btn-primary" causesvalidation="false"
+                               value="Cancel" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $().ready(function () {        
+        //Submit the form on save button click
+        $("#btnSave").click(function () {
+            $("#hdnDescription").val($("#ckeditorBox").val());
+            $("#btnSubmit").click();
+        });
+
+        //redirect to  Master List on Cancel button click
+        $("#btnCancel").click(function () {
+            //window.location.href = "/HowItWorks/Index";
+            window.location.reload();
+        });
+
+    });
+
+</script>

@@ -1,0 +1,501 @@
+﻿@using RepidShare.Entities
+@{
+    //Layout = "~/Views/Shared/_LayoutUser.cshtml";
+    ViewBag.Title = "Register";
+}
+@model Register
+<script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+<!DOCTYPE html>
+
+<html lang="en">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<!-- /Added by HTTrack -->
+<head>
+    <title>LEGAL CONTRACTS, FORMS, DOCUMENTS & TEMPLATES | PAPELES LEGALES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Best of breed: highly affordable online documents, forms & templates covering business needs and personal legal needs" />
+    <link href="../images/favicon.ico" type="image/png" rel="shortcut icon" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Hind:700,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:700,400' rel='stylesheet' type='text/css'>
+    <link href="../css/reset.css" type="text/css" rel="stylesheet" />
+    <link href="../css/bootstrap.css" type="text/css" rel="stylesheet" />
+    <!--<link href="css/global-min.css" type="text/css" rel="stylesheet" /> -->
+    <link href="../css/papeleslegales.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="e_body_home">
+    <div class="header_top">
+        <div class="wrapper"><span class="left">Need help? Call <i class="fa fa-phone"></i><strong>0345 838 4074</strong></span> <span class="right"><a href="/User/Register"><i class="fa fa-user"></i>Register</a> <a href="/User/Login"><i class="fa fa-sign-in"></i>Login</a> </span></div>
+    </div>
+    <div class="header">
+        <div class="wrapper">
+            <a class="header_logo" href="/Home/Index">
+                <img src="../img/logo.png" alt="Papeles Legales" width="180px" />
+            </a>
+            <div class="nav nav_category"><a href="" class="link_personal"><i class="icon-home153"></i>Family Law</a> <a href="" class="link_business"><i class="icon-work3"></i>Business Law</a> <a href="" class="link_lawyers"><i class="icon-justice4"></i>Lawyers</a> </div>
+            <div class="nav nav_links"><a href="javascript:void(0);" onclick="_gaq.push(['_link', this.href]); return false;">Contact</a> <a href="javascript:void(0);">Help</a> <a href="javascript:void(0)" id="header_menu_link">Menu</a> <a href="javascript:void(0)" id="header_search_link"><i class="fa fa-search"></i>Search</a> <a href="javascript:void(0);" onclick="_gaq.push(['_link', this.href]); return false;"><i class="icon-shopping232"></i>Basket (0)</a> </div>
+            <div class="nav_mobile_link"><a href="javascript:void(0);" onclick="_gaq.push(['_link', this.href]); return false;" id="nav_mobile_basket"><i class="fa fa-shopping-cart fa-2x"></i></a><a href="javascript:void(0);" id="nav_mobile_menu_trigger"><i class="fa fa-bars fa-2x"></i></a></div>
+        </div>
+    </div>
+    <div class="header_search">
+        <div class="search_box search_box_header">
+            <form action="#" method="GET" id="searchFormHeader">
+                <input type="hidden" name="event" value="search">
+                <input type="text" name="search" value="" placeholder="Search all documents..." />
+                <a href="javascript:void(0)" class="button"><i class="fa fa-search"></i>Search</a>
+            </form>
+        </div>
+    </div>
+    <div class="header_divider">
+        <div class="header_arrow"><a href="javascript:void(0);"></a></div>
+        <div class="header_full_menu">
+            <div class="wrapper">
+                <a href="/Home/Index">
+                    <img src="../img/logo.png" alt="Papeles Legales" width="140" height="55" />
+                </a>
+                <div class="header_full_menu_col personal">
+                    <ul>
+                        <li>
+                            <h4><a href="index2375.html?event=base:cpage&amp;collection=1&amp;c=cpage%5Fpersonal">Family documents home</a></h4>
+                        </li>
+                    </ul>
+                    <div class='collection'>
+                        <ul class='childcontainer childrenlevel2' data-parent='1'>
+                            <li class='level level2 first li-76052  li2'><a class='selector level2 first 76052 a2' href='index6de4.html?event=base:subsite&amp;1=&amp;subsite=76052'>Building work</a></li>
+                            <li class='level level2 li-76053  li2'><a class='selector level2 76053 a2' href='index9fd5.html?event=base:subsite&amp;1=&amp;subsite=76053'>Buying &amp; selling</a></li>
+                            <li class='level level2 li-76076  li2'><a class='selector level2 76076 a2' href='indexb57d.html?event=base:subsite&amp;1=&amp;subsite=76076'>Complaints &amp; disputes</a></li>
+                            <li class='level level2 li-76048  li2'><a class='selector level2 76048 a2' href='index5435.html?event=base:subsite&amp;1=&amp;subsite=76048'>Divorce</a></li>
+                            <li class='level level2 li-76049  li2'><a class='selector level2 76049 a2' href='index1f51.html?event=base:subsite&amp;1=&amp;subsite=76049'>Identity theft &amp; credit improvement</a></li>
+                            <li class='level level2 li-76046  li2'><a class='selector level2 76046 a2' href='index745b.html?event=base:subsite&amp;1=&amp;subsite=76046'>Landlords</a></li>
+                            <li class='level level2 li-76047  li2'><a class='selector level2 76047 a2' href='indexc3bd.html?event=base:subsite&amp;1=&amp;subsite=76047'>Motoring</a></li>
+                            <li class='level level2 li-76055  li2'><a class='selector level2 76055 a2' href='indexabc2.html?event=base:subsite&amp;1=&amp;subsite=76055'>Personal finance</a></li>
+                            <li class='level level2 li-76050  li2'><a class='selector level2 76050 a2' href='indexb35d.html?event=base:subsite&amp;1=&amp;subsite=76050'>Powers of attorney</a></li>
+                            <li class='level level2 li-76051  li2'><a class='selector level2 76051 a2' href='indexdc8f.html?event=base:subsite&amp;1=&amp;subsite=76051'>Prenuptials &amp; living together</a></li>
+                            <li class='level level2 li-76991  li2'><a class='selector level2 76991 a2' href='indexa1a7.html?event=base:subsite&amp;1=&amp;subsite=76991'>Probate &amp; confirmation</a></li>
+                            <li class='level level2 li-76045  li2'><a class='selector level2 76045 a2' href='index8845.html?event=base:subsite&amp;1=&amp;subsite=76045'>Wills</a></li>
+                            <li class='level level2 last li-76056  li2'><a class='selector level2 last 76056 a2' href='indexf160.html?event=base:subsite&amp;1=&amp;subsite=76056'>Workplace</a></li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li><strong><a href="index7da4.html?event=base:lawguide&amp;collection=1">Family lawguide</a></strong></li>
+                    </ul>
+                </div>
+                <div class="header_full_menu_col business">
+                    <ul>
+                        <li>
+                            <h4><a href="index59a2.html?event=base:cpage&amp;collection=2&amp;c=cpage%5Fbusiness">Business documents home</a></h4>
+                        </li>
+                    </ul>
+                    <div class='collection'>
+                        <ul class='childcontainer childrenlevel2' data-parent='1'>
+                            <li class='level level2 first li-76058  li2'><a class='selector level2 first 76058 a2' href='indexccd8.html?event=base:subsite&amp;2=&amp;subsite=76058'>Business start-up</a></li>
+                            <li class='level level2 li-76065  li2'><a class='selector level2 76065 a2' href='indexea3f.html?event=base:subsite&amp;2=&amp;subsite=76065'>Debts &amp; debt recovery</a></li>
+                            <li class='level level2 li-76064  li2'><a class='selector level2 76064 a2' href='indexa202.html?event=base:subsite&amp;2=&amp;subsite=76064'>Ecommerce</a></li>
+                            <li class='level level2 li-76018  li2'><a class='selector level2 76018 a2' href='index357c.html?event=base:subsite&amp;2=&amp;subsite=76018'>Employment</a></li>
+                            <li class='level level2 li-76060  li2'><a class='selector level2 76060 a2' href='index61b4.html?event=base:subsite&amp;2=&amp;subsite=76060'>Health &amp; safety</a></li>
+                            <li class='level level2 li-76063  li2'><a class='selector level2 76063 a2' href='index2d12.html?event=base:subsite&amp;2=&amp;subsite=76063'>Intellectual property</a></li>
+                            <li class='level level2 li-76061  li2'><a class='selector level2 76061 a2' href='index418e.html?event=base:subsite&amp;2=&amp;subsite=76061'>Property</a></li>
+                            <li class='level level2 last li-76062  li2'><a class='selector level2 last 76062 a2' href='indexbb5f.html?event=base:subsite&amp;2=&amp;subsite=76062'>Purchase &amp; sales agreements</a></li>
+                        </ul>
+                    </div>
+                    <ul>
+                        <li><strong><a href="index9ef4.html?event=base:lawguide&amp;collection=2">Business lawguide</a></strong></li>
+                    </ul>
+                </div>
+                <div class="header_full_menu_col homepages">
+                    <ul>
+                        <li>
+                            <h4><a href="/Home/Index">Homepage</a></h4>
+                        </li>
+                        <li><a href="indexb196.html?event=base:cpage&amp;c=cpage%5Fabout">About us</a></li>
+                        <li><a href="https://desktoplawyer.secureclient.co.uk/dtl/index.cfm?event=base:basket" onclick="_gaq.push(['_link', this.href]); return false;">Basket</a></li>
+                        <li><a href="https://desktoplawyer.secureclient.co.uk/dtl/index.cfm?event=base:customermessageform" onclick="_gaq.push(['_link', this.href]); return false;">Contact us</a></li>
+                        <li><a href="javascript:void(0);">Help</a></li>
+                        <li><a href="javascript:void(0);">How it works</a></li>
+                        <li><a href="javascript:void(0);">FAQs</a></li>
+                        <li><a href="javascript:void(0);">Search</a></li>
+                        <li><a href="javascript:void(0);">Testimonials</a></li>
+                        <li><a href="javascript:void(0);">Two minute tour</a></li>
+                        <li><a href="javascript:void(0);">Why choose us?</a></li>
+                    </ul>
+                </div>
+                <div class="header_full_menu_col">
+                    <ul>
+                        <li>
+                            <h4>&nbsp;</h4>
+                        </li>
+                        <li><a href="index1312.html?event=base:cpage&amp;c=cpage%5Fcomplaintsprocedure">Complaints procedure</a></li>
+                        <li><a href="javascript:void(0);">Data, cookies & privacy policy</a></li>
+                        <li><a href="javascript:void(0);">Intellectual property rights notice</a></li>
+                        <li><a href="javascript:void(0);">Terms of Use</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="javascript:void(0);" onclick="_gaq.push(['_link', this.href]); return false;">Register/Login</a></li>
+                        <li><a href="javascript:void(0);" onclick="_gaq.push(['_link', this.href]); return false;">My Account</a></li>
+                        <li><a href="javascript:void(0);" onclick="_gaq.push(['_link', this.href]); return false;">My Documents</a></li>
+                        <li><a href="javascript:void(0);">My Services</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="container">
+                @using (Ajax.BeginForm("Register", "User", null, new AjaxOptions { OnBegin = "beginRequest", OnComplete = "endRequest" }, new { @id = "frmLogin" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-lg-9 center-block float-none">
+                            <h1>Registration form</h1>
+                            <div class="form-wrap clearfix">
+                                <div class="pull-right">
+                                    <h3 class="heading3">Your satisfaction guaranteed</h3>
+                                    <ul class="unordered-listing">
+                                        <li>100% refund if you're not happy</li>
+                                        <li>Securing your data safely</li>
+                                        <li>This site uses strong 128 Bit Encryption</li>
+                                    </ul>
+                                </div>
+                                <form action="post">
+                                    <div class="overflow">
+                                        <h3 class="heading3">Basic details...</h3>
+                                        <div class="form-group">
+                                            <label class="block">* Account Type:</label>
+                                        </div>
+                                        <div class="form-group radio-group clearfix">
+                                            <span class="padR10 pull-left">
+                                                <input type="radio" name="account" value="Personal" checked="checked" class="pull-left" />
+                                                <label class="pull-left">Personal</label>
+                                            </span><span class="pull-left">
+                                                <input type="radio" name="account" value="Business" class="pull-left" />
+                                                <label class="pull-left">Business</label>
+                                            </span>
+                                        </div>
+                                        <div class="form-group clear">
+                                            <label class="block">Your title:</label>
+                                            <div class="row">
+                                                <div class="col-sm-6 col-xs-12">
+                                                    @{
+                    List<SelectListItem> listTitle = new List<SelectListItem>();
+                    listTitle.Add(new SelectListItem
+                    {
+                        Text = "Miss",
+                        Value = "Miss"
+                    });
+                    listTitle.Add(new SelectListItem
+                    {
+                        Text = "Mr",
+                        Value = "Mr"
+                    });
+                    listTitle.Add(new SelectListItem
+                    {
+                        Text = "Ms",
+                        Value = "Ms"
+                    });
+                    listTitle.Add(new SelectListItem
+                    {
+                        Text = "Mrs",
+                        Value = "Mrs"
+                    });
+                                                    }
+
+                                                    @Html.DropDownListFor(model => model.Title, listTitle, "-- Please select --")
+                                                    @Html.ValidationMessageFor(model => model.Title)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>* First name:</label>
+                                        @Html.TextBoxFor(model => model.FirstName, new { id = "txFirstName", @class = "form-control", @maxlength = "128", @size = "60", @value = "" })
+                                        @Html.ValidationMessageFor(model => model.FirstName)
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Middle name(s):</label>
+                                        @Html.TextBoxFor(model => model.MiddleName, new { id = "txtMiddleName", @class = "form-control", @maxlength = "128", @size = "60", @value = "" })
+                                    </div>
+                                    <div class="form-group">
+                                        <label>* Last name:</label>
+                                        @Html.TextBoxFor(model => model.LastName, new { id = "txtLastName", @class = "form-control", @maxlength = "128", @size = "60", @value = "" })
+                                        @Html.ValidationMessageFor(model => model.LastName)
+                                    </div>
+                                    <div class="form-group">
+                                        <label>* Your gender:</label>
+                                    </div>
+                                    <div class="form-group radio-group clearfix">
+                                        <span class="padR10 pull-left">
+                                            <input type="radio" name="gender" value="male" checked="checked" class="pull-left" />
+                                            <label class="pull-left">Male</label>
+                                        </span><span class="pull-left">
+                                            <input type="radio" name="gender" value="female" class="pull-left" />
+                                            <label class="pull-left">Female</label>
+                                        </span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>* Date of birth:</label>
+                                        <div class="row">
+                                            <div class="col-sm-2 col-xs-4">
+                                                <select class="form-control">
+                                                    <option>Day</option>
+                                                    @for (int i = 1; i <= 31; i++)
+                                                    {
+                                                        <option>@i</option>    
+                                                    }
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2 col-xs-4">
+                                                <select class="form-control">
+                                                    <option value="">Month</option>
+                                                    <option value="1">January</option>
+                                                    <option value="2">February</option>
+                                                    <option value="3">March</option>
+                                                    <option value="4">April</option>
+                                                    <option value="5">May</option>
+                                                    <option value="6">June</option>
+                                                    <option value="7">July</option>
+                                                    <option value="8">August</option>
+                                                    <option value="9">September</option>
+                                                    <option value="10">October</option>
+                                                    <option value="11">November</option>
+                                                    <option value="12">December</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-2 col-xs-4">
+                                                <select class="form-control">
+                                                    <option>Year</option>
+                                                    @for (int i = 1916; i <= 1999; i++)
+                                                    {
+                                                        <option>@i</option>    
+                                                    }
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="block">* Legal region:</label>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+                                                @{
+                                                    List<SelectListItem> listregion = new List<SelectListItem>();
+                                                    listregion.Add(new SelectListItem
+                                                    {
+                                                        Text = "England Wales",
+                                                        Value = "England Wales"
+                                                    });
+                                                    listregion.Add(new SelectListItem
+                                                    {
+                                                        Text = "Scotland",
+                                                        Value = "Scotland"
+                                                    });
+                                                    listregion.Add(new SelectListItem
+                                                    {
+                                                        Text = "Northern Ireland",
+                                                        Value = "Northern Ireland"
+                                                    }); 
+                                                }
+
+                                                @Html.DropDownListFor(model => model.Region, listregion, "-- Please select --", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.Region)
+
+
+
+                                                @*<select class="form-control">
+                                                    <option value="" selected="selected">--- Please select ---</option>
+                                                    <option value="1">England Wales</option>
+                                                    <option value="2">Scotland</option>
+                                                    <option value="3">Northern Ireland</option>
+                                                </select>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="heading3">Address details...</h3>
+                                    <div class="form-group">
+                                        <label class="block">* Country:</label>
+                                        <div class="row">
+                                            <div class="col-sm-4">
+
+                                                @{
+                                                    List<SelectListItem> listCountry = new List<SelectListItem>();
+                                                    listCountry.Add(new SelectListItem
+                                                    {
+                                                        Text = "UK (England &amp; Wales)",
+                                                        Value = "UK (England &amp; Wales)"
+                                                    });
+                                                    listCountry.Add(new SelectListItem
+                                                    {
+                                                        Text = "UK (Scotland)",
+                                                        Value = "UK (Scotland)"
+                                                    });
+                                                    listCountry.Add(new SelectListItem
+                                                    {
+                                                        Text = "NUK (Northern Ireland)",
+                                                        Value = "UK (Northern Ireland)"
+                                                    });
+                                                    listCountry.Add(new SelectListItem
+                                                    {
+                                                        Text = "Other European",
+                                                        Value = "Other European"
+                                                    });
+                                                    listCountry.Add(new SelectListItem
+                                                    {
+                                                        Text = "Other Global",
+                                                        Value = "Other Global"
+                                                    }); 
+                                                }
+
+                                                @Html.DropDownListFor(model => model.Country, listCountry, "-- Please select --", new { @class = "form-control" })
+                                                @Html.ValidationMessageFor(model => model.Country)
+
+                                                @*<select class="form-control">
+                                                    <option value="" selected="selected">--- Please select ---</option>
+                                                    <option value="1">UK (England &amp; Wales)</option>
+                                                    <option value="2">UK (Scotland)</option>
+                                                    <option value="3">UK (Northern Ireland)</option>
+                                                    <option value="4">Other European</option>
+                                                    <option value="5">Other Global</option>
+                                                </select>*@
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h3 class="heading3">Contact information...</h3>
+                                    <div class="form-group">
+                                        <label>* Daytime contact number:</label>
+                                        @Html.TextBoxFor(model => model.DaytimeContactNumber, new { id = "txtDaytimeContactNumber", @class = "form-control", @maxlength = "128", @size = "60", @value = "" })
+                                        @Html.ValidationMessageFor(model => model.DaytimeContactNumber)
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Mobile telephone number:</label>
+                                        @Html.TextBoxFor(model => model.MobileTelephoneNumber, new { id = "txtMobileTelephoneNumber", @class = "form-control", @maxlength = "128", @size = "60", @value = "" })
+                                        @Html.ValidationMessageFor(model => model.MobileTelephoneNumber)
+                                    </div>
+                                    <div class="form-group">
+                                        <label>* Email address:</label>
+                                        @Html.TextBoxFor(model => model.EmailAddress, new { id = "txtEmailAddress", @class = "form-control", @maxlength = "128", @size = "60", @value = "" })
+                                        @Html.ValidationMessageFor(model => model.EmailAddress)
+                                    </div>
+                                    <h3 class="heading3">Login details...</h3>
+                                    <div class="form-group">
+                                        <label>* Type a username:</label>
+                                        @Html.TextBoxFor(model => model.UserName, new { id = "txtUserName", @class = "form-control", @maxlength = "128", @size = "60", @value = "" })
+                                        @Html.ValidationMessageFor(model => model.UserName)
+                                    </div>
+                                    <div class="form-group">
+                                        <label>* Type a password</label>
+                                        @Html.PasswordFor(model => model.Password, new { id = "txtPassword", @class = "form-control", @maxlength = "128", @size = "60", @value = "" })
+                                        @Html.ValidationMessageFor(model => model.Password)
+                                    </div>
+                                    <div class="form-group">
+                                        <label>* Retype your password:</label>
+                                        @Html.PasswordFor(model => model.ConfirmPassword, new { id = "txtConfirmPassword", @class = "form-control", @maxlength = "128", @size = "60", @value = "" })
+                                        @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                                    </div>
+                                    <h3 class="heading3">Terms of Use</h3>
+                                    <p>The Terms of Use relate to your use of the Law Guide, Document Preparation Service and Legal Document Review.</p>
+                                    <a href="javascript:void(0);">View Terms of use</a>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" />
+                                            * I have read and agree to the terms of use
+                                        </label>
+                                    </div>
+                                    <h3 class="heading3">Data and privacy policy</h3>
+                                    <p>Epoq Legal Ltd (trading as DesktopLawyer.co.uk) will hold and process your personal information on our systems for the purposes of administration, operation of the service and business development. If you have purchased a Document Preparation Service which includes Legal Document Review, we will also provide your personal information to the law firm conducting the review.</p>
+                                    <p>To see how we use your information please read the <a href="javascript:void(0);">Cookie data  & privacy</a> policy. We, and our partners will only use your information to contact you by mail, telephone or email, in connection with this service.</p>
+                                    <p>ELL (or other companies in the groups to which they belong) may wish to contact you in the future, to pass on information about product updates and other issues in which you may be interested. Do you wish to receive such information?</p>
+                                    <div class="checkbox">
+                                        <label>
+                                            <input type="checkbox" />
+                                            I would like to receive email updates
+                                        </label>
+                                    </div>
+                                    <p>* indicates required field</p>
+
+                                    <input id="btnLogin" type="button" value='Register' class="btn btn-primary pull-right" />
+                                    <input id="btnSubmit" type="submit" value="login" style="display: none" class="btn btn-primary" />
+
+
+                                    @*<button type="submit" class="btn btn-primary pull-right" id="">Register</button>*@
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="wrapper">
+            <div class="footer_links">
+                <h4>PapelesLegales.co.uk</h4>
+                <ul>
+                    <li><a href="javascript:void(0);">About us</a></li>
+                    <li><a href="javascript:void(0);" onclick="_gaq.push(['_link', this.href]); return false;">Contact Us</a></li>
+                    <li></i> <a href="javascript:void(0);">Help</a></li>
+                    <li><a href="javascript:void(0);">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer_links">
+                <h4>Terms and conditions</h4>
+                <ul>
+                    <li><a href="javascript:void(0);">Data, cookies & privacy policy</a></li>
+                    <li><a href="">Terms of use</a></li>
+                    <li><a href="">Intellectual property rights notice</a></li>
+                    <li><a href="">Complaints procedure</a></li>
+                </ul>
+            </div>
+            <div class="footer_links footer_links_contact">
+                <p><strong>Email</strong> <span><a href="" onclick="_gaq.push(['_link', this.href]); return false;">Visit our contact form</a></span></p>
+                <p>
+                    <strong>Telephone</strong> <span>0345 838 4074<br />
+                        (Monday to Friday, 9:00am - 5:30pm)</span>
+                </p>
+                <p>
+                    <strong>Address</strong> <span>Customer Services, Papeles Legales,<br />
+                        Middlesex House, 29-45 High Street, Edgware, Middlesex, HA8 7UU</span>
+                </p>
+            </div>
+            <div class="footer_links footer_links_social">
+                <div class="footer_social_block">
+                    <a class="social" href="javascript:void(0);"><i class="fa fa-facebook-square fa-3x"></i></a><a class="social" href="javascript:void(0);"><i class="fa fa-twitter-square fa-3x"></i></a><a class="social" href="javascript:void(0);"><i class="fa fa-linkedin-square fa-3x"></i></a>
+                    <!--<a class="social" href="javascript:void(0);"><i class="fa fa-google-plus-square fa-3x"></i> </a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="e_overlay"></div>
+
+</body>
+</html>
+<script type="text/javascript">
+
+    function setFocusToUserNameTextBox() {
+        if ($("#txtUserName").val() == "") {
+            $("#txtUserName").focus();
+        }
+    }
+
+    $(document).ready(function () {
+
+
+        $("#btnLogin").click(function () {
+            if ($("#frmLogin").valid()) {
+                $("#btnSubmit").click();
+            }
+            else {
+                $("#frmLogin").valid();
+            }
+        });
+
+    });
+
+    $(document).keyup(function (e) {
+        if (e.keyCode == 13) {
+            $("#btnSubmit").click();
+        }
+    });
+</script>

@@ -1,0 +1,90 @@
+D:\Project's\Vipin sir\Repidshare\LP\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.dll
+D:\Project's\Vipin sir\Repidshare\LP\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.pdb
+D:\Project's\Vipin sir\Repidshare\LP\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.dll
+D:\Project's\Vipin sir\Repidshare\LP\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.dll
+D:\Project's\Vipin sir\Repidshare\LP\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.pdb
+D:\Project's\Vipin sir\Repidshare\LP\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.pdb
+D:\Project's\Vipin sir\Repidshare\LP\RepidShare.Web\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.csprojResolveAssemblyReference.cache
+D:\Project's\Vipin sir\Repidshare\LP\RepidShare.Web\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.dll
+D:\Project's\Vipin sir\Repidshare\LP\RepidShare.Web\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.pdb
+E:\Working\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.dll
+E:\Working\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.pdb
+E:\Working\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.dll
+E:\Working\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.dll
+E:\Working\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.pdb
+E:\Working\RepidShare.Web\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.pdb
+E:\Working\RepidShare.Web\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.csprojResolveAssemblyReference.cache
+E:\Working\RepidShare.Web\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.dll
+E:\Working\RepidShare.Web\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.pdb
+D:\WorkSpace\VMVCApplication\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.dll
+D:\WorkSpace\VMVCApplication\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.pdb
+D:\WorkSpace\VMVCApplication\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.dll
+D:\WorkSpace\VMVCApplication\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.dll
+D:\WorkSpace\VMVCApplication\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.pdb
+D:\WorkSpace\VMVCApplication\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.pdb
+D:\WorkSpace\VMVCApplication\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.csprojResolveAssemblyReference.cache
+D:\WorkSpace\VMVCApplication\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.dll
+D:\WorkSpace\VMVCApplication\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.pdb
+D:\workbench\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.dll
+D:\workbench\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.pdb
+D:\workbench\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.dll
+D:\workbench\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.dll
+D:\workbench\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.pdb
+D:\workbench\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.pdb
+D:\workbench\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.csprojResolveAssemblyReference.cache
+D:\workbench\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.dll
+D:\workbench\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.pdb
+\\SRV1-PC\Share\27Nov2017\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.dll
+\\SRV1-PC\Share\27Nov2017\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.pdb
+\\SRV1-PC\Share\27Nov2017\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.dll
+\\SRV1-PC\Share\27Nov2017\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.dll
+\\SRV1-PC\Share\27Nov2017\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.pdb
+\\SRV1-PC\Share\27Nov2017\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.pdb
+\\SRV1-PC\Share\27Nov2017\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.csprojResolveAssemblyReference.cache
+\\SRV1-PC\Share\27Nov2017\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.dll
+\\SRV1-PC\Share\27Nov2017\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.pdb
+D:\WorkSpace\28-Nov RapidWeb\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.dll
+D:\WorkSpace\28-Nov RapidWeb\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.pdb
+D:\WorkSpace\28-Nov RapidWeb\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.dll
+D:\WorkSpace\28-Nov RapidWeb\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.dll
+D:\WorkSpace\28-Nov RapidWeb\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.pdb
+D:\WorkSpace\28-Nov RapidWeb\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.pdb
+D:\WorkSpace\28-Nov RapidWeb\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.csprojResolveAssemblyReference.cache
+D:\WorkSpace\28-Nov RapidWeb\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.dll
+D:\WorkSpace\28-Nov RapidWeb\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.pdb
+D:\WorkSpace\14-DEC Rapid\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.dll
+D:\WorkSpace\14-DEC Rapid\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.pdb
+D:\WorkSpace\14-DEC Rapid\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.dll
+D:\WorkSpace\14-DEC Rapid\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.dll
+D:\WorkSpace\14-DEC Rapid\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.pdb
+D:\WorkSpace\14-DEC Rapid\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.pdb
+D:\WorkSpace\14-DEC Rapid\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.csprojResolveAssemblyReference.cache
+D:\WorkSpace\14-DEC Rapid\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.dll
+D:\WorkSpace\14-DEC Rapid\RepidShare.Web (1)\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.pdb
+D:\WorkSpace\RapidShare Project\25dec\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.dll
+D:\WorkSpace\RapidShare Project\25dec\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.pdb
+D:\WorkSpace\RapidShare Project\25dec\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.dll
+D:\WorkSpace\RapidShare Project\25dec\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.dll
+D:\WorkSpace\RapidShare Project\25dec\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.pdb
+D:\WorkSpace\RapidShare Project\25dec\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.pdb
+D:\WorkSpace\RapidShare Project\25dec\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.csprojResolveAssemblyReference.cache
+D:\WorkSpace\RapidShare Project\25dec\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.dll
+D:\WorkSpace\RapidShare Project\25dec\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.pdb
+D:\SVN Repo\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.dll
+D:\SVN Repo\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.pdb
+D:\SVN Repo\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.dll
+D:\SVN Repo\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.dll
+D:\SVN Repo\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.pdb
+D:\SVN Repo\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.pdb
+D:\SVN Repo\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.csprojResolveAssemblyReference.cache
+D:\SVN Repo\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.dll
+D:\SVN Repo\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.pdb
+D:\RVSVNCode\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.dll
+D:\RVSVNCode\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Business.pdb
+D:\RVSVNCode\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.dll
+D:\RVSVNCode\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.dll
+D:\RVSVNCode\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Data.pdb
+D:\RVSVNCode\RepidShare.Web\RepidShare.Business\bin\Debug\RepidShare.Entities.pdb
+D:\RVSVNCode\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.csprojResolveAssemblyReference.cache
+D:\RVSVNCode\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.dll
+D:\RVSVNCode\RepidShare.Web\RepidShare.Business\obj\Debug\RepidShare.Business.pdb

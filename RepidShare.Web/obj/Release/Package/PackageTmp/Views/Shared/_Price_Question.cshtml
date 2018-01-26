@@ -1,0 +1,468 @@
+﻿@model RepidShare.Entities.DocumentResponseDetailModel
+@using RepidShare.Utility;
+
+@if (Model != null && Model.Questions != null && Model.Questions.Count() > 0)
+{
+
+    <div class="row">
+        @if (Model.IsReadOnly)
+        { 
+            <div class="col-sm-12">
+                <div class="ViewTextResponse">@Model.Questions[Model.Index].AnswerDetail</div>
+            </div>
+        }
+        else
+        {
+            <div class="col-sm-6">
+                @Html.SingleLineTextBoxFor(model => Model.Questions[Model.Index].AnswerDetail, Model.Questions[Model.Index])
+                <br />
+                @Html.ValidationMessageFor(model => Model.Questions[Model.Index].AnswerDetail)
+            </div>
+        }
+
+    </div>@*
+    
+        if (!string.IsNullOrWhiteSpace(Model.Questions[Model.Index].HTML))
+        {
+    <div id="PriceQuestion_@Model.Questions[Model.Index].QuestionID">
+        @Html.Raw(Model.Questions[Model.Index].HTML)
+    </div>
+        }
+        else
+        {
+    *@<div id="PriceQuestion_@Model.Questions[Model.Index].QuestionID">
+        <div class="row">
+            <div id="DivText_@Model.Questions[Model.Index].QuestionID" class="PriceAmtText">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <br />
+                <span>Please select tax type</span>
+                <br />
+                <select class="Price_Question_Tax clsDrpDown form-control" id="TaxOpt_@Model.Questions[Model.Index].QuestionID">
+                    <option value="-1">Select</option>
+                    <option value="10">IVA Pluse</option>
+                    <option value="0">IVA Include</option>
+                </select>
+                <br />
+                <span id="Tax_@Model.Questions[Model.Index].QuestionID"></span>
+                <div id="TaxText_@Model.Questions[Model.Index].QuestionID"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <br />
+                <span>Please select installment no</span>
+                <br />
+                <select class="Price_Question_Inst clsDrpDown form-control" id="TaxInst_@Model.Questions[Model.Index].QuestionID">
+                    <option value="-1">Select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <br />
+                <span>Please select interest type</span>
+                <br />
+                <select class="interest_type_Inst clsDrpDown form-control" id="interest_type_@Model.Questions[Model.Index].QuestionID">
+                    <option value="-1">Select</option>
+                    <option value="0">none</option>
+                    <option value="1">fixed</option>
+                    <option value="3">percentage</option>
+                </select>
+                <br />
+                <input type="text" style="display:none" class="numeric form-control" id="interest_fixed_@Model.Questions[Model.Index].QuestionID">
+            </div>
+            </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <br />
+                <span>Please enter panelty</span>
+                <br />
+                <input type="text" class="numeric form-control" id="panelty_@Model.Questions[Model.Index].QuestionID">
+                </div>
+            </div>
+        <br />
+        <div class="row">
+            <div class="TableInnerHTML col-sm-6"  id="TableDiv_@Model.Questions[Model.Index].QuestionID">
+            </div>
+        </div>
+    </div>
+        //}
+
+    <input type="hidden" value="false" id="IsSubmit_@Model.Questions[Model.Index].QuestionID" />
+    @Html.HiddenFor(model => model.Questions[Model.Index].ResultDetailID, new { Value = Model.Questions[Model.Index].ResultDetailID })
+    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionID, new { Value = Model.Questions[Model.Index].QuestionID })
+    @Html.HiddenFor(model => model.Questions[Model.Index].objPriceQuestionModel.DivInnerHTML, new { Value = Model.Questions[Model.Index].objPriceQuestionModel.DivInnerHTML })
+    @Html.HiddenFor(model => model.Questions[Model.Index].objPriceQuestionModel.InstNoValue, new { Value = Model.Questions[Model.Index].objPriceQuestionModel.InstNoValue })
+    @Html.HiddenFor(model => model.Questions[Model.Index].objPriceQuestionModel.TaxTypeValue, new { Value = Model.Questions[Model.Index].objPriceQuestionModel.TaxTypeValue })
+    @Html.HiddenFor(model => model.Questions[Model.Index].objPriceQuestionModel.TableInnerHTML, new { Value = Model.Questions[Model.Index].objPriceQuestionModel.TableInnerHTML })
+    @Html.HiddenFor(model => model.Questions[Model.Index].objPriceQuestionModel.PriceAmtText, new { Value = Model.Questions[Model.Index].objPriceQuestionModel.PriceAmtText })
+    @Html.HiddenFor(model => model.Questions[Model.Index].objPriceQuestionModel.FixedAmt, new { Value = Model.Questions[Model.Index].objPriceQuestionModel.FixedAmt })
+    @Html.HiddenFor(model => model.Questions[Model.Index].objPriceQuestionModel.TaxAmt, new { Value = Model.Questions[Model.Index].objPriceQuestionModel.TaxAmt })
+    @Html.HiddenFor(model => model.Questions[Model.Index].objPriceQuestionModel.TaxAmtText, new { Value = Model.Questions[Model.Index].objPriceQuestionModel.TaxAmtText })
+}
+
+<script type="text/javascript">
+
+
+    $().ready(function () {
+
+        var BackTexxt = "__AnswerDetail";
+
+        if ('@Model.Questions[Model.Index].ResultDetailID' != '0') {
+           // debugger;
+            $("#DivText_@Model.Questions[Model.Index].QuestionID").html('@Model.Questions[Model.Index].objPriceQuestionModel.PriceAmtText');
+            $("#TaxOpt_@Model.Questions[Model.Index].QuestionID").val('@Model.Questions[Model.Index].objPriceQuestionModel.TaxTypeValue');
+
+            $.uniform.update();
+
+            if ($("#TaxOpt_@Model.Questions[Model.Index].QuestionID").val() > 0) {
+
+                var AmtValue = parseInt($("#Questions_@Model.Index" + BackTexxt).val());
+
+                var CalValue = parseInt($("#Questions_@Model.Index" + BackTexxt).val()) / parseInt($("#TaxOpt_@Model.Questions[Model.Index].QuestionID").val());
+
+                var totalAmt = AmtValue + CalValue;
+                $("#Questions_" + @Model.Index + "__objPriceQuestionModel_TaxAmt").val(CalValue);
+
+                testSkill(CalValue, 'TaxText_@Model.Questions[Model.Index].QuestionID');
+
+                $("#Questions_" + @Model.Index + "__objPriceQuestionModel_TaxAmtText").val($("#TaxText_@Model.Questions[Model.Index].QuestionID").html());
+
+                $("#Tax_@Model.Questions[Model.Index].QuestionID").text('IVA Pluse : $' + $("#Questions_@Model.Index" + BackTexxt).val() + ' + $' + CalValue + ' = $' + totalAmt);
+            }
+            else {
+                $("#Tax_@Model.Questions[Model.Index].QuestionID").text('')
+
+            }
+
+            $.uniform.update();
+
+            $("#TaxInst_@Model.Questions[Model.Index].QuestionID").val('@Model.Questions[Model.Index].objPriceQuestionModel.InstNoValue');
+
+            $.uniform.update();
+
+
+
+            $("#interest_type_@Model.Questions[Model.Index].QuestionID").val('@Model.Questions[Model.Index].objPriceQuestionModel.FixedAmt');
+
+            $.uniform.update();
+
+            var dtFixedAmt = 0;
+            var dtPriceDetails = @Html.Raw(Json.Encode(@Model.Questions[Model.Index].objPriceQuestionModel.dtPriceDetails));
+
+            if ($("#TaxInst_@Model.Questions[Model.Index].QuestionID").val() == "-1") {
+                $("#TableDiv_@Model.Questions[Model.Index].QuestionID").html('');
+            }
+            else {
+                var TableHTML = "<table><tr><td></td><td>Inst Amt</td><td>Interest</td><td>Due Date</td></tr>";
+                for (var i = 0; i < dtPriceDetails.length ; i++) {
+                    if ($("#interest_type_@Model.Questions[Model.Index].QuestionID").val() == "1") {
+                        dtFixedAmt = dtPriceDetails[i].IneteAmt;
+                    }
+                    TableHTML += '<tr><td>' + parseInt(i + 1) + '</td><td><input class="numeric amt_@Model.Questions[Model.Index].QuestionID" type="text" id=inst' + i + ' value='+dtPriceDetails[i].InstAmt+' /></td><td><input id=intere' + i + ' value='+dtPriceDetails[i].IneteAmt+' class="numeric interest_fixed" type="text" /></td><td><input id=due' + i + ' value='+dtPriceDetails[i].DateAmt+' type="text" /></td></tr>';
+                    $("#panelty_@Model.Questions[Model.Index].QuestionID").val(dtPriceDetails[0].PenaltyAmt);
+                }
+                TableHTML += "</table><br/><span id='IsRequired_@Model.Questions[Model.Index].QuestionID' style='color:red;'>Please enter all above input.</span>";
+                $("#TableDiv_@Model.Questions[Model.Index].QuestionID").html(TableHTML);
+
+                $.uniform.update();
+            }
+
+            if ($("#interest_type_@Model.Questions[Model.Index].QuestionID").val() == "1") {
+                $("#interest_fixed_@Model.Questions[Model.Index].QuestionID").show();
+                $('.interest_fixed').attr('readonly', true);
+                $('.interest_fixed').addClass('input-disabled');
+                $(".interest_fixed").val(dtFixedAmt);
+                $("#interest_fixed_@Model.Questions[Model.Index].QuestionID").val(dtFixedAmt);
+            }
+            else if ($("#interest_type_@Model.Questions[Model.Index].QuestionID").val() == "0") {
+                $("#interest_fixed_@Model.Questions[Model.Index].QuestionID").hide();
+                $(".interest_fixed").val('0');
+                $('.interest_fixed').attr('readonly', true);
+                $('.interest_fixed').addClass('input-disabled');
+            }
+            else {
+                $("#interest_fixed_@Model.Questions[Model.Index].QuestionID").hide();
+                $(".interest_fixed").val('');
+                $('.interest_fixed').attr('readonly', false);
+                $('.interest_fixed').removeClass('input-disabled');
+
+            }
+
+        $("#IsSubmit_@Model.Questions[Model.Index].QuestionID").val('true');
+            $.uniform.update();
+        }
+
+
+
+        $("#Questions_@Model.Index" + BackTexxt).focusout(function () {
+            testSkill($('#Questions_@Model.Index' + BackTexxt).val(), 'DivText_@Model.Questions[Model.Index].QuestionID');
+        })
+        $("#Questions_@Model.Index" + BackTexxt).blur(function () {
+            testSkill($('#Questions_@Model.Index' + BackTexxt).val(), 'DivText_@Model.Questions[Model.Index].QuestionID');
+        })
+
+        $("#Questions_@Model.Index" + BackTexxt).keydown(function (e) {
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+            }
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+
+        $(".numeric").keydown(function (e) {
+            if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                            (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                            (e.keyCode >= 35 && e.keyCode <= 40)) {
+                return;
+            }
+            if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                e.preventDefault();
+            }
+        });
+
+        $("#interest_fixed_@Model.Questions[Model.Index].QuestionID").keyup(function () {
+            $(".interest_fixed").val($("#interest_fixed_@Model.Questions[Model.Index].QuestionID").val());
+            $('.interest_fixed').attr('readonly', true);
+            $('.interest_fixed').addClass('input-disabled');
+        })
+
+
+
+
+        $("#TaxOpt_@Model.Questions[Model.Index].QuestionID").change(function () {
+            if ($("#TaxOpt_@Model.Questions[Model.Index].QuestionID").val() > 0) {
+
+                var AmtValue = parseInt($("#Questions_@Model.Index" + BackTexxt).val());
+
+                var CalValue = parseInt($("#Questions_@Model.Index" + BackTexxt).val()) / parseInt($("#TaxOpt_@Model.Questions[Model.Index].QuestionID").val());
+
+                var totalAmt = AmtValue + CalValue;
+                $("#Questions_" + @Model.Index + "__objPriceQuestionModel_TaxAmt").val(CalValue);
+
+                testSkill(CalValue, 'TaxText_@Model.Questions[Model.Index].QuestionID');
+
+                $("#Questions_" + @Model.Index + "__objPriceQuestionModel_TaxAmtText").val($("#TaxText_@Model.Questions[Model.Index].QuestionID").html());
+
+                $("#Tax_@Model.Questions[Model.Index].QuestionID").text('IVA Pluse : $' + $("#Questions_@Model.Index" + BackTexxt).val() + ' + $' + CalValue + ' = $' + totalAmt);
+            }
+            else {
+                $("#Tax_@Model.Questions[Model.Index].QuestionID").text('')
+
+            }
+        });
+        $("#TaxInst_@Model.Questions[Model.Index].QuestionID").change(function () {
+
+            if ($("#TaxInst_@Model.Questions[Model.Index].QuestionID").val() == "-1") {
+                $("#TableDiv_@Model.Questions[Model.Index].QuestionID").html('');
+            }
+            else {
+                var TableHTML = "<table><tr><td></td><td>Inst Amt</td><td>Interest</td><td>Due Date</td></tr>";
+                for (var i = 0; i < $("#TaxInst_@Model.Questions[Model.Index].QuestionID").val() ; i++) {
+                    TableHTML += '<tr><td>' + parseInt(i + 1) + '</td><td><input class="numeric amt_@Model.Questions[Model.Index].QuestionID" type="text" id=inst' + i + ' /></td><td><input id=intere' + i + ' class="numeric interest_fixed" type="text" /></td><td><input id=due' + i + ' placeholder="dd/MM/yyyy" type="text" /></td></tr>';
+                }
+                TableHTML += "</table><br/><span id='IsRequired_@Model.Questions[Model.Index].QuestionID' style='color:red;'>Please enter all above input.</span>";
+                $("#TableDiv_@Model.Questions[Model.Index].QuestionID").html(TableHTML);
+
+                $.uniform.update();
+
+
+            }
+
+        });
+
+        $("#interest_type_@Model.Questions[Model.Index].QuestionID").change(function () {
+            $("#interest_fixed_@Model.Questions[Model.Index].QuestionID").val('');
+            if ($("#interest_type_@Model.Questions[Model.Index].QuestionID").val() == "1") {
+                $("#interest_fixed_@Model.Questions[Model.Index].QuestionID").show();
+                $('.interest_fixed').attr('readonly', true);
+                $('.interest_fixed').addClass('input-disabled');
+                $(".interest_fixed").val('');
+            }
+            else if ($("#interest_type_@Model.Questions[Model.Index].QuestionID").val() == "0") {
+                $("#interest_fixed_@Model.Questions[Model.Index].QuestionID").hide();
+                $(".interest_fixed").val('0');
+                $('.interest_fixed').attr('readonly', true);
+                $('.interest_fixed').addClass('input-disabled');
+            }
+            else {
+                $("#interest_fixed_@Model.Questions[Model.Index].QuestionID").hide();
+                $(".interest_fixed").val('');
+                $('.interest_fixed').attr('readonly', false);
+                $('.interest_fixed').removeClass('input-disabled');
+
+            }
+
+        });
+
+
+    });
+
+var JsonRes_@Model.Questions[Model.Index].QuestionID = "";
+
+    $(document).on("keydown", ".numeric", function (e) {
+        console.log(e.keyCode);
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                        (e.keyCode === 65 && (e.ctrlKey === true || e.metaKey === true)) ||
+                        (e.keyCode >= 35 && e.keyCode <= 40)) {
+            return;
+        }
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+
+
+    $(document).on("keyup", ".numeric", function (e) {
+
+        $("#IsSubmit_@Model.Questions[Model.Index].QuestionID").val("true");
+
+        JsonRes_@Model.Questions[Model.Index].QuestionID = "";
+        for (var i = 0; i < $("#TaxInst_@Model.Questions[Model.Index].QuestionID").val() ; i++) {
+            JsonRes_@Model.Questions[Model.Index].QuestionID += "" + $("#inst" + i).val() + "&" + $("#intere" + i).val() + "&" + $("#due" + i).val() + "&" + $("#panelty_@Model.Questions[Model.Index].QuestionID").val() + "~";
+
+            if ($("#inst" + i).val() == "" || $("#intere" + i).val() == "" || $("#due" + i).val() == "" ) {
+                $("#IsSubmit_@Model.Questions[Model.Index].QuestionID").val("false");
+            }
+        }
+
+
+
+        $("#Questions_" + @Model.Index + "__objPriceQuestionModel_TableInnerHTML").val(JsonRes_@Model.Questions[Model.Index].QuestionID);
+    });
+
+</script>
+
+<script>
+    var iWords = ['Zero', ' One', ' Two', ' Three', ' Four', ' Five', ' Six', ' Seven', ' Eight', ' Nine'];
+    var ePlace = ['Ten', ' Eleven', ' Twelve', ' Thirteen', ' Fourteen', ' Fifteen', ' Sixteen', ' Seventeen', ' Eighteen', ' Nineteen'];
+    var tensPlace = ['', ' Ten', ' Twenty', ' Thirty', ' Forty', ' Fifty', ' Sixty', ' Seventy', ' Eighty', ' Ninety'];
+    var inWords = [];
+
+    var numReversed, inWords, actnumber, i, j;
+
+    function tensComplication() {
+        'use strict';
+        if (actnumber[i] === 0) {
+            inWords[j] = '';
+        } else if (actnumber[i] === 1) {
+            inWords[j] = ePlace[actnumber[i - 1]];
+        } else {
+            inWords[j] = tensPlace[actnumber[i]];
+        }
+    }
+
+    function testSkill(junkVal, outbox) {
+
+        'use strict';
+        //var junkVal = document.getElementById(inbox).value;
+        junkVal = Math.floor(junkVal);
+        var obStr = junkVal.toString();
+        numReversed = obStr.split('');
+        actnumber = numReversed.reverse();
+
+        if (Number(junkVal) >= 0) {
+            //do nothing
+        } else {
+            window.alert('wrong Number cannot be converted');
+            return false;
+        }
+        if (Number(junkVal) === 0) {
+            document.getElementById('container').innerHTML = obStr + '' + 'Rupees Zero Only';
+            return false;
+        }
+        if (actnumber.length > 9) {
+            window.alert('Oops!!!! the Number is too big to covertes');
+            return false;
+        }
+
+
+
+        var iWordsLength = numReversed.length;
+        var finalWord = '';
+        j = 0;
+        for (i = 0; i < iWordsLength; i++) {
+            switch (i) {
+                case 0:
+                    if (actnumber[i] === '0' || actnumber[i + 1] === '1') {
+                        inWords[j] = '';
+                    } else {
+                        inWords[j] = iWords[actnumber[i]];
+                    }
+                    inWords[j] = inWords[j] + ' Only';
+                    break;
+                case 1:
+                    tensComplication();
+                    break;
+                case 2:
+                    if (actnumber[i] === '0') {
+                        inWords[j] = '';
+                    } else if (actnumber[i - 1] !== '0' && actnumber[i - 2] !== '0') {
+                        inWords[j] = iWords[actnumber[i]] + ' Hundred and';
+                    } else {
+                        inWords[j] = iWords[actnumber[i]] + ' Hundred';
+                    }
+                    break;
+                case 3:
+                    if (actnumber[i] === '0' || actnumber[i + 1] === '1') {
+                        inWords[j] = '';
+                    } else {
+                        inWords[j] = iWords[actnumber[i]];
+                    }
+                    if (actnumber[i + 1] !== '0' || actnumber[i] > '0') {
+                        inWords[j] = inWords[j] + ' Thousand';
+                    }
+                    break;
+                case 4:
+                    tensComplication();
+                    break;
+                case 5:
+                    if (actnumber[i] === '0' || actnumber[i + 1] === '1') {
+                        inWords[j] = '';
+                    } else {
+                        inWords[j] = iWords[actnumber[i]];
+                    }
+                    if (actnumber[i + 1] !== '0' || actnumber[i] > '0') {
+                        inWords[j] = inWords[j] + ' Lakh';
+                    }
+                    break;
+                case 6:
+                    tensComplication();
+                    break;
+                case 7:
+                    if (actnumber[i] === '0' || actnumber[i + 1] === '1') {
+                        inWords[j] = '';
+                    } else {
+                        inWords[j] = iWords[actnumber[i]];
+                    }
+                    inWords[j] = inWords[j] + ' Crore';
+                    break;
+                case 8:
+                    tensComplication();
+                    break;
+                default:
+                    break;
+            }
+            j++;
+        }
+
+
+        inWords.reverse();
+        for (i = 0; i < inWords.length; i++) {
+            finalWord += inWords[i];
+        }
+        document.getElementById(outbox).innerHTML = '$' + obStr + '  ' + finalWord;
+    }
+</script>

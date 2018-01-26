@@ -1,0 +1,29 @@
+﻿
+
+@if (Model.myDocument.objListDocumentModel != null && Model.myDocument.objListDocumentModel.Count > 0)
+{
+    foreach (var item in Model.myDocument.objListDocumentModel)
+    {
+        <div class="clearfix margin15"></div>
+                <div class="col-md-5 font-s">
+                    <div class="col-md-2 col-sm-2 col-xs-1">
+                        <img src="/img/icon02.png">
+                    </div>
+                    <div class="col-md-10 col-sm-10 col-xs-6">
+                        <a href="/User/AddForTrial?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(item.DocumentID))">
+                            <span class="color-t">@Html.Raw(item.DocumentTitle)</span>
+                        </a><br>
+                        <span style="cursor:pointer" title="@Html.Raw(item.DocumentDescription).ToHtmlString().Replace("<p>", "").Replace("</p>", "")">@Html.Raw(item.DocumentDescription.Length > 50 ? item.DocumentDescription.Substring(0, 50) + "..." : item.DocumentDescription)</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-12 col-xs-12 font-s m-top">
+                    <p>Created On</p>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-6 m-top xs-center">
+                    <span>@item.CreatedOn.ToShortDateString()</span>
+
+                </div>
+    }
+}
+
+

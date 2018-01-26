@@ -1,0 +1,494 @@
+﻿@model RepidShare.Entities.DocumentResponseDetailModel
+@if (Model != null && Model.Questions != null && Model.Questions.Count() > 0)
+{
+    <div class="row">
+    <div class="col-sm-12">
+        <div class="response-question-list sm-corner-a">
+            @Html.HiddenFor(model => model.ReferralUrl)
+            @Html.HiddenFor(model => model.UrlPageName)
+            @Html.HiddenFor(model => model.UrlTitle)
+
+            @if (Model.Result != null)
+            {
+                @Html.HiddenFor(model => model.Result.IsCompleted, new { Value = Model.Result.IsCompleted, id = "hdnIsCompleted" })
+                @Html.HiddenFor(model => model.Result.DocumentResultID, new { Value = Model.Result.DocumentResultID, id = "hdnDocumentResultID" })
+                @Html.HiddenFor(model => model.Result.NoOfAttempt, new { Value = Model.Result.NoOfAttempt, id = "hdnNoOfAttempt" })
+                @Html.HiddenFor(model => model.Result.DocumentTargetAudienceID, new { Value = Model.Result.DocumentTargetAudienceID, id = "hdnDocumentTargetAudienceID" })
+                @Html.HiddenFor(model => model.Result.CompletionDate, new { Value = Model.Result.CompletionDate, id = "hdnCompletionDate" })
+                @Html.HiddenFor(model => model.Result.NoOfAttempt, new { Value = Model.Result.NoOfAttempt, id = "hdnNoOfAttempt" })
+            }
+            @for (int i = 0; i < Model.Questions.Count; i++)
+            { 
+                @Html.HiddenFor(model => model.Questions[i].QuestionType, new { Value = Model.Questions[i].QuestionType })
+                @Html.HiddenFor(model => model.Questions[i].QuestionID, new { Value = Model.Questions[i].QuestionID })
+                @Html.HiddenFor(m => Model.Questions[i].DisplayOrder, new { Value = Model.Questions[i].DisplayOrder })
+                @Html.HiddenFor(m => Model.Questions[i].IsRequireResponse, new { Value = Model.Questions[i].IsRequireResponse, id = "hdnIsReq_" + Model.Questions[i].QuestionID })
+               
+                
+                
+                <li id="Main_@Model.Questions[i].QuestionID" >
+                    <div class="form-item" onclick="GetExplanation('@Model.Questions[i].QuestionID')">
+                        <span id="Explanation_@Model.Questions[i].QuestionID" style="display: none">@Html.Raw(Model.Questions[i].Explanation != null ? Model.Questions[i].Explanation.Replace("\r\n", "") : "")</span>
+                        <label for="textfield">@Model.Questions[i].QuestionDescription</label>
+                        @*<i class="icon-qmark" title="@Html.Raw(Model.Questions[i].QuestionHint != null ? Model.Questions[i].QuestionHint.Replace("\r\n", "") : "")" 
+                            onmouseover="GetHint('@Model.Questions[i].QuestionID')"><span id="Hint_@Model.Questions[i].QuestionID" style="display: none">@Html.Raw(Model.Questions[i].QuestionHint != null ? Model.Questions[i].QuestionHint.Replace("\r\n", "") : "")</span></i>*@
+                        <i class="icon-qmark" title="@Html.Raw(Model.Questions[i].QuestionHint != null ? Model.Questions[i].QuestionHint.Replace("\r\n", "") : "")" ><span id="Hint_@Model.Questions[i].QuestionID" style="display: none">@Html.Raw(Model.Questions[i].QuestionHint != null ? Model.Questions[i].QuestionHint.Replace("\r\n", "") : "")</span></i>
+                        @if (Model.Questions[i].IsRequireResponse)
+                        {<span class="mandatoryFeildNew" style="color: red">*</span>}
+                        <div response-question-content="" class="response-question-content">
+                            <div class="DocumentResultWrapper clearfix">
+                                @*<div class="question-conunt">Ans: </div>*@
+                                <div class="response-question-title-text validation-error-outer">
+                                    <div class="response-container essay " view-role="responseEssayView">
+                                        @if (!String.IsNullOrEmpty(Model.Questions[i].QuestionType))
+                                        {
+                                            Model.Index = i;
+                                            @Html.HiddenFor(m => m.Index, new { Value = i })
+                                            if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.SingleLine.ToString())
+                                            {
+                                            @Html.Partial("_SingleLineText", Model)
+                                                <div class="validation-error-outer">
+                                                    <span id="spnSingleText_@Model.Questions[i].QuestionID" class="field-validation-error " style="display:none;color:red">@RepidShare.Entities.Resource.DocumentResponse.valAnswer</span>
+                                                </div>
+
+                                            }
+                                            else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.MultiLine.ToString())
+                                            {
+                                            @Html.Partial("_MultiLineText", Model)
+                                            }
+                                            else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.Number.ToString())
+                                            {
+                                            @Html.Partial("_NumberText", Model)
+                                            <div class="validation-error-outer">
+                                                <span id="spnum_@Model.Questions[i].QuestionID" class="field-validation-error " style="display:none;color:red">@RepidShare.Entities.Resource.DocumentResponse.valAnswer</span>
+                                            </div>
+                                            }
+                                            else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.SingleSelect.ToString())
+                                            {
+                                            @Html.Partial("_SingleSelectRadio", Model)
+                                            <div class="validation-error-outer">
+                                                <span id="spn_@Model.Questions[i].QuestionID" class="field-validation-error " style="display:none;color:red">@RepidShare.Entities.Resource.DocumentResponse.valAnswer</span>
+                                            </div> 
+                                            }
+                                            else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.MultiSelect.ToString())
+                                            {
+                                            @Html.Partial("_MultiSelectCheckbox", Model)
+                                            <div class="validation-error-outer">
+                                                <span id="spnm_@Model.Questions[i].QuestionID" class="field-validation-error " style="display:none;color:red">@RepidShare.Entities.Resource.DocumentResponse.valAnswer</span>
+                                            </div>
+                                            }
+                                            else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.DateAndTime.ToString())
+                                            {
+                                            @Html.Partial("_DateTimeText", Model)
+                                            }
+                                            else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.DropDown.ToString())
+                                            {
+                                            @Html.Partial("_DropDown", Model)
+                                            }
+                                            else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.Price_Question.ToString())
+                                            {
+                                            @Html.Partial("_Price_Question", Model)
+                                            }
+                                            else if (Model.Questions[i].QuestionType == RepidShare.Utility.CommonUtils.QuestionType.Price.ToString())
+                                            {
+                                            @Html.Partial("_PriceText", Model)
+                                            }
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                                   
+               
+                      
+                        
+            }
+        </div>
+        @*<div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>*@
+        <!--.pagination-strip-->
+    </div>
+    </div>
+    <br />
+@*<div class="row add-bottom">
+        <div class="col-sm-12">
+            <div class="text-center button-group button-group-new question-button-group">
+                @if (Model != null && Model.TotalPages > 1 && Model.CurrentPage > 1)
+                {
+                    <a href="javascript:void(0)" id="btnPrevious" class="btn btn-primary">Previous</a>
+                }
+                @if (Model != null && Model.CurrentPage == Model.TotalPages)
+                {
+                    <a href="javascript:void(0)" id="btnSave" class="btn btn-primary">Save</a>
+                    <a href="javascript:void(0)" id="btnSaveAndFinish" class="btn btn-primary">Finish</a>
+                }
+                else
+                {
+                    <a href="javascript:void(0)" id="btnNext" class="btn btn-primary">Next</a>
+                }
+                <a href="@Model.ReferralUrl" id="btnBackToList" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </div>*@
+    @Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+     
+    <div class="row">
+        <div class="col-sm-12">
+        </div>
+    </div>
+}
+
+
+<script type="text/javascript">
+
+    function GetExplanation(id)
+    {
+        $("#div_explanationwrap").html($("#Explanation_"+id).html());
+    }
+
+    function GetHint(id)
+    {
+        $("#div_explanationwrap").html($("#Hint_"+id).html());
+    }
+
+
+    function QuestionShowHide(QuestionId,AnsValue)
+    {
+        var QuestionParents = @Html.Raw(Json.Encode(Model.Questions));
+        
+        for (var i = 0; i < QuestionParents.length; i++) {
+            var questionOpetion = QuestionParents[i];
+            
+            if(QuestionId>0 && AnsValue !='')
+            {
+                if(questionOpetion.ParentQuestion == QuestionId)
+                {
+                    if(questionOpetion.ParentAnswer == AnsValue)
+                        $("#Main_"+questionOpetion.QuestionID).show();
+                    else
+                        $("#Main_"+questionOpetion.QuestionID).hide();
+                }
+                
+            }
+            else
+            {
+                if ( questionOpetion.ParentQuestion == null || questionOpetion.ParentQuestion == '')
+                {
+                    $("#Main_"+questionOpetion.QuestionID).show();       
+                }
+                else
+                {
+                    $("#Main_"+questionOpetion.QuestionID).hide();
+                }
+            }
+            
+        }
+        
+    }
+
+
+    $().ready(function () {
+
+        $(".numericInt").numeric({decimal : false });
+        $("input.numericDec").numeric({ decimal: "." });
+        $.validator.unobtrusive.addValidation("#frmDocumentResponse");
+        // Show Sucess or Error Message on popup by common function showMessagePopup
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+        
+        QuestionShowHide(0,'');
+        $("#btnSave").click(function () {
+            
+            $("#ActionType").val("save");
+           
+            if (CheckValid())
+            {
+                sendToServer();
+            } else 
+            {
+                $("#frmDocumentResponse").valid();
+            }
+        });
+
+        $("#btnSaveAndFinish").click(function () {
+            $("#ActionType").val("submit");
+            if (CheckValid())
+            {
+                sendToServer();
+            }
+            else 
+            {
+                $("#frmDocumentResponse").valid();
+            }
+        });
+
+        $("#btnPrevious").click(function () {
+            $("#ActionType").val("previous");
+            //debugger;
+            //$(".form-control").rules("remove", "required");
+            //$(".form-control").rules( "remove", "required" );
+            if(CheckValid())
+            {
+                sendToServer();
+            }
+            else 
+            {
+                $("#frmDocumentResponse").valid();
+            }
+        });
+        $("#btnNext").click(function () {
+ 
+            $("#ActionType").val("next");
+            // SetSelectedAnswers();
+            //$(".form-control").rules( "remove", "required" );
+            if(CheckValid())
+            {
+                sendToServer();
+            }
+            else 
+            {
+                $("#frmDocumentResponse").valid();
+            }
+        });
+        //Text area fixed no of lines
+
+        
+        $('.yourtextarea').keyup(function() 
+        {
+  
+            var allowedNumberOfLines = 4;
+            allowedNumberOfLines = $(this).attr('rows');
+            var TotalLines =  $(this).val().split("\n").length;
+            if(TotalLines > allowedNumberOfLines)
+            {
+                modifiedText = $(this).val().split("\n").slice(0, allowedNumberOfLines);
+                $(this).val(modifiedText.join("\n"));
+            }
+        });
+
+        //regular expression for script tag
+        var regex = new RegExp("^[^<>\"/;`%]*$");
+        $("input[type=text], textarea").keypress(function (e) {
+            if (!regex.test(String.fromCharCode(e.which))) {
+                //$(this).val($(this).val().replace($(this).val(), ""));
+                e.preventDefault();
+            }
+        });
+
+        $(".radioanswer").click(function () {
+
+            var surveOptions = $(this).attr('id').replace('rdb_', '');
+            var suveyQuestionOptionID = surveOptions.split('_')[0];
+            var suveyQuestionID = surveOptions.split('_')[1];
+            var hdnSelectedAnswer = $("#hdn_" + suveyQuestionID);
+            $("#spn_" + suveyQuestionID).hide();
+            hdnSelectedAnswer.val(suveyQuestionOptionID);
+        });
+
+    });
+    function CheckValid() {
+    
+        var isvalid= true;
+        var Questions = @Html.Raw(Json.Encode(Model.Questions));
+  
+        for (var i = 0; i < Questions.length; i++) {
+            var question = Questions[i];
+            if ( question.IsRequireResponse && question.QuestionType == '@RepidShare.Utility.CommonUtils.QuestionType.SingleSelect.ToString()')
+            {
+                if($(".radioquestionoption_"+question.QuestionID+":checked").length<=0)
+                {
+                    $("#spn_"+question.QuestionID).show();
+                    isvalid=false;
+                }
+                else{
+                    $("#spn_"+question.QuestionID).hide();
+
+                }
+            }
+            else  if ( question.IsRequireResponse && question.QuestionType == '@RepidShare.Utility.CommonUtils.QuestionType.MultiSelect.ToString()')
+            {
+                if($(".chkquestionansweroption_"+question.QuestionID+":checked").length<=0)
+                {
+                    $("#spnm_"+question.QuestionID).show();
+                    isvalid=false;
+                }
+                else{
+                    $("#spnm_"+question.QuestionID).hide();
+
+                }
+            }
+            else  if ( question.IsRequireResponse && question.QuestionType == '@RepidShare.Utility.CommonUtils.QuestionType.Number.ToString()')
+            {
+                isvalid= CheckNumber("#num_"+question.QuestionID);
+            
+            }
+            else if (question.QuestionType == '@RepidShare.Utility.CommonUtils.QuestionType.Number.ToString()' &&  $("#num_"+question.QuestionID).val().length>0)
+            {
+                isvalid= CheckNumber("#num_"+question.QuestionID);
+            }
+            else if (question.QuestionType == '@RepidShare.Utility.CommonUtils.QuestionType.Price_Question.ToString()')
+            {
+                //Questions_0__objPriceQuestionModel_DivInnerHTML
+                $("#Questions_"+i+"__objPriceQuestionModel_DivInnerHTML").val($("#PriceQuestion_"+question.QuestionID).html());
+                //var s = "Bobby Peel (12 February 1857 – 12 August 1941) was an English professional cricketer who played first-class cricket for Yorkshire between 1883 and 1897. Although an effective batsman, he was primarily a left-arm spin bowler; when conditions favoured his bowling style, he was a matchwinner. Between 1884 and 1896, Peel was regularly selected to represent England, playing 20 Test matches in which he took 101 wickets; in one such game, he bowled England to victory after they had followed on in Australia in 1894–95. Peel began playing for Yorkshire in 1883 and was the team's main spinner by 1887; he regularly took over 100 wickets in a season, despite receiving little support from other bowlers, and was among the leading batsmen for the county. As a player, he was very popular but had a reputation for drinking heavily. In 1897 he was suspended for drunkenness during a match and never played for Yorkshire again, although the events leading up to this are unclear. Later stories, generally dismissed by historians, suggested he urinated on the pitch. He continued to play and coach cricket for most of his life. Among his other jobs, he became the landlord of a public house and worked in a mill. (Full article...) Bobby Peel (12 February 1857 – 12 August 1941) was an English professional cricketer who played first-class cricket for Yorkshire between 1883 and 1897. Although an effective batsman, he was primarily a left-arm spin bowler; when conditions favoured his bowling style, he was a matchwinner. Between 1884 and 1896, Peel was regularly selected to represent England, playing 20 Test matches in which he took 101 wickets; in one such game, he bowled England to victory after they had followed on in Australia in 1894–95. Peel began playing for Yorkshire in 1883 and was the team's main spinner by 1887; he regularly took over 100 wickets in a season, despite receiving little support from other bowlers, and was among the leading batsmen for the county. As a player, he was very popular but had a reputation for drinking heavily. In 1897 he was suspended for drunkenness during a match and never played for Yorkshire again, although the events leading up to this are unclear. Later stories, generally dismissed by historians, suggested he urinated on the pitch. He continued to play and coach cricket for most of his life. Among his other jobs, he became the landlord of a public house and worked in a mill. (Full article...) Bobby Peel (12 February 1857 – 12 August 1941) was an English professional cricketer who played first-class cricket for Yorkshire between 1883 and 1897. Although an effective batsman, he was primarily a left-arm spin bowler; when conditions favoured his bowling style, he was a matchwinner. Between 1884 and 1896, Peel was regularly selected to represent England, playing 20 Test matches in which he took 101 wickets; in one such game, he bowled England to victory after they had followed on in Australia in 1894–95. Peel began playing for Yorkshire in 1883 and was the team's main spinner by 1887; he regularly took over 100 wickets in a season, despite receiving little support from other bowlers, and was among the leading batsmen for the county. As a player, he was very popular but had a reputation for drinking heavily. In 1897 he was suspended for drunkenness during a match and never played for Yorkshire again, although the events leading up to this are unclear. Later stories, generally dismissed by historians, suggested he urinated on the pitch. He continued to play and coach cricket for most of his life. Among his other jobs, he became the landlord of a public house and worked in a mill. (Full article...) Bobby Peel (12 February 1857 – 12 August 1941) was an English professional cricketer who played first-class cricket for Yorkshire between 1883 and 1897. Although an effective batsman, he was primarily a left-arm spin bowler; when conditions favoured his bowling style, he was a matchwinner. Between 1884 and 1896, Peel was regularly selected to represent England, playing 20 Test matches in which he took 101 wickets; in one such game, he bowled England to victory after they had followed on in Australia in 1894–95. Peel began playing for Yorkshire in 1883 and was the team's main spinner by 1887; he regularly took over 100 wickets in a season, despite receiving little support from other bowlers, and was among the leading batsmen for the county. As a player, he was very popular but had a reputation for drinking heavily. In 1897 he was suspended for drunkenness during a match and never played for Yorkshire again, although the events leading up to this are unclear. Later stories, generally dismissed by historians, suggested he urinated on the pitch. He continued to play and coach cricket for most of his life. Among his other jobs, he became the landlord of a public house and worked in a mill. (Full article...) Bobby Peel (12 February 1857 – 12 August 1941) was an English professional cricketer who played first-class cricket for Yorkshire between 1883 and 1897. Although an effective batsman, he was primarily a left-arm spin bowler; when conditions favoured his bowling style, he was a matchwinner. Between 1884 and 1896, Peel was regularly selected to represent England, playing 20 Test matches in which he took 101 wickets; in one such game, he bowled England to victory after they had followed on in Australia in 1894–95. Peel began playing for Yorkshire in 1883 and was the team's main spinner by 1887; he regularly took over 100 wickets in a season, despite receiving little support from other bowlers, and was among the leading batsmen for the county. As a player, he was very popular but had a reputation for drinking heavily. In 1897 he was suspended for drunkenness during a match and never played for Yorkshire again, although the events leading up to this are unclear. Later stories, generally dismissed by historians, suggested he urinated on the pitch. He continued to play and coach cricket for most of his life. Among his other jobs, he became the landlord of a public house and worked in a mill. (Full article...) Bobby Peel (12 February 1857 – 12 August 1941) was an English professional cricketer who played first-class cricket for Yorkshire between 1883 and 1897. Although an effective batsman, he was primarily a left-arm spin bowler; when conditions favoured his bowling style, he was a matchwinner. Between 1884 and 1896, Peel was regularly selected to represent England, playing 20 Test matches in which he took 101 wickets; in one such game, he bowled England to victory after they had followed on in Australia in 1894–95. Peel began playing for Yorkshire in 1883 and was the team's main spinner by 1887; he regularly took over 100 wickets in a season, despite receiving little support from other bowlers, and was among the leading batsmen for the county. As a player, he was very popular but had a reputation for drinking heavily. In 1897 he was suspended for drunkenness during a match and never played for Yorkshire again, although the events leading up to this are unclear. Later stories, generally dismissed by historians, suggested he urinated on the pitch. He continued to play and coach cricket for most of his life. Among his other jobs, he became the landlord of a public house and worked in a mill. (Full article...)"
+                //$("#Questions_"+i+"__objPriceQuestionModel_DivInnerHTML").val(s);
+                $("#Questions_"+i+"__objPriceQuestionModel_InstNoValue").val($("#TaxInst_"+question.QuestionID).val());
+                $("#Questions_"+i+"__objPriceQuestionModel_TaxTypeValue").val($("#TaxOpt_"+question.QuestionID).val());
+                $("#Questions_"+i+"__objPriceQuestionModel_PriceAmtText").val($("#DivText_"+question.QuestionID).html());
+                $("#Questions_"+i+"__objPriceQuestionModel_FixedAmt").val($("#interest_type_"+question.QuestionID).val());
+               
+                var BackTxt = "__AnswerDetail";
+                var sum = 0;
+                // iterate through each td based on class and add the values
+                $(".amt_"+question.QuestionID).each(function() {
+
+                    var value = $(this).text();
+                    // add only if the value is number
+                    if(!isNaN(value) && value.length != 0) {
+                        sum += parseFloat(value);
+                    }
+                });
+
+                if(sum > $("#Questions_@Model.Index" + BackTxt).val())
+                {
+                    $("#IsRequired_"+question.QuestionID).text('Please Change installment amount');
+                    isvalid = false;
+                }
+
+                if($("#IsSubmit_"+question.QuestionID).val()=="false" )
+                {
+                    isvalid = false;
+                }
+            }
+       
+}
+    return isvalid;
+}
+
+
+    
+
+//Limit to # of rows in textarea or arbitrary # of rows
+/*
+$('.yourtextarea').bind('change keyup', function (event) {
+    //Option 1: Limit to # of rows in textarea
+    rows = $(this).attr('rows');
+    //Optiion 2: Limit to arbitrary # of rows
+   // rows = 6;
+
+    var value = '';
+    var splitval = $(this).val().split("\n");
+
+    for (var a = 0; a < rows && typeof splitval[a] != 'undefined'; a++) {
+        if (a > 0) value += "\n";
+        value += splitval[a];
+    }
+    $(this).val(value);
+});
+*/
+ 
+// check number validation
+$('.numericDec').bind('change keyup', function (event) {
+        
+    min_length = $(this).attr('data-val-length-min');
+    max_length=  $(this).attr('data-val-length-max');
+    questionid=  $(this).attr('questionid');
+          
+    var numval = $(this).val();
+
+    if (isNaN(numval) ||(  parseFloat(min_length) >parseFloat( numval )|| parseFloat(numval) >parseFloat(max_length)))
+    {
+        //  $(this).val('');
+        $("#spnum_"+questionid).text(format('@RepidShare.Entities.Resource.DocumentResponse.valNumberText',min_length,max_length));
+        $("#spnum_"+questionid).show();
+    }
+    else{
+        $("#spnum_"+questionid).hide();
+    } 
+       
+       
+});
+
+
+// check number validation
+$('.numericInt').bind('change keyup', function (event) {
+        
+    min_length = $(this).attr('data-val-length-min');
+    max_length=  $(this).attr('data-val-length-max');
+    questionid=  $(this).attr('questionid');
+          
+    var numval = $(this).val();
+    if ( isNaN(numval) ||(  parseFloat(min_length) >parseFloat( numval )|| parseFloat(numval) >parseFloat(max_length)))
+    {
+        //  $(this).val('');
+        $("#spnum_"+questionid).text(format('@RepidShare.Entities.Resource.DocumentResponse.valNumberText',min_length,max_length));
+        $("#spnum_"+questionid).show();
+    }
+    else{
+        $("#spnum_"+questionid).hide();
+    } 
+       
+       
+});
+
+
+function CheckNumber(obj)
+{
+    
+    var checkValidnum= true;
+    min_length = $(obj).attr('data-val-length-min');
+    max_length=  $(obj).attr('data-val-length-max');
+    questionid=  $(obj).attr('questionid');
+    var numval = $(obj).val();
+    if ( isNaN(numval) ||(  parseFloat(min_length) >parseFloat( numval )|| parseFloat(numval) >parseFloat(max_length)))
+    {
+        //  $(this).val('');
+        $("#spnum_"+questionid).text(format('@RepidShare.Entities.Resource.DocumentResponse.valNumberText',min_length,max_length));
+        $("#spnum_"+questionid).show();
+        checkValidnum=false;
+    }
+    else{
+        $("#spnum_"+questionid).hide();
+        checkValidnum=true;
+    } 
+    return checkValidnum;
+}
+
+
+  
+
+</script>
+<style>
+    /* Tooltip container */
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+    }
+
+        /* Tooltip text */
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: black;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+            border-radius: 6px;
+            /* Position the tooltip text - see examples below! */
+            position: absolute;
+            z-index: 1;
+        }
+
+        /* Show the tooltip text when you mouse over the tooltip container */
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+        }
+</style>

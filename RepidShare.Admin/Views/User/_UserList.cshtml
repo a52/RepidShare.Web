@@ -1,0 +1,84 @@
+﻿@model RepidShare.Entities.ViewUserLoginModel
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>
+                                Sr No
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="Username" class="sort">User Name</a>
+                            </div>
+                        </th>
+                        <th>First Name
+                        </th>
+                        <th>Last Name
+                        </th>
+                        <th>Email
+                        </th>
+                        <th class="text-center"> Action </th>
+                        <th class="text-center"> Activate </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.UserLoginList != null && Model.UserLoginList.Count > 0)
+                    {
+                        for (int i = 0; i < Model.UserLoginList.Count; i++)
+                        {
+                        <tr>
+                            <td>@Model.UserLoginList[i].RowNumber</td>
+                            <td>@Model.UserLoginList[i].UserName</td>
+                            <td>@Model.UserLoginList[i].FName</td>
+                            <td>@Model.UserLoginList[i].LName</td>
+                            <td>@Model.UserLoginList[i].Email</td>
+                            <td class="btn-action"><a class="icon-view" href="/Document/MyDocument?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.UserLoginList[i].UserID))" title="Document View">Document View</a></td>
+
+                             @*By Narayan*@
+                              @if(Model.UserLoginList[i].IsActive == true)
+                            {
+                            <td> <img src="~/Images/icon-published.png"  width="19px"/>&nbsp; &nbsp; &nbsp;
+                            <a  href="/User/ActivateDeactivateUser?prm=@(RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.UserLoginList[i].UserID))+"~"+0)"  onclick=" return confirm('Are you sure want to Deactivate User')"      title=" DeActivate ">DeActivate</a></td>
+                            }
+                            else
+                            {
+                            <td> <img src="~/Images/cross.png" /> &nbsp; &nbsp; &nbsp;
+                            <a  href="/User/ActivateDeactivateUser?prm=@(RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.UserLoginList[i].UserID))+"~"+1)" onclick=" return confirm('Are you sure want to Activate User')"  title=" Activate "> Activate </a></td>
+                            }
+                        </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="5">No Record Found.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+
+    </div>
+</div>
+
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+<script type="text/javascript">
+    $().ready(function () {
+        // Show Sucess or Error Message on popup by common function showMessagePopup
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+</script>

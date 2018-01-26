@@ -1,0 +1,16 @@
+﻿@model RepidShare.Entities.ViewQuestionModel
+@using RepidShare.Entities.Resource;
+@if (Model != null && Model.QuestionTypeDetail != null && Model.QuestionTypeDetail.SingleLineTextType != null)
+{
+<div class="row">
+    <div class="col-sm-3">
+        @Html.LabelFor(model => model.QuestionTypeDetail.SingleLineTextType.MaxChar, new { @class = "labelColon" })
+    </div>
+    <div class="col-sm-4 mandatoryFeild">
+        @Html.TextBoxFor(model => model.QuestionTypeDetail.SingleLineTextType.MaxChar, new { @MaxLength = 3, @id = "txtMaxChar", @class = "number form-control questionType" })
+        @Html.ValidationMessageFor(model => model.QuestionTypeDetail.SingleLineTextType.MaxChar)
+        @Html.HiddenFor(model => model.QuestionTypeDetail.SingleLineTextType.SingleLineMaxCharMin, new { @class = "SingleLineMaxCharMin" })
+        @Html.HiddenFor(model => model.QuestionTypeDetail.SingleLineTextType.SingleLineMaxCharMax, new { @class = "SingleLineMaxCharMax" })
+    </div>
+</div>
+}

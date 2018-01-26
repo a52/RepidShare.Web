@@ -1,0 +1,69 @@
+﻿@model RepidShare.Entities.DocumentResponseDetailModel
+@using RepidShare.Utility;
+@if (Model != null && Model.Questions != null && Model.Questions.Count() > 0)
+{
+
+    <div class="divRadioButton" style="margin-left:25px !important">
+
+        @if (Model.Questions[Model.Index].QuestionOptionsList != null && Model.Questions[Model.Index].QuestionOptionsList.Count > 0)
+        {
+            <ul>
+                @for (int j = 0; j < Model.Questions[Model.Index].QuestionOptionsList.Count; j++)
+                    {
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].QuestionOptionsID)
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].QuestionID)
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].IsSelected)
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].ResultDetailID)
+                    <li class="responseResultWrapper clearfix">
+                        @Html.RadioButton("questionAnswer_" + @Model.Questions[Model.Index].QuestionID, @Model.Questions[Model.Index].QuestionOptionsList[j].QuestionOptionsID
+           , new
+           {
+               @class = "radioanswer radioquestionoption_" + Model.Questions[Model.Index].QuestionID,
+               id = "rdb_" + @Model.Questions[Model.Index].QuestionOptionsList[j].QuestionOptionsID + "_" + @Model.Questions[Model.Index].QuestionID,
+               Value = @Model.Questions[Model.Index].QuestionOptionsList[j].QuestionOptionsID,
+               @title = @Model.Questions[Model.Index].QuestionOptionsList[j].OptionText
+           })
+                        @* <div class="response-wrp"> *@
+                        <span>@Model.Questions[Model.Index].QuestionOptionsList[j].OptionText </span>
+
+                        @*                        </div>*@
+                    </li>
+                }
+            </ul>
+        }
+
+    </div>
+    @Html.HiddenFor(m => m.Questions[Model.Index].SelectedAnswers, new { @class = " clsSelectedAnswers_" + @Model.Index, id = "hdn_" + Model.Questions[Model.Index].QuestionID })
+    @Html.HiddenFor(model => model.Questions[Model.Index].ResultDetailID, new { Value = Model.Questions[Model.Index].ResultDetailID })
+    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionID, new { id = "hdnQuestion_" + Model.Index, Value = Model.Questions[Model.Index].QuestionID })
+}
+<script type="text/javascript">
+    //set radio option
+    var yes;
+    $(document).ready(function () {
+        if ('@Model.IsReadOnly' == "True") {
+            $(".divRadioButton").attr("disabled", "disabled");
+            $("select, input[type='checkbox'], input[type='radio']").uniform();
+        }
+
+        var index = parseInt('@Model.Index');
+        var SelectedAns = $(".clsSelectedAnswers_" + index).val();
+        var QuestionID = $("#hdnQuestion_" + index).val();
+        if (SelectedAns != '') {
+            yes = $("#rdb_" + SelectedAns + "_" + QuestionID).attr('title');
+            $("#rdb_" + SelectedAns + "_" + QuestionID).prop("checked", true);
+            $("#uniform-rdb_" + SelectedAns + "_" + QuestionID).find('span').addClass('checked');
+        }
+
+        $('input[type=radio][name=questionAnswer_@Model.Questions[Model.Index].QuestionID]').change(function () {
+            QuestionShowHide('@Model.Questions[Model.Index].QuestionID', this.title);
+        });
+
+    });
+
+
+    $(window).load(function () {
+        QuestionShowHide('@Model.Questions[Model.Index].QuestionID', yes);
+    });
+
+</script>

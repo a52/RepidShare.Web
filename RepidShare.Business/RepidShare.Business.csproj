@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B1775403-2F3E-45EF-8F85-2F8E7917F326}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RepidShare.Business</RootNamespace>
+    <AssemblyName>RepidShare.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Category\BLCategory.cs" />
+    <Compile Include="Common\BLBase.cs" />
+    <Compile Include="Common\BLCommon.cs" />
+    <Compile Include="Bulletin\BLBulletin.cs" />
+    <Compile Include="Coupen\BLCoupen.cs" />
+    <Compile Include="HowItWorks\BLHowItWorks.cs" />
+    <Compile Include="MasterSetting\BLMasterSetting.cs" />
+    <Compile Include="Document\BLDocumentResponse.cs" />
+    <Compile Include="Home\BLHome.cs" />
+    <Compile Include="Master\BLMaster.cs" />
+    <Compile Include="DropDown\BLDropDown.cs" />
+    <Compile Include="Document\BLDocument.cs" />
+    <Compile Include="Group\BLGroup.cs" />
+    <Compile Include="Order\BLOrder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Question\BLQuestion.cs" />
+    <Compile Include="Question\BLQuestionType.cs" />
+    <Compile Include="StepDocMapped\BLStepDocMapped.cs" />
+    <Compile Include="Step\BLStep.cs" />
+    <Compile Include="SubCategory\BLLawGuide.cs" />
+    <Compile Include="SubCategory\BLSubCategory.cs" />
+    <Compile Include="UserLogin\BLUserLogin.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RepidShare.Data\RepidShare.Data.csproj">
+      <Project>{d57ea430-add1-4ecc-ac02-6880edce4339}</Project>
+      <Name>RepidShare.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RepidShare.Entities\RepidShare.Entities.csproj">
+      <Project>{b68d25f2-9c62-4369-8773-904f7f77d744}</Project>
+      <Name>RepidShare.Entities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

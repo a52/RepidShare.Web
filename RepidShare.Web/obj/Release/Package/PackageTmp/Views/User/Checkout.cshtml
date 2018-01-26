@@ -1,0 +1,330 @@
+﻿@{
+    Layout = "~/Views/Shared/_webSiteMasterLayout.cshtml";
+    ViewBag.Title = "My Document";
+}
+
+@model RepidShare.Web.PayPalItemDetail
+
+
+<div class="clearfix"></div>
+
+<div class="container">
+    <div class="row padd15">
+        <div class="col-md-9">
+            <h3>Please review and confirm your order</h3>
+            <p class="f-color">Click here for information about your order and your cancellation rights</p>
+            <div class="margin15 clearfix"></div>
+            <div class="borer-left-box">
+                <div class="row">
+                    <div class="col-md-1 col-sm-2 col-xs-2">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                                <input class="form-check-input" id="chkTerms" type="checkbox">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-11 col-sm-10 col-xs-10">
+                        <p>I understand that you will take payment from me for this order once I click 'pay now'. As soon as you've processed my payment, I ask that you allow me to use the service and understand that I'll lose my right to cancel after the service is complete. I also agree to your data and privacy policy and terms of use.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+
+            <h3>Order Summery Someone Santanas</h3>
+            <h3>Your Order</h3>
+            <p>Someone Santanas</p>
+            <p>Call System Technology LTD</p>
+            <p>Middlesex house</p>
+            <p>2-45 high Street</p>
+            <p>Edgeware</p>
+            <p>Middle Sex</p>
+            <p>Ha8 7UU someone@gmail.com(an invioce receipt will be emailed top this address)</p>
+
+            <h3>Your Bussiness Detail</h3>
+            <p>Someone Santanas</p>
+            <p>Call System Technology LTD</p>
+            <p>Middlesex house</p>
+            <p>2-45 high Street</p>
+            <p>Edgeware</p>
+            <p>Middle Sex</p>
+            <p>Ha8 7UU someone@gmail.com(an invioce receipt will be emailed top this address)</p>
+            <div class="pdf-box"> This invoice will be emailed to you in PDF format.</div>
+            <div class="margin10"></div>
+            <p> Order reference no. <strong> 34970502 </strong></p>
+            <p> Invioce data/date piont <strong>26 september 2017 </strong></p>
+            <div class="clearfix"></div>
+            <h3>Order Detail</h3>
+
+            <a id="hrfPaymentWithPaypal" href="/PayPal/PaymentWithPaypal"><button type="button" class="btn btn-default pull-right top-m btn-pay">Pay Now <i class="fa fa-chevron-right" aria-hidden="true"></i></button></a>
+
+            <div class="margin15 clearfix"></div>
+            <div class="hidden-xs hidden-sm">
+                <div class="col-md-6">
+                    <h4> Product name</h4>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-4">
+                        <h4>Price (Excl. VAT)</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>VAT(20%)</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <h4>Price (Incl. VAT)</h4>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+                <div class="grey-l"></div>
+            </div>
+
+            @for (int i = 0; i < Model.itemList.items.Count; i++)
+            {
+                <div class="col-md-6">
+                    <h4 class="visible-xs visible-sm bold"> Product name</h4>
+                    <h5> @Model.itemList.items[i].name</h5>
+                    <p> <strong>Service Level :</strong> Self Service</p>
+                    <p> <strong>Payment method :</strong> Credit or debit card account</p>
+                </div>
+
+                <div class="col-md-6">
+                    <h4 class="visible-xs visible-sm bold"> Price excl. VAT</h4>
+                    <div class="col-md-4">
+                        <h5>£@Model.itemList.items[i].price</h5>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4 class="visible-xs visible-sm bold"> VAT(20%)</h4>
+                        <h5>£@Model.details.tax</h5>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h4 class="visible-xs visible-sm bold">Price incl. VAT</h4>
+                        <h5></h5>
+                    </div>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="col-md-6">
+                    <h4><strong>Total</strong></h4>
+                </div>
+                <div class="col-md-6">
+                    <div class="col-md-4 ">
+                        <h4 class="visible-xs visible-sm bold"> Price excl.VAT</h4>
+                        <h5><strong>£@Model.itemList.items[i].price</strong></h5>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="visible-xs visible-sm bold"> VAT(20%)</h4>
+                        <h5><strong>£@Model.details.tax</strong></h5>
+                    </div>
+                    <div class="col-md-4">
+                        <h4 class="visible-xs visible-sm bold">Price incl.VAT</h4>
+                        <h5><strong>£@Model.amount.total</strong></h5>
+                    </div>
+                </div>
+            }
+            <div class="clearfix margin10"></div>
+            <a id="hrfPaymentWithPaypal" href="/PayPal/PaymentWithPaypal">
+                <button type="button" class="btn btn-default pull-right btn-pay">
+                    Pay Now
+                    <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                </button>
+            </a>
+        </div>
+        <div class="margin20 clearfix visible-xs visible-sm"></div>
+        <div class="col-md-3">
+            <div class="checkbox checkbox-circle">
+                <input id="checkbox7" type="checkbox" checked="checked">
+                <label for="checkbox7">
+                    Term
+                </label>
+            </div>
+
+            <div class="checkbox checkbox-circle">
+                <input id="checkbox8" type="checkbox">
+                <label for="checkbox8" class="active">
+                    Confirm
+                </label>
+            </div>
+
+            <div class="checkbox checkbox-circle">
+                <input id="checkbox9" type="checkbox">
+                <label for="checkbox9">
+                    Payment Detail
+                </label>
+            </div>
+            <div class="margin10 clearfix"></div>
+            <div class="grey-right-box">
+                <h4>Your satisfaction guaranteed</h4>
+                <p> <i class="fa fa-check" aria-hidden="true"></i> 100% refund if you're not happy</p>
+                <p> <i class="fa fa-check" aria-hidden="true"></i> Secure your data safely</p>
+                <p> <i class="fa fa-check" aria-hidden="true"></i> This site uses strong 128 bit Encryption</p>
+            </div>
+            <div class="clearfix margin15"></div>
+            <div class="grey-right-box">
+                <p> Need help with your Purchase?</p>
+                <p>Please call us on <strong> 0354 838 4074 </strong></p>
+                <p> (Mon-Fri, 9:30-17:30) and we'll do all we can to help</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*<div class="container">
+        <div class="basket_checkout">
+            <div class="col-md-9">
+
+                <h1>Please review and confirm your order   </h1>
+                <a href="javascript:void(0);" class="checkout_review" title="Click here for information">Click here for information about your order and your cancellation rights</a>
+                <div class="basket_checkbox">
+                    <label>
+                        <input type="checkbox">
+                    </label>
+                    <span>I understand that you will take payment from me for this order once I click 'pay now'. As soon as you've processed my payment, I ask that you allow me to use the service and understand that I'll lose my right to cancel after the service is complete. I also agree to your data and privacy policy and terms of use.</span>
+
+                </div>
+                <h2>Order summary for someone Santanas</h2>
+                <div class="checkout_urdetails">
+                    <h3>Your details</h3>
+                    <p>
+                        someone Santanas
+                        <br>
+                        Call Systems Technology Ltd<br>
+                        Middlesex House<br>
+                        29-45 High Street<br>
+                        Edgware<br>
+                        Middlesex<br>
+                        HA8 7UU someone@gmail.com (an invoice receipt will be emailed to this address)
+                    </p>
+                </div>
+                <div class="checkout_urdetails">
+                    <h3>Your business details</h3>
+                    <p>
+                        someone Santanas
+                        <br>
+                        Call Systems Technology Ltd<br>
+                        Middlesex House<br>
+                        29-45 High Street<br>
+                        Edgware<br>
+                        Middlesex<br>
+                        HA8 7UU someone@gmail.com (an invoice receipt will be emailed to this address)
+                    </p>
+                </div>
+                <div class="gray-stack checkout-stack">This invoice will be emailed to you in PDF format.</div>
+                <ul class="checkout_refrence">
+                    <li>
+                        <p>Order reference no.<strong>34970502</strong></p>
+                    </li>
+                    <li>
+                        <p>Invoice date/tax point<strong>26 September 2016</strong></p>
+                    </li>
+                </ul>
+                <div class="checkout_ordedetails">
+                    <div class="checkout_ordedetails_head">
+                        <h2>Order details</h2>
+                        <div class="checkout_paybtn"><a href="/PayPal/PaymentWithPaypal"><span>Pay now</span></a></div>
+                    </div>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Product name</th>
+                                <th>
+                                    Price<br>
+                                    excl. VAT
+                                </th>
+                                <th>
+                                    VAT<br>
+                                    (20%)
+                                </th>
+                                <th>
+                                    Price<br>
+                                    incl. VAT
+                                </th>
+                            </tr>
+                        </thead>
+
+                        @for (int i = 0; i < Model.itemList.items.Count; i++)
+                        {
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <p>
+                                            <strong>@Model.itemList.items[i].name</strong>
+                                            <br>
+                                            <strong>Service Level</strong> : Self Service
+                                            <br>
+                                            <strong>Payment method : </strong>Credit or debit card account
+                                        </p>
+                                    </td>
+                                    <td>£@Model.itemList.items[i].price</td>
+                                    <td>£@Model.details.tax</td>
+                                    <td>£@Model.amount.total</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Total</strong></td>
+                                    <td><strong>£@Model.itemList.items[i].price</strong></td>
+                                    <td><strong>£@Model.details.tax</strong></td>
+                                    <td><strong>£@Model.amount.total</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>Our VAT No. 761 2373 41</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                    <td>&nbsp;</td>
+                                </tr>
+                            </tbody>
+                        }
+
+
+                    </table>
+                    <div class="checkout_paybtn checkout_paybtn_bottom"><a href="/PayPal/PaymentWithPaypal"><span>Pay now</span></a></div>
+                </div>
+            </div>
+            <div class="col-md-3 checkout_rightbox">
+
+                <ul class="checkout_termbox">
+                    <li>Terms<span></span></li>
+                    <li class="active">Confirm<span></span></li>
+                    <li>Payment details<span></span></li>
+                </ul>
+                <div class="checkout_gurantees">
+                    <h5>Your satisfaction guaranteed</h5>
+                    <ul class="gurantees_list">
+                        <li>
+                            <span></span>
+                            <p>100% refund if you're not happy</p>
+                        </li>
+                        <li>
+                            <span></span>
+                            <p>Securing your data safely</p>
+                        </li>
+                        <li>
+                            <span></span>
+                            <p>This site uses strong 128 Bit Encryption </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="checkout_gurantees">
+                    <p>Need help with your purchase? Please call us on <strong>0345 838 4074</strong> (Mon-Fri, 9:30-17:30) and we'll do all we can to help</p>
+                </div>
+
+            </div>
+        </div>
+    </div>*@
+
+<script type="text/javascript">
+    $('#hrfPaymentWithPaypal').attr('disabled', 'disabled');
+    $(document).ready(function () {
+        debugger;
+       
+        $('#chkTerms').click(function () {
+            if ($(this).is(':checked')) {
+                $('#hrfPaymentWithPaypal').attr("disabled", false);
+            }
+            else {
+                $('#hrfPaymentWithPaypal').attr("disabled", "disabled");
+            }
+        });
+    });
+   
+   
+</script>

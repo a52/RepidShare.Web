@@ -1,0 +1,196 @@
+﻿@using RepidShare.Entities
+@model HomeDocumentViewModel
+
+@{
+    if (Model.objDocumentModel != null && Model.objDocumentModel.DocumentID > 0)
+    {
+        <div class="clearfix colelem" id="pu53232" style="width: 500px;">
+            <!-- group -->
+            <div class="clip_frame grpelem" id="u53232">
+                <!-- image -->
+                <img class="block" id="u53232_img" alt="" data-image-width="25" data-image-height="26" src="~/images/untitled-3.png">
+            </div>
+            <div class="clearfix grpelem" id="u53241-4">
+                <!-- content -->
+                <p id="u53241-2">@Model.objDocumentModel.DocumentTitle</p>
+            </div>
+        </div>
+        <div class="bs-example">
+            <ul class="nav nav-tabs">
+                <li class="active"><a data-toggle="tab" href="#tab-1" class="a-tab">Descripción de documento</a></li>
+                <li><a data-toggle="tab" href="#tab-2" class="a-tab">Como funciona</a></li>
+            </ul>
+            <div class="grpelem" id="u54551"><!-- simple frame --></div>
+            <div class="tab-content">
+                <div id="tab-1" class="tab-pane fade in active">
+
+                    <div class="Container clearfix grpelem wp-panel wp-panel-active" id="u53665" role="tabpanel" aria-labelledby="u53660">
+                        <!-- group -->
+                        <div class="clearfix grpelem" id="u53788">
+                            <!-- column -->
+                            <div class="clearfix colelem" id="u53251-4">
+                                <!-- content -->
+                                <p id="u53251-2">@Html.Raw(Model.objDocumentModel.DocumentDescription)</p>
+                            </div>
+                            <div class="clearfix colelem" id="pu53267-4">
+                                <!-- group -->
+                                <div class="clearfix grpelem" id="u53267-4">
+                                    <!-- content -->
+                                    <p id="u53267-2">Auto-Servicio</p>
+                                </div>
+                                <div class="clearfix grpelem" id="u53279-4">
+                                    <!-- content -->
+                                    <p id="u53279-2">$@Model.objDocumentModel.Price</p>
+                                </div>
+                                <div class="clearfix grpelem" id="u53273-9">
+                                    <!-- content -->
+                                    <p id="u53273-2">Elabore su documento al instante contestando una sene&nbsp; de preguntas fáciles de responder.</p>
+                                    <p id="u53273-4">Explicaciones útiles y notas de orientación.</p>
+                                    <p id="u53273-6">Almacene, gestione, rastree e imprima su documento en línea.</p>
+                                    <p id="u53273-7">&nbsp;</p>
+                                </div>
+                                <div class="clearfix grpelem" id="u53304">
+                                    <!-- group -->
+                                    <div class="museBGSize clearfix grpelem" id="u53300">
+                                        <!-- group -->
+                                        <div class="clearfix grpelem" id="u53285-4" style="cursor:pointer">
+                                            <!-- content -->
+                                            @*<p id="u53285-2">Añadir al carrito</p>*@
+                                            <div class="btnwrapper">
+                                                <a href="/User/buy?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objDocumentModel.DocumentID))" class="button btn-default pricebtn">Add to basket<span></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clip_frame grpelem" id="u53291" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=-1,M12=0,M21=0,M22=-1,SizingMethod='auto expand')" data-mu-ie-matrix-dx="0" data-mu-ie-matrix-dy="0">
+                                        <!-- image -->
+                                        <img style="cursor:pointer" class="block" id="u53291_img" alt="" data-image-width="7" data-image-height="11" src="images/flecha.png?crc=3855135023">
+                                    </div>
+                                </div>
+                                <div class="grpelem" id="u53308"><!-- simple frame --></div>
+                            </div>
+                            <div class="colelem" id="u53312"><!-- simple frame --></div>
+                            <div class="clearfix colelem" id="pu53316-6">
+                                <!-- group -->
+                                <div class="clearfix grpelem" id="u53316-6">
+                                    <!-- content -->
+                                    <p id="u53316-2">Incluido en este servicio:</p>
+                                    <p id="u53316-4">@Model.objDocumentModel.DocumentTitle</p>
+                                </div>
+                                <div class="clearfix grpelem" id="u53320-4">
+                                    <!-- content -->
+                                    <p><a href="/User/AddForTrial?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objDocumentModel.DocumentID))" title="Try this document out online for free" data-placement="top" class="">Try for free</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="PamphletWidget clearfix grpelem" id="pamphletu55907">
+                            <!-- none box -->
+                            <div class="ThumbGroup clearfix grpelem" id="u55919">
+                                <!-- none box -->
+                                <div class="popup_anchor" id="u55920popup">
+                                    <div class="Thumb popup_element" id="u55920" title="Try this document out online for free" role="button" tabindex="0" aria-haspopup="true" aria-controls="u55915"><!-- simple frame --></div>
+                                </div>
+                            </div>
+                            <div class="popup_anchor" id="u55914popup">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-2" class="tab-pane fade">
+                    <div class="Container clearfix grpelem wp-panel wp-panel-active" id="u53796" role="tabpanel" aria-labelledby="u53852" style="">
+                        <!-- column -->
+                        <div class="clearfix colelem" id="u53877-26">
+                            <!-- content -->
+                            <p id="u53877-2">Como funciona:</p>
+                            <p id="u53877-4">Es asi de fácil y asequible con nuestro proceso de 3 pasos ...</p>
+                            <p id="u53877-5">&nbsp;</p>
+                            <p id="u53877-9"><span id="u53877-6">1. Seleccione su documento:</span> <span id="u53877-8">Lea la información proporcionada en esta página para versi este es el documento adecuado para usted. Usted puede incluso probarlo gratuitamente (abajo), V utilizar nuestra guía legal en línea para obtener toda la información relacionada al documento</span></p>
+                            <p id="u53877-11">seleccionado.</p>
+                            <p id="u53877-12">&nbsp;</p>
+                            <p id="u53877-16"><span id="u53877-13">2. Responda las preguntas:</span> <span id="u53877-15">Vea su borrador de documento como si estuviera viendo a su abogado prepararlo. Se proporciona orientación adicional en pantalla para cada pregunta.</span></p>
+                            <p id="u53877-17">&nbsp;</p>
+                            <p id="u53877-21"><span id="u53877-18">3. Complete tu pedido:</span> <span id="u53877-20">Obtenga acceso completo a su documento terminado (para imprimir v</span></p>
+                            <p id="u53877-23">firmar] después de la compra.</p>
+                            <p id="u53877-24">&nbsp;</p>
+                        </div>
+                        <div class="clearfix colelem" id="pu54539">
+                            <!-- group -->
+                            <div class="clearfix grpelem" id="u54539">
+                                <!-- column -->
+                                <div class="clearfix colelem" id="pu54396-4">
+                                    <!-- group -->
+                                    <div class="clearfix grpelem" id="u54396-4">
+                                        <!-- content -->
+                                        <p id="u54396-2">Auto-Servicio</p>
+                                    </div>
+                                    <div class="clearfix grpelem" id="u54400-4">
+                                        <!-- content -->
+                                        <p id="u54400-2">US$ 50.00</p>
+                                    </div>
+                                    <div class="clearfix grpelem" id="u54393-9">
+                                        <!-- content -->
+                                        <p id="u54393-2">Elabore su documento al instante contestando una sene&nbsp; de preguntas fáciles de responder.</p>
+                                        <p id="u54393-4">Explicaciones útiles y notas de orientación.</p>
+                                        <p id="u54393-6">Almacene, gestione, rastree e imprima su documento en línea.</p>
+                                        <p id="u54393-7">&nbsp;</p>
+                                    </div>
+                                    <div class="clearfix grpelem" id="u54403">
+                                        <!-- group -->
+                                        <div class="museBGSize clearfix grpelem" id="u54404">
+                                            <!-- group -->
+                                            <div class="clearfix grpelem" id="u54407-4">
+                                                <!-- content -->
+                                                <p id="u54407-2">Añadir al carrito</p>
+                                            </div>
+                                        </div>
+                                        <div class="clip_frame grpelem" id="u54405" data-mu-ie-matrix="progid:DXImageTransform.Microsoft.Matrix(M11=-1,M12=0,M21=0,M22=-1,SizingMethod='auto expand')" data-mu-ie-matrix-dx="0" data-mu-ie-matrix-dy="0">
+                                            <!-- image -->
+                                            <img class="block" id="u54405_img" alt="" data-image-width="7" data-image-height="11" src="images/flecha.png?crc=3855135023">
+                                        </div>
+                                    </div>
+                                    <div class="grpelem" id="u54399"><!-- simple frame --></div>
+                                </div>
+                                <div class="colelem" id="u54402"><!-- simple frame --></div>
+                                <div class="clearfix colelem" id="pu54401-6">
+                                    <!-- group -->
+                                    <div class="clearfix grpelem" id="u54401-6">
+                                        <!-- content -->
+                                        <p id="u54401-2">Incluido en este servicio:</p>
+                                        <p id="u54401-4">Contrato de prestación de servicios</p>
+                                    </div>
+                                    <div class="clearfix grpelem" id="u54397-4">
+                                        <!-- content -->
+                                        <p>Probar gratis</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="PamphletWidget clearfix grpelem" id="pamphletu55300">
+                                <!-- none box -->
+                                <div class="ThumbGroup clearfix grpelem" id="u55301">
+                                    <!-- none box -->
+                                    <div class="popup_anchor" id="u55302popup">
+                                        <div class="Thumb popup_element" id="u55302" role="button" tabindex="0" aria-haspopup="true" aria-controls="u55310"><!-- simple frame --></div>
+                                    </div>
+                                </div>
+                                <div class="popup_anchor" id="u55309popup">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    }
+}
+
+
+<style type="text/css">
+    .bs-example {
+        margin: 20px;
+    }
+</style>
+

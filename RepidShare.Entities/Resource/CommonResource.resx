@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="btnBack" xml:space="preserve">
+    <value>Back</value>
+  </data>
+  <data name="btnCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="btnClear" xml:space="preserve">
+    <value>Clear</value>
+  </data>
+  <data name="btnNext" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="btnPrevious" xml:space="preserve">
+    <value>Previous</value>
+  </data>
+  <data name="btnPublish" xml:space="preserve">
+    <value>Publish</value>
+  </data>
+  <data name="btnReset" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="btnSave" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="btnSaveFinish" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="btnSearch" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="lblAction" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="lblActive" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="lblApplicationName" xml:space="preserve">
+    <value>Application Name:</value>
+  </data>
+  <data name="lblApplicationRole" xml:space="preserve">
+    <value>Application Role</value>
+  </data>
+  <data name="lblApplicationRoleMapping" xml:space="preserve">
+    <value>Application Survey Role Mapping</value>
+  </data>
+  <data name="lblInActive" xml:space="preserve">
+    <value>In Active</value>
+  </data>
+  <data name="lblNo" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="lblNoRecordFound" xml:space="preserve">
+    <value>No record found.</value>
+  </data>
+  <data name="lblSrNo" xml:space="preserve">
+    <value>Sr.No.</value>
+  </data>
+  <data name="lblSurveyRole" xml:space="preserve">
+    <value>Survey Role</value>
+  </data>
+  <data name="lblYes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="lnkAdd" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="lnkComplete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="lnkDelete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="lnkEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="lnkView" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="msgAlreadyExist" xml:space="preserve">
+    <value>{0} already exist.</value>
+  </data>
+  <data name="msgCanNotEditSurvey" xml:space="preserve">
+    <value>You cannot edit, as Survey is already published.</value>
+  </data>
+  <data name="msgCompleteError" xml:space="preserve">
+    <value>There is an error while completing {0}, please try again.</value>
+  </data>
+  <data name="msgCompleteSuccess" xml:space="preserve">
+    <value>{0} Completed successfully.</value>
+  </data>
+  <data name="msgDeleteError" xml:space="preserve">
+    <value>There is an error while deleting {0}, please try again.</value>
+  </data>
+  <data name="msgDeleteSuccess" xml:space="preserve">
+    <value>{0} deleted successfully.</value>
+  </data>
+  <data name="msgPublishSuccess" xml:space="preserve">
+    <value>{0} published successfully.</value>
+  </data>
+  <data name="msgSaveError" xml:space="preserve">
+    <value>There is an error while saving {0}, please try again.</value>
+  </data>
+  <data name="msgSaveSuccess" xml:space="preserve">
+    <value>{0} saved successfully.</value>
+  </data>
+  <data name="msgSubmitSuccess" xml:space="preserve">
+    <value>{0} submitted successfully.</value>
+  </data>
+  <data name="msgSurveyUnAuthorized" xml:space="preserve">
+    <value>You do not have access this survey.</value>
+  </data>
+  <data name="msgUpdateError" xml:space="preserve">
+    <value>There is an error while updating {0}, please try again.</value>
+  </data>
+  <data name="msgUpdateSuccess" xml:space="preserve">
+    <value>{0} updated successfully.</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Preview" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="valApplication" xml:space="preserve">
+    <value>Application is required.</value>
+  </data>
+  <data name="valApplicationRole" xml:space="preserve">
+    <value>Application Role is required.</value>
+  </data>
+  <data name="valSpecialChar" xml:space="preserve">
+    <value>Special character not allowed.</value>
+  </data>
+  <data name="valSurveyRole" xml:space="preserve">
+    <value>Survey Role is required.</value>
+  </data>
+  <data name="Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="lblAttachmentName" xml:space="preserve">
+    <value>Attachment Name</value>
+  </data>
+  <data name="lblCategoryName" xml:space="preserve">
+    <value>Category Name</value>
+  </data>
+  <data name="lblSubCategoryName" xml:space="preserve">
+    <value>Sub Category Name</value>
+  </data>
+  <data name="lblDropDownText" xml:space="preserve">
+    <value>DropDown Text</value>
+  </data>
+  <data name="lblGroupText" xml:space="preserve">
+    <value>Group Title</value>
+  </data>
+  <data name="lblStepDiscription" xml:space="preserve">
+    <value>Step Discription</value>
+  </data>
+  <data name="lblStepName" xml:space="preserve">
+    <value>Step Name</value>
+  </data>
+  <data name="lblSubDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="lblServiceDescription" xml:space="preserve">
+    <value>Service Description</value>
+  </data>
+  <data name="lblServiceText" xml:space="preserve">
+    <value>Service Header</value>
+  </data>
+  <data name="lblVatTax" xml:space="preserve">
+    <value>Vat Tax</value>
+  </data>
+</root>

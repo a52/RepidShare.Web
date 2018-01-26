@@ -1,0 +1,99 @@
+﻿@using DocumentResource = RepidShare.Entities.Resource.DocumentResource
+@using CommonResource = RepidShare.Entities.Resource.CommonResource
+@model RepidShare.Entities.ViewDocumentResponseModel
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-overflow">
+                <thead>
+                    <tr>
+                        <th style="width: 7%;">
+                            @CommonResource.lblSrNo
+                        </th>
+                        <th style="width: 16%;">
+                            <div>
+                                <a href="javascript:void(0)" sortby="Name" class="sort">@DocumentResource.lblDocumentTitle</a>
+                            </div>
+                        </th>
+                        <th style="width: 12%;">
+                            <div>
+                                <a href="javascript:void(0)" sortby="CreatedOn" class="sort">Created Date</a>
+                            </div>
+                        </th>
+                        <th style="width: 10%;">
+                            Total User
+                        </th>
+                        @* <th>
+                            @DocumentResource.lblCompletedUser
+                        </th>*@
+                        <th style="width: 13%;">
+                            In Progres User
+                        </th>
+                        @*<th>
+                            @DocumentResource.lblNotAttemptUser
+                        </th>*@
+                        <th class="text-center" style="width: 7%;">
+                            <div>
+                                @CommonResource.lblAction
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.lstDocumentResponseModel != null && Model.lstDocumentResponseModel.Count > 0)
+                    {
+                        for (int i = 0; i < Model.lstDocumentResponseModel.Count; i++)
+                        {
+                        <tr valign="middle">
+                            <td width="3%">@Model.lstDocumentResponseModel[i].RowNumber
+                            </td>
+                            
+                            @Html.HiddenFor(m => Model.lstDocumentResponseModel[i].DocumentID)
+                            <td>@Model.lstDocumentResponseModel[i].DocumentTitle
+                            </td>
+                            <td>@Convert.ToDateTime(Model.lstDocumentResponseModel[i].CreatedOn).ToString(RepidShare.Utility.CommonUtils.ShortDateFormat)
+                            </td>
+                            <td align="center">@Model.lstDocumentResponseModel[i].TotalUser
+                            </td>
+                            @* <td align="center">@Model.lstDocumentResponseModel[i].CompletedUser
+                            </td>*@
+                            <td align="center">@Model.lstDocumentResponseModel[i].CompletedUser
+                            </td>
+                            @* <td align="center">@Model.lstDocumentResponseModel[i].NotAttemptUser
+                            </td>*@
+                            <td class="btn-action" width="3%"><a class="icon-view-user" href="/Document/ViewDocumentUser?prm=@RepidShare.Utility.CommonUtils.Encrypt(Model.lstDocumentResponseModel[i].DocumentID.ToString())" title="ViewUsers">ViewUsers
+                            </a>
+                            </td>
+                        </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="7">@CommonResource.lblNoRecordFound
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+    </div>
+</div>
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+</script>

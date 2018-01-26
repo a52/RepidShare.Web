@@ -1,0 +1,235 @@
+﻿@{
+    ViewBag.Title = "LEGAL CONTRACTS, FORMS, DOCUMENTS & TEMPLATES | PAPELES LEGALES";
+    Layout = "~/Views/Shared/_websiteLayout.cshtml";
+}
+
+@{
+    RepidShare.Entities.HomeLayOutModel objHomeLayOutModel = (RepidShare.Entities.HomeLayOutModel)Session["LayOutData"];
+}
+
+<!--Container Region Start-->
+<div class="content">
+    <div class="wrapper">
+        <div id="e_page" class="">
+            <div class="e_contentMainWrapper e_spanLeftRight">
+                <div class="promo_first">
+                    <div class="blurb">
+                        <h1>Papeles Legales legal documents</h1>
+                        <h4>Affordable online documents, forms and templates covering business and personal legal needs.</h4>
+                        <p>Our automated document drafting tool turns a simple questionnaire into a lawyer authored and legally binding document. You can trial any of our available document templates for peace of mind before you purchase. Our prices are affordable and we offer a money-back guarantee if you are unsatisfied with the final product.</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <ul class="navtab nav-tabs">
+                                <li class="active"><a data-toggle="tab" href="#home">General Law</a></li>
+                                <li><a data-toggle="tab" href="#menu1">Family Law</a></li>
+                                <li><a data-toggle="tab" href="#menu2">Criminal Law</a></li>
+                                <li><a data-toggle="tab" href="#menu3">Business Law</a></li>
+                                <li><a data-toggle="tab" href="#menu3">Consumer Law</a></li>
+                            </ul>
+                            <div class="tab-content">
+                                <div id="home" class="tab-pane fade in active tab_box">
+                                    <h3>Please Explain your Legal Question below</h3>
+                                    <p>Search our law guide and available documents.</p>
+                                    <div>
+                                        <div class="form-group">
+                                            <textarea class="form-control" rows="5" id="comment">Hi, can I answer your legal question? Please type your question here...</textarea>
+                                            <a class="btn btn-primary marT10" href=""><span class="pull-left">Ask Lawyer</span><i class="fa fa-chevron-right pull-left"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu1" class="tab-pane fade">
+                                    <div id="home" class="tab-pane fade in active tab_box">
+                                        <h3>Please Explain your Legal Question below</h3>
+                                        <p>Search our law guide and available documents.</p>
+                                        <div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" rows="5" id="comment">Hi, can I answer your legal question? Please type your question here...</textarea>
+                                                <a class="button button_big_b" href="">Ask Lawyer<i class="fa fa-chevron-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu2" class="tab-pane fade">
+                                    <div id="home" class="tab-pane fade in active tab_box">
+                                        <h3>Please Explain your Legal Question below</h3>
+                                        <p>Search our law guide and available documents.</p>
+                                        <div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" rows="5" id="comment">Hi, can I answer your legal question? Please type your question here...</textarea>
+                                                <a class="button button_big_b" href="">Ask Lawyer<i class="fa fa-chevron-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="menu3" class="tab-pane fade">
+                                    <div id="home" class="tab-pane fade in active tab_box">
+                                        <h3>Please Explain your Legal Question below</h3>
+                                        <p>Search our law guide and available documents.</p>
+                                        <div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" rows="5" id="comment">Hi, can I answer your legal question? Please type your question here...</textarea>
+                                                <a class="button button_big_b" href="">Ask Lawyer<i class="fa fa-chevron-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="promo_second border-none">
+                    <div class="personal">
+                        <div class="promo_image">
+                            <div class="promo_links">
+                                @{
+                                    if (objHomeLayOutModel.objViewCategoryModel != null && objHomeLayOutModel.objViewCategoryModel.CategoryList != null && objHomeLayOutModel.objViewCategoryModel.CategoryList.Count > 0)
+                                    {
+                                        int iCount = objHomeLayOutModel.objViewCategoryModel.CategoryList.Count > 1 ? 2 : objHomeLayOutModel.objViewCategoryModel.CategoryList.Count;
+                                        if (iCount > 0)
+                                        {
+                                    <h3>Popular @objHomeLayOutModel.objViewCategoryModel.CategoryList[0].CategoryName topics </h3>
+                                        }
+                                    }
+
+
+                                    if (objHomeLayOutModel.objViewCategoryModel != null && objHomeLayOutModel.objViewCategoryModel.CategoryList != null && objHomeLayOutModel.objViewCategoryModel.CategoryList.Count > 0 && objHomeLayOutModel.objSubViewCategoryModel.SubCategoryList != null && objHomeLayOutModel.objSubViewCategoryModel.SubCategoryList.Where(x => x.CategoryID == objHomeLayOutModel.objViewCategoryModel.CategoryList[0].CategoryID).Count() > 0)
+                                    {
+                                        int iCount = objHomeLayOutModel.objSubViewCategoryModel.SubCategoryList.Where(x => x.CategoryID == objHomeLayOutModel.objViewCategoryModel.CategoryList[0].CategoryID).Count() > 3 ? 4 : objHomeLayOutModel.objSubViewCategoryModel.SubCategoryList.Where(x => x.CategoryID == objHomeLayOutModel.objViewCategoryModel.CategoryList[0].CategoryID).Count();
+
+                                        List<RepidShare.Entities.SubCategoryModel> objSubCategoryList = objHomeLayOutModel.objSubViewCategoryModel.SubCategoryList.Where(x => x.CategoryID == objHomeLayOutModel.objViewCategoryModel.CategoryList[0].CategoryID).ToList();
+
+                                        for (int i = 0; i < iCount; i++)
+                                        {
+                                    <a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(objSubCategoryList[i].SubCategoryID))"><i class="icon-hand214"></i>@objSubCategoryList[i].SubCatName</a>
+                                        }
+                                    }
+                                    
+                                    <a class="button button_big_p" href="/Home/CategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(objHomeLayOutModel.objViewCategoryModel.CategoryList[0].CategoryID))">All @objHomeLayOutModel.objViewCategoryModel.CategoryList[0].CategoryName documents<i class="fa fa-chevron-right"></i></a>
+                                }
+                                @*    <a href="javascript:void(0);"><i class="icon-hand214"></i>Writing a Will</a> <a href="javascript:void(0);"><i class="fa fa-heart fa-lg"></i>Prepare a prenuptial</a> <a href="javascript:void(0);"><i class="icon-lock91"></i>Prepare powers of attorney</a> <a href="javascript:void(0);"><i class="fa fa-gavel fa-lg"></i>Seek a divorce</a> <a class="button button_big_p" href="javascript:void(0);">All Family Law documents<i class="fa fa-chevron-right"></i></a>*@
+                            </div>
+                        </div>
+                    </div>
+                    <div class="business">
+                        <div class="promo_image promo_image_b">
+                            <div class="promo_links">
+
+                                @{
+                                    if (objHomeLayOutModel.objViewCategoryModel != null && objHomeLayOutModel.objViewCategoryModel.CategoryList != null && objHomeLayOutModel.objViewCategoryModel.CategoryList.Count > 0)
+                                    {
+                                        int iCount = objHomeLayOutModel.objViewCategoryModel.CategoryList.Count > 1 ? 2 : objHomeLayOutModel.objViewCategoryModel.CategoryList.Count;
+                                        if (iCount > 1)
+                                        {
+                                    <h3>Popular @objHomeLayOutModel.objViewCategoryModel.CategoryList[1].CategoryName topics </h3>
+                                        }
+                                    }
+
+
+                                    if (objHomeLayOutModel.objViewCategoryModel != null && objHomeLayOutModel.objViewCategoryModel.CategoryList != null && objHomeLayOutModel.objViewCategoryModel.CategoryList.Count > 1 && objHomeLayOutModel.objSubViewCategoryModel.SubCategoryList != null && objHomeLayOutModel.objSubViewCategoryModel.SubCategoryList.Where(x => x.CategoryID == objHomeLayOutModel.objViewCategoryModel.CategoryList[1].CategoryID).Count() > 0)
+                                    {
+                                        int iCount = objHomeLayOutModel.objSubViewCategoryModel.SubCategoryList.Where(x => x.CategoryID == objHomeLayOutModel.objViewCategoryModel.CategoryList[1].CategoryID).Count() > 3 ? 4 : objHomeLayOutModel.objSubViewCategoryModel.SubCategoryList.Where(x => x.CategoryID == objHomeLayOutModel.objViewCategoryModel.CategoryList[1].CategoryID).Count();
+
+                                        List<RepidShare.Entities.SubCategoryModel> objSubCategoryList = objHomeLayOutModel.objSubViewCategoryModel.SubCategoryList.Where(x => x.CategoryID == objHomeLayOutModel.objViewCategoryModel.CategoryList[1].CategoryID).ToList();
+
+                                        for (int i = 0; i < iCount; i++)
+                                        {
+                                    <a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(objSubCategoryList[i].SubCategoryID))"><i class="icon-hand214"></i>@objSubCategoryList[i].SubCatName</a>
+                                        }
+                                    }
+                                    
+                                    <a class="button button_big_p" href="/Home/CategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(objHomeLayOutModel.objViewCategoryModel.CategoryList[1].CategoryID))">All @objHomeLayOutModel.objViewCategoryModel.CategoryList[1].CategoryName documents<i class="fa fa-chevron-right"></i></a>
+                                }
+
+
+                                @*<h3>Popular business topics</h3>
+                                <a href=""><i class="icon-handshake3"></i>Employment contracts</a> <a href=""><i class="icon-money132"></i>Set up your business</a> <a href=""><i class="icon-key162"></i>Landlords & property</a> <a href=""><i class="icon-heart258"></i>Health and safety</a> <a class="button button_big_b" href="">All Business Law documents<i class="fa fa-chevron-right"></i></a>*@
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="grey">
+        <div class="container">
+            <div class="row">
+                <div class="help col-sm-12">
+                    <div class="col-sm-3 col-xs-12">
+                        <a href="javascript:void(0);"><i class="icon-thumb52"></i></a>
+                        <h5><a href="javascript:void(0);">Why choose us?</a></h5>
+                        <p>Save time and money with our legal services. See how much could you save.</p>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <a href=""><i class="icon-comments16"></i></a>
+                        <h5><a href="">What others had to say</a></h5>
+                        <p>Testimonials from some of our thousands of satisfied customers.</p>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <a href=""><i class="icon-settings48"></i></a>
+                        <h5><a href="javascript:void(0);">How it works?</a></h5>
+                        <p>Professional services at affordable prices? Find out how we do it.</p>
+                    </div>
+                    <div class="col-sm-3 col-xs-12">
+                        <a href="javascript:void(0);"><i class="icon-question58"></i></a>
+                        <h5><a href="javascript:void(0);">FAQs</a></h5>
+                        <p>Frequently Asked Questions about our online legal service.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="whatsay col-sm-6 col-xs-12">
+                <a href="javascript:void(0);"><i class="icon-user132"></i></a>
+                <h2><a href="javascript:void(0);">Customer Feedback</a></h2>
+                <div id="slider">
+                    <figure>
+                        <div>
+                            <p>"Thank you for all of your help and support ... It's nice to see dedicated people in this day and age believe me they are far and few left around."</p>
+                            <strong>Sandy</strong>
+                        </div>
+                        <div>
+                            <p>"I am very impressed with your website. It looks great and is user friendly, fast and pleasant to the eye. Great work webmaster!"</p>
+                            <strong>Rajni Sonkar</strong>
+                        </div>
+                        <div>
+                            <p>"I used one of your legal documents few weeks ago. This morning I received a cheque from the holiday travel company for &pound;750, 50% of the cost of the holiday! Thank you.</p>
+                            <p>I'm impressed with the whole service & will definitely use it again in future as I am in the process of establishing a small business.</p>
+                            <p>Many thanks & best regards,"</p>
+                            <strong>Vipin Rathore</strong>
+                        </div>
+                        <div>
+                            <p>"Thank you so much for your excellent service and understanding.</p>
+                            <p>This has probably been the best service I have received so far in the UK :)"</p>
+                            <strong>Anon</strong>
+                        </div>
+                        <div>
+                            <p>"Thank you for all of your help and support ... It's nice to see dedicated people in this day and age believe me they are far and few left around."</p>
+                            <strong>Sandy</strong>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <div class="whois col-sm-6 col-xs-12">
+                <a href=""><i class="icon-meet"></i></a>
+                <h2><a href="">Meet the team</a></h2>
+                <p>
+                    Meet our legal team. Our skilled content writers and legal reviewers ensure that you end up with a professional, legally binding document customised for your situation. Help is available to you from when you begin your document to completion.
+        
+        <div class="team" style="background-position: -173px -1px;"></div>
+                    <div class="team" style="background-position: -340px -4px;"></div>
+                    <div class="team" style="background-position: -177px -164px;"></div>
+                    <div class="team" style="background-position: -175px -332px; margin-right: 0;"></div>
+            </div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+<!--Container Region End -->
+
+
+
+

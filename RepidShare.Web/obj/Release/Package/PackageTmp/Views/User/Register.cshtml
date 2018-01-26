@@ -1,0 +1,288 @@
+﻿@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_webSiteMasterLayout.cshtml";
+}
+
+@model RepidShare.Entities.Register
+
+<script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+<script type="text/javascript">
+
+    function CheckPassword() {
+        $(".ChangePasswordError").text('');
+        var passwordCriteria = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{7,}$";
+        var CurrentPassword = $('#txtPassword').val();
+        if (CurrentPassword.match(passwordCriteria)) {
+            return true;
+        }
+        else {
+            $(".ChangePasswordError").text("Password must be 7 characters long and contain at least one upper case letter, one lower case letter, one number, and one symbol.");
+            return false;
+            //return true;
+        }
+
+    }
+
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9" style="border:1px solid #ddd; border-radius:6px;">
+
+            <div class="margin15"></div>
+            <div class="reg_form col-lg-12 col-md-12">
+                <h3>Basic Details</h3>
+                @using (Ajax.BeginForm("Register", "User", null, new AjaxOptions { OnBegin = "beginRequest", OnComplete = "endRequest" }, new { @id = "frmRegister" }))
+            {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(model => Model.UserId)
+                    @Html.HiddenFor(model => Model.RegisterId)
+                    <div class="col-md-4 form_heigh">
+                        <label>*Account Type</label><br>
+                        @Html.RadioButtonFor(m => m.AccountType, "Personal", new { @checked = true })<span>Personal</span>
+                        @Html.RadioButtonFor(m => m.AccountType, "Business")<span>Business</span>
+                        @Html.ValidationMessageFor(model => model.AccountType)
+                    </div>
+                    <div class="col-md-4 form_heigh">
+                        <label>Your title</label><br>
+                        @{
+                            List<SelectListItem>
+                                listTitle = new List<SelectListItem>
+                                    ();
+                            listTitle.Add(new SelectListItem
+                            {
+                                Text = "Miss",
+                                Value = "Miss"
+                            });
+                            listTitle.Add(new SelectListItem
+                            {
+                                Text = "Mr",
+                                Value = "Mr"
+                            });
+                            listTitle.Add(new SelectListItem
+                            {
+                                Text = "Ms",
+                                Value = "Ms"
+                            });
+                            listTitle.Add(new SelectListItem
+                            {
+                                Text = "Mrs",
+                                Value = "Mrs"
+                            });
+                        }
+
+                        @Html.DropDownListFor(model => model.Title, listTitle, "-- Please select --",new { @class="input"})
+                        @Html.ValidationMessageFor(model => model.Title)
+                    </div>
+                    <div class="col-md-4 form_heigh">
+                        <label>*Frist name</label><br>
+                        @Html.TextBoxFor(model => model.FirstName, new { id = "txFirstName", @class = "input", @maxlength = "100", @value = "" })
+                        @Html.ValidationMessageFor(model => model.FirstName)
+                    </div>
+                    <div class="col-md-4 form_heigh">
+                        <label>Middle name</label><br>
+                        @Html.TextBoxFor(model => model.MiddleName, new { id = "txtMName", @class = "input", @maxlength = "100", @value = "" })
+                    </div>
+                    <div class="col-md-4 form_heigh">
+                        <label>*Last name</label><br>
+                        @Html.TextBoxFor(model => model.LastName, new { id = "txtLastName", @class = "input", @maxlength = "128", @value = "" })
+                        @Html.ValidationMessageFor(model => model.LastName)
+                    </div>
+                    <div class="col-md-4 form_heigh">
+                        <label>*Gender</label><br>
+                        @Html.RadioButtonFor(m => m.Gender, "Male", new { @checked = true })<span>Male</span>
+                        @Html.RadioButtonFor(m => m.Gender, "Female")<span>Female</span>
+                        @Html.ValidationMessageFor(model => model.Gender)
+                    </div>
+
+                    <div class="col-md-12 form_heigh">
+                        <label>*Date Of Birth</label><br>
+                        <div class="col-md-4" style="padding-left:0px;">
+                            <select name="Dob_day">
+                                <option>Day</option>
+                                @for (int i = 1; i <= 31; i++)
+                                {
+                                    <option>@i</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select name="Dob_month">
+                                <option value="">Month</option>
+                                <option value="1">January</option>
+                                <option value="2">February</option>
+                                <option value="3">March</option>
+                                <option value="4">April</option>
+                                <option value="5">May</option>
+                                <option value="6">June</option>
+                                <option value="7">July</option>
+                                <option value="8">August</option>
+                                <option value="9">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <select name="Dob_year">
+                                <option>Year</option>
+                                @for (int i = 1916; i <= 1999; i++)
+                                {
+                                    <option>@i</option>
+                                }
+                            </select>
+                        </div>
+                        @Html.ValidationMessageFor(model => model.Dob_day)
+                    </div>
+                    <div class="col-md-12" style="">
+                        <div class="col-md-4 form_heigh" style="padding-left:0px;">
+                            <label>*Legal region</label><br>
+                            @{
+                                List<SelectListItem>
+                                                listregion = new List<SelectListItem>
+                                                    ();
+                                listregion.Add(new SelectListItem
+                                {
+                                    Text = "England Wales",
+                                    Value = "England Wales"
+                                });
+                                listregion.Add(new SelectListItem
+                                {
+                                    Text = "Scotland",
+                                    Value = "Scotland"
+                                });
+                                listregion.Add(new SelectListItem
+                                {
+                                    Text = "Northern Ireland",
+                                    Value = "Northern Ireland"
+                                });
+                            }
+
+                            @Html.DropDownListFor(model => model.Region, listregion, "-- Please select --", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Region)
+                        </div>
+                    </div>
+                    <div class="line_1"></div>
+                    <h3>Address Details</h3>
+                    <div class="col-md-12" style="">
+                        <div class="col-md-4 form_heigh" style="padding-left:0px;">
+                            <label>* Country</label><br>
+                            @{
+                                List<SelectListItem> listCountry = new List<SelectListItem>();
+                                listCountry.Add(new SelectListItem
+                                {
+                                    Text = "UK (England &amp; Wales)",
+                                    Value = "UK (England &amp; Wales)"
+                                });
+                                listCountry.Add(new SelectListItem
+                                {
+                                    Text = "UK (Scotland)",
+                                    Value = "UK (Scotland)"
+                                });
+                                listCountry.Add(new SelectListItem
+                                {
+                                    Text = "NUK (Northern Ireland)",
+                                    Value = "UK (Northern Ireland)"
+                                });
+                                listCountry.Add(new SelectListItem
+                                {
+                                    Text = "Other European",
+                                    Value = "Other European"
+                                });
+                                listCountry.Add(new SelectListItem
+                                {
+                                    Text = "Other Global",
+                                    Value = "Other Global"
+                                });
+                            }
+
+                            @Html.DropDownListFor(model => model.Country, listCountry, "-- Please select --", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.Country)
+                        </div>
+                    </div>
+                    <div class="line_1"></div>
+                    <h3>Contact Information</h3>
+                    <div class="col-md-12 form_heigh">
+                        <div class="col-md-4 form_heigh" style="padding-left:0px;">
+                            <label>* Daytime contact number</label><br>
+                            @Html.TextBoxFor(model => model.DaytimeContactNumber, new { id = "txtDaytimeContactNumber", @class = "input", @maxlength = "128", @size = "60", @value = "" })
+                            @Html.ValidationMessageFor(model => model.DaytimeContactNumber)
+                        </div>
+                        <div class="col-md-4 form_heigh" style="padding-left:0px;">
+                            <label>Mobile telephone number</label><br>
+                            @Html.TextBoxFor(model => model.MobileTelephoneNumber, new { id = "txtMobileTelephoneNumber", @class = "input", @maxlength = "128", @size = "60", @value = "" })
+                            @Html.ValidationMessageFor(model => model.MobileTelephoneNumber)
+                        </div>
+                        <div class="col-md-4 form_heigh" style="padding-left:0px;">
+                            <label>*Email</label><br>
+                            @Html.TextBoxFor(model => model.EmailAddress, new { id = "txtEmailAddress", @class = "input", @maxlength = "128", @size = "60", @value = "" })
+                            @Html.ValidationMessageFor(model => model.EmailAddress)
+                        </div>
+                    </div>
+
+                    <div class="line_1"></div>
+                    <h3>Login Details</h3>
+                    <div class="col-md-12 form_heigh">
+                        <div class="col-md-4 form_heigh" style="padding-left:0px;">
+                            <label>*Username</label><br>
+                            @Html.TextBoxFor(model => model.UserName, new { id = "txtUserName", @class = "input", @maxlength = "128", @size = "60", @value = "" })
+                            @Html.ValidationMessageFor(model => model.UserName)
+                        </div>
+                        <div class="col-md-4 form_heigh" style="padding-left:0px;">
+                            <label>Password</label><br>
+                            @Html.PasswordFor(model => model.Password, new { id = "txtPassword", @class = "input", @maxlength = "128", @size = "60", @value = "", @onblur = "return CheckPassword()" })
+                            @Html.ValidationMessageFor(model => model.Password)
+                            <label class="ChangePasswordError" style="color:red"></label>
+                        </div>
+                        <div class="col-md-4 form_heigh" style="padding-left:0px;">
+                            <label>Confirm new password</label><br>
+                            @Html.PasswordFor(model => model.ConfirmPassword, new { id = "txtConfirmPassword", @class = "input", @maxlength = "128", @size = "60", @value = "" })
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                        </div>
+                    </div>
+
+                    <div class="line_1"></div>
+                    <h3>Terms of Use</h3>
+                    <p>The Terms of Use relate to your use of the Law Guide, Document Preparation Service and Legal Document Review.</p>
+
+                    <a href="#">View Terms of use</a><br> <br>
+                                <input type="checkbox" id="ckAgree" />
+                                @Html.LabelFor(x => x.TermsAndConditions)
+                                @Html.ValidationMessageFor(x => x.TermsAndConditions)
+                                <div class="line_1"></div>
+                                <h3>Privacy and Data Policy</h3>
+                                <p>
+                                    Epoq Legal Ltd (trading as DesktopLawyer.co.uk) will hold and process your personal information on our systems for the purposes of administration, operation of the service and business development. If you have purchased a Document Preparation Service which includes Legal Document Review, we will also provide your personal information to the law firm conducting the review.
+                                </p>
+                                <p>
+                                    To see how we use your information please read the Cookie data & privacy policy. We, and our partners will only use your information to contact you by mail, telephone or email, in connection with this service.
+                                </p>
+                                <p>
+                                    ELL (or other companies in the groups to which they belong) may wish to contact you in the future, to pass on information about product updates and other issues in which you may be interested. Do you wish to receive such information?
+                                </p>
+                                <br><br>
+                                <input name="I agree" type="checkbox" value="" checked><span>I would like to receive email updates</span>
+                                <br><br>
+                                <input id="btnRegister" name="Register" type="submit" value="Register" class="reg_btn">
+                                }
+            </div>
+        </div>
+
+        <div class="clearfix margin15 visible-xs visible-xs"></div>
+        <div class="col-md-3">
+            <div class="judicail-box">
+                <h2 class="font14 bold">Your Satisfaction Guaranteed</h2>
+            </div>
+            <div class="judicail-inner-box padd15">
+                <p class="font14"> <i class="fa fa-check" aria-hidden="true"></i> 100% refund if you're not happy</p>
+                <p class="font14"><i class="fa fa-check" aria-hidden="true"></i>  Securing your data safely</p>
+                <p class="font14"><i class="fa fa-check" aria-hidden="true"></i>  This site uses strong 128 Bit Encryption </p>
+
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,275 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_webSiteMasterLayout.cshtml";
+    ViewBag.Title = "Summary View";
+
+}
+<div class="container">
+    <div class="row">
+        @*<p class="font13 text-muted padd15"> Home &gt; Pesonal</p>*@
+        <div class="clearfix margin10"></div>
+        <div class="col-md-7">           
+            @Html.Action("MyActivity", "User", new { prm = ViewBag.Message })
+            <div class="clearfix margin15"></div>
+            <div class="clearfix"></div>
+            <!-- Nav tabs -->
+            <div class="summry-box">
+                <div class="card">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Messages</a></li>
+                        <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Chores</a></li>
+                        <li role="presentation"><a href="#messages" aria-controls="profile" role="tab" data-toggle="tab">Events</a></li>
+                    </ul>
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active font-s" id="home">
+                            <div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <input name="" value="" type="checkbox"> Received
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        Sent
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        file
+                                    </div>
+                                    <div class="col-md-3 col-md-3 col-sm-3 col-xs-3 text-right">
+                                        Displaying 1-6 of 6
+                                    </div>
+                                </div>
+                                <div class="clearfix margin15"></div>
+                                <div class="grey-box">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input name="" value="" type="checkbox"> Bill Bondy (34)
+                                            <div class="m-top"></div>
+                                            <p class="color-a">Answer | File</p>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Medical Record</p>
+                                            <p>Hello Bill, i hope your doing well. Loo</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p> Nov. 16. 2015</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="bottom-l"></div>
+                                        <div class="margin10"></div>
+
+                                        <div class="col-md-4">
+                                            <input name="" value="" type="checkbox"> Bill Bondy (34)
+                                            <div class="m-top"></div>
+                                            <p class="color-a">Answer | File</p>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Medical Record</p>
+                                            <p>Hello Bill, i hope your doing well. Loo</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p> Nov. 16. 2015</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="bottom-l"></div>
+                                        <div class="margin10"></div>
+                                        <div class="col-md-4">
+                                            <input name="" value="" type="checkbox"> Bill Bondy (34)
+                                            <div class="m-top"></div>
+                                            <p class="color-a">Answer | File</p>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Medical Record</p>
+                                            <p>Hello Bill, i hope your doing well. Loo</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p> Nov. 16. 2015</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane font-s" id="profile">
+                            <div class="tab-scroll">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <input name="" value="" type="checkbox"> Received
+
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        Sent
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        file
+                                    </div>
+                                    <div class="col-md-3 text-right">
+                                        Displaying 1-6 of 6
+                                    </div>
+                                </div>
+                                <div class="clearfix margin15"></div>
+                                <div class="grey-box">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <form action="">
+                                                <input name="" value="" type="checkbox"> Bill Bondy (34)
+                                                <div class="m-top"></div>
+                                                <p class="color-a">Answer | File</p>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Medical Record</p>
+                                            <p>Hello Bill, i hope your doing well. Loo</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p> Nov. 16. 2015</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="bottom-l"></div>
+                                        <div class="margin10"></div>
+
+                                        <div class="col-md-4">
+                                            <form action="">
+                                                <input name="" value="" type="checkbox"> Bill Bondy (34)
+                                                <div class="m-top"></div>
+                                                <p class="color-a">Answer | File</p>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Medical Record</p>
+                                            <p>Hello Bill, i hope your doing well. Loo</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p> Nov. 16. 2015</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="bottom-l"></div>
+                                        <div class="margin10"></div>
+                                        <div class="col-md-4">
+                                            <form action="">
+                                                <input name="" value="" type="checkbox"> Bill Bondy (34)
+                                                <div class="m-top"></div>
+                                                <p class="color-a">Answer | File</p>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Medical Record</p>
+                                            <p>Hello Bill, i hope your doing well. Loo</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p> Nov. 16. 2015</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div role="tabpanel" class="tab-pane font-s" id="messages">
+                            <div class="tab-scroll">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        <input name="" value="" type="checkbox"> Received
+
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        Sent
+                                    </div>
+                                    <div class="col-md-3 col-sm-3 col-xs-3">
+                                        file
+                                    </div>
+                                    <div class="col-md-3 text-right">
+                                        Displaying 1-6 of 6
+                                    </div>
+                                </div>
+                                <div class="clearfix margin15"></div>
+                                <div class="grey-box">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <input name="" value="" type="checkbox"> Bill Bondy (34)
+                                            <div class="m-top"></div>
+                                            <p class="color-a">Answer | File</p>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Medical Record</p>
+                                            <p>Hello Bill, i hope your doing well. Loo</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p> Nov. 16. 2015</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="bottom-l"></div>
+                                        <div class="margin10"></div>
+
+                                        <div class="col-md-4">
+                                            <form action="">
+                                                <input name="" value="" type="checkbox"> Bill Bondy (34)
+                                                <div class="m-top"></div>
+                                                <p class="color-a">Answer | File</p>
+                                            </form>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Medical Record</p>
+                                            <p>Hello Bill, i hope your doing well. Loo</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p> Nov. 16. 2015</p>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                        <div class="bottom-l"></div>
+                                        <div class="margin10"></div>
+
+                                        <div class="col-md-4">
+                                            <input name="" value="" type="checkbox"> Bill Bondy (34)
+                                            <div class="m-top"></div>
+                                            <p class="color-a">Answer | File</p>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <p>Medical Record</p>
+                                            <p>Hello Bill, i hope your doing well. Loo</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p> Nov. 16. 2015</p>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">«</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">»</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <a href="/User/UpdateAccount">Update my account details</a><br />
+            <a href="/User/ChangePassword">Change my password</a>
+
+        </div>
+        <!--right-dection Box-->
+        <div class="margin15 visible-sm visible-xs"></div>
+
+        @Html.Action("RequestNewDocument")
+    </div>
+</div>

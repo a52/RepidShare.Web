@@ -1,0 +1,337 @@
+﻿@model RepidShare.Entities.DocumentModel
+@{
+    if (Model.DocumentID > 0)
+    {
+        ViewBag.Title = "Edit Document";
+    }
+    else
+    {
+        ViewBag.Title = "Add Document";
+    }
+    
+}
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="@Url.Content("~/Images/home-icon.png")"></a></li>
+            <li>@Html.ActionLink("View Document", "ViewDocument", "Document")</li>
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2 class="gray-heading">@ViewBag.Title</h2>
+        <div class="white-bg">
+            <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/chosen.css")" />
+            <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+            @using (Html.BeginForm("SaveDocument", "Document", FormMethod.Post, new { @id = "frmDocument" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.DocumentID, new { Value = Model.DocumentID, id = "hdnDocumentID" })
+                @Html.HiddenFor(model => model.Message, new { Value = Model.Message, id = "hdnMessage" })
+                @Html.HiddenFor(model => model.MessageType, new { Value = Model.MessageType, id = "hdnMessageType" })
+                @Html.HiddenFor(model => model.SavedStep, new { Value = Model.SavedStep, id = "hdnSavedStep" })
+                @Html.HiddenFor(model => model.ActionType, new { Value = Model.ActionType, id = "hdnActionType" })
+                @Html.HiddenFor(model => model.DocumentDescription, new { id = "hdnDescription" })
+                @Html.HiddenFor(model => model.SelectedText, new { id = "hdnSelectedText" })
+                
+                //@Html.HiddenFor(model => model.GroupID, new { id = "hdnGroupID" })
+                @Html.HiddenFor(model => model.DocumentHTML, new { id = "DocumentHTML", Value = Model.DocumentHTML })
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.CategoryID, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4 mandatoryFeild">
+                        @Html.DropDownListFor(model => model.CategoryID, ViewBag.CaegoryDropDown as SelectList, "--Select--", new { id = "ddlCaegoryDropDown", @class = "ddlMedium", @onchange = "CaegoryChange();" })
+                        @Html.ValidationMessageFor(model => model.CategoryID)
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.SubCategoryID, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4 mandatoryFeild">
+                        @Html.DropDownListFor(model => model.SubCategoryID, ViewBag.SubCatDropDown as SelectList, "--Select--", new { id = "ddlSubCatDropDown", @class = "ddlMedium" })
+                        @Html.ValidationMessageFor(model => model.SubCategoryID)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.GroupID, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.DropDownListFor(model => model.GroupID, ViewBag.GroupDropDown as SelectList, "--Select--", new { id = "ddlGroupDropDown", @class = "ddlMedium" })
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.DocumentTitle, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4 mandatoryFeild">
+                        @Html.TextBoxFor(model => model.DocumentTitle, new { @id = "txtDocumentTitle", @class = "form-control name", @maxlength = "8000" })
+                        @Html.ValidationMessageFor(model => model.DocumentTitle)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.DocumentDescription, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-8">
+                        @Html.Partial("_HTMLText", Model.DocumentDescription, new ViewDataDictionary<string>())
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <span>&nbsp</span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.Price, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4 mandatoryFeild">
+                        @if (Model.DocumentID > 0)
+                        { 
+                            @Html.TextBoxFor(model => model.Price, new { @id = "txtPrice", @class = "form-control name", @maxlength = "100" })
+                        }
+                        else
+                        {
+                            @Html.TextBoxFor(model => model.Price, new { @id = "txtPrice", @Value = "", @class = "form-control name", @maxlength = "100" })
+                        }
+                        @Html.ValidationMessageFor(model => model.Price)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.PackIds, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.ListBox("ddlPack", ViewBag.PackList as MultiSelectList, new { @id = "ddlPack", @class = "chosen-select ddlMedium", @CausesValidation = "false", data_placeholder = "--Select--" })
+                        @Html.HiddenFor(model => model.PackIds, new { @id = "hdnPackIds" })
+                    </div>
+                </div>
+                <div class="row add-bottom">
+                    <div class="col-sm-3 label-style">
+                        @Html.Label("Document Shared TO ")
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.ListBox("ddlUserId", ViewBag.UserListDropDown as MultiSelectList, new { @id = "ddlUserId", @class = "chosen-select ddlMedium", @CausesValidation = "false", data_placeholder = "--Select--" })
+                        @Html.HiddenFor(model => model.UserIds, new { @id = "hdnUserIds" })
+                    </div>
+                </div>
+@*<div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.DocumentHTML, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.TextBoxFor(model => model.DocumentHTML, new { @id = "txtDocumentHTML", @class = "form-control name", @maxlength = "100" })
+                        @Html.ValidationMessageFor(model => model.DocumentHTML)
+                    </div>
+                </div>*@
+                <div class="row add-bottom">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.IsPublished, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.CheckBoxFor(model => model.IsPublished, new { @id = "chkIsPulished", @class = "form-control name", @checked = Model.IsMostPopular })
+                        @Html.ValidationMessageFor(model => model.IsPublished)
+                    </div>
+                </div>
+                <div class="row add-bottom">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.IsMostPopular, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4">
+                        @Html.CheckBoxFor(model => model.IsMostPopular, new { @id = "chkIsMostPopular", @class = "form-control name", @checked = Model.IsMostPopular })
+                        @Html.ValidationMessageFor(model => model.IsMostPopular)
+                    </div>
+                </div>
+                <div class="row add-bottom">
+                    <div class="col-sm-3 label-style">
+                        @Html.Label("Select Step Order", new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="tbl-access-row mandatoryFeild ErrorMsgOuter remove-bottom" id="lstRole">
+                            @Html.ListBoxFor(model => model.AllSteps, ViewBag.objStepDDL as MultiSelectList, new { @id = "select-from", @size = "10", @SelectionMode = "multiple", @style = "width: 250px" })
+                            <a href="JavaScript:void(0);" id="btn-add">Add &raquo;</a>
+                            <a href="JavaScript:void(0);" id="btn-remove">&laquo; Remove</a>
+                            @Html.ListBoxFor(model => model.SelectedSteps, ViewBag.objSavedStep as MultiSelectList, new { @id = "select-to", @size = "10", @SelectionMode = "multiple", @style = "width: 250px" })
+                            <a href="JavaScript:void(0);" id="btn-up">Up</a>
+                            <a href="JavaScript:void(0);" id="btn-down">Down</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-left button-group row">
+                    <div class="col-sm-3">&nbsp;</div>
+                    <div class="col-sm-4">
+                        <input id="btnSave" class="btn btn-primary" type="button" value="Save" />
+                        <input id="btnSubmit" class="btn btn-primary" type="submit" value="Save" style="display: none" />
+                        <input id="btnCancel" type="button" class="btn cancel btn-primary" causesvalidation="false"
+                            value="Cancel" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+
+    function RedirectConfirmSaveDialog(ActionType) {
+        $("#hdnActionType").val(ActionType);
+        $("#btnSubmit").click();
+    }
+
+    $().ready(function () {
+
+        $('#ddlPack').chosen();
+
+        $("#ddlPack").change(function () {
+            $("#hdnPackIds").val($(this).val());
+        });
+
+        $('#ddlUserId').chosen();
+
+        $("#ddlUserId").change(function () {
+            $("#hdnUserIds").val($(this).val());
+        });
+
+        $("#select-from").val($("#select-from option:first").val());
+        $("#select-to").val($("#select-to option:first").val());
+
+        $("#txtDocumentText").focus();
+        // Show  Error Message on popup by common function showMessagePopup if any error found in hidden fields hdnMessage and hdnMessageType
+        showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        //Submit the form on save button click
+        $("#btnSave").click(function () {
+            $("#hdnDescription").val($("#ckeditorBox").val());
+            var SavedStep = $("#select-to option").map(function () { return this.value; }).get().join(',');
+            var SavedStepText = $("#select-to option").map(function () { return this.text; }).get().join('->');
+            var hdnSelectedText = $("#select-to option").map(function () { return this.text; }).get().join(',');
+            $("#hdnSelectedText").val(hdnSelectedText);
+            //debugger;
+            //if ($("#ddlGroupDropDown").val() == "") {
+            //    $("#hdnGroupId").val("0");
+            //}
+            //else {
+            //    $("#hdnGroupId").val($("#ddlGroupDropDown").val());
+            //}
+
+            $("#frmDocument").valid()
+            if ($("#frmDocument").valid()) {
+                if (SavedStep == "") {
+                    showMessagePopup("divMessage", 'error', 'Please Select atleast one Step');
+                }
+                else {
+                    $("#hdnSavedStep").val(SavedStep);
+                    openConfirmDialog(0, 'Are you sure your Step Order? </br></br> <p>' + SavedStepText + '</p> ', fnSaveItems, null)
+                }
+            }
+            //$("#hdnSelectedRoleIds").val(RoleIds);
+        });
+
+
+
+        //redirect to  Document List on Cancel button click
+        $("#btnCancel").click(function () {
+            window.location.href = "/Document/ViewDocument";
+        });
+
+
+        $('#btn-add').click(function () {
+            $('#select-from option:selected').each(function () {
+                $('#select-to').append("<option value='" + $(this).val() + "'>" + $(this).text() + "</option>");
+                $(this).remove();
+                $("#select-from").val($("#select-from option:first").val());
+                $("#select-to").val($("#select-to option:first").val());
+            });
+        });
+        $('#btn-remove').click(function () {
+            $('#select-to option:selected').each(function () {
+                $('#select-from').append("<option value='" + $(this).val() + "'>" + $(this).text() + "</option>");
+                $(this).remove();
+                $("#select-from").val($("#select-from option:first").val());
+                $("#select-to").val($("#select-to option:first").val());
+            });
+        });
+        $('#btn-up').bind('click', function () {
+            $('#select-to option:selected').each(function () {
+                var newPos = $('#select-to option').index(this) - 1;
+                if (newPos > -1) {
+                    $('#select-to option').eq(newPos).before("<option value='" + $(this).val() + "' selected='selected'>" + $(this).text() + "</option>");
+                    $(this).remove();
+                }
+            });
+        });
+        $('#btn-down').bind('click', function () {
+            var countOptions = $('#select-to option').size();
+            $('#select-to option:selected').each(function () {
+                var newPos = $('#select-to option').index(this) + 1;
+                if (newPos < countOptions) {
+                    $('#select-to option').eq(newPos).after("<option value='" + $(this).val() + "' selected='selected'>" + $(this).text() + "</option>");
+                    $(this).remove();
+                }
+            });
+        });
+
+        $("#select-to").on('dblclick', 'option', function () {
+            //alert($(this).text());
+            openEditDialog("/Document/EditStep?prm=" + $(this).text(), "Step Copy", "", "")
+        })
+
+    });
+
+    function fnSaveItems(id) {
+        $("#btnSubmit").click()
+    }
+
+    function CaegoryChange() {
+        var assetTypeId = $("#ddlCaegoryDropDown").val();
+        if (assetTypeId > 0) {
+            $.ajax({
+
+                url: "/Document/GetSubCategoryByOtherIds",
+                data: { CategoryID: $("#ddlCaegoryDropDown").val(), GroupID: null },
+                cache: false,
+                type: "POST",
+                success: function (data) {
+                    $("#ddlSubCatDropDown").empty();
+                    var markup = "<option value=>--Select--</option>";
+                    for (var x = 0; x < data.length; x++) {
+                        if (data[x].Value == "0") {
+                            markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+                        }
+                        else {
+                            markup += "<option value=" + data[x].Value + ">" + data[x].Text + "</option>";
+                        }
+                    }
+                    $("#ddlSubCatDropDown").append(markup);
+                    $("select").uniform();
+                },
+                error: function (reponse) {
+                    if (reponse.status != 403) {
+                        alert("error : " + reponse);
+                    }
+                }
+            });
+        }
+        else {
+            $("#ddlSubCatDropDown").empty();
+            var markup = "<option value=>--Select--</option>";
+            $("#ddlSubCatDropDown").append(markup);
+            $("select").uniform();
+        }
+        $("#ddlCaegoryDropDown").valid();
+    }
+
+    //$(window).load(function () {
+    //    //alert('a');
+    //   // $("#ddlPack").val("7,6").trigger('chosen:updated');
+    //});
+</script>

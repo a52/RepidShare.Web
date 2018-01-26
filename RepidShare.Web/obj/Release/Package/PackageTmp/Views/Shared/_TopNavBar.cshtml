@@ -1,0 +1,118 @@
+﻿@{
+    int BasketCount = 0;
+    if (Session["PayPalItemDetail"] != null)
+    {
+        RepidShare.Web.PayPalItemDetail objPayPalItemDetail = (RepidShare.Web.PayPalItemDetail)Session["PayPalItemDetail"];
+        BasketCount = objPayPalItemDetail.itemList.items.Count;
+    }
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <nav class="navbar navbar-default bg0">
+                <div class="navbar-header h0">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @if (Session["UserId"] != null)
+                    {
+                        <a class="navbar-brand" href="/"><img src="/img/logo.png"></a>
+                    }
+                    else
+                    {
+                        <a class="navbar-brand" href="/"><img src="/img/logo.png"></a>
+                    }
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <!--<li class="active"><a href="#">Home</a></li>-->
+                        @if (Session["UserId"] != null)
+                        {
+                            //<li><a href="/User/SummaryView">Home</a></li>
+                            <li><a href="~/">Home</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="~/">Home</a></li>
+                        }
+                        <li><a href="#">Companies </a></li>
+                        <li><a href="#">Lawyers </a></li>
+                        <li><a href="#">Notary Publics </a></li>
+                        <li><a href="#">Alguaciles </a></li>
+                        <li><a href="~/FAQ">Frequently Questions </a></li>
+                        <div class="margin15 clearfix visible-sm visible-xs"></div>
+
+                        @if (Session["UserId"] != null)
+                        {
+                            <li>
+                                <a href="#">
+                                    <button type="button" class="btn btn-default pull-left top-m btn-account visible-sm visible-xs">My Account</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/User/LogOff">
+                                    <button type="button" class="btn btn-logout logout-img visible-xs visible-sm"><img src="/img/logout.svg">Logout</button>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+
+                    @if (Session["UserId"] != null)
+                    {
+                        <a href="#">
+                            <button type="button" class="btn btn-default pull-right top-m btn-account hidden-xs hidden-sm">My Account</button>
+                        </a>
+                        <a href="/User/LogOff">
+                            <button type="button" class="btn btn-logout logout-img hidden-xs hidden-sm"><img src="/img/logout.svg"> Logout</button>
+                        </a>
+                        <div class="cart hidden-xs hidden-sm">
+                            <img src="/img/cart.svg">
+                            <a href="/User/Basket" onclick="_gaq.push(['_link', this.href]); return false;"><i class="icon-shopping232"></i>(@BasketCount)</a>
+                        </div>
+                    }
+                </div>
+            </nav>
+        </div><!--/.container-fluid -->
+        @if (Session["UserId"] != null)
+        {
+            <div class="cart visible-xs visible-sm">
+                <img src="/img/cart.svg">
+                <a href="/User/Basket" onclick="_gaq.push(['_link', this.href]); return false;"><i class="icon-shopping232"></i>(@BasketCount)</a>
+            </div>
+        }
+        <div class="clearfix margin15 visible-xs visible-sm"></div>
+        <div class="col-md-3 m-top">
+            <div class="margin10"></div>
+            <div class="row">
+                <div class="col-md-7">
+                    <form>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Find Your lawyer</label>
+                            <input type="email" class="form-control" id="" aria-describedby="" placeholder="Area of Practice">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-5 m-t">
+                    <form>
+                        <div class="form-group">
+                            <select class="form-control" id="">
+                                <option>City</option>
+                                <option>Bhopal </option>
+                                <option>Indore</option>
+                                <option>jabalpur</option>
+                                <option>Dhar</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                @*<small id="" class="form-text text-muted t-l"> Thursday,December 8 2016-12:30PM </small>*@
+                <div class="margin10 clearfix visible-xs visible-sm"></div>
+            </div>
+        </div>
+    </div>
+</div>

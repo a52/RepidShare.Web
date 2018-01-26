@@ -1,0 +1,72 @@
+﻿@model RepidShare.Entities.DocumentResponseDetailModel
+@using RepidShare.Utility;
+<div class="row">
+    <div class="col-sm-6" id="dtTimepckr">
+        @if (Model != null && Model.Questions != null && Model.Questions.Count() > 0)
+        {
+            if (Model.IsReadOnly)
+            {
+                <span>@Model.Questions[Model.Index].AnswerDetail</span>
+            }
+            else
+            {
+                @Html.DateTimeTextBoxFor(model => Model.Questions[Model.Index].AnswerDetail, Model.Questions[Model.Index])
+
+                <br />
+                @Html.ValidationMessageFor(model => Model.Questions[Model.Index].AnswerDetail)
+            }
+
+
+            @Html.HiddenFor(model => model.Questions[Model.Index].ResultDetailID, new { Value = Model.Questions[Model.Index].ResultDetailID })
+            @Html.HiddenFor(model => model.Questions[Model.Index].QuestionID, new { Value = Model.Questions[Model.Index].QuestionID })
+        }
+    </div>
+
+</div>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <link rel="stylesheet" href="/resources/demos/style.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+   @* <link href="https://www.script-tutorials.com/demos/348/css/ui-lightness/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://www.script-tutorials.com/demos/348/js/jquery.191.js"></script>
+    <script src="https://www.script-tutorials.com/demos/348/js/jquery-ui-1.9.2.custom.min.js"></script>*@
+    
+
+   @* <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script>*@
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.js"></script>
+
+<script>
+
+    $.noConflict();
+    jQuery(document).ready(function ($) {
+        if('@Model.Questions[Model.Index].QuestionTypeDetail.DateAndTimeType.IsDateOnly'==true)
+        {
+            $('#DatetimePicker_' + @Model.Index).datepicker({ minView: 2, autoclose: true, format: "@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()"});
+        }
+        else{
+            $('#DatetimePicker_' + @Model.Index).datepicker({ autoclose: true, format: '@RepidShare.Utility.CommonUtils.LongDateFormat.Replace("mm", "ii").ToLower()'});
+        }
+        //$('#DatetimePicker_' + @Model.Index).datetimepicker('update');
+
+    });
+
+
+    @*$().ready(function () {
+        bindDateTimePicker('@Model.Questions[Model.Index].QuestionTypeDetail.DateAndTimeType.IsDateOnly', 'DatetimePicker_'+@Model.Index);
+    });
+    function bindDateTimePicker(isDateOnly, id) {       
+        if (isDateOnly == "True") {          
+            $('#' + id).datetimepicker({ minView: 2, autoclose: true, format: "@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()"});
+        }
+        else {           
+            $('#' + id).datetimepicker({ autoclose: true, format: '@RepidShare.Utility.CommonUtils.LongDateFormat.Replace("mm", "ii").ToLower()' });
+
+        }
+        $('#' + id).datetimepicker('update');
+    }*@
+
+</script>

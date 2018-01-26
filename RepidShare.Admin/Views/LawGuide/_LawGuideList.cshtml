@@ -1,0 +1,98 @@
+﻿@model RepidShare.Entities.ViewLawGuideModel
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>
+                                Sr No
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="CategoryName" class="sort">Law Guide Name</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="SubCatName" class="sort">SubCat Name</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="Description" class="sort">Description</a>
+                            </div>
+                        </th>
+                        <th class="text-center">
+                            <div>
+                                Action
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.LawGuideList != null && Model.LawGuideList.Count > 0)
+                    {
+                        for (int i = 0; i < Model.LawGuideList.Count; i++)
+                        {
+                        <tr>
+                            @Html.HiddenFor(m => Model.LawGuideList[i].LawGuideID)
+
+                            <td>@Model.LawGuideList[i].RowNumber</td>
+                            <td>@Model.LawGuideList[i].LawGuideName</td>
+                            <td>@Model.LawGuideList[i].SubCategoryName</td>
+                            <td>@if (Model.LawGuideList[i].Description != null && Model.LawGuideList[i].Description.ToString().Length > 20)
+                                {
+                                @Model.LawGuideList[i].Description.Substring(0, 20).ToString()
+                                <span>...<a title="@Model.LawGuideList[i].Description.ToString()" >more</a></span>
+                                }
+                                else
+                                { 
+                                @Model.LawGuideList[i].Description
+                                }
+                            </td>
+                            <td class="btn-action" width="15%">
+                                @if (Model.LawGuideList[i].Count > 0)
+                                {
+                                    <a class="icon-edit-disabled" href="javascript:void(0)" title="Edit">Edit</a><a class="icon-delete-disabled" href="javascript:void(0)" title="Delete">Delete</a>
+                                }
+                                else
+                                {
+                                    <a class="icon-edit" href="/LawGuide/SaveLawGuide?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.LawGuideList[i].LawGuideID))" title="Edit">Edit</a><a class="icon-delete" onclick="openConfirmDialog('@Model.LawGuideList[i].LawGuideID','Are you sure to delete?',deleteLawGuide,null)" href="javascript:void(0)" title="Delete">Delete</a>
+                                }
+                            </td>
+                        </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6">No Record Found.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+
+    </div>
+</div>
+@Html.HiddenFor(model => model.DeletedLawGuideID, new { id = "DeletedLawGuideID" })
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+<script type="text/javascript">
+    $().ready(function () {
+        // Show Sucess or Error Message on popup by common function showMessagePopup
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+</script>

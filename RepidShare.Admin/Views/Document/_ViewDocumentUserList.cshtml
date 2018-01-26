@@ -1,0 +1,122 @@
+﻿@using DocumentResource = RepidShare.Entities.Resource.DocumentResource
+@using CommonResource = RepidShare.Entities.Resource.CommonResource
+@model RepidShare.Entities.ViewDocumentUserResponseModel
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-overflow">
+                <thead>
+                    <tr>
+                        <th style="width: 7%;">
+                            @CommonResource.lblSrNo
+                        </th>
+                        <th style="width: 18%;">
+                            <div>
+                                <a href="javascript:void(0)" sortby="UserDomainName" class="sort">User Name</a>
+                            </div>
+                        </th>
+                        <th style="width: 11%;">
+                            <div>
+                                <a href="javascript:void(0)" sortby="CreatedOn" class="sort">Created On</a>
+                            </div>
+                        </th>
+                        <th style="width: 13%;">
+                            <div>
+                                <a href="javascript:void(0)" sortby="CompletionDate" class="sort">Completion Date</a>
+                            </div>
+                        </th>
+                        <th style="width: 10%;">No Of Attempt
+                        </th>
+                        <th class="text-center" style="width: 7%;">
+                            <div>
+                                @CommonResource.lblAction
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.lstDocumentUserResponseModel != null && Model.lstDocumentUserResponseModel.Count > 0)
+                    {
+                        for (int i = 0; i < Model.lstDocumentUserResponseModel.Count; i++)
+                        {
+                        <tr valign="middle">
+                            @Html.HiddenFor(m => Model.DocumentID)
+                            <td width="3%">@Model.lstDocumentUserResponseModel[i].RowNumber
+                            </td>
+                            <td>@Model.lstDocumentUserResponseModel[i].UserName
+                            </td>
+                            <td>@if (Model.lstDocumentUserResponseModel[i].StartDate != null)
+                                {
+                                <span>@Convert.ToDateTime(Model.lstDocumentUserResponseModel[i].StartDate).ToString(RepidShare.Utility.CommonUtils.ShortDateFormat)</span>
+                                }
+                                else
+                                {
+                                <samp>----</samp>
+                                }
+                            </td>
+                            <td>@if (Model.lstDocumentUserResponseModel[i].CompletionDate != null)
+                                { 
+                                <span>@Convert.ToDateTime(Model.lstDocumentUserResponseModel[i].CompletionDate).ToString(RepidShare.Utility.CommonUtils.ShortDateFormat)</span>
+                                }
+                                else
+                                {
+                                <samp>----</samp>
+                                }
+                            </td>
+                            <td>@if (Model.lstDocumentUserResponseModel[i].IsCompleted == null)
+                                {
+                                <span>NotAttempted</span>
+                                }
+                                else if (Model.lstDocumentUserResponseModel[i].IsCompleted == true)
+                                {
+                                <span>Attempted</span>
+                                }
+                                else
+                                {
+                                <span>Attempt</span>
+                                }
+                            </td>
+                            <td align="center">@Model.lstDocumentUserResponseModel[i].NoOfAttempt
+                            </td>
+                            <td class="btn-action" width="12%">@if (Model.lstDocumentUserResponseModel[i].NoOfAttempt > 0)
+                                                               {
+                                <a class="icon-view"  href="/DocumentResponse/ViewDocumentResponse?prm=@RepidShare.Utility.CommonUtils.Encrypt("UserId=" + Model.lstDocumentUserResponseModel[i].UserID.ToString() + "&DocumentId=" + Model.DocumentID.ToString() + "&pagename=Documentuser")" title="View Response">View Response</a>
+                                                               }
+                                                               else
+                                                               {
+                                <a class="icon-view-disabled" href="javascript:void(0)" title="View Response">View Response</a>
+                                                               }
+                            </td>
+                        </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="8">@CommonResource.lblNoRecordFound
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+    </div>
+</div>
+@Html.HiddenFor(m => m.DocumentID)
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+</script>

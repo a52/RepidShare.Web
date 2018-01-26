@@ -1,0 +1,25 @@
+﻿<div class="login-box padd15">
+    <form role="form" id="loginForm">
+        <div class="form-group">
+            <label for="" class="white control-label">Login</label>
+            <input type="text" class="form-control" id="txtUserName" name="userName" placeholder="Enter Username" tabindex="1">
+            <span id="validUser" style="color:red;"></span>
+        </div>
+        <div class="form-group">
+            <input type="Password" class="form-control" id="txtPassword" name="password" placeholder="Enter Password" tabindex="2">
+            <span id="validPassword" style="color:red;"></span>
+        </div>
+        <span id="validMessage" style="color:red"></span>
+    </form>
+
+    <a href="/User/ForgotPassword" class="font12 white" style="cursor:pointer" data-toggle="modal">Forgot Your Password ?</a>
+    <div class="row">
+        <div class="col-md-6">
+            <button type="button" id="btnLogin" class="btn btn-default pull-left btn-signup"  value="submit" tabindex="3">Sign In</button>
+        </div>
+        <div class="col-md-6">
+            <a href="@Url.Content("/User/Register")" style="cursor:pointer"><button type="button" class="btn btn-default pull-right btn-signup " tabindex="4">Sign Up</button></a>
+
+        </div>
+    </div>     
+</div>

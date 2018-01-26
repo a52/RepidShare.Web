@@ -1,0 +1,90 @@
+﻿@model RepidShare.Entities.ViewUserLoginModel
+
+@{
+    ViewBag.Title = "View User List";
+}
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="/Images/home-icon.png"></a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "dvUserNameList", OnBegin = "beginRequest", OnComplete = "searchComplete" }))
+{
+
+    <div class="search-strip half-padding">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="search-row width-auto labelPaddingTop">
+                    @Html.LabelFor(model => model.FilterUserName, new { @class = "labelColon" })
+                </div>
+                <div class="search-row">
+                    @Html.TextBoxFor(model => model.FilterUserName, new { @class = "form-control  filter-control remove-bottom", @maxlength = "50" })
+                </div>
+                <div class="search-row search-row-large">
+                    <input id="btnSubmit" type="submit" value="Search" class="btn btn-primary" style="display: none" />
+                    <input id="btnSearch" type="button" value="Search" class="btn btn-primary" />
+                    <input id="btnReset" type="button" value="Reset" onclick="resetFilter()" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="dvUserNameList">
+        @Html.Partial("_UserList", Model)
+    </div>    
+}
+
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        $("#btnSearch").click(function () {
+            // set Action type as search and currentpage as 1 while click on search and submit the form.
+            $("#ActionType").val("search");
+            $("#CurrentPage").val("1");
+            sendToServer();
+        });
+
+        $("a.sort").click(function () {
+            //set sotring parameter with common function bindSort and submit the form
+            bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer)
+        });
+    });
+
+    function resetFilter() {
+        //Reset search filter on Reset buton click and submit the form
+        $("#FilterUserName").val("");
+        $("#ActionType").val("search");
+        $("#CurrentPage").val("1");
+        sendToServer();
+    }
+
+    //Call common function createFooter to create footer based on Total pages and Current page.
+    createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+
+    // submit form 
+    function sendToServer() {
+
+        $("#btnSubmit").click();
+    }
+
+    //search complete will call after search completion and create footer based on search criteria 
+    function searchComplete(xmlHttpRequest, textStatus) {
+
+        createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+        $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer) });
+        setSortClass("SortBy", "SortOrder");
+        endRequest();
+    }
+
+    $(document).keyup(function (e) {
+        if (e.keyCode == 13) {
+            sendToServer();
+        }
+    });
+</script>

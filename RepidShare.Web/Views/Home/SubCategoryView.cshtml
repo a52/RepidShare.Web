@@ -1,0 +1,202 @@
+﻿@using RepidShare.Entities
+@model HomeCategoryViewModel
+@{
+    Layout = "~/Views/Shared/_websiteLayout.cshtml";
+    ViewBag.Title = "Sub Category View";
+}
+@{
+    RepidShare.Entities.HomeLayOutModel objHomeLayOutModel = (RepidShare.Entities.HomeLayOutModel)Session["LayOutData"];
+}
+<!--Header Bottom egion Start-->
+<div class="header_bottom">
+    <div class="wrapper">
+        <div class="links_main">
+
+            @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null)
+            {
+                <span>@Model.objCategoryModel.CategoryName law: </span>
+            }
+            <a href="javascript:void(0);" class="selected"><i class="fa fa-file-text"></i>Legal documents </a><a href="/Home/LawGuideView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objCategoryModel.CategoryID))"><i class="fa fa-book"></i>Law guide </a>
+        </div>
+        <div class="links_popular">
+            <span class="pop">Popular topics:</span>
+            @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0)
+            {
+                int Icount = Model.objListSubCategory.Count > 2 ? 3 : Model.objListSubCategory.Count;
+                for (int i = 0; i < Icount; i++)
+                {
+                <a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListSubCategory[i].SubCategoryID))">@Model.objListSubCategory[i].SubCatName</a>                 
+                }
+
+            }
+        </div>
+    </div>
+</div>
+<!--Header Bottom egion End-->
+
+<!--Container egion Start-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 e_sidebar">
+            <ul class="left-menu">
+                @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null)
+                {
+                    <li><a href="/Home/CategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objCategoryModel.CategoryID))">@Model.objCategoryModel.CategoryName law home</a></li>
+                }
+                @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0)
+                {
+                    for (int i = 0; i < Model.objListSubCategory.Count; i++)
+                    {
+                        if (Model.objListSubCategory[i].SubCategoryID == Model.SelectedSubCatId)
+                        {
+                    <li class="active"><a href='javascript:void(0);'>@Model.objListSubCategory[i].SubCatName</a></li>
+                        }
+                        else
+                        {              
+                    <li><a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListSubCategory[i].SubCategoryID))">@Model.objListSubCategory[i].SubCatName</a></li>
+                        }
+                    }
+
+                }
+            </ul>
+            <div class="promo">
+                <div>
+                    <h5><a href="javascript:void(0);">Family law guide</a></h5>
+                    <i class="fa fa-book fa-3x"></i>
+                    <p>
+                        Need help understanding specific areas of law? Our lawguide can help you.<br>
+                        <a href="javascript:void(0);">Visit our Family Law guide</a>
+                    </p>
+                </div>
+            </div>
+            <div class="promo">
+                <div>
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <p>Choose your document and try it for FREE</p>
+                </div>
+                <div>
+                    <i class="fa fa-gbp fa-3x"></i>
+                    <p>Purchase when you're happy to print or export</p>
+                </div>
+                <div>
+                    <i class="fa fa-search fa-3x"></i>
+                    <p>Have your document reviewed by our legal team for extra peace of mind</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div class="e_contentMainWrapper e_spanRight">
+                <div class="ele-subsite">
+                    <div class="e_wrapper subsite_76058">
+                        <div class="pull-right">
+                            <img src="img/builder2.jpg">
+                        </div>
+                        <div class="overflow">
+
+                            @if (Model != null && Model.objCategoryModel != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0 && Model.objListSubCategory.Where(x => x.SubCategoryID == Model.SelectedSubCatId).SingleOrDefault().SubCatName != null)
+                            {
+                                <h1>@Model.objListSubCategory.Where(x => x.SubCategoryID == Model.SelectedSubCatId).SingleOrDefault().SubCatName</h1>
+                                <div class="ele-subsiteDesc">
+                                    <p>@Html.Raw(Model.objListSubCategory.Where(x => x.SubCategoryID == Model.SelectedSubCatId).SingleOrDefault().Description)</p>
+                                </div>
+                               
+                            }
+                        </div>
+                        <div class="ele-subsiteCats" style="margin-top: 0px;">
+                            <h2 class="e_title">Quick links</h2>
+                            <ul class="e_categoriesList">
+                                @if (objHomeLayOutModel != null && objHomeLayOutModel.objViewCategoryModel != null && objHomeLayOutModel.objViewCategoryModel.CategoryList != null && objHomeLayOutModel.objViewCategoryModel.CategoryList.Count > 0)
+                                {
+                                    for (int x = 0; x < objHomeLayOutModel.objViewCategoryModel.CategoryList.Count; x++)
+                                    {
+                                        if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null)
+                                        {
+                                            if (objHomeLayOutModel.objViewCategoryModel.CategoryList[x].CategoryName == Model.objCategoryModel.CategoryName && objHomeLayOutModel.objViewCategoryModel.CategoryList[x].objDocumentList != null && objHomeLayOutModel.objViewCategoryModel.CategoryList[x].objDocumentList.Count > 0)
+                                            {
+                                                for (int i = 0; i < objHomeLayOutModel.objViewCategoryModel.CategoryList[x].objDocumentList.Count; i++)
+                                                {
+                                    <li><a href="/Home/DocumentView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(objHomeLayOutModel.objViewCategoryModel.CategoryList[x].objDocumentList[i].DocumentID))" class="active ">@objHomeLayOutModel.objViewCategoryModel.CategoryList[x].objDocumentList[i].DocumentTitle</a></li>            
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <div class="ele-subsiteProducts" data-subsite="76058">
+                            <div id="jurisdictionSelectorWrapper" data-jurisdiction-id="0" style="margin-top: 375px;">
+                                <div class="jurisdictionSelectorInner">
+                                    <label for="jurisdictionSelector">Region: </label>
+                                    <select name="jurisdictionSelector" id="jurisdictionSelector">
+                                        <option value="0">All</option>
+                                        <option value="1">England &amp; Wales</option>
+                                        <option value="2">Scotland</option>
+                                        <option value="3">Northern Ireland</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="e_wrap">
+                                @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0 && Model.objListDocumentModel != null && Model.objListDocumentModel.Count > 0)
+                                {
+                                    for (int i = 0; i < Model.objListDocumentModel.Count; i++)
+                                    {
+                                    <h2 class="e_title mainPageTitle">Products</h2>
+                                    <div class="e_top" id="catid105"></div>
+                                    <div class="e_productCategories  e_jurId_1 e_jurId_2 e_jurId_3" id="e_subsiteCatId105">
+                                        <h3 class="e_title e_categoryTitle marT20 marB20">@Model.objListDocumentModel[i].GroupName</h3>
+                                        <ul class="e_productsGlobal">
+                                            <li class="e_noDocsInJurisdiction" style="display: none"><span class="e_img"></span><span class="e_text">Unfortunately there aren't currently any documents available for the region you selected.</span></li>
+
+                                            @{
+                                        string GroupName = Model.objListDocumentModel[i].GroupName;
+                                        int iCount = Model.objListDocumentModel.Where(x => x.GroupName == GroupName).Count();
+
+                                        for (int j = 0; j < iCount; j++)
+                                        {      
+                                                <li class="e_product e_first e_odd e_jurItem  e_jurId_1 e_jurId_2 e_jurId_3 e_productId2263 e_price9999" id="e_subsiteProdId2263">
+                                                    <div class="e_block1">
+                                                        <div class="e_name"><span class="e_value"><a href="/Home/DocumentView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i + j].DocumentID))">@Model.objListDocumentModel[i + j].DocumentTitle</a></span> </div>
+                                                        <div class="e_shortDesc"><span class="e_value">@Html.Raw(Model.objListDocumentModel[i + j].DocumentDescription)</span> <span class="e_readMore"><a href="javascript:void(0);">Read more</a></span> </div>
+                                                    </div>
+                                                    <div class="e_block2">
+                                                        <div class="e_price"><span class="e_label">Price : </span><span class="e_value">@Model.objListDocumentModel[i + j].Price</span> </div>
+                                                        <div class="e_tbyb">
+                                                            <a class="width115 e_tbyb_btn e_document_launch tooltip" href="javascript:void(0);">Try for free</a>
+                                                        </div>
+                                                        <div class="e_buy  width115">
+
+                                                            <a href="/User/buy?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentModel[i + j].DocumentID))">Buy now</a>
+                                                        </div>
+                                                        <div class="jurFlags jurFlags_1_2_3"><span class="e_label">Compatible region(s):</span> <span class="wrap_jurFlag"><span class="jurFlag jurFlagId_1" title="England &amp; Wales"></span><span class="jurFlag jurFlagId_2" title="Scotland"></span><span class="jurFlag jurFlagId_3" title="Northern Ireland"></span></span></div>
+                                                    </div>
+                                                </li>
+                                        }
+                                        i = i + (iCount - 1);
+                                            }
+
+
+                                        </ul>
+                                    </div>
+                                    <div class="e_bottom"></div>
+                                    
+                                    }
+                                }
+                            </div>
+                        </div>
+
+                        <a href="/h0neyp0t/"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--Container egion End-->
+<script>
+
+    if ('@Model.objCategoryModel.CategoryName' == 'Family Law')
+        $('body').addClass(' business e_body_subsite_home');
+    else
+        $('body').addClass(' family e_body_subsite_home');
+
+</script>

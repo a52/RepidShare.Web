@@ -1,0 +1,41 @@
+﻿@model string
+
+<div class="row">
+    <div class="col-sm-3 label-style">
+        <label class="labelColon" for="StepName">Step Name</label>
+    </div>
+    <div class="col-sm-9">
+        <input class="form-control name" readonly="readonly" data-val="true"  type="text" value="@Model" autocomplete="off" id="txtOldStepName">
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-3 label-style">
+        <label class="labelColon" for="StepName">New Name</label>
+    </div>
+    <div class="col-sm-9">
+        <input class="form-control name" id="txtNewStepName" maxlength="100" name="StepName">
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <span>&nbsp</span>
+    </div>
+</div>
+<div class="text-left button-group row">
+    <div class="col-sm-3">&nbsp;</div>
+    <div class="col-sm-9">
+        <input id="btnCopy" class="btn btn-primary" type="button" value="Step Copy" />
+    </div>
+</div>
+
+<script>
+    $("#btnCopy").click(function () {
+        $('#select-to option:selected').each(function (i, selected) {
+            //alert($("#txtNewStepName").val());
+            $(selected).text($("#txtNewStepName").val());
+            $('.close').click();
+        });
+    });
+
+</script>

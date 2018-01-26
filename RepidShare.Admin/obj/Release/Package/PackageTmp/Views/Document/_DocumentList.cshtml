@@ -1,0 +1,122 @@
+﻿@model RepidShare.Entities.ViewDocumentModel
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>
+                                Sr No
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="CategoryName" class="sort">Cat Name</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="SubCatName" class="sort">Sub Cat Name</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="DocumentTitle" class="sort">Doc Title</a>
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="Price" class="sort">Price</a>
+                            </div>
+                        </th>
+                        <th>Is Published
+                        </th>
+                        <th>Step Order
+                        </th>
+                        <th class="text-center">Action
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.DocumentList != null && Model.DocumentList.Count > 0)
+                    {
+                        for (int i = 0; i < Model.DocumentList.Count; i++)
+                        {
+                        <tr>
+                            @Html.HiddenFor(m => Model.DocumentList[i].DocumentID)
+
+                            <td>@Model.DocumentList[i].RowNumber</td>
+                            <td>@Model.DocumentList[i].CategoryName</td>
+                            <td>@Model.DocumentList[i].SubCatName</td>
+                            <td>@Model.DocumentList[i].DocumentTitle <a href="javascript:void()" title="@Model.DocumentList[i].DocumentDescription">More..</a></td>
+                            <td>@Model.DocumentList[i].Price</td>
+                            <td>@if (Model.DocumentList[i].IsPublished)
+                                {
+                                <span>Yes</span>
+                                }
+                                else
+                                {
+                                <span>No</span>
+                                }
+                            </td>
+                            <td>@if (!string.IsNullOrWhiteSpace(Model.DocumentList[i].SavedStep))
+                                {
+                                <a href="javascript:void()" title="@Model.DocumentList[i].SavedStep">Order</a>
+                                }
+                                else
+                                {
+                                <a href="javascript:void()">Order</a>
+                                }
+                            </td>
+                            <td class="btn-action" width="15%">
+                                @if (Model.DocumentList[i].Count > 0 || Model.DocumentList[i].IsPublished)
+                                {
+                                    <a class="icon-edit-disabled" href="javascript:void(0)" title="Edit">Edit</a><a class="icon-delete-disabled" href="javascript:void(0)" title="Delete">Delete</a>
+                                }
+                                else
+                                {
+                                    <a class="icon-edit" href="/Document/SaveDocument?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.DocumentList[i].DocumentID))" title="Edit">Edit</a><a class="icon-delete" onclick="openConfirmDialog('@Model.DocumentList[i].DocumentID','Are you sure to delete?',deleteDocument,null)" href="javascript:void(0)" title="Delete">Delete</a>
+                                }
+                                <a class="icon-add-result" href="/Question/SaveQuestion?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.DocumentList[i].DocumentID))" title="Add Question">Question</a>
+                                <a class="icon-view" href="/Document/DocumentHTML?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.DocumentList[i].DocumentID))" title="View Document Text">View</a>
+                                <a class="icon-view" href="http://localhost:49328//DocumentResponse/SaveDocumentResponse?prm=@RepidShare.Utility.CommonUtils.Encrypt("userid=0&Documentid=" + Convert.ToString(Model.DocumentList[i].DocumentID))" target="_blank" title="Repid Doc">Document View</a>
+                                @*<a class="icon-view" href="http://localhost:49208/DocumentResponse/SaveDocumentResponse?prm=@RepidShare.Utility.CommonUtils.Encrypt("userid=0&Documentid=" + Convert.ToString(Model.DocumentList[i].DocumentID))" target="_blank" title="Repid Doc">Document View</a>*@
+                            </td>
+                        </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="7">No Record Found.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+
+    </div>
+</div>
+@Html.HiddenFor(model => model.DeletedDocumentID, new { id = "DeletedDocumentID" })
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+<script type="text/javascript">
+    $().ready(function () {
+        // Show Sucess or Error Message on popup by common function showMessagePopup
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+
+    function WebURLRedirect(Url) {
+        window.location.href = 'http://papeleslegales.com/DocumentResponse/SaveDocumentResponse?prm=' + Url;
+    }
+</script>

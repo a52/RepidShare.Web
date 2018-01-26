@@ -1,0 +1,40 @@
+﻿
+<div class="margin15"></div>
+@{ int i = 0;}
+
+@foreach (var item in Model)
+{
+    <div class="panel-group" id="accordion_@i">
+        <div class="panel panel-default bg0">
+            <div class="panel-heading bg0">
+                <h4 class="panel-title bg0">
+                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion_@i" href="#collapse_@i">
+                        <i class="indicator glyphicon glyphicon-chevron-down  pull-right"></i>
+
+                        <div class="row">
+                            <div class="col-md-3 col-sm-4 col-xs-3">
+                                <span class="di-box">DI</span>
+                            </div>
+                            <div class="col-md-7 col-sm-6 col-xs-6 m-t-0">
+                                <span class="font14">Demand It</span><br>
+                                <span class="font12"> Demuestra tu firmeza</span>
+                                @*<div class="box-green font12"><i class="fa fa-check" aria-hidden="true"></i> @item.DocumentTitle </div>*@
+                            </div>
+                        </div>
+                    </a>
+                </h4>
+            </div>
+            <div id="collapse_@i" class="panel-collapse collapse">
+                <div class="panel-body" >
+                    <div style="float:left">
+                        @Html.Raw(item.DocumentDescription)
+                    </div>
+                    <div class="box-green font12" style="float:right; margin-top:auto !important"><i class="fa fa-check" aria-hidden="true"></i>Buy it now </div>
+                </div>
+            </div>
+        </div>
+        <div class="margin15"></div>
+    </div>
+    i++;
+}
+

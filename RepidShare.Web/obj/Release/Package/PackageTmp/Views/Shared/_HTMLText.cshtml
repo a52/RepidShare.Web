@@ -1,0 +1,21 @@
+﻿@model string
+
+@*<link rel="stylesheet" href="~/resources/libs/bootstrap/css/bootstrap.css" type="text/css" media="screen" />*@
+<link rel="stylesheet" href="~/resources/css/custom-css.css" type="text/css" media="screen" />
+
+@Html.TextArea("TextAreaEditor", new { @id = "ckeditorBox", @class = "editor", @name = "ckeditorBox", rows = 10, columns = 80 })
+@*<textarea cols="80" id="ckeditorBox" name="ckeditorBox" class="editor" rows="10"></textarea>*@
+
+@*<script type="text/javascript" src="~/resources/libs/jquery/jquery-1.11.0.min.js"></script>*@
+<script type="text/javascript" src="~/resources/libs/ckeditor/ckeditor.js"></script>
+<script type="text/javascript" src="~/resources/libs/ckeditor/adapters/jquery.js"></script>
+<script type="text/javascript" src="~/resources/js/index.js"></script>
+<script>
+    $(document).ready(function () {
+        Index.init();
+        $("#ckeditorBox").val('@Html.Raw(Model != null ? Model.Replace("\r\n", "") : "")');
+    });
+</script>
+
+
+

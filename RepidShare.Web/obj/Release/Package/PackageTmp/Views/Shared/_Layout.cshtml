@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>papeleslegales</title>
+    @*@Styles.Render("~/Content/css")*@
+
+    @*<link rel="stylesheet" href="~/css/datepicker.css">*@
+    <link rel="stylesheet" href="/Filters/css/main.css" />
+    <link rel="stylesheet" href="~/Filters/css/StyleSheet.css" />
+    @* <script src="~/js/vendor/modernizr-2.6.2.min.js"></script>*@
+
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @*<script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script>
+ 
+    <script type="text/javascript" src="/Scripts/jquery-ui-timepicker-addon.js"></script>*@
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.numeric.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.blockUI.js")" type="text/javascript"></script>
+    @RenderSection("scripts", required: false)
+    @* <script type="text/javascript" src="/Scripts/jquery.js"></script>*@
+    <script type="text/javascript" src="../../Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/moment.js"></script>
+    <script type="text/javascript" src="../../Scripts/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="../../Scripts/bootbox.min.js"></script>
+    <script src="../../Scripts/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.nicescroll.min.js"></script>
+    @Scripts.Render("~/bundles/jscomm")
+    <script src="/Scripts/jquery.jscrollpane.min.js" type="text/javascript"></script>
+    <script src="/Scripts/nanoScroller.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/Scripts/custom.js"></script>
+</head>
+<body>
+    @RenderBody()
+    @* <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.validate.js" type="text/javascript"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js" type="text/javascript"></script>*@
+    @*<script src="~/js/vendor/jquery-1.11.0.min.js"></script>*@
+    <script src="~/js/plugins.js"></script>
+    <script src="~/js/main.js" type="text/javascript"></script>
+    <script>
+        $(document).ready(function () {
+            $(".loader").fadeOut();
+            // For Countdown
+            var austDay = new Date();
+            austDay = new Date(austDay.getFullYear() + 1, 1 - 1, 88);
+            $('#defaultCountdown').countdown({ until: austDay });
+            $('#defaultCountdown2').countdown({ until: austDay });
+            $('#year').text(austDay.getFullYear());
+            //End
+            DatePickerFn();
+            //$('.tipsy').tipsy({ fade: true, gravity: 'n' });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("ul.prog-bar li").click(function () {
+                $("li .box-region").hide();
+                $(this).find('.box-region').show();
+            });
+        });
+
+    </script>
+    <script>
+        $(document).ready(function () {
+            setTimeout(function () {
+                $('#dvData').fadeOut();
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

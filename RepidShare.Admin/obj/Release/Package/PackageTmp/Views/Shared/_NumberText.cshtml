@@ -1,0 +1,23 @@
+﻿@model IIMSSurveyEntities.SurveyResponseDetailModel
+@using IIMSSurvey.Common;
+<div class="row">
+<div class="col-sm-6">
+@if (Model != null && Model.Questions != null && Model.Questions.Count() > 0)
+{
+    if (Model.IsReadOnly)
+    { 
+    <span>@Model.Questions[Model.Index].AnswerDetail</span>
+    }
+    else
+    {
+    @Html.NumberTextBoxFor(model => Model.Questions[Model.Index].AnswerDetail, Model.Questions[Model.Index]) 
+    @Html.ValidationMessageFor(model => Model.Questions[Model.Index].AnswerDetail)
+    }
+    
+     
+                                @Html.HiddenFor(model => model.Questions[Model.Index].SurveyResultDetailID, new { Value = Model.Questions[Model.Index].SurveyResultDetailID })
+                                @Html.HiddenFor(model => model.Questions[Model.Index].SurveyQuestionID, new { Value = Model.Questions[Model.Index].SurveyQuestionID })
+}
+
+</div>
+</div>

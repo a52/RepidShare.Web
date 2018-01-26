@@ -1,0 +1,33 @@
+﻿<div class="top-right-header">
+    <ul>
+
+        @if (Session["UserId"] != null && Session["RoleID"] != null)
+        {
+            <li><span class="glyphicon glyphicon-user"></span>Hello, @Session["UserFirstLastName"]
+
+                @*  ! Last Login in : @Session["LastLoginTime"] *@
+            </li>
+        
+        }
+        else
+        {
+            <li><span class="glyphicon glyphicon-user"></span>Hello, Anonymous User !</li>
+        }
+        @{
+            if (Session["UserId"] != null && Session["RoleID"] != null)
+            {
+            <li><a href="/User/ChangePassword"><span class="change-password"></span>Change Password</a></li>
+            <li><a href="/Home/LogOff"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+            }
+            else
+            {
+            <li><a href="/Home/LogOff"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+            }
+        }
+
+    </ul>
+
+
+
+
+</div>

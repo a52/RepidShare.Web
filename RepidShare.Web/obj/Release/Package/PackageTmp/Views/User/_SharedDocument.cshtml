@@ -1,0 +1,60 @@
+﻿@model RepidShare.Entities.SharedDocument
+
+@using (Html.BeginForm("SharedDocument", "User", FormMethod.Post, new { @id = "frmDocument" }))
+{
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1"> Message</label>
+        @Html.TextBoxFor(model => model.SharedDocumentTitle, new { @id = "txtSharedDocumentTitle", @class = "form-control", @maxlength = "100" })
+        <span id="errorTitleMsg" style="color:red;"></span>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1"> Description</label>
+        @Html.TextAreaFor(model => model.SharedDocumentDescrition, new { @id = "txtSharedDocumentDescrition", @class = "form-control", @maxlength = "500" })
+        <span id="errorDescMsg" style="color:red;"></span>
+    </div>
+    <button type="button" id="btnDocument" class="btn btn-account">Apply</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+}
+
+<script>
+    $(document).ready(function () {
+
+        $('#txtSharedDocumentTitle').on("keyup", function () {
+            if ($(this).val() == '') {
+                $('#errorTitleMsg').html('Please enter title');
+                $('#txtSharedDocumentTitle').css('border-color', 'red');
+            }
+            else {
+                $('#errorTitleMsg').html('');
+                $('#txtSharedDocumentTitle').css('border-color', 'green');
+            }
+        });
+        $('#txtSharedDocumentDescrition').on("keyup", function () {
+            if ($(this).val() == '') {
+                $('#errorDescMsg').html('Please enter description');
+                $('#txtSharedDocumentDescrition').css('border-color', 'red');
+            }
+            else {
+                $('#errorDescMsg').html('');
+                $('#txtSharedDocumentDescrition').css('border-color', 'green');
+            }
+        });
+        $("#btnDocument").click(function () {
+
+            if ($('#txtSharedDocumentTitle').val() == '') {
+                $('#errorTitleMsg').html('Please enter title');
+                $('#txtSharedDocumentTitle').css('border-color', 'red');
+            }
+            if ($('#txtSharedDocumentDescrition').val() == '') {
+                $('#errorDescMsg').html('Please enter description');
+                $('#txtSharedDocumentDescrition').css('border-color', 'red');
+            }
+            if ($('#txtSharedDocumentTitle').val() != '' && $('#txtSharedDocumentDescrition').val() != '')
+            {
+                $("#frmDocument").submit();
+            }
+        });
+    });
+
+</script>

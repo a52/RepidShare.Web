@@ -1,0 +1,262 @@
+﻿@using RepidShare.Entities
+@model HomeDocumentViewModel
+@{
+    Layout = "~/Views/Shared/_websiteLayout.cshtml";
+    ViewBag.Title = "Document View";
+}
+
+<!--Header Bottom egion Start-->
+<div class="header_bottom">
+    <div class="wrapper">
+        <div class="links_main">
+
+            @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null)
+            {
+                <span>@Model.objCategoryModel.CategoryName law: </span>
+            }
+            <a href="javascript:void(0);" class="selected"><i class="fa fa-file-text"></i>Legal documents </a><a href="/Home/LawGuideView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objCategoryModel.CategoryID))"><i class="fa fa-book"></i>Law guide </a>
+        </div>
+        <div class="links_popular">
+            <span class="pop">Popular topics:</span>
+            @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0)
+            {
+                int Icount = Model.objListSubCategory.Count > 2 ? 3 : Model.objListSubCategory.Count;
+                for (int i = 0; i < Icount; i++)
+                {
+                <a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListSubCategory[i].SubCategoryID))">@Model.objListSubCategory[i].SubCatName</a>                 
+                }
+
+            }
+        </div>
+    </div>
+</div>
+<!--Header Bottom egion End-->
+
+<!--Container egion Start-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 e_sidebar">
+            <ul class="left-menu">
+                @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null)
+                {
+                    <li><a href="/Home/CategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objCategoryModel.CategoryID))">@Model.objCategoryModel.CategoryName  law home</a></li>
+@*<li class="active"><a href='javascript:void(0);'>@Model.objCategoryModel.CategoryName law home</a></li>*@
+                }
+                @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0)
+                {
+                    for (int i = 0; i < Model.objListSubCategory.Count; i++)
+                    {
+                        if (Model.objListSubCategory[i].SubCategoryID == Model.objDocumentModel.SubCategoryID)
+                        {
+                    <li class="active"><a href='javascript:void(0);'>@Model.objListSubCategory[i].SubCatName</a></li>
+                        }
+                        else
+                        {
+                    <li><a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListSubCategory[i].SubCategoryID))">@Model.objListSubCategory[i].SubCatName</a></li>
+                        }
+                    }
+
+                }
+            </ul>
+            <div class="promo">
+                <div>
+                    <h5><a href="javascript:void(0);">Family law guide</a></h5>
+                    <i class="fa fa-book fa-3x"></i>
+                    <p>
+                        Need help understanding specific areas of law? Our lawguide can help you.<br>
+                        <a href="javascript:void(0);">Visit our Family Law guide</a>
+                    </p>
+                </div>
+            </div>
+            <div class="promo">
+                <div>
+                    <i class="fa fa-file-text-o fa-3x"></i>
+                    <p>Choose your document and try it for FREE</p>
+                </div>
+                <div>
+                    <i class="fa fa-gbp fa-3x"></i>
+                    <p>Purchase when you're happy to print or export</p>
+                </div>
+                <div>
+                    <i class="fa fa-search fa-3x"></i>
+                    <p>Have your document reviewed by our legal team for extra peace of mind</p>
+                </div>
+            </div>
+        </div>
+
+        @{if (Model.objDocumentModel != null && Model.objDocumentModel.DocumentID > 0)
+          { 
+            @:<div class="col-sm-9">
+@:<div class="e_contentMainWrapper e_spanRight contract">
+
+
+                    <h1>@Model.objDocumentModel.DocumentTitle</h1>
+                    <!-------->
+                    @:<div id="content">
+                        <ul id="tabs" class="nav nav-tabs businesslawtab page_nav" data-tabs="tabs">
+                            <li class="active"><a href="#Document_overview" data-toggle="tab">Document overview</a></li>
+                            <li><a href="#How_it_works" data-toggle="tab">How it works</a></li>
+                        </ul>
+                        @:<div id="my-tab-content" class="tab-content">
+                       @:     <div class="tab-pane active" id="Document_overview">
+                                <p>@Html.Raw(Model.objDocumentModel.DocumentDescription)</p>
+                         @:       <div class="Compatible_region">
+                                    <li>Compatible region(s):</li>
+                                    <li><span class="Compatible_region_btn">"England & Wales"</span></li>
+                                    <span class="Compatible_region_btn">"Northern Ireland"</span>
+                           @:         </li>
+                     @:           </div>
+                                <div class="Self_Service">
+                                    <div class="col-lg-9">
+                                        <h2>Self Service</h2>
+                                        <p>
+                                            Draft your document instantly by answering a series of easy-to-answer questions
+                                            Helpful explanation and guidance notes
+                                            Store, manage, track and print your document online
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="price">
+                                            @Model.objDocumentModel.Price
+                                        </div>
+                                        <div class="btnwrapper">
+                                            <a href="/User/buy?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objDocumentModel.DocumentID))" class="button btn-default pricebtn">Add to basket<span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="include_service">
+
+                                    <div class="col-lg-9 info_free">
+                                        <h2>Included in this service:</h2>
+                                        <li>@Model.objDocumentModel.DocumentTitle</li>
+                                    </div>
+                                    <div class="col-lg-3 info_free tryfree ">
+                                        <div class="try_free">
+                                            <a href="/User/AddForTrial?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objDocumentModel.DocumentID))" data-toggle="tooltip" title="Try this document out online for free" data-placement="top" class="">Try for free</a>
+                                            <span></span>
+                                        </div>
+                                        <div class="try_free">
+                                            <a href="javascript:void(0);" class="tooltip" data-toggle="tooltip" title="Try this document out online for free" data-placement="top">Try for free</a>
+                                            <span></span>
+                                        </div>
+                                    </div>
+
+                                    @for (int i = 0; i < Model.objListDocumentService.Count; i++)
+                                    {
+                                        <div class="col-lg-9 info_free">
+                                            <li>@Model.objListDocumentService[i].DocumentTitle</li>
+                                        </div>
+                                        <div class="col-lg-3 info_free tryfree ">
+                                            <div class="try_free">
+                                                <a href="/User/AddForTrial?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListDocumentService[i].DocumentID))" data-toggle="tooltip" title="Try this document out online for free" data-placement="top" class="">Try for free</a>
+                                                <span></span>
+                                            </div>
+                                            <div class="try_free">
+                                                <a href="javascript:void(0);" class="tooltip" data-toggle="tooltip" title="Try this document out online for free" data-placement="top">Try for free</a>
+                                                <span></span>
+                                            </div>
+                                        </div>
+                                    }
+
+                                </div>
+                   @:         </div>
+
+                            <div class="tab-pane" id="How_it_works">
+                                <h2 class="step_process">It's so easy and affordable with our 3 step process...</h2>
+
+                                <div class="select_document">
+                                    <div class="col-lg-4 step_table">
+                                        <h4>Select your document</h4>
+                                    </div>
+                                    <div class="col-lg-8 step_table">
+                                        <p>Read the information provided on this page to see if this is the right document for you. You can even try for free (below), and use our online law guide to give you background information.</p>
+                                    </div>
+                                </div>
+                                <div class="select_document">
+                                    <div class="col-lg-4 step_table">
+                                        <h4>Answer the questions</h4>
+                                    </div>
+                                    <div class="col-lg-8 step_table">
+                                        <p>Read the information provided on this page to see if this is the right document for you. You can even try for free (below), and use our online law guide to give you background information.</p>
+                                    </div>
+                                </div>
+                                <div class="select_document">
+                                    <div class="col-lg-4 step_table">
+                                        <h4>Complete your order</h4>
+                                    </div>
+                                    <div class="col-lg-8 step_table">
+                                        <p>Read the information provided on this page to see if this is the right document for you. You can even try for free (below), and use our online law guide to give you background information.</p>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="Compatible_region">
+                                    <li>Compatible region(s):</li>
+                                    <li><span class="Compatible_region_btn">"England &amp; Wales"</span></li>
+                                    <span class="Compatible_region_btn">"Northern Ireland"</span>
+
+                                </div>
+                                <div class="Self_Service">
+                                    <div class="col-lg-9">
+                                        <h2>Self Service</h2>
+                                        <p>
+                                            Draft your document instantly by answering a series of easy-to-answer questions<br>
+                                            Helpful explanation and guidance notes<br>
+                                            Store, manage, track and print your document online
+                                        </p>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="price">
+                                            £@Model.objDocumentModel.Price
+                                        </div>
+                                        <div class="btnwrapper">
+                                            <a href="/User/buy?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objDocumentModel.DocumentID))" class="button btn-default pricebtn">Add to basket<span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="include_service">
+
+                                    <div class="col-lg-9 info_free">
+                                        <h2>What is Lorem Ipsum?</h2>
+                                        <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+                                        <li>Small-scale building contract</li>
+                                    </div>
+                                    <div class="col-lg-3 info_free tryfree ">
+                                        <div class="try_free">
+                                            <a href="javascript:void(0);" data-toggle="tooltip" title="Try this document out online for free" data-placement="top" class="">Try for free</a>
+                                            <span></span>
+
+
+                                        </div>
+                                        <div class="try_free">
+                                            <a href="javascript:void(0);" class="tooltip" data-toggle="tooltip" title="Try this document out online for free" data-placement="top">Try for free</a>
+
+                                            <span></span>
+
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                 @:       </div>
+               @:     </div>
+                    
+                
+
+             @:   </div>
+           @: </div>
+                                                                                                                                  }
+        }
+    </div>
+</div>
+<!--Container egion End-->
+<script>
+
+    if ('@Model.objCategoryModel.CategoryName' == 'Family Law')
+        $('body').addClass(' business e_body_subsite_home');
+    else
+        $('body').addClass(' family e_body_subsite_home');
+
+</script>

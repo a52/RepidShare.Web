@@ -1,0 +1,95 @@
+﻿@model RepidShare.Entities.ServiceModel
+@{
+    if (Model.ServiceID > 0)
+    {
+        ViewBag.Title = "Edit Service";
+    }
+    else
+    {
+        ViewBag.Title = "Add Service";
+    }
+    
+}
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="@Url.Content("~/Images/home-icon.png")"></a></li>
+            <li>@Html.ActionLink("View Document", "ViewDocument", "Document")</li>
+            @if (Model.DocumentId > 0)
+            {
+                <li>@Html.ActionLink("Edit Document", "SaveDocument", "Document", new { prm = RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.DocumentId)) }, null)</li>
+                <li>@Html.ActionLink("View Service", "SaveService", "Service", new { prm = RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.DocumentId)) }, null)</li>
+            }
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2 class="gray-heading">@ViewBag.Title</h2>
+        <div class="white-bg">
+            <link rel="stylesheet" type="text/css" href="@Url.Content("~/Content/chosen.css")" />
+            <script src="@Url.Content("~/Scripts/chosen.jquery.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+            <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+            @using (Html.BeginForm("SaveService", "Service", FormMethod.Post, new { @id = "frmService" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.ServiceID, new { Value = Model.ServiceID, id = "hdnServiceID" })
+                @Html.HiddenFor(model => model.DocumentId, new { Value = Model.DocumentId, id = "hdnDocumentId" })
+                @Html.HiddenFor(model => model.Message, new { Value = Model.Message, id = "hdnMessage" })
+                @Html.HiddenFor(model => model.MessageType, new { Value = Model.MessageType, id = "hdnMessageType" })
+
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.ServiceText, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4 mandatoryFeild">
+                        @Html.TextBoxFor(model => model.ServiceText, new { @id = "txtServiceText", @class = "form-control name", @maxlength = "100" })
+                        @Html.ValidationMessageFor(model => model.ServiceText)
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-3 label-style">
+                        @Html.LabelFor(model => model.Description, new { @class = "labelColon" })
+                    </div>
+                    <div class="col-sm-4 mandatoryFeild">
+                        @Html.TextAreaFor(model => model.Description, new { @id = "txtDescription", @class = "form-control name", @maxlength = "100", rows = 3, columns = 30 })
+                        @Html.ValidationMessageFor(model => model.Description)
+                    </div>
+                </div>
+                <div class="text-left button-Service row">
+                    <div class="col-sm-3">&nbsp;</div>
+                    <div class="col-sm-4">
+                        <input id="btnSave" class="btn btn-primary" type="button" value="Save" />
+                        <input id="btnSubmit" class="btn btn-primary" type="submit" value="Save" style="display: none" />
+                        <input id="btnCancel" type="button" class="btn cancel btn-primary" causesvalidation="false"
+                            value="Cancel" />
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $().ready(function () {
+        $("#txtServiceText").focus();
+        // Show  Error Message on popup by common function showMessagePopup if any error found in hidden fields hdnMessage and hdnMessageType
+        showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        //Submit the form on save button click
+        $("#btnSave").click(function () {
+            $("#btnSubmit").click();
+        });
+
+        //redirect to  Service List on Cancel button click
+        $("#btnCancel").click(function () {
+            window.location.href = "/Service/ViewService?prm=" + '@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.DocumentId))';
+        });
+
+    });
+
+</script>

@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2012 for Web
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepidShare.Web", "RepidShare.Web\RepidShare.Web.csproj", "{D46FDD6D-31FD-4997-9FB2-C3B8B45F7987}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepidShare.API", "RepidShare.API\RepidShare.API.csproj", "{17409D28-DE34-408C-8CAC-7F5F8838D2E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepidShare.Entities", "RepidShare.Entities\RepidShare.Entities.csproj", "{B68D25F2-9C62-4369-8773-904F7F77D744}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepidShare.Business", "RepidShare.Business\RepidShare.Business.csproj", "{B1775403-2F3E-45EF-8F85-2F8E7917F326}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepidShare.Data", "RepidShare.Data\RepidShare.Data.csproj", "{D57EA430-ADD1-4ECC-AC02-6880EDCE4339}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepidShare.Utility", "RepidShare.Utility\RepidShare.Utility.csproj", "{917FDCD5-F93F-4E95-9AB9-FBFED067ED4F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepidShare.Admin", "RepidShare.Admin\RepidShare.Admin.csproj", "{739A7E1B-B5C0-4677-9004-1327635C72A3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D46FDD6D-31FD-4997-9FB2-C3B8B45F7987}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D46FDD6D-31FD-4997-9FB2-C3B8B45F7987}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D46FDD6D-31FD-4997-9FB2-C3B8B45F7987}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D46FDD6D-31FD-4997-9FB2-C3B8B45F7987}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17409D28-DE34-408C-8CAC-7F5F8838D2E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17409D28-DE34-408C-8CAC-7F5F8838D2E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17409D28-DE34-408C-8CAC-7F5F8838D2E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17409D28-DE34-408C-8CAC-7F5F8838D2E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B68D25F2-9C62-4369-8773-904F7F77D744}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B68D25F2-9C62-4369-8773-904F7F77D744}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B68D25F2-9C62-4369-8773-904F7F77D744}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B68D25F2-9C62-4369-8773-904F7F77D744}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1775403-2F3E-45EF-8F85-2F8E7917F326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1775403-2F3E-45EF-8F85-2F8E7917F326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1775403-2F3E-45EF-8F85-2F8E7917F326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1775403-2F3E-45EF-8F85-2F8E7917F326}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D57EA430-ADD1-4ECC-AC02-6880EDCE4339}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D57EA430-ADD1-4ECC-AC02-6880EDCE4339}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D57EA430-ADD1-4ECC-AC02-6880EDCE4339}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D57EA430-ADD1-4ECC-AC02-6880EDCE4339}.Release|Any CPU.Build.0 = Release|Any CPU
+		{917FDCD5-F93F-4E95-9AB9-FBFED067ED4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{917FDCD5-F93F-4E95-9AB9-FBFED067ED4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{917FDCD5-F93F-4E95-9AB9-FBFED067ED4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{917FDCD5-F93F-4E95-9AB9-FBFED067ED4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{739A7E1B-B5C0-4677-9004-1327635C72A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{739A7E1B-B5C0-4677-9004-1327635C72A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{739A7E1B-B5C0-4677-9004-1327635C72A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{739A7E1B-B5C0-4677-9004-1327635C72A3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

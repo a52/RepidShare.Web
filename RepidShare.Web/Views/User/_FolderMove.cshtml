@@ -1,0 +1,50 @@
+﻿@model RepidShare.Entities.FolderModel
+
+@using (Html.BeginForm("FolderMove", "User", FormMethod.Post, new { @id = "frmDocument" }))
+{
+    @Html.HiddenFor(model => model.DocumentId, new { Value = Model.DocumentId, id = "hdnDocumentId" })
+    <div class="row">
+        <div class="col-md-offset-2 col-md-4 label-style">
+            <label class="labelColon" for="StepName" style="margin-top: 12px">Select Folder</label>
+        </div>
+        <div class="col-md-5">
+            @Html.DropDownListFor(model => model.FolderId, ViewBag.FolderDropDown as SelectList, "--Select--", new { id = "ddlFolderDropDown", @class = "ddlMedium form-control02" })
+            @Html.ValidationMessageFor(model => model.FolderId)
+        </div>
+    </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <span>&nbsp</span>
+            </div>
+        </div>
+        <div class="text-left button-group row">
+            @*<div class="col-sm-3">&nbsp;</div>*@
+            <div class="col-md-offset-4 col-md-4">
+                <input id="btnFolder" class="btn btn-primary" type="submit" value="Save" />
+            </div>
+        </div>
+}
+<script>
+
+
+    //$("#btnFolder").click(function () {
+
+    //  var FolderModel = {};
+    //    FolderModel.FolderId = $('#ddlFolderDropDown').val();
+    //    FolderModel.FolderName = $("#ddlFolderDropDown option:selected").text();
+    //    FolderModel.DocumentId = $('#hdnDocumentID').val();
+    //    alert(JSON.stringify(FolderModel));
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "User/FolderMove",
+    //        data: '{FolderModel: ' + JSON.stringify(FolderModel) + '}',
+    //        //data: JSON.stringify(''),
+    //        datatype: "html",
+    //        success: function (data) {
+    //            //$('#result').html(data);
+    //            window.location = "";
+    //        }
+    //    });
+    //});
+
+</script>

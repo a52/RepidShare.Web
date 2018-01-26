@@ -1,0 +1,126 @@
+﻿@model RepidShare.Entities.DocumentResponseDetailModel
+@{
+    ViewBag.Title = "";
+    Layout = "~/Views/Shared/_LayoutResponsive.cshtml";
+}
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="/Images/home-icon.png"></a></li>
+            <li><a href="@Model.ReferralUrl">@Model.UrlTitle</a></li>
+            <li class="active">@ViewBag.Title</li>
+        </ol>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+@using (Ajax.BeginForm("ViewDocumentResponse", "DocumentResponse", null, new AjaxOptions { OnBegin = "beginRequest", UpdateTargetId = "dvDocumentQuestionList", OnSuccess = "searchComplete", OnComplete = "endRequest" }, new { @id = "frmDocumentResponse" }))
+{ 
+   
+    <div class="page-content-body">
+        @if (Model != null)
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(model => model.DocumentID, new { Value = Model.DocumentID, id = "hdnDocumentID" })
+            @Html.HiddenFor(model => model.ApplicationRoleID, new { Value = Model.ApplicationRoleID, id = "hdnApplicationRoleID" })
+          
+            @Html.HiddenFor(model => model.MaxNoOfAttempt, new { Value = Model.MaxNoOfAttempt, id = "hdnMaxNoOfAttempt" })
+            @Html.HiddenFor(model => model.UserId, new { Value = Model.UserId, id = "hdnUserId" })
+            @Html.HiddenFor(model => model.AppID, new { Value = Model.AppID, id = "hdnAppID" })
+            @Html.HiddenFor(model => model.DocumentRoleID, new { Value = Model.DocumentRoleID, id = "hdnDocumentRoleID" })
+            @Html.HiddenFor(model => model.IsReadOnly, new { Value = Model.IsReadOnly, id = "hdnIsReadOnly" })
+            @Html.HiddenFor(model => model.Message, new { Value = Model.Message, id = "hdnMessage" })
+            @Html.HiddenFor(model => model.MessageType, new { Value = Model.MessageType, id = "hdnMessageType" })
+            @Html.HiddenFor(model => model.ReferralUrl)         
+        }
+        <h2 class="gray-heading">@ViewBag.Title</h2>
+        <div class="">
+           @* @Html.Partial("_DocumentDetail", Model.DocumentApplicationDetail)*@
+        </div>
+    
+   
+
+   
+    
+    <div id="dvDocumentQuestionList" class="show-questions half-bottom ">
+      
+        @Html.Partial("_ViewDocumentQueAnsList", Model)
+    </div>
+                
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="text-center button-group ">
+                <a href="@Model.ReferralUrl" id="btnBackToList" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+    </div>
+    
+   
+    <input id="btnSubmit" type="submit" value="Search" class="btn btn-primary" style="display: none" />
+    </div>
+}
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        //        $("#btnSearch").click(function () {
+        //            // set Action type as search and currentpage as 1 while click on search and submit the form.
+        //            $("#ActionType").val("search");
+        //            $("#CurrentPage").val("1");
+        //            sendToServer();
+        //        });
+
+        //        $("a.sort").click(function () {
+        //            //set sotring parameter with common function bindSort and submit the form
+        //            bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer)
+        //        });
+        // CreateNoOfAttempt("divNoOfAttempt", parseInt($("#hdnMaxNoOfAttempt").val()), 1, "ActionType", "hdnNoOfAttempt", sendToServer);
+
+      
+    });
+
+    
+
+    function resetFilter() {
+        //Reset search filter on Reset buton click and submit the form
+        $("#FilterCategoryName").val("");
+        $("#ActionType").val("search");
+        $("#CurrentPage").val("1");
+        sendToServer();
+    }
+
+    //Call common function createFooter to create footer based on Total pages and Current page.
+    createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+
+    // submit form 
+    function sendToServer() {
+
+        $("#btnSubmit").click();
+    }
+
+    //search complete will call after search completion and create footer based on search criteria 
+    function searchComplete(xmlHttpRequest, textStatus) {
+
+        createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+        //  CreateNoOfAttempt("divNoOfAttempt", parseInt($("#hdnMaxNoOfAttempt").val()), 1, "ActionType", "hdnNoOfAttempt", sendToServer);
+        // $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer) });
+        setSortClass("SortBy", "SortOrder");
+        endRequest();
+    }
+
+
+    var onSuccess = function (result) {
+        if (result != null) {
+            if (result.url) {
+                // if the server returned a JSON object containing an url 
+                // property we redirect the browser to that url
+                endRequest();
+                window.location.href = result.url;
+            }
+        }
+        else {
+            endRequest();
+        }
+
+    }
+</script>

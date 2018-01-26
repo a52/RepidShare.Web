@@ -1,0 +1,48 @@
+﻿@if (Model.objListFolderModel != null)
+{
+    for (int i = 0; i < Model.objListFolderModel.Count; i++)
+    {
+        if (i == 0)
+        {
+            <div class="clearfix margin15"></div>
+            <div class="col-md-5 font-s">
+                <div class="col-md-2 col-sm-2 col-xs-1">
+                    <img src="/img/folder.png">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10">
+                    <span class="color-t">@Model.objListFolderModel[i].FolderName</span><br>
+
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 font-s m-top">
+                <p>Created On</p>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 m-top">
+                <span>@Model.objListFolderModel[i].CreatedOn.ToShortDateString()</span>
+            </div>
+        }
+        else
+        {
+
+            <div class="clearfix margin15"></div>
+            <div class="col-md-5 font-s">
+                <div class="col-md-2 col-sm-2 col-xs-1">
+                    <img src="/img/folder.png">
+                </div>
+                <div class="col-md-10 col-sm-10 col-xs-10">
+                    <span class="color-t">@Model.objListFolderModel[i].FolderName</span><br>
+
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12 font-s m-top">
+                <p>Created On</p>
+            </div>
+            <div class="col-md-4 col-sm-6 col-xs-12 m-top">
+                <span>@Model.objListFolderModel[i].CreatedOn.ToShortDateString()</span>
+                <a href="javascript:void(0);" onclick="DeleteFolder('@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListFolderModel[i].FolderId))','Are you sure you want to delete this folder? <br/> This will only delete the folder, not the documents within it.?',DeleteFolder,null)" class="delete_folder">Delete</a> (@Model.objListFolderModel[i].Count)
+
+            </div>
+        }
+
+    }
+}

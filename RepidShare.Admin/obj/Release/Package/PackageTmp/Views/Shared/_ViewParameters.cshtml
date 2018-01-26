@@ -1,0 +1,18 @@
+﻿@using RepidShare.Entities
+@model ViewParameters
+
+@Html.HiddenFor(m => Model.CurrentPage, new { Value = (Model.CurrentPage.ToString()), id = Model.PagingPrefix+"CurrentPage" })
+@Html.HiddenFor(m => Model.TotalPages, new { Value = (Model.TotalPages.ToString()), id = Model.PagingPrefix + "TotalPages" })
+@Html.Hidden("PageSize", Model.PageSize, new { id = Model.PagingPrefix + "PageSize" })
+@Html.HiddenFor(m => m.ActionType, new { id = Model.PagingPrefix + "ActionType" })
+@Html.HiddenFor(m => m.SortOrder, new { id = Model.PagingPrefix + "SortOrder" })
+@Html.HiddenFor(m => m.SortBy, new { id = Model.PagingPrefix + "SortBy" })
+@Html.HiddenFor(m => m.PagingPrefix, new { id = "PagingPrefix" })
+@Html.HiddenFor(m => m.Message, new { Value = (Model.Message), id = "hdnMessage" })
+@Html.HiddenFor(m => m.MessageType, new { Value = (Model.MessageType), id = "hdnMessageType" })
+@Html.HiddenFor(m => m.IsReadOnly, new { Value = (Model.IsReadOnly), id = "hdnIsReadOnly" })
+@Html.HiddenFor(m => m.FilterAppID, new { Value = (Model.FilterAppID), id = "hdnAppID" })
+
+
+
+

@@ -1,0 +1,18 @@
+﻿@model RepidShare.Entities.ViewQuestionModel
+
+@using RepidShare.Entities.Resource;
+
+@if(Model != null && Model.QuestionTypeDetail != null && Model.QuestionTypeDetail.MultiLineTextType != null)
+{
+<div class="row">
+    <div class="col-sm-3">
+        @Html.LabelFor(model => model.QuestionTypeDetail.MultiLineTextType.NoOfLines, new { @class = "labelColon" })
+    </div>
+    <div class="col-sm-4 mandatoryFeild">
+        @Html.TextBoxFor(model => model.QuestionTypeDetail.MultiLineTextType.NoOfLines, new { @MaxLength = "2", @id = "txtNoOfLines", @class = "number form-control questionType" })
+        @Html.ValidationMessageFor(model => model.QuestionTypeDetail.MultiLineTextType.NoOfLines)
+        @Html.HiddenFor(model => model.QuestionTypeDetail.MultiLineTextType.MultiLineNoOfLineMin, new { @class = "MultiLineNoOfLineMin" })
+        @Html.HiddenFor(model => model.QuestionTypeDetail.MultiLineTextType.MultiLineNoOfLineMax, new { @class = "MultiLineNoOfLineMax" })
+    </div>
+</div>
+}

@@ -1,0 +1,101 @@
+﻿@model RepidShare.Entities.ViewOrderModel
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>
+                                Sr No
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="RefTimestamp" class="sort">RefTimestamp</a>
+                            </div>
+
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="OrderDate" class="sort">OrderDate</a>
+                            </div>
+
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="TransactStatus" class="sort">TransactStatus</a>
+                            </div>
+
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="PaidTotal" class="sort">PaidTotal</a>
+                            </div>
+
+                        </th>
+                        <th class="text-center">
+                            <div>
+                                Action
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.OdersList != null && Model.OdersList.Count > 0)
+                    {
+                        for (int i = 0; i < Model.OdersList.Count; i++)
+                        {
+                        <tr>
+                            @Html.HiddenFor(m => Model.OdersList[i].OrderID)
+
+                            <td>@Model.OdersList[i].RowNumber</td>
+                            <td>@Model.OdersList[i].RefTimestamp</td>
+                            <td>@if (Model.OdersList[i].OrderDate != null)
+                                {
+                                @Model.OdersList[i].OrderDate.ToShortDateString()
+                                }
+                                else
+                                {
+
+                                }
+                            </td>
+                            <td>@Model.OdersList[i].TransactStatus</td>
+                            <td>@Model.OdersList[i].PaidTotal</td>
+                            <td class="btn-action" width="15%">
+                                <a class="icon-view" onclick="ViewOrder('@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.OdersList[i].OrderID))')" href="javascript:void()" title="View">View</a>
+                            </td>
+
+                        </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6">No Record Found.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+
+    </div>
+</div>
+
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+<script type="text/javascript">
+    $().ready(function () {
+        // Show Sucess or Error Message on popup by common function showMessagePopup
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+</script>

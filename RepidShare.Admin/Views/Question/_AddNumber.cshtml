@@ -1,0 +1,51 @@
+﻿@model RepidShare.Entities.ViewQuestionModel
+@using RepidShare.Entities.Resource;
+@if (Model != null && Model.QuestionTypeDetail != null && Model.QuestionTypeDetail.NumberType != null)
+{
+<div class="row">
+    <div class="col-sm-3">
+        @Html.LabelFor(model => model.QuestionTypeDetail.NumberType.MinValue, new { @class = "labelColon" })
+    </div>
+    <div class="col-sm-4 mandatoryFeild">
+        @Html.TextBoxFor(model => model.QuestionTypeDetail.NumberType.MinValue, new {@MaxLength="8", @id = "txtMinValue", @class = "numeric form-control questionType" })
+        @Html.ValidationMessageFor(model => model.QuestionTypeDetail.NumberType.MinValue)
+    </div>
+</div>
+    <div class="row">
+    <div class="col-sm-3">
+        @Html.LabelFor(model => model.QuestionTypeDetail.NumberType.MaxValue, new { @class = "labelColon" })
+    </div>
+    <div class="col-sm-4 mandatoryFeild">
+        @Html.TextBoxFor(model => model.QuestionTypeDetail.NumberType.MaxValue, new { @MaxLength = "8", @id = "txtMaxValue", @class = "numeric form-control questionType" })
+        @Html.ValidationMessageFor(model => model.QuestionTypeDetail.NumberType.MaxValue)
+        <span id="valRangeMaxValue" style="display:none" class="field-validation-error">@QuestionTypeResource.valMaxMinValue</span>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-sm-3">
+        @Html.LabelFor(model => model.QuestionTypeDetail.NumberType.NoOfDecimal, new { @class = "labelColon" })
+    </div>
+    <div class="col-sm-4 mandatoryFeild">
+        @Html.TextBoxFor(model => model.QuestionTypeDetail.NumberType.NoOfDecimal, new {@MaxLength="1", @id = "txtNoOfDecimal", @class = "numeric form-control questionType" })
+        @Html.ValidationMessageFor(model => model.QuestionTypeDetail.NumberType.NoOfDecimal)
+    </div>
+  </div>
+}
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#txtMinValue").keyup(function () { checkMinMaxValidation(); });
+        $("#txtMinValue").change(function () { checkMinMaxValidation(); });
+        $("#txtMaxValue").keyup(function () { checkMinMaxValidation(); });
+        $("#txtMaxValue").change(function () { checkMinMaxValidation(); });
+    });
+    function checkMinMaxValidation() {
+        if ($("#txtMaxValue").val() != "" && $("#txtMinValue").val() != "") {
+            if (parseFloat($("#txtMaxValue").val()) <= parseFloat($("#txtMinValue").val())) {
+                $("#valRangeMaxValue").show();
+            }
+            else {
+                $("#valRangeMaxValue").hide();
+            }
+        }
+    }
+</script>

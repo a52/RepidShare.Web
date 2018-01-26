@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    @*<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">*@
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>papeles</title>
+    <!-- Bootstrap -->
+    
+    @*<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/css/easy-responsive-tabs.css" rel="stylesheet" />*@
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    @*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>*@
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    @*<script src="/js/bootstrap.min.js"></script>*@
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/jquery-1.9.1.min.js"></script>
+    @*<script src="/js/easyResponsiveTabs.js"></script>*@
+</head>
+<body>
+    @*<div class="top-color"></div>
+    
+    <div class="grey-l"></div>
+    <div class="clearfix"></div>*@
+    @RenderBody()
+    @*@Html.Partial("_FooterPartial")*@
+</body>
+</html>
+
+<!--Plug-in Initialisation-->
+<script type="text/javascript">
+    //$(document).ready(function () {
+        //Horizontal Tab
+        //$('#parentHorizontalTab').easyResponsiveTabs({
+        //    type: 'default', //Types: default, vertical, accordion
+        //    width: 'auto', //auto or any width like 600px
+        //    fit: true, // 100% fit in a container
+        //    tabidentify: 'hor_1', // The tab groups identifier
+        //    activate: function(event) { // Callback function if tab is switched
+        //        var $tab = $(this);
+        //        var $info = $('#nested-tabInfo');
+        //        var $name = $('span', $info);
+        //        $name.text($tab.text());
+        //        $info.show();
+        //    }
+        //});
+
+        //// Child Tab
+        //$('#ChildVerticalTab_1').easyResponsiveTabs({
+        //    type: 'vertical',
+        //    width: 'auto',
+
+        //    fit: true,
+        //    tabidentify: 'ver_1', // The tab groups identifier
+        //    activetab_bg: '#fff', // background color for active tabs in this group
+        //    inactive_bg: '#C4C4C4;', // background color for inactive tabs in this group
+        //    active_border_color: '#c1c1c1', // border color for active tabs heads in this group
+        //    active_content_border_color: '#5AB1D0' // border color for active tabs contect in this group so that it matches the tab head border
+        //});
+
+        //Vertical Tab
+        //$('#parentVerticalTab').easyResponsiveTabs({
+        //    type: 'vertical', //Types: default, vertical, accordion
+        //    width: 'auto', //auto or any width like 600px
+        //    fit: true, // 100% fit in a container
+        //    closed: 'accordion', // Start closed if in accordion view
+        //    tabidentify: 'hor_1', // The tab groups identifier
+        //     inactive_bg: '#C4C4C4', // background color for inactive tabs in this group
+        //    activate: function(event) { // Callback function if tab is switched
+        //        var $tab = $(this);
+        //        var $info = $('#nested-tabInfo2');
+        //        var $name = $('span', $info);
+        //        $name.text($tab.text());
+        //        $info.show();
+        //    }
+        //});
+    //});
+</script>
+
+

@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic Page Needs
+  ================================================== -->
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS
+  ================================================== -->
+    @Styles.Render("~/Content/css")
+@*    <link rel="stylesheet" href="css/bootstrap.css" type="text/css">
+    <link href="css/style.css" type="text/css" rel="stylesheet">*@
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <!-- Favicons
+	================================================== -->
+    @*<link rel="shortcut icon" href="Images/favicon.ico">*@
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @*<script src="@Url.Content("~/Scripts/jquery-ui.min.js")" type="text/javascript"></script>
+ 
+    <script type="text/javascript" src="/Scripts/jquery-ui-timepicker-addon.js"></script>*@
+    <script src="@Url.Content("~/Scripts/jquery.jqGrid.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.numeric.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.blockUI.js")" type="text/javascript"></script>
+    @RenderSection("scripts", required: false)
+    @* <script type="text/javascript" src="/Scripts/jquery.js"></script>*@
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/moment.js"></script>
+    <script type="text/javascript" src="/Scripts/bootstrap-datetimepicker.js"></script>
+    <script type="text/javascript" src="/Scripts/bootbox.min.js"></script>
+    <script src="/Scripts/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/Scripts/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.mousewheel.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.nicescroll.min.js"></script>
+    @Scripts.Render("~/bundles/jscomm")
+</head>
+<body>
+    @*    <div class="main-page-header fix-header">
+
+        <div class="header-sidebar header-bg">
+            <div class="logo">
+                <img src="@Url.Content("~/Images/logo.png")" alt="Reliance - Jio infocomm Limited">
+            </div>
+        </div>
+
+        <div class="header-content-wrapper">
+            <div>
+                <div class="header-title">
+                    <h1>Infocomm Infrastructure Management Solution (IIMS)</h1>
+                    <p>Single Sign on System</p>
+                </div>
+            </div>
+
+        </div>
+    </div>*@
+
+    <!--.main-page-header-->
+
+    <div class="clearfix user-wrapper">
+
+        @RenderBody()
+    </div>
+    <!--.main-page-container-->
+    <script src="/Scripts/jquery.jscrollpane.min.js" type="text/javascript"></script>
+    <script src="/Scripts/nanoScroller.js" type="text/javascript"></script>
+    <script type="text/javascript" src="/Scripts/custom.js"></script>
+    <script language="javascript" type="text/javascript">
+
+        (function ($) {
+            $(document).ready(function () {
+
+                // Security issue no 14, Set Autocomplete off, 09Jan2015.
+                $("input").attr("autocomplete", "off");
+                $("textarea[maxlength]").keyup(function () {
+
+                    var maxLength = $(this).attr("maxlength");
+                    CheckLength(this, maxLength);
+                });
+
+
+                $("textarea[maxlength]").change(function () {
+                    var maxLength = $(this).attr("maxlength");
+                    CheckLength(this, maxLength);
+                });
+
+                function CheckLength(text, long) {
+                    var maxlength = new Number(long); // Change number to your max length.
+                    if (text.value.length > maxlength) {
+                        text.value = text.value.substring(0, maxlength);
+                    }
+                }
+
+            });
+        })(jQuery);
+
+        // Security issue no 12, Token management, 09Jan2015.
+        ///Check Ajax request in session time out or token change 
+        $(document).ajaxError(function (e, xhr) {
+            if (xhr.status == '403') {
+                window.location.href = "/User/Login";
+            }
+        });
+    </script>
+</body>
+</html>

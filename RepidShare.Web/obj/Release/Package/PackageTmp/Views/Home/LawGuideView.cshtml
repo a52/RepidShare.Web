@@ -1,0 +1,90 @@
+﻿@using RepidShare.Entities
+@model HomeLawGuideViewModel
+@{
+    Layout = "~/Views/Shared/_websiteLayout.cshtml";
+    ViewBag.Title = "Law Guide View";
+}
+
+<!--Header Bottom Region Start-->
+<div class="header_bottom">
+    <div class="wrapper">
+        <div class="links_main">
+
+            @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null)
+            {
+                <span>@Model.objCategoryModel.CategoryName law: </span>
+            }
+            <a href="/Home/CategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objCategoryModel.CategoryID))"><i class="fa fa-file-text"></i>Legal documents </a><a href="javascript:void(0);" class="selected"><i class="fa fa-book"></i>Law guide </a>
+        </div>
+        <div class="links_popular">
+            <span class="pop">Popular topics:</span>
+            @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0)
+            {
+                int Icount = Model.objListSubCategory.Count > 2 ? 3 : Model.objListSubCategory.Count;
+                for (int i = 0; i < Icount; i++)
+                {
+                <a href="/Home/SubCategoryView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objListSubCategory[i].SubCategoryID))">@Model.objListSubCategory[i].SubCatName</a>                 
+                }
+
+            }
+        </div>
+    </div>
+</div>
+<!--Header Bottom Region End-->
+
+<!--Container Region Start-->
+<div class="container">
+    <div class="row">
+        <div class="col-sx-12">
+            <h1>Law guide topics</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris laoreet dui sed diam interdum, nec consectetur risus sagittis. Donec volutpat, quam porta consectetur vulputate, mi elit ultrices dolor, sit amet mattis purus justo vel urna. Etiam </p>
+            <div class="search_box">
+                <form action="/dtl/index.cfm?event=base:search" method="GET" id="searchForm">
+                    <a href="javascript:void(0)" class="button pull-right"><i class="fa fa-search"></i>Search</a>
+                    <div class="overflow">
+                        <input type="hidden" name="event" value="search">
+                        <input type="text" name="search" value="" placeholder="Search all documents...">
+                    </div>
+                </form>
+            </div>
+            <div class="wrap-lawguide">
+                @if (Model != null && Model.objCategoryModel != null && Model.objCategoryModel.CategoryName != null && Model.objListSubCategory != null && Model.objListSubCategory.Count > 0 && Model.objListLawGuideModel != null && Model.objListLawGuideModel.Count > 0)
+                {
+                    for (int i = 0; i < Model.objListLawGuideModel.Count; i++)
+                    {
+
+                        string SubCategoryName = Model.objListLawGuideModel[i].SubCategoryName;
+                        int iCount = Model.objListLawGuideModel.Where(x => x.SubCategoryName == SubCategoryName).Count();
+
+                    <div class="desk-blog">
+                        <h3><i class="fa pull-left"></i><span class="overflow">@SubCategoryName</span></h3>
+                        <ul class="items">
+
+                            @for (int j = 0; j < iCount; j++)
+                            {      
+
+                                <li class="item item1"><a href="javascript:void(0);">@Model.objListLawGuideModel[i + j].LawGuideName</a></li>
+                        
+                            }
+
+                            @{
+                            i = i + (iCount - 1);
+                            }
+                        </ul>
+                    </div>
+                    }
+
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<!--Container Region End-->
+<script>
+
+    if ('@Model.objCategoryModel.CategoryName' == 'Family Law')
+        $('body').addClass(' business e_body_subsite_home');
+    else
+        $('body').addClass(' family e_body_subsite_home');
+
+</script>

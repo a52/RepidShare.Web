@@ -1,0 +1,725 @@
+﻿@model RepidShare.Entities.DocumentResponseDetailModel
+
+
+<script language="JavaScript" type="text/javascript">
+    var type = '<%= ConfigurationManager.AppSettings["imagetype"] %>';
+</script>
+
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<link href="~/css/style.css" rel="stylesheet" />
+<link href="~/css/font-awesome.min.css" rel="stylesheet" />
+<link href="~/css/easy-responsive-tabs.css" rel="stylesheet" />
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+@*<script src="@Url.Content("~/Scripts/jquery-1.8.3.min.js")"></script>*@
+
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+<script src="/Scripts/jquery.validate.js" type="text/javascript"></script>
+<script src="/Scripts/jquery.validate.unobtrusive.js" type="text/javascript"></script>
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>*@
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+@*<script src= "/js/bootstrap.min.js"></script>*@
+@*<script src="/js/jquery.min.js"></script>*@
+@*<script src="/js/jquery-1.9.1.min.js"></script>*@
+<script src="/js/easyResponsiveTabs.js"></script>
+<div class="top-color"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <nav class="navbar navbar-default bg0">
+                <div class="navbar-header h0">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @if (Session["UserId"] != null)
+                    {
+                        <a class="navbar-brand logo02" href="/User/SummaryView"><img src="/img/logo2.png"></a>
+                    }
+                    else
+                    {
+                        <a class="navbar-brand logo02" href="/"><img src="/img/logo2.png"></a>
+                    }
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav visibility-hidden">
+                        <!--<li class="active"><a href="#">Home</a></li>-->
+                        @if (Session["UserId"] != null)
+                        {
+                            <li><a href="/User/SummaryView">Home</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="~/">Home</a></li>
+                        }
+                        <li><a href="#">Companies </a></li>
+                        <li><a href="#">Lawyers </a></li>
+                        <li><a href="#">Notary Publics </a></li>
+                        <li><a href="#">Alguaciles </a></li>
+                        <li><a href="~/FAQ">Frequently Questions </a></li>
+                        <div class="margin15 clearfix visible-sm visible-xs"></div>
+
+                        @if (Session["UserId"] != null)
+                        {
+                            <li>
+                                <a href="#">
+                                    <button type="button" class="btn btn-default pull-left top-m btn-account visible-sm visible-xs">My Account</button>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/User/LogOff">
+                                    <button type="button" class="btn btn-logout logout-img visible-xs visible-sm"><img src="/img/logout.svg">Logout</button>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+
+                    @if (Session["UserId"] != null)
+                    {
+                        <a href="#">
+                            <button type="button" class="btn btn-default pull-right top-m btn-account hidden-xs hidden-sm visibility-hidden">My Account</button>
+                        </a>
+                        <a href="/User/LogOff">
+                            <button type="button" class="btn btn-logout logout-img hidden-xs hidden-sm visibility-hidden"><img src="/img/logout.svg"> Logout</button>
+                        </a>
+                        @*<div class="cart hidden-xs hidden-sm">
+                                <img src="/img/cart.svg">
+                                <a href="/User/Basket" onclick="_gaq.push(['_link', this.href]); return false;"><i class="icon-shopping232"></i>(@BasketCount)</a>
+                            </div>*@
+                    }
+                </div>
+            </nav>
+        </div><!--/.container-fluid -->
+        @*@if (Session["UserId"] != null)
+            {
+                <div class="cart visible-xs visible-sm">
+                    <img src="/img/cart.svg">
+                    <a href="/User/Basket" onclick="_gaq.push(['_link', this.href]); return false;"><i class="icon-shopping232"></i>(@BasketCount)</a>
+                </div>
+            }*@
+        <div class="clearfix margin15 visible-xs visible-sm"></div>
+        <div class="col-md-3 m-top">
+            <div class="margin10"></div>
+            <div class="row">
+                <div class="col-md-7">
+                    <form>
+                        <div class="form-group visibility-hidden">
+                            <label for="exampleInputEmail1">Find Your lawyer</label>
+                            <input type="email" class="form-control" id="" aria-describedby="" placeholder="Area of Practice">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-md-5 m-t">
+                    <form>
+                        <div class="form-group">
+                            <select class="form-control visibility-hidden" id="" style="width:85px !important">
+                                <option>City</option>
+                                <option>Bhopal </option>
+                                <option>Indore</option>
+                                <option>jabalpur</option>
+                                <option>Dhar</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                @*<small id="" class="form-text text-muted t-l"> Thursday,December 8 2016-12:30PM </small>*@
+                <div class="margin10 clearfix visible-xs visible-sm"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="grey-l"></div>
+<div class="clearfix"></div>
+
+
+
+
+
+
+@{
+
+    ViewBag.Title = "";
+    var BarWidth = 0;
+    if (Model != null && Model.objStepList != null)
+    {
+        BarWidth = 100 / (Model.objStepList.Count);
+
+    }
+}
+
+
+
+
+
+@using (Ajax.BeginForm("SaveDocumentResponse", "DocumentResponse", null, new AjaxOptions { OnBegin = "beginRequest", UpdateTargetId = "dvDocumentQuestionList", OnSuccess = "onSuccess", OnComplete = "endRequest" }, new { @id = "frmDocumentResponse" }))
+{
+
+    <div class="fullbg-color">
+        <div class="container">
+            <div class="row">
+                @*<p class="font13 text-muted m-l-15">Home > Contracts & Documents</p>*@
+                @if (Model != null && Model.objStepList != null)
+                {
+                    <h4><span class="m-l-15">@Model.objDocumentModel.DocumentTitle</span> </h4>
+                }
+                <div class="margin10"></div>
+                <div class="col-md-9">
+                    <div class="row background-white tab-section">
+                        <div class="row padd15">
+                            <!--Vertical Tab-->
+                            <div id="parentVerticalTab">
+                                @*style="background-color:red"*@
+                                <div>
+                                    <ul class="resp-tabs-list hor_1" style="margin-top: 3px;">
+                                        <div class="left-scroll-bar">
+                                            @if (Model != null && Model.objStepList != null)
+                                            {
+
+                                                var cnt = 1;
+                                                var completeSteps = 0;
+                                                foreach (RepidShare.Entities.StepModel item in Model.objStepList)
+                                                {
+                                                    if (item.stepStatus >= 1)
+                                                    {
+                                                        if (item.stepStatus > 1)
+                                                        {
+                                                            <span class="cross margin-left5"><img src="~/img/cross.png"></span>
+                                                            <li id="stepsId_@cnt" formnovalidate="formnovalidate" class="margin-right0 stepCls">@item.StepName.ToString()</li>
+                                                        }
+                                                        else
+                                                        {
+                                                            <span class="tick margin-left5"><img src="~/img/tick.png"></span>
+                                                            <li id="stepsId_@cnt" formnovalidate="formnovalidate" class="margin-right0 stepCls">@item.StepName.ToString() </li>
+                                                            completeSteps++;
+                                                        }
+                                                    }
+                                                    else
+                                                    {
+                                                        <span class="dots margin-left5">  <i class="fa fa-circle" aria-hidden="true"></i></span>
+                                                        <li id="stepsId_@cnt" formnovalidate="formnovalidate" class="margin-right0 stepCls">@item.StepName.ToString()</li>
+
+                                                    }
+                                                    cnt++;
+                                                }
+                                                cnt = cnt - 1;
+                                                <input type="hidden" value="@cnt" id="hdnTotalSteps" />
+                                                <input type="hidden" value="@completeSteps" id="hdnCompleteSteps" />
+                                            }
+                                        </div>
+                                    </ul>
+                                </div>
+
+                                <div class="resp-tabs-container hor_1">
+                                    <div>
+                                        <div class="col-md-12">
+                                            <div class="row background-white">
+                                                @if (Model != null)
+                                                {
+                                                    @Html.AntiForgeryToken()
+                                                    @Html.HiddenFor(model => model.DocumentID, new { Value = Model.DocumentID, id = "hdnDocumentID" })
+                                                    @Html.HiddenFor(model => model.UserId, new { Value = Model.UserId, id = "hdnUserId" })
+                                                    @Html.HiddenFor(model => model.ApplicationRoleID, new { Value = Model.ApplicationRoleID, id = "hdnApplicationRoleID" })
+                                                    @Html.HiddenFor(model => model.AppID, new { Value = Model.AppID, id = "hdnAppID" })
+                                                    @Html.HiddenFor(model => model.DocumentRoleID, new { Value = Model.DocumentRoleID, id = "hdnDocumentRoleID" })
+                                                    @Html.HiddenFor(model => model.IsReadOnly, new { Value = Model.IsReadOnly, id = "hdnIsReadOnly" })
+                                                    @Html.HiddenFor(model => model.Message, new { Value = Model.Message, id = "hdnMessage" })
+                                                    @Html.HiddenFor(model => model.MessageType, new { Value = Model.MessageType, id = "hdnMessageType" })
+                                                    @Html.HiddenFor(model => model.FolderId, new { Value = Model.MessageType, id = "FolderId" })
+                                                    @Html.HiddenFor(model => model.isSaved, new { Value = Model.MessageType, id = "isSaved" })
+                                                    @Html.HiddenFor(model => model.MaxPage, new { Value = Model.MaxPage, id = "hdnMaxPage" })
+                                                }
+                                                <div id="dvDocumentQuestionList" class="show-questions half-bottom">
+                                                    @Html.Partial("_SaveDocumentQueAnsList", Model)
+                                                </div>
+                                                @*<input type="hidden" value="@Model.MaxPage" id="hdnMaxPage" />*@
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="margin20 clearfix"></div>
+                            <div class="progress add-bottom col-sm-3 bottomProgress">
+                                <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="margin15 visible-xs visible-sm"></div>
+                <!--right-box-->
+                <div class="row col-md-3">
+                    <div class="background-white-right-p">
+                        <div class="clearfix"></div>
+                        <div class="padd15">
+                            <div class="blue-box">
+                                <span style="cursor:pointer" data-toggle="modal" data-target="#myModal"> <i class="fa fa-eye" aria-hidden="true"></i> View Document</span>
+                                @*<i class="fa fa-question" aria-hidden="true"></i> Contract Notes*@
+                            </div>
+                            <div class="m-top"></div>
+                            <p class="font12">
+                                View a preview of your document with your answers included
+                            </p>
+                            <div class="m-top"></div>
+                            <div class="green-box">
+                                <span style="cursor:pointer" data-toggle="modal" data-target="#GuidanceModal">
+                                    <i class="fa fa-question" aria-hidden="true"></i> Contract Notes
+                                </span>
+                                @*<i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy*@
+                            </div>
+                            <p class="font12">
+                                Detailed guidance for filling in this legal document
+                            </p>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="background-white-right-p">
+                        <div class="clearfix"></div>
+                        <div class="padd15">
+                            <div class="orange-box">
+                                <a style="color: #fff; text-decoration:none;" href="/User/buy?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.objDocumentModel.DocumentID))">
+                                    <i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy
+                                </a>
+                                @*<i class="fa fa-shopping-cart" aria-hidden="true"></i> Buy*@
+                                @*<i class="fa fa-usd" aria-hidden="true"></i> Comprar*@
+                            </div>
+                            <div class="m-top"></div>
+                            <p class="font12">Save your progress and purchase this document</p>
+                            <div class="m-top"></div>
+                            <div id="btnSaveLater" class="yellow-box" style="cursor:pointer;">
+                                <i class="fa fa-floppy-o" aria-hidden="true"></i> Save for later
+                            </div>
+                            <p class="font12">Not ready to buy? Sign up to save your progress for another day</p>
+                        </div>
+                    </div>
+                    <button type="button" id="btnExit" class="btn btn-exitprimary" data-toggle="modal" data-target="#myConirmationModal">Exit</button>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix margin15"></div>
+    </div>
+    <input id="btnSubmit" type="submit" value="Search" style="display:none" class="btn btn-primary" />
+
+
+     <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width:67% !important">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Document Details</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="scroll-pop" style="overflow-y:hidden !important">
+                        <p>
+                            @if (Model != null && Model.objDocumentModel != null)
+                            {
+                                @Html.Raw(Model.objDocumentModel.DocumentHTML != null ? Model.objDocumentModel.DocumentHTML.Replace("\r\n", "") : "")
+                            }
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Guidance -->
+    <div id="GuidanceModal" class="modal fade" role="dialog">
+        <div class="modal-dialog" style="width:67% !important">
+            <!-- Modal content-->
+            <div class="modal-content1" style="overflow:visible !important">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body" style="max-height:900px !important">
+                    @*<div class="scroll-pop" style="overflow-y:hidden !important; height:800px !important">*@
+                        @*<div id="GuidanceTab" class="guidance-tab tab-content">*@
+                        <div class="loader">
+                            <img src="~/img/loader.GIF" alt="" />
+                        </div>
+                        <div class="right-header-Search" style="width:27%; left:34%">
+                            <div class="inner-rheader" style="height:60px; background:none">
+                                <div class="pull-right">
+                                    <span class="search-bar">
+                                        <label for="search">Search these guidence note: </label>
+                                        <input type="text" style="margin-top:5px" class="form-text search" maxlength="128"  style="width:60% !important" value="" id="keywords" placeholder="Enter search terms...">
+                                    </span>
+                                    @*<span class="seach-button">
+                                            <a class="button" href="javascript:void(0);" id="next">Next</a>
+                                            <a class="button" href="javascript:void(0);" id="prev">Previous</a>
+                                        </span>*@
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right-container" style="margin-top:-67px !important">
+
+                            <div id="playground">
+                                <h1>Guidance</h1>
+
+                                <span class="m-title">For use in he UK only</span>
+                                <span class="small">Agreement for the sale of motor vehicle</span>
+                                <h3 class="small">Introduction</h3>
+                                <p>
+                                    This document is suitable for the private sale of all UK vehicles between individuals and provides the seller with the written confirmation that the vehicle is purchased as seen. Without it, the seller risks the buyer later alleging that the seller had orally represented the vehicle being in a better condition than it was.
+                                </p>
+                                <p>The law requires both the seller and the buyer of a vehicle to sign a joint declaration on the Registration Document (V5)/Certificate (V5C) or in Northern Ireland V5CNI. It is the seller's legal responsibility to notify the DVLA (or in Northern Ireland, DVA) of the change of ownership. The seller should tear off the green slip (V5/2 or V5C/2, or in Northern Ireland V5C/2NI) of the Registration Document/Certificate and hand it to the buyer.</p>
+
+                                <h3 class="small">Buying a vehicle</h3>
+                                <p>It is prudent when buying a vehicle to perform an online check of its history using services such as HPI Check or AA Car Data Check.</p>
+
+                                <p>These services will tell you whether your chosen vehicle is recorded as subject to outstanding finance, stolen or is on an 'at risk' register. You can cross-check the VIN number with the registration mark and check the MOT paperwork against their databases of stolen certificates. Their services also include a check against the National Mileage Register, giving you unique intelligence on suspect readings.</p>
+
+                                <p>If the vehicle has an MOT certificate, you can check it on the Gov.uk website. You can use this site to confirm the authenticity of an MOT Certificate; check on the status of a recent test conducted on a vehicle; or request a vehicle's MOT test history. Mileage information is recorded on the MOT test certificate, so you can check the accuracy of a mileage reading for the vehicle on offer. In addition, the test history will show the results, including reasons for any failures. Please note that this system does not contain details of vehicles with MOT tests carried out in Northern Ireland; it will only show results for MOTs carried out in England, Wales and Scotland.</p>
+
+                                <h3 class="small">Personal number plates</h3>
+                                <p>If the vehicle has a personal number plate and you want to keep it then you must apply to the DVLA (or in Northern Ireland, DVA) to retain it before you sell the vehicle. If you do not then the buyer will become the new owner of the personalised licence plate and may keep it or sell it, if they wish. See the DVLA  website for more information.</p>
+                            </div>
+                        </div>
+                        @*</div>*@
+
+                    @*</div>*@
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+<script type="text/javascript">
+
+    $().ready(function () {
+        //        $("#btnSearch").click(function () {
+        //            // set Action type as search and currentpage as 1 while click on search and submit the form.
+        //            $("#ActionType").val("search");
+        //            $("#CurrentPage").val("1");
+        //            sendToServer();
+        //        });
+    });
+    $("#btnConfirm").click(function () {
+        window.location.href = "/User/SummaryView";
+    });
+
+
+
+    //$(".numericInt").numeric({ decimal: false });
+    //$("input.numericDec").numeric({ decimal: "." });
+    //    function resetFilter() {
+    //        //Reset search filter on Reset buton click and submit the form
+    //        $("#FilterCategoryName").val("");
+    //        $("#ActionType").val("search");
+    //        $("#CurrentPage").val("1");
+    //        sendToServer();
+    //    }
+    // submit form
+    function setModalMaxHeight(element) {
+
+        this.$element = $(element);
+        this.$content = this.$element.find('.modal-content');
+        var borderWidth = this.$content.outerHeight() - this.$content.innerHeight();
+        var dialogMargin = $(window).width() < 768 ? 20 : 60;
+        var contentHeight = $(window).height() - (dialogMargin + borderWidth);
+        var headerHeight = this.$element.find('.modal-header').outerHeight() || 0;
+        var footerHeight = this.$element.find('.modal-footer').outerHeight() || 0;
+        var maxHeight = contentHeight - (headerHeight + footerHeight);
+        this.$content.css({
+            'overflow': 'hidden',
+            'height': '580px'
+        });
+
+        this.$element
+          .find('.modal-body').css({
+              'max-height': maxHeight,
+              'overflow-y': 'auto'
+          });
+    }
+    $('.modal').on('show.bs.modal', function () {
+        $(this).show();
+        setModalMaxHeight(this);
+    });
+    $(window).resize(function () {
+        if ($('.modal.in').length != 0) {
+            setModalMaxHeight($('.modal.in'));
+        }
+    });
+    function sendToServer() {
+        $("#btnSubmit").click();
+    }
+
+    var onSuccess = function (result) {
+        if (result != null) {
+            if (result.url) {
+                // if the server returned a JSON object containing an url
+                // property we redirect the browser to that url
+                endRequest();
+                window.location.href = result.url;
+            }
+        }
+        else {
+            $.validator.unobtrusive.parse("#frmDocumentResponse");
+            endRequest();
+        }
+    }
+
+    $.validator.unobtrusive.addValidation = function (selector) {
+        //get the relevant form
+        var form = $(selector);
+        // delete validator in case someone called form.validate()
+        $(form).removeData("validator");
+        $.validator.unobtrusive.parse(form);
+    }
+
+    var format = function (str, col) {
+        col = typeof col === 'object' ? col : Array.prototype.slice.call(arguments, 1);
+
+        return str.replace(/\{\{|\}\}|\{(\w+)\}/g, function (m, n) {
+            if (m == "{{") { return "{"; }
+            if (m == "}}") { return "}"; }
+            return col[n];
+        });
+    };
+</script>
+<script src="/Scripts/hilitorJS.js"></script>
+<style>
+    .modal {
+        text-align: center;
+        padding: 0 !important;
+    }
+
+        .modal:before {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            margin-right: -4px;
+        }
+
+    .modal-dialog {
+        display: inline-block;
+        text-align: left;
+        vertical-align: middle;
+    }
+
+    .AddModal {
+        display: none;
+    }
+
+    .hideDive {
+        display: none;
+    }
+
+    .showDiv {
+        display: block;
+    }
+
+    .redText {
+        color: red;
+    }
+
+    .redSrcoll {
+        height: 916px !important;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin-right: 0;
+    }
+
+    .bottomProgress {
+        padding: 0 !important;
+        float: left;
+        margin-top: -23px;
+    }
+
+    .progress-bar-color {
+        background-color: #76b533 !important;
+    }
+
+    .scroll-bar {
+        height: 916px;
+        border: none;
+        overflow-y: auto;
+    }
+
+    .progress-bar {
+        float: left;
+        width: 0;
+        height: 100%;
+        font-size: 12px;
+        line-height: 20px;
+        color: #fff;
+        text-align: center;
+        background-color: #6fae46;
+        -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+        box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+        -webkit-transition: width .6s ease;
+        -o-transition: width .6s ease;
+        transition: width .6s ease;
+        border-radius: 10px;
+        margin-left: 1px;
+    }
+
+    .progress {
+        height: 20px;
+        margin-bottom: 20px;
+        overflow: hidden;
+        background-color: #efefef;
+        border-radius: 4px;
+        -webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+        box-shadow: inset 0 1px 2px rgba(0,0,0,.1);
+        border-radius: 10px;
+        width: 30%;
+    }
+
+    .margin-right0 {
+        margin-right: 0px !important;
+    }
+
+    .resp-vtabs li.resp-tab-active {
+        position: relative;
+        z-index: 1;
+        margin-right: 0px !important;
+        padding: 6px 0px 12px 28px !important;
+        border-top: 1px solid;
+        border: 1px solid #76b533 !important;
+        border-left: 5px solid #5AB1D0 !important;
+        margin-bottom: 4px !important;
+    }
+
+    .margin-left5 {
+        margin-left: -15px;
+    }
+
+    .widthModal {
+        width: 776px !important;
+        height: 638px !important;
+    }
+
+    .inactiveLink {
+        pointer-events: none;
+        cursor: default;
+    }
+
+
+    .btExit {
+        color: #1389ad;
+        background-color: #ffffff;
+        border-color: #ffffff;
+        border-radius: 3px;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=198, Color=#9b9b9b)";
+        -moz-box-shadow: -1px 3px 7px #9b9b9b;
+        -webkit-box-shadow: -1px 3px 7px #9b9b9b;
+        box-shadow: -1px 3px 7px #9b9b9b;
+        filter: progid:DXImageTransform.Microsoft.Shadow(Strength=7, Direction=198, Color=#9b9b9b);
+        text-align: center;
+        outline: none;
+        margin-left: 11px;
+    }
+
+    .m02 {
+        margin: 2px;
+    }
+
+    .visibility-hidden {
+        visibility: hidden;
+    }
+    .right-header-Search {
+        padding: 5px;
+        display: block;
+        overflow: hidden;
+        position: relative;
+        /* top: -5px; */
+        left: 37%;
+        width: 42%;
+        background-color: #fff;
+        margin:auto;
+    }
+</style>
+<script type="text/javascript">
+
+    var myHilitor;
+    document.addEventListener("DOMContentLoaded", function () {
+        myHilitor = new Hilitor2("playground");
+        myHilitor.setMatchType("left");
+    }, false);
+    //document.getElementById("keywords").addEventListener("keyup", function () {
+    //    myHilitor.apply(this.value);
+    //}, false);
+</script>
+
+
+@Html.Partial("_FooterPartial")
+<!--Plug-in Initialisation-->
+<script type="text/javascript">
+    $(document).ready(function () {
+        var progressValue = 100 * ($("#hdnCompleteSteps").val()) / $("#hdnTotalSteps").val();        
+        $('.progress-bar').attr('aria-valuenow', progressValue.toFixed()).css('width', progressValue.toFixed() + "%");
+        $('.progress-bar').html(progressValue.toFixed() + "%");
+        $('.selector>span').remove();
+        //Horizontal Tab
+        $('#parentHorizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function (event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+
+        // Child Tab
+        $('#ChildVerticalTab_1').easyResponsiveTabs({
+
+            type: 'vertical',
+            width: 'auto',
+
+            fit: true,
+            tabidentify: 'ver_1', // The tab groups identifier
+            activetab_bg: '#fff', // background color for active tabs in this group
+            inactive_bg: '#C4C4C4;', // background color for inactive tabs in this group
+            active_border_color: '#c1c1c1', // border color for active tabs heads in this group
+            active_content_border_color: '#5AB1D0' // border color for active tabs contect in this group so that it matches the tab head border
+        });
+
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            inactive_bg: '#C4C4C4', // background color for inactive tabs in this group
+            activate: function (event) {
+                // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo2');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+        function SetStep() {
+            var page = $("#CurrentPage").val();
+            //$("li[id^='stepsId_']").removeAttr('class');
+            //$("li[id^='stepsId_']").removeAttr('style');
+            $("li[id^='stepsId_']").attr('style', ' background-color: rgb(196, 196, 196)');
+            $("li[id^='stepsId_']").addClass('resp-tab-item hor_1');
+            $("#stepsId_" + page).addClass("resp-tab-active");
+            $("#stepsId_" + page).attr('style', ' background-color: rgb(255, 255, 255); border-color: rgb(193, 193, 193)');
+        }
+        SetStep();
+    });
+    document.getElementById("keywords").addEventListener("keyup", function () {
+        myHilitor.apply(this.value);
+    }, false);
+</script>
+
+
+

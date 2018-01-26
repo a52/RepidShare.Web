@@ -1,0 +1,83 @@
+﻿@model RepidShare.Entities.DocumentResponseDetailModel
+@using RepidShare.Utility;
+@if (Model != null && Model.Questions != null && Model.Questions.Count() > 0)
+{
+
+    <div class="divCheckBox ">
+        @if (Model.Questions[Model.Index].QuestionOptionsList != null && Model.Questions[Model.Index].QuestionOptionsList.Count > 0)
+        {
+            <ul>
+                @for (int j = 0; j < Model.Questions[Model.Index].QuestionOptionsList.Count; j++)
+                {
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].QuestionOptionsID)
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].QuestionID)
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].IsSelected)
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].ResultDetailID)
+                    <li class="responseResultWrapper clearfix">@Html.CheckBox("questionAnswer_" + @Model.Questions[Model.Index].QuestionID,
+            new
+            {
+                @class = "chkanswer_" + @Model.Index + " chkquestionansweroption_" + Model.Questions[Model.Index].QuestionID,
+                id = "chk_" + @Model.Questions[Model.Index].QuestionOptionsList[j].QuestionOptionsID + "_" + @Model.Questions[Model.Index].QuestionID,
+                Value = @Model.Questions[Model.Index].QuestionOptionsList[j].QuestionOptionsID
+            })
+                        <div class="response-wrp">@Model.Questions[Model.Index].QuestionOptionsList[j].OptionText</div>
+                    </li>   
+                }
+
+            </ul>
+    
+        }
+    </div>
+    @Html.HiddenFor(m => m.Questions[Model.Index].SelectedAnswers, new { @class = "clsSelectedAnswers_" + @Model.Index, id = "hdnms_" + Model.Questions[Model.Index].QuestionID })
+    @Html.HiddenFor(model => model.Questions[Model.Index].ResultDetailID, new { Value = Model.Questions[Model.Index].ResultDetailID })
+    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionID, new { id = "hdnQuestion_" + Model.Index, Value = Model.Questions[Model.Index].QuestionID })
+}
+<script type="text/javascript">
+    //set radio option
+
+    $(document).ready(function () {
+        if ('@Model.IsReadOnly' == "True") {
+            $(".divCheckBox").attr("disabled", "disabled");
+            $("select, input[type='checkbox'], input[type='radio']").uniform();
+        }
+        var index = parseInt('@Model.Index');
+        var SelectedAns = $(".clsSelectedAnswers_" + index).val();
+        //debugger;
+        var QuestionID = $("#hdnQuestion_" + index).val();
+
+        if (SelectedAns != '') {
+            var arrSelectedAns = SelectedAns.split(",");
+           // debugger;
+            for (var i = 0; i < arrSelectedAns.length; i++) {
+                $("#chk_" + arrSelectedAns[i] + "_" + QuestionID).prop("checked", true);
+
+                //$("#rdb_" + SelectedAns + "_" + QuestionID).prop("checked", true);
+                $("#uniform-chk_" + arrSelectedAns[i] + "_" + QuestionID).find('span').addClass('checked');
+            }
+
+
+        }
+
+        $("input[type=checkbox]").click(function () {
+            var index = parseInt('@Model.Index');
+            var QuestionID = $("#hdnQuestion_" + index).val();
+            var selectedAnswers = $("input[name='questionAnswer_" + QuestionID + "']:checked").map(function () { return this.value; }).get().join(',');
+            var hdnSelectedAnswer = $("#hdnms_" + QuestionID);
+            var IsReq = $("#hdnIsReq_" + QuestionID).val();
+
+            if (IsReq == "True") {
+                if (selectedAnswers.length > 0) {
+                    $("#spnm_" + QuestionID).hide();
+                }
+                else {
+                    $("#spnm_" + QuestionID).show();
+                }
+            }
+            hdnSelectedAnswer.val(selectedAnswers);
+        });
+    });
+
+
+
+
+</script>

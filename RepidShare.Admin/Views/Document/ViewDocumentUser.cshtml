@@ -1,0 +1,177 @@
+﻿@using RepidShare.Entities.Resource;
+@using RepidShare.Entities
+
+@{
+    ViewBag.Title = "ViewDocumentUser";
+}
+@model ViewDocumentUserResponseModel
+<div class="row">
+    <div class="col-sm-12">
+        <ol class="breadcrumb">
+            <li><a href="/Home/Home">
+                <img src="/Images/home-icon.png"></a></li>
+            <li>@Html.ActionLink("ViewDocumentResponse", "ViewDocumentResponse", "Document")</li>
+            <li class="active">ViewDocumentUser</li>
+        </ol>
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        <h2 class="gray-heading">@ViewBag.Title</h2>
+        <div class="table-bg table-style-new">
+            <div class="table-responsive largeToolTip">
+                <table class="table">
+                    <tbody>
+                        <tr class="no-border">
+                            <td>
+                                <label class="labelColon">
+                                    <strong>@DocumentResource.lblDocumentTitle</strong></label>
+                            </td>
+                            <td>@Model.DocumentName
+                            </td>
+                            <td>
+                                <label class="labelColon">
+                                    <strong>@DocumentResource.lblDocumentDescription</strong></label>
+                            </td>
+                            <td>
+                                @if (Model.DocumentDescription != null && Model.DocumentDescription.ToString().Length > 50)
+                                {
+                                    @Model.DocumentDescription.Substring(0, 50).ToString()
+                                    <span>...<a title="@Model.DocumentDescription.ToString()" >more</a></span>
+                                }
+                                else
+                                { 
+                                    @Model.DocumentDescription
+                                }
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+@using (Ajax.BeginForm(new AjaxOptions { UpdateTargetId = "divDocumentList", OnBegin = "beginRequest", OnComplete = "searchComplete" }))
+{
+    
+    <div class="search-strip label-left remove-top">
+        <div class="row" style="margin-left: 5px; margin-right: 5px;">
+            <div class="col-sm-3">
+                <div class="">
+                    @Html.LabelFor(model => model.UserName, new { @class = "labelColon" })
+                    @Html.TextBoxFor(model => model.UserName, new { @id = "txtUserName", @class = "form-control  filter-control", @maxlength = "50", @Width = "265px" })
+                </div>
+            </div>
+            <div class="col-sm-5">
+                <div class="">
+                    <label>
+                        &nbsp</label>
+                    <input id="btnSubmit" type="submit" value="Search" class="btn" style="display: none" />
+                    <input id="btnSearch" type="button" value="Search" class="btn btn-primary" />
+                    <input id="btnReset" type="button" value="Reset" onclick="resetFilter()" class="btn btn-primary" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+    </div>
+    <div id="divDocumentList">
+        @Html.Partial("_ViewDocumentUserList", Model)
+    </div> 
+    <br />
+    <div class="row">
+        <div class="text-center button-group">
+            <input id="btnBack" type="button" class="btn btn-primary" causesvalidation="false" value="@CommonResource.btnBack" />
+        </div>
+    </div>
+}
+<script type="text/javascript">
+
+    $().ready(function () {
+
+        $(".pickDate").val('');
+        $("#SubmittedFromDate").datetimepicker({ minView: 2, autoclose: true, format: '@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()' });
+        $("#SubmittedEndDate").datetimepicker({ minView: 2, autoclose: true, format: '@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()' });
+
+
+        $("#SubmittedFromDate").on("changeDate", function (e) {
+            $('#SubmittedEndDate').datetimepicker('setStartDate', e.date);
+        });
+        $("#SubmittedEndDate").on("changeDate", function (e) {
+            $('#SubmittedFromDate').datetimepicker('setEndDate', e.date);
+        });
+
+        $("#StartFromDate").datetimepicker({ minView: 2, autoclose: true, format: '@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()' });
+        $("#StartEndDate").datetimepicker({ minView: 2, autoclose: true, format: '@RepidShare.Utility.CommonUtils.ShortDateFormat.ToLower()' });
+
+
+        $("#StartFromDate").on("changeDate", function (e) {
+            $('#StartEndDate').datetimepicker('setStartDate', e.date);
+        });
+        $("#StartEndDate").on("changeDate", function (e) {
+            $('#StartFromDate').datetimepicker('setEndDate', e.date);
+        });
+
+
+        $("#btnSearch").click(function () {
+            $("#ActionType").val("search");
+            $("#CurrentPage").val("1");
+            sendToServer();
+        });
+
+        $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer) });
+        $("a.lnkDetail").click(function () { getDetail(this, "ActionType", sendToServer) });
+
+        $("#btnBack").click(function () {
+            window.location.href = "/Document/ViewDocumentResponse";
+        });
+
+    });
+
+    function resetFilter() {
+        $(".filter-control").val("");
+        $("#SubmittedFromDate").val("");
+        $("#SubmittedEndDate").val("");
+        $("#StartFromDate").val("");
+        $("#StartEndDate").val("");
+        $("#ddlCompletedStatus").val(0);
+        //Validation for Super Admin if Model.AppID = 0 Means Super Admin Login
+        @if (Model.AppID == 0)
+        {
+           <text>
+        $("#ddlApplication").val(0);
+           </text>
+        }
+        $("#txtUserName").val("");
+        $("#ActionType").val("search");
+        $("#CurrentPage").val("1");
+        sendToServer();
+    }
+
+
+
+    createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+
+    function sendToServer() {
+        $("#btnSubmit").click();
+    }
+
+    function searchComplete(xmlHttpRequest, textStatus) {
+
+        createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", sendToServer);
+        $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", sendToServer) });
+        setSortClass("SortBy", "SortOrder");
+        $("a.lnkDetail").click(function () { getDetail(this, "ActionType", sendToServer) });
+        endRequest();
+    }
+    $(document).keyup(function (e) {
+        if (e.keyCode == 13) {
+            sendToServer();
+        }
+    });
+</script>

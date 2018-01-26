@@ -1,0 +1,117 @@
+﻿@{
+    Layout = "~/Views/Shared/_websiteLayout.cshtml";
+    ViewBag.Title = "Basket";
+}
+
+@model RepidShare.Web.PayPalItemDetail
+
+<div class="container">
+    <div class="add_basket">
+        <div class="addbasket_table_top_content">
+            <h1>Basket</h1>
+            <div class="gray-stack">The item you attempted to add (Agreement for the sale of a motor vehicle) is already in the basket.</div>
+            <div class="checkout_table">
+                <table class="table table-striped">
+
+                    <thead>
+                        <tr>
+                            <th>Products</th>
+                            <th>Service level</th>
+                            <th>Price (inc. VAT)</th>
+                            <th>&nbsp;</th>
+                        </tr>
+                    </thead>
+                    @for (int i = 0; i < Model.itemList.items.Count; i++)
+                    {
+                        <tbody>
+                            <tr>
+                                <td class="basket_agreement"><a href="/Home/DocumentView?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.itemList.items[i].url))" title="@Model.itemList.items[i].name">@Model.itemList.items[i].name</a></td>
+                                <td>Self Service</td>
+                                <td>£@Model.itemList.items[i].price</td>
+                                <td class="remove_basket"><a href="/User/BuyRemove?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.itemList.items[i].url))" title="Remove">Remove</a></td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+        <div class="addbasket_tablebottom_content">
+            <div class="col-md-7">
+                <img src="~/img/logos-paymentcardsborder.gif" title="logos-paymentcards">
+                <p>You can pay with any Visa, Mastercard or Maestro debit or credit card</p>
+            </div>
+            <div class="col-md-5">
+                <div class="addbasket_payment_details">
+                    <div class="addbasket_payment_details_box">
+                        <div class="frow">
+                            <div>Subtotal<span>(ex. VAT)</span></div>
+                            <div>£@Model.details.subtotal</div>
+                        </div>
+                        <div class="frow">
+                            <div>VAT</div>
+                            <div>£@Model.details.tax</div>
+                        </div>
+                        <div class="frow">
+                            <div>Total<span>(inc. VAT)</span></div>
+                            <input type="hidden" id="hdntotal" value="@Model.amount.total"/>
+                            <div>£<span id="spnTotal">@Model.amount.total</span> </div>
+                        </div>
+                    </div>
+                    <p>If you have a discount voucher, please enter the voucher code:</p>
+                    <p>
+                        <span id="spnDiscount" style="color: green; display: none"></span>
+                        <span id="spnError" style="color: red; display: none"></span>
+                    </p>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="txtCoupenCode">
+                        <a href="javascript:void(0);" title="apply" id="txtApply">Apply</a>
+                    </div>
+                    <div class="addbasket_processbtn"><a href="/User/Checkout"><span>Proceed to checkout</span></a> </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $("#txtApply").click(function () {
+
+            if ($("#txtCoupenCode").val() != "") {
+                $.ajax({
+
+                    url: "/User/ApplyOffer?prm=" + $("#txtCoupenCode").val(),
+                    cache: false,
+                    type: "GET",
+                    success: function (data) {
+
+                        if (parseFloat(data.Discount) > 0) {
+                            $("#spnTotal").html(parseFloat($("#hdntotal").val()) - parseFloat(data.Discount));
+                            $("#spnDiscount").html("Congrets. Offer Code applied, you get " + parseFloat(data.Discount) + " Discount");
+                            $("#spnDiscount").show();
+
+                            $("#spnError").html("");
+                            $("#spnError").hide();
+                        }
+                        else {
+                            $("#spnTotal").html(parseFloat($("#hdntotal").val()));
+                            $("#spnDiscount").html("");
+                            $("#spnDiscount").hide();
+                            $("#spnError").html("Offer code not valid");
+                            $("#spnError").show();
+                        }
+                    },
+                    error: function (reponse) {
+                        //debugger;
+                    }
+                });
+            }
+        });
+
+    });
+</script>
+
+
+

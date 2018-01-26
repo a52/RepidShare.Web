@@ -1,0 +1,159 @@
+﻿@model RepidShare.Entities.ViewQuestionModel
+@using RepidShare.Entities.Resource;
+
+<h1>
+    @QuestionResource.QuestionList</h1>
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-overflow">
+                <thead>
+                    <tr>
+                        <th style="width: 6%;">
+                            @CommonResource.lblSrNo
+                        </th>
+                        <th class="ui-state-default ui-th-column ui-th-ltr" style="width: 34%;">
+                            <a id="lnkQuestionDescription" href="javascript:void(0)" sortby="QuestionDescription" class="sort">@QuestionResource.QuestionDescription</a>
+                        </th>
+                        <th class="ui-state-default ui-th-column ui-th-ltr" style="width: 25%;">
+                            <a id="lnkQuestionTypeName" href="javascript:void(0)" sortby="QuestionTypeName" class="sort">@QuestionResource.QuestionType</a>
+                        </th>
+                        <th class="ui-state-default ui-th-column ui-th-ltr" style="width: 25%;">
+                            <a id="lnkIsRequireResponse" href="javascript:void(0)" sortby="IsRequireResponse" class="sort">@QuestionResource.RequireResponseToQuestion</a>
+                        </th>
+                        <th class="text-center" style="width: 10%;">
+                            @CommonResource.lblAction
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.QuestionsList != null && Model.QuestionsList.Count > 0)
+                    {
+                        for (int t = 0; t < Model.QuestionsList.Count; t++)
+                        {
+                        <tr>
+                            <td>@Model.QuestionsList[t].RowNumber</td>
+                            <td>@if (@Model.QuestionsList[t].QuestionDescription != null && @Model.QuestionsList[t].QuestionDescription.ToString().Length > 50)
+                                {
+                                @Model.QuestionsList[t].QuestionDescription.Substring(0, 50).ToString()
+                                <span>...<a title="@Model.QuestionsList[t].QuestionDescription.ToString()" >more</a></span>
+                                }
+                                else
+                                { 
+                                @Model.QuestionsList[t].QuestionDescription.Trim()
+                                }</td>
+                            <td>@Model.QuestionsList[t].QuestionTypeName
+                            </td>
+                            <td>@if (Model.QuestionsList[t].IsRequireResponse)
+                                {
+                                <span>@CommonResource.lblYes</span>
+                                }
+                                else
+                                {
+                                <span>@CommonResource.lblNo</span>
+                                }
+                            </td>
+                            <td class="btn-action">@if (Model.QuestionDetail.IsPublish)
+                                                   {
+                                <a class="icon-view" href="/Question/SaveQuestion?prm=@RepidShare.Utility.CommonUtils.Encrypt(String.Concat(Convert.ToString(Model.QuestionDetail.DocumentID), ',', Convert.ToString(Model.QuestionsList[t].QuestionID), ',', Convert.ToString(Model.QuestionsList[t].StepID)))" title="@RepidShare.Entities.Resource.CommonResource.lnkView">@RepidShare.Entities.Resource.CommonResource.lnkEdit</a><a class="icon-delete-disabled" href="javascript:void(0)" title="@RepidShare.Entities.Resource.CommonResource.lnkDelete">@RepidShare.Entities.Resource.CommonResource.lnkDelete</a>
+                                                   }
+                                                   else
+                                                   {
+                                <a class="icon-edit" href="/Question/SaveQuestion?prm=@RepidShare.Utility.CommonUtils.Encrypt(String.Concat(Convert.ToString(Model.QuestionDetail.DocumentID), ',', Convert.ToString(Model.QuestionsList[t].QuestionID), ',', Convert.ToString(Model.QuestionsList[t].StepID)))" title="@RepidShare.Entities.Resource.CommonResource.lnkEdit">@RepidShare.Entities.Resource.CommonResource.lnkEdit</a><a class="icon-delete" onclick="openConfirmDialog('@Model.QuestionsList[t].QuestionID','Are you sure to delete?',deleteQuestion,null)" href="javascript:void(0)" title="@RepidShare.Entities.Resource.CommonResource.lnkDelete">@RepidShare.Entities.Resource.CommonResource.lnkDelete</a>
+                                                   }
+                            </td>
+                        </tr>
+                        }
+                    }
+                    else
+                    { 
+                        <tr>
+                            <td colspan="5">@CommonResource.lblNoRecordFound
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip add-bottom clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="text-center button-group">
+                    @*@Html.ActionLink("Back", "SaveTraining", "Training", new { TrainingID = @Model.TrainingID }, new { @class = "btn btn-primary" })*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.HiddenFor(model => model.DeletedQuestionID, new { id = "hdnDeletedQuestionID" })
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+
+<script type="text/javascript">
+    $().ready(function () {
+
+        $("a.sort").click(function () { bindSort(this, "SortBy", "SortOrder", "ActionType", RefreshQuestionList) });
+
+        if ("@Model.SortOrder" == "1" && '@Model.SortBy' != "") {
+            $("#lnk" + "@Model.SortBy").addClass("desc");
+        }
+    });
+
+    createFooter("pg_pager", parseInt($("#TotalPages").val()), parseInt($("#PageSize").val()), "ActionType", "CurrentPage", RefreshQuestionList);
+
+    function sendToServer() {
+        $("#btnSubmit").click();
+    }
+    function postWithOutValidation() {
+        removeValidationRule();
+        sendToServer();
+    }
+    function removeValidationRule() {
+        ClearAllData();
+        $(".form-control").rules('remove');
+        $("#ddlQuestionType").rules('remove');
+        $('form').removeData('unobtrusiveValidation');
+    }
+    function addValidationRule() {
+        $(".form-control").rules("add", "required");
+        $("#ddlQuestionType").rules("add", "required");
+        $('form').removeData('validator');
+        $('form').removeData('unobtrusiveValidation');
+        $.validator.unobtrusive.parse('form');
+    }
+
+    function deleteQuestion(qId) {
+        $("#ActionType").val("deletequestion");
+        $("#hdnDeletedSurveyQuestionID").val(qId);
+        removeValidationRule();
+        sendToServer();
+    }
+
+    function RefreshQuestionList() {
+        beginRequest();
+        $.ajax({
+            url: '/Question/RefreshQuestionList',
+            type: 'POST',
+            data: $("form").serialize(),
+            success: function (data) {
+                $("#divQuestionList").html(data);
+            },
+            error: function () {
+                alert("An error occurred while loading the results.");
+            },
+            complete: function () {
+                $('form').removeData('validator');
+                $('form').removeData('unobtrusiveValidation');
+                $.validator.unobtrusive.parse('form');
+                endRequest();
+                $(".numeric").numeric();
+            }
+        });
+    }
+
+</script>

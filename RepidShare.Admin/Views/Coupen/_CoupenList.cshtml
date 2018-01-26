@@ -1,0 +1,86 @@
+﻿@model RepidShare.Entities.ViewCoupenModel
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>
+                                Sr No
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="CoupenName" class="sort">Coupen Code</a>
+                            </div>
+
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="Description" class="sort">Off Value</a>
+                            </div>
+
+                        </th>
+                        <th class="text-center">
+                            <div>
+                                Action
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.CoupenList != null && Model.CoupenList.Count > 0)
+                    {
+                        for (int i = 0; i < Model.CoupenList.Count; i++)
+                        {
+                        <tr>
+                            @Html.HiddenFor(m => Model.CoupenList[i].CoupenID)
+
+                            <td>@Model.CoupenList[i].RowNumber</td>
+                            <td>@Model.CoupenList[i].CoupenCode</td>
+                            <td>@Model.CoupenList[i].OffValue
+                            </td>
+                            <td class="btn-action" width="15%">
+                                @if (Model.CoupenList[i].Count > 0)
+                                {
+                                    <a class="icon-edit-disabled" href="javascript:void(0)" title="Edit">Edit</a><a class="icon-delete-disabled" href="javascript:void(0)" title="Delete">Delete</a>
+                                }
+                                else
+                                {
+                                    <a class="icon-edit" href="/Coupen/SaveCoupen?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.CoupenList[i].CoupenID))" title="Edit">Edit</a><a class="icon-delete" onclick="openConfirmDialog('@Model.CoupenList[i].CoupenID','Are you sure to delete?',deleteCoupen,null)" href="javascript:void(0)" title="Delete">Delete</a>
+                                }
+                            </td>
+                        </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6">No Record Found.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+
+    </div>
+</div>
+@Html.HiddenFor(model => model.DeletedCoupenID, new { id = "DeletedCoupenID" })
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+<script type="text/javascript">
+    $().ready(function () {
+        // Show Sucess or Error Message on popup by common function showMessagePopup
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+</script>

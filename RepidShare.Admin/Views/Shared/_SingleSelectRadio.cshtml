@@ -1,0 +1,53 @@
+﻿@model IIMSSurveyEntities.SurveyResponseDetailModel
+@using IIMSSurvey.Common;
+@if (Model != null && Model.Questions != null && Model.Questions.Count() > 0)
+{
+
+    <div class="divRadioButton">
+        @if (Model.Questions[Model.Index].QuestionOptionsList != null && Model.Questions[Model.Index].QuestionOptionsList.Count
+        > 0)
+        {
+            <ul>
+                @for (int j = 0; j < Model.Questions[Model.Index].QuestionOptionsList.Count; j++)
+                {
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].SurveyQuestionOptionsID)
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].SurveyQuestionID)
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].IsSelected)
+                    @Html.HiddenFor(model => model.Questions[Model.Index].QuestionOptionsList[j].SurveyResultDetailID)
+                    <li class="responseResultWrapper clearfix">
+                        @Html.RadioButton("questionAnswer_" + @Model.Questions[Model.Index].SurveyQuestionID, @Model.Questions[Model.Index].QuestionOptionsList[j].SurveyQuestionOptionsID
+           , new
+           {
+               @class = "radioanswer radioquestionoption_" + Model.Questions[Model.Index].SurveyQuestionID,
+               id = "rdb_" + @Model.Questions[Model.Index].QuestionOptionsList[j].SurveyQuestionOptionsID + "_" + @Model.Questions[Model.Index].SurveyQuestionID,
+               Value = @Model.Questions[Model.Index].QuestionOptionsList[j].SurveyQuestionOptionsID
+           })
+                        <div class="response-wrp"> @Model.Questions[Model.Index].QuestionOptionsList[j].OptionText</div>
+                    </li>   
+                }
+            </ul>
+        }
+    </div>    
+    @Html.HiddenFor(m => m.Questions[Model.Index].SelectedAnswers, new { @class = " clsSelectedAnswers_" + @Model.Index, id = "hdn_" + Model.Questions[Model.Index].SurveyQuestionID })
+    @Html.HiddenFor(model => model.Questions[Model.Index].SurveyResultDetailID, new { Value = Model.Questions[Model.Index].SurveyResultDetailID })
+    @Html.HiddenFor(model => model.Questions[Model.Index].SurveyQuestionID, new { id = "hdnQuestion_" + Model.Index, Value = Model.Questions[Model.Index].SurveyQuestionID })
+}
+<script type="text/javascript">
+    //set radio option
+
+    $(document).ready(function () {
+        if ('@Model.IsReadOnly' == "True") {
+            $(".divRadioButton").attr("disabled", "disabled");
+            $("select, input[type='checkbox'], input[type='radio']").uniform();
+        }
+        var index = parseInt('@Model.Index');
+        var SelectedAns = $(".clsSelectedAnswers_" + index).val();
+        var QuestionID = $("#hdnQuestion_" + index).val();
+        if (SelectedAns != '') {
+            $("#rdb_" + SelectedAns + "_" + QuestionID).prop("checked", true);
+        }
+
+
+    });
+     
+</script>

@@ -1,0 +1,400 @@
+﻿<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Best of breed: highly affordable online documents, forms & templates covering business needs and personal legal needs" />
+    <link href="~/Images/favicon.ico" type="image/png" rel="shortcut icon" />
+
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>@ViewBag.Title</title>
+    <!-- Bootstrap -->
+
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+
+    <script src="/Scripts/bootbox.min.js"></script>
+    <script src="/Scripts/jquery-1.8.3.js"></script>
+
+    <script type="text/javascript" src="/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/Scripts/bootbox.min.js"></script>
+
+</head>
+<body>
+    <div class="loading" style="display:none">Loading&#8230;</div>
+    <div class="top-color"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <nav class="navbar navbar-default bg0">
+                    <div class="navbar-header h0">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                         <span class="sr-only">Toggle navigation</span>
+                             <span class="icon-bar"></span>
+                         <span class="icon-bar"></span> 
+                            <span class="icon-bar"></span>
+                         </button>
+                        @if (Session["UserId"] != null)
+                        {
+                            <a class="navbar-brand" href="/User/SummaryView"><img src="/img/logo2.png"></a>
+                        }
+                        else
+                        {
+                            <a class="navbar-brand" href="/"><img src="/img/logo2.png"></a>
+                        }
+                    </div>
+                    <div id="navbar" class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            @if (Session["UserId"] != null)
+                            {
+                                <li><a href="/User/SummaryView">Home</a></li>
+                            }
+                            else
+                            {
+                                <li><a href="~/">Home</a></li>
+                            }
+                            <li><a href="#">Companies </a></li>
+                            <li><a href="#">Lawyers </a></li>
+                            <li><a href="#">Notary Publics </a></li>
+                            <li><a href="#">Alguaciles </a></li>
+                            <li><a href="~/FAQ">Frequently Questions </a></li>
+                            <div class="margin15 clearfix visible-sm visible-xs"></div>
+                            @if (Session["UserId"] != null)
+                            {
+                                <li>
+                                    <a href="/User/ChangePassword">
+                                        <button type="button" class="btn btn-default pull-left top-m btn-account visible-sm visible-xs">My Account</button>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="/User/LogOff">
+                                        <button type="button" class="btn btn-logout logout-img visible-xs visible-sm"><img src="/img/logout.svg">Logout</button>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                        @if (Session["UserId"] != null)
+                        {
+                            <a href="/User/ChangePassword">
+                                <button type="button" class="btn btn-default pull-right top-m btn-account hidden-xs hidden-sm">My Account</button>
+                            </a>
+                            <a href="/User/LogOff">
+                                <button type="button" class="btn btn-logout logout-img hidden-xs hidden-sm"><img src="/img/logout.svg"> Logout</button>
+                            </a>
+                            <div class="cart hidden-xs hidden-sm">
+                                <img src="/img/cart.svg">
+                                <a href="/User/Basket" onclick="_gaq.push(['_link', this.href]); return false;"><i class="icon-shopping232"></i>(@BasketCount)</a>
+                            </div>
+                        }
+                    </div>
+                    <!--/.nav-collapse -->
+                </nav>
+            </div>
+            <!--/.container-fluid -->
+            <div class="clearfix margin15 visible-xs visible-sm"></div>
+            <div class="col-md-3">
+                <div class="margin10"></div>
+                <div class="row">
+                    <div class="col-md-7 m-top">
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Find Your lawyer</label>
+                                <input type="email" class="form-control" id="" aria-describedby="" placeholder="Area of Practice">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-5 m-t">
+                        <form>
+                            <div class="form-group">
+                                <select class="form-control" id="">
+                                    <option>City</option>
+                                    <option>Bhopal </option>
+                                    <option>Indore</option>
+                                    <option>jabalpur</option>
+                                    <option>Dhar</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="margin10 clearfix visible-xs visible-sm"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+    <div class="grey-l"></div>
+    <div class="clearfix margin15"></div>
+    @RenderBody()
+    <div class="clearfix margin15"></div>
+    @Html.Partial("_FooterPartial")
+
+    <div class="modal fade" id="light-box" tabindex="-1" role="dialog">
+        <div class="modal-dialog top-form">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        X
+                    </button>
+                    <div class="text-center">
+                        <h3 id="modal-body-title"></h3>
+                    </div>
+                    <form>
+                        <div id="modal-body-content">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<style>
+    .field-validation-error {
+        color: #f00;
+    }
+
+    .field-validation-valid {
+        display: none;
+    }
+
+    .input-validation-error {
+        border: 1px solid #f00 !important;
+    }
+
+    .validation-summary-errors {
+        font-weight: bold;
+        color: #f00;
+    }
+
+    .validation-summary-valid {
+        display: none;
+    }
+
+    .select-validation-error {
+        background: #FEF1EC;
+        border: 1px solid #f00 !important;
+    }
+</style>
+<script>
+    function openEditDialog(url, titleText, dialogID, removeClasses) {
+
+        //beginRequest();
+        $.ajax({
+            type: "GET",
+            url: encodeURI(url),
+            cache: false,
+            dataType: 'html',
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                // Security Issue Point 12, 12Jan2015
+                if (XMLHttpRequest.status != 403) {
+                    $("#modal-body-content").html(XMLHttpRequest.responseText);
+                }
+            },
+            success: function (data, textStatus, XMLHttpRequest) {
+                $("#modal-body-content").html(data);
+            },
+            complete: function (XMLHttpRequest, textStatus) {
+                //            $("#modal-body-content").html($("#" + dialogID).html());
+                $("#modal-body-title").addClass("modelbox-title").html(titleText);
+                //added by Lakhan for Removing class in case of full dialog and medium dialog
+                if (removeClasses == null) {
+                    $('#light-box').removeClass("model-full");
+                    $('#light-box').removeClass("model-medium");
+                }
+                $('#light-box').modal('toggle');
+                //  endRequest();
+            }
+        });
+    }
+    function PrintPriview(id) {
+        openEditDialog("/User/PrintPreview?prm=" + id, "Print Priview", "", "")
+    }
+
+    function FolderMove(id) {
+        openEditDialog("/User/FolderMove?prm=" + id, "Folder Move", "", "")
+    }
+
+    function FolderCreate(id) {
+        openEditDialog("/User/FolderCreate?prm=" + id, "Folder Create", "", "")
+    }
+
+    function HistoryView(id) {
+        openEditDialog("/User/HistoryView?prm=" + id, "Document History View", "", "")
+    }
+
+    function GuidanceNotes(id) {
+        openEditDialog("/User/GuidanceNotes?prm=" + id, "Guidance Notes", "", "")
+    }
+
+    function RenameDocument(id) {
+        openEditDialog("/User/RenameDocument?prm=" + id, "Rename Document", "", "")
+    }
+
+    function MoreOption(id) {
+
+        if ($('#example_' + id).is(":visible")) {
+            $('#show-example_' + id).html('More');
+        } else {
+            $('#show-example_' + id).html('Less');
+        }
+        // Do it afterwards as the operation is async
+        $("#example_" + id).slideToggle("slow");
+    }
+    // submit form
+    function sendToServer() {
+
+        $("#btnSubmit").click();
+    }
+
+    
+    $(document).keyup(function (e) {
+        if (e.keyCode == 13) {
+            sendToServer();
+        }
+    });
+
+    $(".btn-pref .btn").click(function () {
+
+        $(".btn-pref .btn").removeClass("btn-primary").addClass("btn-default");
+        // $(".tab").addClass("active"); // instead of this do the below
+        $(this).removeClass("btn-default").addClass("btn-primary");
+    });
+
+
+    // logoff
+    $('#btnLogOff').click(function () {
+        window.location.href = "/User/LogOff";
+    });
+
+</script>
+
+<style>
+    /* Absolute Center Spinner */
+    .loading {
+        position: fixed;
+        z-index: 999;
+        height: 2em;
+        width: 2em;
+        overflow: show;
+        margin: auto;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+        /* Transparent Overlay */
+        .loading:before {
+            content: '';
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.3);
+        }
+        /* :not(:required) hides these rules from IE9 and below */
+        .loading:not(:required) {
+            /* hide "loading..." text */
+            font: 0/0 a;
+            color: transparent;
+            text-shadow: none;
+            background-color: transparent;
+            border: 0;
+        }
+
+            .loading:not(:required):after {
+                content: '';
+                display: block;
+                font-size: 10px;
+                width: 1em;
+                height: 1em;
+                margin-top: -0.5em;
+                -webkit-animation: spinner 1500ms infinite linear;
+                -moz-animation: spinner 1500ms infinite linear;
+                -ms-animation: spinner 1500ms infinite linear;
+                -o-animation: spinner 1500ms infinite linear;
+                animation: spinner 1500ms infinite linear;
+                border-radius: 0.5em;
+                -webkit-box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.5) -1.5em 0 0 0, rgba(0, 0, 0, 0.5) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+                box-shadow: rgba(0, 0, 0, 0.75) 1.5em 0 0 0, rgba(0, 0, 0, 0.75) 1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) 0 1.5em 0 0, rgba(0, 0, 0, 0.75) -1.1em 1.1em 0 0, rgba(0, 0, 0, 0.75) -1.5em 0 0 0, rgba(0, 0, 0, 0.75) -1.1em -1.1em 0 0, rgba(0, 0, 0, 0.75) 0 -1.5em 0 0, rgba(0, 0, 0, 0.75) 1.1em -1.1em 0 0;
+            }
+    /* Animation */
+
+    @@-webkit-keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @@-moz-keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @@-o-keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+
+    @@keyframes spinner {
+        0% {
+            -webkit-transform: rotate(0deg);
+            -moz-transform: rotate(0deg);
+            -ms-transform: rotate(0deg);
+            -o-transform: rotate(0deg);
+            transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+            -ms-transform: rotate(360deg);
+            -o-transform: rotate(360deg);
+            transform: rotate(360deg);
+        }
+    }
+</style>

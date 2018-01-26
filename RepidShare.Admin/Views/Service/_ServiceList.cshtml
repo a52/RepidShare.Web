@@ -1,0 +1,85 @@
+﻿@model RepidShare.Entities.ViewServiceModel
+<div class="row">
+    <div class="col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped remove-bottom table-selector table-bordered">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>
+                                Sr No
+                            </div>
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="ServiceText" class="sort">Service Header</a>
+                            </div>
+
+                        </th>
+                        <th>
+                            <div>
+                                <a href="javascript:void(0)" sortby="Description" class="sort">Description</a>
+                            </div>
+
+                        </th>
+                        <th class="text-center">
+                            <div>
+                                Action
+                            </div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model != null && Model.ServiceList != null && Model.ServiceList.Count > 0)
+                    {
+                        for (int i = 0; i < Model.ServiceList.Count; i++)
+                        {
+                        <tr>
+                            @Html.HiddenFor(m => Model.ServiceList[i].ServiceID)
+
+                            <td>@Model.ServiceList[i].RowNumber</td>
+                            <td>@Model.ServiceList[i].ServiceText</td>
+                            <td>@Model.ServiceList[i].Description</td>
+                            <td class="btn-action" width="15%">
+                                @if (Model.ServiceList[i].Count > 0)
+                                {
+                                    <a class="icon-edit-disabled" href="javascript:void(0)" title="Edit">Edit</a><a class="icon-delete-disabled" href="javascript:void(0)" title="Delete">Delete</a>
+                                }
+                                else
+                                {
+                                    <a class="icon-edit" href="/Service/SaveService?prm=@RepidShare.Utility.CommonUtils.Encrypt(Convert.ToString(Model.ServiceList[i].DocumentId + "," + Model.ServiceList[i].ServiceID))" title="Edit">Edit</a><a class="icon-delete" onclick="openConfirmDialog('@Model.ServiceList[i].ServiceID','Are you sure to delete?',deleteService,null)" href="javascript:void(0)" title="Delete">Delete</a>
+                                }
+                            </td>
+                        </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="6">No Record Found.
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination-strip clearfix">
+            <div class="show-page-number">
+            </div>
+            <div id="pg_pager" class="text-right pagination-wrp">
+            </div>
+        </div>
+        <!--.pagination-strip-->
+
+    </div>
+</div>
+@Html.HiddenFor(model => model.DeletedServiceID, new { id = "DeletedServiceID" })
+@Html.Partial("_ViewParameters", Model, new ViewDataDictionary<RepidShare.Entities.ViewParameters>())
+<script type="text/javascript">
+    $().ready(function () {
+        // Show Sucess or Error Message on popup by common function showMessagePopup
+        if ($("#hdnMessage").val() != "" && $("#hdnMessageType").val() != "") {
+            showMessagePopup("divMessage", $("#hdnMessageType").val(), $("#hdnMessage").val());
+        }
+    });
+</script>

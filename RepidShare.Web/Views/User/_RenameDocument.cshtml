@@ -1,0 +1,42 @@
+﻿@model RepidShare.Entities.DocumentModel
+
+@using (Html.BeginForm("RenameDocument", "User", FormMethod.Post, new { @id = "frmDocument" }))
+{
+    @Html.HiddenFor(model => model.DocumentID, new { Value = Model.DocumentID, id = "hdnDocumentId" })
+    <div class="row">
+        <div class="col-sm-3 label-style">
+            <label class="labelColon" for="StepName">Rename Document Title</label>
+        </div>
+        <div class="col-sm-9">
+            @Html.TextBoxFor(model => model.DocumentTitle, new { @id = "txtDocumentTitle", @class = "form-control", @maxlength = "100" })
+            @Html.ValidationMessageFor(model => model.DocumentTitle)
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-12">
+            <span>&nbsp</span>
+        </div>
+    </div>
+    <div class="text-left button-group row">
+        <div class="col-sm-3">&nbsp;</div>
+        <div class="col-sm-9">
+            <input id="btnFolder" class="btn btn-primary" type="submit" value="Save" />
+        </div>
+    </div>
+}
+
+<script>
+    //$("#btnFolder").click(function () {
+    //    $.ajax({
+    //        type: "POST",
+    //        url: "User/FolderMove",
+    //        data: JSON.stringify(''),
+    //        datatype: "html",
+    //        success: function (data) {
+    //            //$('#result').html(data);
+    //            window.location = "User/MyDocument";
+    //        }
+    //    });
+    //});
+
+</script>
